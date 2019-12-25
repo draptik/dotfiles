@@ -12,6 +12,8 @@
 
 ## Configuration
 
+- Example: see `projecteur.config`.
+
 ## Usage
 
 - `projecteur --cfg ~/.dotfiles/projecteur-logitech-spotlight/projecteur.config`
