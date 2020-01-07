@@ -27,3 +27,9 @@ set ruler	        " Show row and column ruler information
 set undolevels=1000	" Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
 
+" powerline
+" added as arch package as described in
+" https://wiki.archlinux.org/index.php/Powerline#Vim
+let g:powerline_pycmd="py3"
+set laststatus=2
+
