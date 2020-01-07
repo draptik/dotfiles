@@ -8,14 +8,14 @@ alias lt='ls -Alhrt'
 
 # aliases for `colorls`
 ## dark theme (default)
-alias lc='colorls -lA --sd --gs'
-alias lct='colorls -lA --sd --gs -t'    # sort by last-modified
-alias lctr='colorls -lA --sd --gs -tr'  # sort by last-modified reverse
+alias lc='RUBYOPT=-W:no-deprecated colorls -lA --sd --gs'
+alias lct='RUBYOPT=-W:no-deprecated colorls -lA --sd --gs -t'    # sort by last-modified
+alias lctr='RUBYOPT=-W:no-deprecated colorls -lA --sd --gs -tr'  # sort by last-modified reverse
 ## light theme
 ## (just prefix `l` for `light`...)
-alias llc='colorls -lA --sd --gs --light'
-alias llct='colorls -lA --sd --gs --light -t'
-alias llctr='colorls -lA --sd --gs --light -tr'
+alias llc='RUBYOPT=-W:no-deprecated colorls -lA --sd --gs --light'
+alias llct='RUBYOPT=-W:no-deprecated colorls -lA --sd --gs --light -t'
+alias llctr='RUBYOPT=-W:no-deprecated colorls -lA --sd --gs --light -tr'
 
 ## Projecteur
 alias projecteur='projecteur --cfg ~/.dotfiles/projecteur-logitech-spotlight/projecteur.config'
