@@ -20,6 +20,12 @@ alias llctr='RUBYOPT=-W:no-deprecated colorls -lA --sd --gs --light -tr'
 ## Projecteur
 alias projecteur='projecteur --cfg ~/.dotfiles/projecteur-logitech-spotlight/projecteur.config'
 
+## ripgrep, fd, and fzf
+## https://bluz71.github.io/2018/06/07/ripgrep-fd-command-line-search-tools.html
+export FZF_DEFAULT_COMMAND='fd --type f --color=never'
+export FZF_ALT_C_COMMAND='fd --type d . --color=never'
+
+
 ## Some aliases from https://computingforgeeks.com/pacman-and-yaourt-package-manager-mastery-cheat-sheet/
 ##
 ## pacman Alias commands.
