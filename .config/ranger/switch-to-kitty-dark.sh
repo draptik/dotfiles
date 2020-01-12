@@ -5,5 +5,5 @@ rm ${DIR}/rc.conf
 ln -s ${DIR}/rc.kitty-image-support.conf ${DIR}/rc.conf
 
 rm ${DIR}/scope.sh
-ln -s ${DIR}/scope-light.sh ${DIR}/scope.sh
+ln -s ${DIR}/scope.original.sh ${DIR}/scope.sh
 
