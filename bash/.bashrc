@@ -152,3 +152,7 @@ export RANGER_LOAD_DEFAULT_RC="FALSE"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+## fzf
+. /usr/share/fzf/key-bindings.bash
+. /usr/share/fzf/completion.bash
+
