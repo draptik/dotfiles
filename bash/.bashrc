@@ -156,3 +156,6 @@ export EDITOR="$VISUAL"
 . /usr/share/fzf/key-bindings.bash
 . /usr/share/fzf/completion.bash
 
+## alwaysontop
+#. ~/projects/alwaysontop/alwaysontop.sh
+
