@@ -8,7 +8,7 @@ alias lt='ls -Alhrt'
 
 # aliases for `colorls`
 ## dark theme (default)
-alias lc='RUBYOPT=-W:no-deprecated colorls -lA --sd --gs'
+alias lc='colorls -lA --sd --gs'
 alias lct='RUBYOPT=-W:no-deprecated colorls -lA --sd --gs -t'    # sort by last-modified
 alias lctr='RUBYOPT=-W:no-deprecated colorls -lA --sd --gs -tr'  # sort by last-modified reverse
 ## light theme
