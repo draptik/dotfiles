@@ -112,7 +112,9 @@ fi
 
 ## GIT PROMPT
 GIT_PROMPT_ONLY_IN_REPO=1
-source ~/.bash-git-prompt/gitprompt.sh
+if [ -d ~/.bash-git-prompt ]; then
+    source ~/.bash-git-prompt/gitprompt.sh
+fi
 
 ## activate autocd
 shopt -s autocd
