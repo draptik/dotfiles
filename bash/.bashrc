@@ -161,3 +161,6 @@ export EDITOR="$VISUAL"
 ## alwaysontop
 #. ~/projects/alwaysontop/alwaysontop.sh
 
+## broot: Get an overview of a directory, even a big one. Command: `br`
+## https://dystroy.org/broot/
+source /home/patrick/.config/broot/launcher/bash/br
