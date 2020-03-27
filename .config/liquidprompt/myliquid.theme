@@ -1,0 +1,3 @@
+## Default path color is too dark -> use blue
+LP_COLOR_PATH=$BOLD_BLUE
+LP_COLOR_MARK=$BOLD_YELLOW
