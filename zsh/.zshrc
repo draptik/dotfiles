@@ -10,6 +10,8 @@ export ZSH="/home/patrick/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster"
 
+DEFAULT_USER=patrick
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -72,6 +74,9 @@ plugins=(
     git
     archlinux
     zsh-autosuggestions
+    sudo
+    fzf
+    chucknorris
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -108,3 +113,5 @@ alias lc='colorls -lA --sd --gs'
 # zsh-syntax-highlighting (installed via arch linux)
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+
+eval $(thefuck --alias)
