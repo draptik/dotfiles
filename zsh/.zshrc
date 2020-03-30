@@ -102,6 +102,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lc='colorls -lA --sd --gs'
+# z
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 # zsh-syntax-highlighting (installed via arch linux)
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
