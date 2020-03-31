@@ -105,7 +105,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
 alias lc='colorls -lA --sd --gs'
+alias llc='colorls -lA --sd --gs --light'
+
 # z
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
