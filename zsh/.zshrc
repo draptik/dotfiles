@@ -73,7 +73,6 @@ DEFAULT_USER=patrick
 plugins=(
     git
     archlinux
-    zsh-autosuggestions
     sudo
     fzf
     chucknorris
@@ -109,6 +108,9 @@ source $ZSH/oh-my-zsh.sh
 alias lc='colorls -lA --sd --gs'
 # z
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
+
+# zsh-autosuggestions (installed via arch linux)
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # zsh-syntax-highlighting (installed via arch linux)
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
