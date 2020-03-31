@@ -9,6 +9,8 @@ export ZSH="/home/patrick/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster"
+#ZSH_THEME="amuse"
+#ZSH_THEME="wild-cherry"
 
 DEFAULT_USER=patrick
 
@@ -75,7 +77,8 @@ plugins=(
     archlinux
     sudo
     fzf
-    chucknorris
+    extract
+    emoji
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -85,7 +88,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -106,6 +109,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias zshconfig="vim ~/.zshrc"
 alias lc='colorls -lA --sd --gs'
 alias llc='colorls -lA --sd --gs --light'
 
@@ -118,5 +122,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # zsh-syntax-highlighting (installed via arch linux)
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# command-not-found (installed via arch linux: pkgfile)
+source /usr/share/doc/pkgfile/command-not-found.zsh
 
 eval $(thefuck --alias)
