@@ -113,6 +113,9 @@ alias zshconfig="vim ~/.zshrc"
 alias lc='colorls -lA --sd --gs'
 alias llc='colorls -lA --sd --gs --light'
 
+alias flameshot='flameshot gui -p ~/screenshots'
+alias screenshot='flameshot gui -p ~/screenshots'
+
 # z
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
