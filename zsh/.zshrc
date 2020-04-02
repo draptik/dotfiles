@@ -110,11 +110,14 @@ export LANG=en_US.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias zshconfig="vim ~/.zshrc"
-alias lc='colorls -lA --sd --gs'
-alias llc='colorls -lA --sd --gs --light'
+#alias lc='colorls -lA --sd --gs'
+#alias llc='colorls -lA --sd --gs --light'
 
-alias flameshot='flameshot gui -p ~/screenshots'
-alias screenshot='flameshot'
+#alias flameshot='flameshot gui -p ~/screenshots'
+#alias screenshot='flameshot'
+
+# Load common aliases shared between bash and zsh. Also handles light/dark theme switching.
+source ~/.dotfiles/sh_common_aliases/common_aliases
 
 # z
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh

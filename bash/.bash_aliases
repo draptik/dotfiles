@@ -58,3 +58,7 @@ alias poweroff='sudo systemctl poweroff'
 
 ## Cleanup
 alias cleanup='sudo paccache -r'
+
+# Load common aliases shared between bash and zsh
+source ~/.dotfiles/sh_common_aliases/common_aliases
+
