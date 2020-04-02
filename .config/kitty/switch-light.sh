@@ -3,7 +3,7 @@
 # This script must be executed from within kitty
 kitty @ set-colors -a /home/patrick/.config/kitty/kitty-themes/themes/Tango_Light.conf
 
-#./switch-other-apps-to-light.sh
+# switch shell aliases
 ~/.dotfiles/sh_common_aliases/switch-to-light.sh
 
 export KITTY_THEME="LIGHT"
