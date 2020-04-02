@@ -5,6 +5,8 @@ kitty @ set-colors -a /home/patrick/.config/kitty/kitty-themes/themes/Tango_Dark
 
 ~/.dotfiles/sh_common_aliases/switch-to-dark.sh
 
+~/.dotfiles/.config/ranger/switch-to-kitty-dark.sh
+
 export KITTY_THEME="DARK"
 
 ## Reload zsh configs
