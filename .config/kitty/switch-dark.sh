@@ -5,6 +5,8 @@ kitty @ set-colors -a /home/patrick/.config/kitty/kitty-themes/themes/Tango_Dark
 
 ~/.dotfiles/sh_common_aliases/switch-to-dark.sh
 
+export KITTY_THEME="DARK"
+
 ## Reload zsh configs
 ##
 ## "Sourcing" `source ~/.zshrc` didn't work. Use `exec /bin/zsh` instead:
