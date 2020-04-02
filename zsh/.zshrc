@@ -117,7 +117,7 @@ alias zshconfig="vim ~/.zshrc"
 #alias screenshot='flameshot'
 
 # Load common aliases shared between bash and zsh. Also handles light/dark theme switching.
-source ~/.dotfiles/sh_common_aliases/common_aliases
+source ~/.dotfiles/sh_common_aliases/common_aliases.sh
 
 # z
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
