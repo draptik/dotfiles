@@ -6,3 +6,6 @@ rm ${DIR}/theme.conf
 
 ln -s ${DIR}/kitty-themes/themes/CLRS.conf theme.conf
 
+## Switch other apps to light theme and reload current shell
+${DIR}/switch-other-apps-to-light.sh
+

@@ -2,9 +2,16 @@
 
 ## Change other terminal applications' color scheme for usage with light background color.
 
-## BAT
+## handles: bat, colorls,
+./~/.dotfiles/sh_common_aliases/switch_to_light.sh
 
-## COLORLS
+## TODO Check current shell
+
+## Reload zshrc
+source ~/.zshrc
+
+## Reload bashrc
+#source ~/.bashrc
 
 ## RANGER
 
