@@ -1,7 +1,6 @@
 #!/bin/sh
 
-# This script should be executed from within kitty
-
+# This script must be executed from within kitty
 kitty @ set-colors -a /home/patrick/.config/kitty/kitty-themes/themes/Tango_Light.conf
 
 #./switch-other-apps-to-light.sh
