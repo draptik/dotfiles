@@ -7,5 +7,4 @@ alias lct='colorls -lA --sd --gs -t'    # sort by last-modified
 alias lctr='colorls -lA --sd --gs -tr'  # sort by last-modified reverse
 
 ## BAT
-alias bat='bat --theme=ansi-light'
-
+alias bat='bat --theme="Monokai Extended"'
