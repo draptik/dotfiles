@@ -1,3 +1,4 @@
+#!/bin/sh
 # -*- mode: sh -*-
 
 # some more ls aliases
@@ -21,3 +22,13 @@ alias screenshot='flameshot'
 ## include themes aliases
 source ~/.dotfiles/sh_common_aliases/themed_aliases
 
+## TODO Switch between kitty themes
+if [ "$TERM" = "xterm-kitty" ]; then
+    # echo "Kitty rules"
+    alias darkkitty='~/.dotfiles/.config/kitty/switch-dark.sh'
+    alias lightkitty='~/.dotfiles/.config/kitty/switch-light.sh'
+else
+    # echo "not kitty"
+    # only change the common aliases in gnome-terminal:
+    # TODO
+fi
