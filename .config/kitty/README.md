@@ -1,17 +1,20 @@
 # README
 
-This folder should be a soft link to `~/.config/kitty`.
+`~/.config/kitty` should link to this folder (via `ln -s`).
 
 ## Usage: Inline theme switching
 
 From within kitty terminal (!)
 
 ```sh
-# to dakr them...
+# to dark them...
 ./switch-dark.sh
 
 # to light them...
 ./switch-light.sh
+
+# or use the toggle function defined in `common_aliases.sh`:
+togglekitty
 ```
 
 ## Light themes
