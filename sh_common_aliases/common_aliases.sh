@@ -19,6 +19,9 @@ export FZF_ALT_C_COMMAND='fd --type d . --color=never'
 alias flameshot='flameshot gui -p ~/screenshots'
 alias screenshot='flameshot'
 
+## exa
+alias le='exa -l --icons --git'
+
 ## include themes aliases
 source ~/.dotfiles/sh_common_aliases/themed_aliases
 
