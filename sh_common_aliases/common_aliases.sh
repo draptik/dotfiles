@@ -42,4 +42,5 @@ else
     # echo "not kitty"
     # only change the common aliases in gnome-terminal:
     # TODO
+    echo "not a kitty terminal"
 fi
