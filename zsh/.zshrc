@@ -4,21 +4,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/patrick/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster"
-#ZSH_THEME="amuse"
-#ZSH_THEME="wild-cherry"
 
 DEFAULT_USER=patrick
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -63,6 +51,7 @@ DEFAULT_USER=patrick
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -110,11 +99,6 @@ export LANG=en_US.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias zshconfig="vim ~/.zshrc"
-#alias lc='colorls -lA --sd --gs'
-#alias llc='colorls -lA --sd --gs --light'
-
-#alias flameshot='flameshot gui -p ~/screenshots'
-#alias screenshot='flameshot'
 
 # Load common aliases shared between bash and zsh. Also handles light/dark theme switching.
 source ~/.dotfiles/sh_common_aliases/common_aliases.sh
@@ -123,12 +107,12 @@ source ~/.dotfiles/sh_common_aliases/common_aliases.sh
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 # zsh-autosuggestions (installed via arch linux)
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+[[ -r "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # zsh-syntax-highlighting (installed via arch linux)
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[[ -r "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # command-not-found (installed via arch linux: pkgfile)
-source /usr/share/doc/pkgfile/command-not-found.zsh
+[[ -r "/usr/share/doc/pkgfile/command-not-found.zsh" ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
 
 eval $(thefuck --alias)
