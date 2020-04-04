@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # This script must be executed from within kitty
-kitty @ set-colors -a /home/patrick/.config/kitty/kitty-themes/themes/Tango_Light.conf
+kitty @ set-colors -a /home/patrick/.config/kitty/kitty-themes/mythemes/Tango_Light_patched.conf
 
 # switch shell aliases
 ~/.dotfiles/sh_common_aliases/switch-to-light.sh
