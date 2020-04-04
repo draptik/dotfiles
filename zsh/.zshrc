@@ -4,7 +4,13 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/patrick/.oh-my-zsh"
 
-ZSH_THEME="agnoster"
+# THEMES
+#ZSH_THEME="agnoster"
+#ZSH_THEME="robbyrussel"
+#ZSH_THEME="avit"
+
+# Theme Liquid Prompt: Only load Liquid Prompt in interactive shells, not from a script or from scp
+[[ $- = *i* ]] && source /usr/bin/liquidprompt
 
 DEFAULT_USER=patrick
 
