@@ -67,6 +67,8 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+#
+# PD oh-my-zsh (installed via arch linux)
 plugins=(
     git
     archlinux
@@ -74,6 +76,7 @@ plugins=(
     fzf
     extract
     emoji
+    z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -89,9 +92,6 @@ alias zshconfig="vim ~/.zshrc"
 
 # Load common aliases shared between bash and zsh. Also handles light/dark theme switching.
 source ~/.dotfiles/sh_common_aliases/common_aliases.sh
-
-# z
-[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 # zsh-autosuggestions (installed via arch linux)
 [[ -r "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
