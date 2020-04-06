@@ -174,3 +174,15 @@ bar {
         # Font for i3 bar:
         font pango:Terminus 14px
 }
+
+# PD Toggle keyboard layout between german and us layout
+# https://superuser.com/questions/1147320/how-to-change-keyboard-layout-in-i3
+# http://docs.slackware.com/howtos:window_managers:keyboard_layout_in_i3
+#setxkpmap -layout us,de
+#setxkbmap -option 'grp:ctrl_alt_toggle'
+# above didn't work out of the box...
+# Use mode+x for german, because mod+d is already used by
+# another key-binding...
+bindsym $mod+x exec setxkbmap de
+bindsym $mod+u exec setxkbmap us
+
