@@ -171,4 +171,6 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        # Font for i3 bar:
+        font pango:Terminus 14px
 }
