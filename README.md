@@ -1,6 +1,6 @@
-# Common configuration files for MY STUFF
+# Common configuration files for my stuff
 
-Currently a have 2 machines running arch linux (laptop and desktop).
+Currently I a have 2 machines running arch linux (laptop and desktop).
 
 YMMV...
 
