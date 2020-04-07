@@ -1,3 +1,9 @@
-## Default path color is too dark -> use blue
+# LP_*: LP line prompt - the symbol at the end of the prompt 
+# linux default for user: `$`, for root `#`, windows bat `>`...
+#
+# Default path color is too dark -> use blue
 LP_COLOR_PATH=$BOLD_BLUE
+
 LP_COLOR_MARK=$BOLD_YELLOW
+
+LP_MARK_DEFAULT="$"
