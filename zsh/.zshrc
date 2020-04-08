@@ -103,3 +103,5 @@ source ~/.dotfiles/sh_common_aliases/common_aliases.sh
 [[ -r "/usr/share/doc/pkgfile/command-not-found.zsh" ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
 
 eval $(thefuck --alias)
+
+source /home/patrick/.config/broot/launcher/bash/br
