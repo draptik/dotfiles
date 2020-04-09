@@ -12,3 +12,10 @@
 - `pavucontroller` PulseAudio mixer
 - `alsamixer` Alsa mixer
 - `volumeicon` Audio applet
+
+## TODOs
+
+- multi-monitor setup (and presentation setup)
+- lockscreen (logout, reboot, poweroff, hibernate, etc)
+- scratch
+
