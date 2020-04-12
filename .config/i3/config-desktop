@@ -101,20 +101,9 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-#set $ws1 "1"
-#set $ws2 "2"
-#set $ws3 "3"
-#set $ws4 "4"
-#set $ws5 "5"
-#set $ws6 "6"
-#set $ws7 "7"
-#set $ws8 "8"
-#set $ws9 "9"
-#set $ws10 "10"
-
 set $ws1    "1:   Terminal "
 set $ws2    "2:   Code "
-set $ws3    "3:   Chromium "
+set $ws3    "3:   Browser "
 set $ws4    "4:   Files "
 set $ws5    "5:   Documents "
 set $ws6    "6:   Media "
@@ -123,6 +112,30 @@ set $ws8    "8:   Chat "
 set $ws9    "9:   General "
 set $ws10   "10:   Settings "
 
+# see output of `xrandr --listmonitors` and `xrandr --current` to determine which monitor is which
+set $left-monitor   "DVI-I-1"
+set $right-monitor   "DVI-D-0"
+
+workspace $ws1 output  $left-monitor
+workspace $ws2 output  $right-monitor
+workspace $ws3 output  $left-monitor
+workspace $ws4 output  $left-monitor
+workspace $ws5 output  $left-monitor
+workspace $ws6 output  $left-monitor
+workspace $ws7 output  $left-monitor
+workspace $ws8 output  $left-monitor
+workspace $ws9 output  $left-monitor
+workspace $ws10 output $left-monitor
+
+# assign program to workspace
+# Note to self: This does not mean that the following apps can't be reassigned to a different workplace - it's just the default workspace.
+assign [class="kitty"]        $ws1
+assign [class="[Cc]ode"]      $ws2
+assign [class="[Rr]ider"]     $ws2
+assign [class="[Cc]hromium"]  $ws3
+assign [class="[Ff]irefox"]   $ws3
+assign [class="eog"]          $ws6
+assign [class="evince"]       $ws6
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
