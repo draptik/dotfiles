@@ -42,7 +42,12 @@ bindsym $mod+Shift+q kill
 #bindsym $mod+d exec dmenu_run
 #
 # Requires `j4-dmenu-desktop`
-bindsym $mod+d exec j4-dmenu-desktop
+#bindsym $mod+d exec j4-dmenu-desktop
+#
+# Requires `rofi`
+bindsym $mod+d exec "rofi -show run -modi run,drun -lines 20 -eh 1.3 -bw 0"
+bindsym $mod+Shift+d exec "rofi -show drun -modi run,drun -lines 20 -eh 1.3 -bw 0"
+bindsym $mod+c exec "nautilus"
 
 # change focus
 bindsym $mod+j focus left
@@ -96,16 +101,28 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+#set $ws1 "1"
+#set $ws2 "2"
+#set $ws3 "3"
+#set $ws4 "4"
+#set $ws5 "5"
+#set $ws6 "6"
+#set $ws7 "7"
+#set $ws8 "8"
+#set $ws9 "9"
+#set $ws10 "10"
+
+set $ws1    "1:   Terminal "
+set $ws2    "2:   Code "
+set $ws3    "3:   Chromium "
+set $ws4    "4:   Files "
+set $ws5    "5:   Documents "
+set $ws6    "6:   Media "
+set $ws7    "7:   Design "
+set $ws8    "8:   Chat "
+set $ws9    "9:   General "
+set $ws10   "10:   Settings "
+
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -131,13 +148,15 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+# ------------------------------------------------------------
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec i3-msg exit
 
+# ------------------------------------------------------------
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -165,6 +184,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# ------------------------------------------------------------
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -173,6 +193,26 @@ bar {
         font pango:Terminus 14px
 }
 
+# toggle bar
+bindsym $mod+m bar mode toggle
+
+# ------------------------------------------------------------
+# exit i3 (logs you out of your X session)
+set $System System (l) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$System" {
+    bindsym l exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+Tab mode "$System"
+
+# ------------------------------------------------------------
 # Toggle keyboard layout between german and us layout
 #
 # https://superuser.com/questions/1147320/how-to-change-keyboard-layout-in-i3
@@ -182,10 +222,11 @@ bar {
 # above didn't work out of the box...
 #
 # Use mode+x for german, because mod+d is already used by
-# another key-binding...
+# dmenu key-binding...
 bindsym $mod+x exec setxkbmap de
 bindsym $mod+u exec setxkbmap us
 
+# ------------------------------------------------------------
 # Pulse Audio controls
 #
 # Useful tools:
@@ -207,6 +248,7 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 0 +5%; 
 bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 0 -5%; pactl set-sink-volume 1 -5%;"
 bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle; pactl set-sink-mute 1 toggle"
 
+# ------------------------------------------------------------
 # Media player controls
 #
 # Requires application `playerctl`
@@ -218,9 +260,7 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-# TODO: check with laptop - Screen brightness controls
+# ------------------------------------------------------------
+# TODO: Screen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
-
-# TODO: check with laptop - Touchpad controls
-#bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
