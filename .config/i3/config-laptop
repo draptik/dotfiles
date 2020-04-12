@@ -224,3 +224,16 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 
 # TODO: check with laptop - Touchpad controls
 #bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+
+# ------------------------------------------------------------
+# Autostart applications
+
+# network manager
+exec --no-startup-id nm-applet
+
+# screenshot tool
+exec --no-startup-id flameshot
+
+# audio volume control
+exec --no-startup-id volumeicon
+
