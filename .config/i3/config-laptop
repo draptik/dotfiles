@@ -197,6 +197,22 @@ bar {
 bindsym $mod+m bar mode toggle
 
 # ------------------------------------------------------------
+# exit i3 (logs you out of your X session)
+set $System System (l) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$System" {
+    bindsym l exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+Tab mode "$System"
+
+# ------------------------------------------------------------
 # Toggle keyboard layout between german and us layout
 #
 # https://superuser.com/questions/1147320/how-to-change-keyboard-layout-in-i3
