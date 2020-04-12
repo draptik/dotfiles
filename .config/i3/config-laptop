@@ -190,7 +190,7 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status --config "~/.dotfiles/.config/i3/i3status-laptop.conf"
         # Font for i3 bar:
-        font pango:Terminus 14px
+        font pango:Terminus 12px
 }
 
 # toggle bar
