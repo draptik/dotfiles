@@ -218,13 +218,10 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-# TODO: check with laptop - Screen brightness controls
+# Screen brightness controls
 # xbacklight has no effect on laptop (arch package: `xorg-xbacklight`)
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 #bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
-
-# TODO: check with laptop - Touchpad controls
-#bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
 # ------------------------------------------------------------
 # Autostart applications
