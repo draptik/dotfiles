@@ -25,3 +25,12 @@
 - lockscreen (logout, reboot, poweroff, hibernate, etc)
 - scratch
 
+## Laptop
+
+- audio volume: works, but requires pressing key sequence twice (muting works as expected)
+- TODO xbacklight
+- untested: multi-monitor / presentation mode
+- autostart:
+    - nm-applet (started automatically on desktop?)
+    - volumeicon
+
