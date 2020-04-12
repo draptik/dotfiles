@@ -16,21 +16,19 @@
 ## Different systems, different setups: Laptop vs Desktop
 
 - gitignore `config` file
-- manually create soft-link `ln -s config-laptop config` (or `desktop`)
+- manually create soft-link `ln -s config-laptop config` (or `config-desktop`)
 
 ## TODOs
 
-- ~~same config for desktop and laptop~~ use soft links instead
 - multi-monitor setup (and presentation setup)
-- lockscreen (logout, reboot, poweroff, hibernate, etc)
-- scratch
+- ~~same config for desktop and laptop~~ use soft links instead
+- ~~logout, reboot, poweroff, hibernate, etc~~
 
 ## Laptop
 
-- audio volume: works, but requires pressing key sequence twice (muting works as expected)
-- TODO xbacklight
 - untested: multi-monitor / presentation mode
 - autostart:
-    - nm-applet (started automatically on desktop?)
-    - volumeicon
-
+  - ~~nm-applet (started automatically on desktop?)~~
+  - ~~volumeicon~~
+- TODO xbacklight
+- audio volume: works, but requires pressing key sequence twice (muting works as expected)
