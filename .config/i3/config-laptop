@@ -190,6 +190,9 @@ bar {
         font pango:Terminus 14px
 }
 
+# toggle bar
+bindsym $mod+m bar mode toggle
+
 # Toggle keyboard layout between german and us layout
 #
 # https://superuser.com/questions/1147320/how-to-change-keyboard-layout-in-i3
