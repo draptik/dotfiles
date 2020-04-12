@@ -47,7 +47,7 @@ bindsym $mod+Shift+q kill
 # Requires `rofi`
 bindsym $mod+d exec "rofi -show run -modi run,drun -lines 20 -eh 1.3 -bw 0"
 bindsym $mod+Shift+d exec "rofi -show drun -modi run,drun -lines 20 -eh 1.3 -bw 0"
-
+bindsym $mod+c exec "nautilus"
 
 # change focus
 bindsym $mod+j focus left
