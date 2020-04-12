@@ -3,7 +3,7 @@
 ## Required dependencies used in i3 configuration
 
 - `kitty` terminal
-- `j4-dmenu-desktop` fast `dmenu` replacement
+- `rofi` fast `dmenu` replacement
 - `pactl` PulseAudio controller
 - `playerctl` Media player controller
 
@@ -16,11 +16,11 @@
 ## Different systems, different setups: Laptop vs Desktop
 
 - gitignore `config` file
-- manualy create soft-link `ln -s config-laptop config` (or `desktop`)
+- manually create soft-link `ln -s config-laptop config` (or `desktop`)
 
 ## TODOs
 
-- same config for desktop and laptop
+- ~~same config for desktop and laptop~~ use soft links instead
 - multi-monitor setup (and presentation setup)
 - lockscreen (logout, reboot, poweroff, hibernate, etc)
 - scratch
