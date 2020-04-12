@@ -129,13 +129,15 @@ workspace $ws10 output $left-monitor
 
 # assign program to workspace
 # Note to self: This does not mean that the following apps can't be reassigned to a different workplace - it's just the default workspace.
-assign [class="kitty"]        $ws1
-assign [class="[Cc]ode"]      $ws2
-assign [class="[Rr]ider"]     $ws2
-assign [class="[Cc]hromium"]  $ws3
-assign [class="[Ff]irefox"]   $ws3
-assign [class="eog"]          $ws6
-assign [class="evince"]       $ws6
+assign [class="kitty"]         $ws1
+assign [class="[Cc]ode"]       $ws2
+assign [class="[Rr]ider"]      $ws2
+assign [class="[Cc]hromium"]   $ws3
+assign [class="[Ff]irefox"]    $ws3
+assign [class="eog"]           $ws6
+assign [class="evince"]        $ws6
+assign [class="[Ss]ignal"]     $ws8
+assign [class="[Tt]elegram*"]  $ws8
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
