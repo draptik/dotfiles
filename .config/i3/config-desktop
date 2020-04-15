@@ -279,3 +279,12 @@ bindsym XF86AudioPrev exec playerctl previous
 # TODO: Screen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# ------------------------------------------------------------
+# Autostart applications
+
+# network manager
+exec --no-startup-id nm-applet
+
+# audio volume control
+exec --no-startup-id volumeicon
