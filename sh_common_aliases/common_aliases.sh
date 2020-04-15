@@ -44,3 +44,6 @@ else
     # TODO
     echo "not a kitty terminal"
 fi
+
+# Load patched xmodmap: caps lock now behaves like windows key
+xmodmap ~/.Xmodmap
