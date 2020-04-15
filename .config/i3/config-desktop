@@ -119,13 +119,13 @@ set $right-monitor   "DVI-D-0"
 workspace $ws1 output  $left-monitor
 workspace $ws2 output  $right-monitor
 workspace $ws3 output  $left-monitor
-workspace $ws4 output  $left-monitor
+workspace $ws4 output  $right-monitor
 workspace $ws5 output  $left-monitor
-workspace $ws6 output  $left-monitor
+workspace $ws6 output  $right-monitor
 workspace $ws7 output  $left-monitor
-workspace $ws8 output  $left-monitor
+workspace $ws8 output  $right-monitor
 workspace $ws9 output  $left-monitor
-workspace $ws10 output $left-monitor
+workspace $ws10 output $right-monitor
 
 # assign program to workspace
 # Note to self: This does not mean that the following apps can't be reassigned to a different workplace - it's just the default workspace.
