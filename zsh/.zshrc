@@ -90,9 +90,6 @@ export LANG=en_US.UTF-8
 
 alias zshconfig="vim ~/.zshrc"
 
-# Load common aliases shared between bash and zsh. Also handles light/dark theme switching.
-source ~/.dotfiles/sh_common_aliases/common_aliases.sh
-
 # zsh-autosuggestions (installed via arch linux)
 [[ -r "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
@@ -102,6 +99,11 @@ source ~/.dotfiles/sh_common_aliases/common_aliases.sh
 # command-not-found (installed via arch linux: pkgfile)
 [[ -r "/usr/share/doc/pkgfile/command-not-found.zsh" ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
 
+# the-fuck (installed via arch linux)
 eval $(thefuck --alias)
 
+# broot (installed via arch linux)
 source /home/patrick/.config/broot/launcher/bash/br
+
+# Load common aliases shared between bash and zsh. Also handles light/dark theme switching.
+source ~/.dotfiles/sh_common_aliases/common_aliases.sh
