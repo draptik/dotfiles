@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## This line must be executed from within kitty
-kitty @ set-colors -a /home/patrick/.config/kitty/kitty-themes/themes/Tango_Dark.conf
+kitty @ set-colors -a ~/.config/kitty/kitty-themes/themes/Tango_Dark.conf
 
 ~/.dotfiles/sh_common_aliases/switch-to-dark.sh
 

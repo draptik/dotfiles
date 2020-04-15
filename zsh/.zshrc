@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/patrick/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 
 # THEMES
 #ZSH_THEME="agnoster"
@@ -103,7 +103,7 @@ alias zshconfig="vim ~/.zshrc"
 eval $(thefuck --alias)
 
 # broot (installed via arch linux)
-source /home/patrick/.config/broot/launcher/bash/br
+source ~/.config/broot/launcher/bash/br
 
 # Load common aliases shared between bash and zsh. Also handles light/dark theme switching.
 source ~/.dotfiles/sh_common_aliases/common_aliases.sh
