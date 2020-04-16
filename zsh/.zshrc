@@ -79,6 +79,8 @@ plugins=(
     z
 )
 
+ZSH="/usr/share/oh-my-zsh"
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
