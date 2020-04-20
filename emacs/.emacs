@@ -1,4 +1,11 @@
+(package-initialize)
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
+; YAML Mode
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.yaml\\'" . yaml-mode))
 
 ;; ===================================================================
 ;; DISABLE CTRL-Z MINIMIZATION/SUSPENSION OF EMACS ===================
@@ -60,6 +67,13 @@
  '(ido-enable-flex-matching t)
  '(inhibit-startup-buffer-menu t)
  '(inhibit-startup-screen t)
+ '(package-selected-packages (quote (yaml-mode)))
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(tool-bar-mode nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
