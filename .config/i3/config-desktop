@@ -220,6 +220,15 @@ bar {
 #        font pango:FantasqueSansMono Nerd Font 12
         font pango:JetBrainsMono Nerd Font 11
 #        font pango:Terminus 14px
+
+        # colors {
+        #         #                  Border  Background Textcolor
+        #         #
+        #         focused_workspace  #CECECE #CECECE    #000000
+        #         active_workspace   #333333 #333333    #888888
+        #         inactive_workspace #CECECE #333333    #f1f1f1
+        #         urgent_workspace   #eb709b #eb709b    #ffffff
+        # }
 }
 
 # toggle bar
