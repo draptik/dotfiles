@@ -217,7 +217,9 @@ bar {
         # status_command SCRIPT_DIR=~/.dotfiles/.config/i3/i3blocks i3blocks -c ~/.dotfiles/.config/i3/i3blocks-desktop.conf
 
         # Font for i3 bar:
-        font pango:Terminus 14px
+#        font pango:FantasqueSansMono Nerd Font 12
+        font pango:JetBrainsMono Nerd Font 11
+#        font pango:Terminus 14px
 }
 
 # toggle bar
