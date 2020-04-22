@@ -218,7 +218,7 @@ bar {
 
         # Font for i3 bar:
 #        font pango:FantasqueSansMono Nerd Font 12
-        font pango:JetBrainsMono Nerd Font 11
+        font pango:JetBrainsMono Nerd Font 10
 #        font pango:Terminus 14px
 
         # colors {
