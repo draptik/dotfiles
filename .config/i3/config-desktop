@@ -212,9 +212,9 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	# i3status:
-        status_command i3status --config "~/.dotfiles/.config/i3/i3status-desktop.conf"
+        # status_command i3status --config "~/.dotfiles/.config/i3/i3status-desktop.conf"
 	# i3blocks:
-        # status_command SCRIPT_DIR=~/.dotfiles/.config/i3/i3blocks i3blocks -c ~/.dotfiles/.config/i3/i3blocks-desktop.conf
+        status_command SCRIPT_DIR=~/.dotfiles/.config/i3/i3blocks i3blocks -c ~/.dotfiles/.config/i3/i3blocks-desktop.conf
 
         # Font for i3 bar:
 #        font pango:FantasqueSansMono Nerd Font 12
