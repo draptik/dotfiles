@@ -308,4 +308,8 @@ bindsym XF86AudioPrev exec playerctl previous
 exec --no-startup-id nm-applet
 
 # audio volume control
+#
+# NOTE: This icon can be configured to use any audio mixer.
+# Since I'm migrating from gnome... `gnome-control-center sound`. 
+# Right-click on the volume-icon, select 'Preferences' -> 'Status Icon' -> 'External mixer' -> 'gnome-control-center sound'
 exec --no-startup-id volumeicon
