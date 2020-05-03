@@ -109,3 +109,14 @@ source ~/.config/broot/launcher/bash/br
 
 # Load common aliases shared between bash and zsh. Also handles light/dark theme switching.
 source ~/.dotfiles/sh_common_aliases/common_aliases.sh
+
+# dotnet core completions https://khalidabuhakmeh.com/dotnet-core-tab-completion-with-zsh
+_dotnet_zsh_complete()
+{
+    local completions=("$(dotnet complete "$words")")
+
+    reply=( "${(ps:\n:)completions}" )
+}
+
+compctl -K _dotnet_zsh_complete dotnet
+
