@@ -168,9 +168,10 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # Open specific applications in floating mode
-for_window [title="[Zz]oom"] floating enable resize set 800 600
-for_window [title="[Kk]ee[Pp]ass"] floating enable resize set 800 600
-for_window [title="Volume Control"] floating enable resize set 800 600
+for_window [class="[Zz]oom"] floating enable resize set 800 600
+for_window [class="[Kk]ee[Pp]ass"] floating enable resize set 800 600
+for_window [class="Volume Control"] floating enable resize set 800 600
+for_window [class="[Ss]ignal"] floating enable resize set 800 600
 
 # ------------------------------------------------------------
 # reload the configuration file
