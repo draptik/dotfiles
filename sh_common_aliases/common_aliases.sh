@@ -41,8 +41,8 @@ if [ "$TERM" = "xterm-kitty" ]; then
 else
     # echo "not kitty"
     # only change the common aliases in gnome-terminal:
-    # TODO
-    echo "not a kitty terminal"
+    #echo "not a kitty terminal"
+    true
 fi
 
 # Load patched xmodmap: caps lock now behaves like windows key
