@@ -110,6 +110,10 @@ source ~/.config/broot/launcher/bash/br
 # Load common aliases shared between bash and zsh. Also handles light/dark theme switching.
 source ~/.dotfiles/sh_common_aliases/common_aliases.sh
 
+# dotnet
+export DOTNET_ROOT=/opt/dotnet
+export PATH=$PATH:/opt/dotnet
+
 # dotnet core completions https://khalidabuhakmeh.com/dotnet-core-tab-completion-with-zsh
 _dotnet_zsh_complete()
 {
@@ -119,4 +123,7 @@ _dotnet_zsh_complete()
 }
 
 compctl -K _dotnet_zsh_complete dotnet
+
+# java: use system default (set via `archlinux-java`)
+unset JAVA_HOME
 
