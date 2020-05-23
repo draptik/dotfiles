@@ -111,8 +111,8 @@ source ~/.config/broot/launcher/bash/br
 source ~/.dotfiles/sh_common_aliases/common_aliases.sh
 
 # dotnet
-export DOTNET_ROOT=/opt/dotnet
-export PATH=$PATH:/opt/dotnet
+#export PATH=$PATH:/opt/dotnet
+#export DOTNET_ROOT="$(dirname $(which dotnet))"
 
 # dotnet core completions https://khalidabuhakmeh.com/dotnet-core-tab-completion-with-zsh
 _dotnet_zsh_complete()
@@ -126,4 +126,11 @@ compctl -K _dotnet_zsh_complete dotnet
 
 # java: use system default (set via `archlinux-java`)
 unset JAVA_HOME
+
+# make sure that PATH only contains unique entries
+# https://unix.stackexchange.com/a/62599/57915
+typeset -U path
+
+# add ~/bin to PATH
+path+=(~/bin)
 

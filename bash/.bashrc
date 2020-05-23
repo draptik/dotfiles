@@ -132,7 +132,7 @@ eval $(thefuck --alias)
 #export PATH=$PATH:~/tmp/adr-tools-3.0.0/src/
 
 ## dotnet core
-export DOTNET_ROOT=/opt/dotnet
+#export DOTNET_ROOT=/opt/dotnet
 
 ## Liquidprompt
 ## Only load Liquid Prompt in interactive shells, not from a script or from scp
