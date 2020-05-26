@@ -111,8 +111,9 @@ source ~/.config/broot/launcher/bash/br
 source ~/.dotfiles/sh_common_aliases/common_aliases.sh
 
 # dotnet
-#export PATH=$PATH:/opt/dotnet
+export PATH=$PATH:/opt/dotnet
 #export DOTNET_ROOT="$(dirname $(which dotnet))"
+export DOTNET_ROOT=/opt/dotnet
 
 # dotnet core completions https://khalidabuhakmeh.com/dotnet-core-tab-completion-with-zsh
 _dotnet_zsh_complete()
@@ -133,4 +134,5 @@ typeset -U path
 
 # add ~/bin to PATH
 path+=(~/bin)
+#path+=(~/.dotnet)
 
