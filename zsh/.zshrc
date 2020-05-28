@@ -115,6 +115,9 @@ export PATH=$PATH:/opt/dotnet
 #export DOTNET_ROOT="$(dirname $(which dotnet))"
 export DOTNET_ROOT=/opt/dotnet
 
+# Add .NET Core SDK tools
+export PATH="$PATH:/home/patrick/.dotnet/tools"
+
 # dotnet core completions https://khalidabuhakmeh.com/dotnet-core-tab-completion-with-zsh
 _dotnet_zsh_complete()
 {
