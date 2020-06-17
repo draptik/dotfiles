@@ -282,6 +282,9 @@ bindsym $mod+Shift+Tab mode "$System"
 bindsym $mod+x exec setxkbmap de
 bindsym $mod+u exec setxkbmap us
 
+# TODO changing keyboard layout doesn't work on desktop: once I switch to german layout the caps-key
+# behaves like a "normal caps-key", so I can't use it as a modifier anymore.
+
 # ------------------------------------------------------------
 # Pulse Audio controls
 #
