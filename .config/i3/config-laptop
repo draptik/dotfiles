@@ -36,7 +36,7 @@ floating_modifier $mod
 bindsym $mod+Return exec kitty
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
@@ -222,7 +222,7 @@ mode "$System" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+Shift+Tab mode "$System"
+bindsym $mod+Shift+s mode "$System"
 
 # ------------------------------------------------------------
 # Toggle keyboard layout between german and us layout
