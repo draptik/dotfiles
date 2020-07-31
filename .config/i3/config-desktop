@@ -116,8 +116,8 @@ set $ws9    "9"
 set $ws10   "10"
 
 # see output of `xrandr --listmonitors` and `xrandr --current` to determine which monitor is which
-set $left-monitor   "DVI-I-1"
-set $right-monitor   "DVI-D-0"
+set $left-monitor   "HDMI-0"
+set $right-monitor   "HDMI-1"
 
 workspace $ws1 output  $left-monitor
 workspace $ws2 output  $right-monitor
