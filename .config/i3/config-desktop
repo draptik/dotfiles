@@ -116,8 +116,8 @@ set $ws9    "9"
 set $ws10   "10"
 
 # see output of `xrandr --listmonitors` and `xrandr --current` to determine which monitor is which
-set $left-monitor   "HDMI-0"
-set $right-monitor   "HDMI-1"
+set $left-monitor   "DVI-I-1"
+set $right-monitor   "DVI-D-0"
 
 workspace $ws1 output  $left-monitor
 workspace $ws2 output  $right-monitor
@@ -156,6 +156,7 @@ bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
+## $mod+shift+1 doesn't work..
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
