@@ -267,7 +267,7 @@ mode "$System" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+Shift+s mode "$System"
+bindsym $mod+s mode "$System"
 
 # ------------------------------------------------------------
 # Toggle keyboard layout between german and us layout
