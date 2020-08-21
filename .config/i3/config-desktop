@@ -285,6 +285,11 @@ bindsym $mod+u exec setxkbmap us
 
 # TODO changing keyboard layout doesn't work on desktop: once I switch to german layout the caps-key
 # behaves like a "normal caps-key", so I can't use it as a modifier anymore.
+#
+# TODO workaround: invoke xmodmap after switching keyboard layout
+# Example:
+# 
+# xmodmap ~/.Xmodmap
 
 # ------------------------------------------------------------
 # Pulse Audio controls
