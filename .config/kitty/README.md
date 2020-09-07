@@ -17,6 +17,14 @@ From within kitty terminal (!)
 togglekitty
 ```
 
+## Usage: setting theme when starting kitty
+
+Use script `kitty-with-color-from-env.zsh` from `i3`. The toggle scripts from the previous section
+now (2020-09-07) also change the soft link `theme.conf`, which in turn is loaded by `kitty.conf`.
+
+Basic idea: Switching the theme saves an environment variable `KITTY_THEME` to `~/.zshenv`, which
+can be read from other scripts. Works with combo `i3`, `zsh` and `kitty` on both desktop and laptop.
+
 ## Light themes
 
 Light themes which work ok-ish with programs like `bat`, `ranger`, `colorls`, `exa`, etc.:
