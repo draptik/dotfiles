@@ -1,13 +1,20 @@
 #!/bin/sh
 echo "dark script starting..."
+
+echo 'export KITTY_THEME="DARK"' > ~/.zshenv
+
+echo 'setting kitty theme'
 ## This line must be executed from within kitty
 kitty @ set-colors -a ~/.config/kitty/kitty-themes/themes/Tango_Dark.conf
+
+ln -sf \
+    ~/.dotfiles/.config/kitty/kitty-themes/themes/Tango_Dark.conf \
+    ~/.dotfiles/.config/kitty/theme.conf
 
 ~/.dotfiles/sh_common_aliases/switch-to-dark.sh
 
 ~/.dotfiles/.config/ranger/switch-to-kitty-dark.sh
 
-export KITTY_THEME="DARK"
 
 ## Reload zsh configs
 ##
