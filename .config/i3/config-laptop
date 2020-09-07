@@ -33,7 +33,7 @@ floating_modifier $mod
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
 # Requires `kitty` terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec "$HOME/.dotfiles/.config/kitty/kitty-with-color-from-env.zsh"
 
 # kill focused window
 bindsym $mod+q kill
