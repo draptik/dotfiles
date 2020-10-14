@@ -340,5 +340,5 @@ exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
 
 # Solaar: configure MX Master 3 Wireless Mouse
-exec --no-startup-id solaar
+#exec --no-startup-id solaar
 
