@@ -139,3 +139,7 @@ typeset -U path
 path+=(~/bin)
 #path+=(~/.dotnet)
 
+# Haskell ghcup
+# prepend to path (don't append)
+path=(~/.ghcup/bin $path)
+
