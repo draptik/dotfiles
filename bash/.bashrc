@@ -124,7 +124,7 @@ shopt -s autocd
 
 
 ## Used by darcula theme for gnome terminal
-eval `dircolors ~/.dir_colors/dircolors`
+eval `dircolors ~/.dotfiles/dir_colors/dircolors`
 
 ## the fuck
 eval $(thefuck --alias)
