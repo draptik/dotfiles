@@ -272,6 +272,9 @@ bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle; pactl 
 # ------------------------------------------------------------
 # Autostart applications
 
+# load Xresources
+exec_always --no-startup-id xrdb ~/.Xresources
+
 # network manager
 exec --no-startup-id nm-applet
 
@@ -282,5 +285,6 @@ exec --no-startup-id flameshot
 exec --no-startup-id volumeicon
 
 # seafile
-exec --no-startup-id seafile-applet
+# for some reason seafile is already started
+#exec --no-startup-id seafile-applet
 
