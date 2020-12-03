@@ -2,6 +2,9 @@
 
 `~/.config/kitty` should link to this folder (via `ln -s`).
 
+`kitty.conf` should be a soft link pointing to the desired config file. Example: `ln -sf
+kitty-main.conf kitty.conf`
+
 ## Usage: Inline theme switching
 
 From within kitty terminal (!)
