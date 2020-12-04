@@ -141,9 +141,10 @@ eval $(thefuck --alias)
 [[ $- = *i* ]] && source /usr/bin/liquidprompt
 
 # Set up Node Version Manager
-export NVM_DIR="$HOME/.nvm"                            # You can change this if you want.
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # Load NVM
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
+source /usr/share/nvm/nvm.sh
+source /usr/share/nvm/bash_completion
+source /usr/share/nvm/install-nvm-exec
 
 ## Exercism.io
 export PATH=$PATH:~/bin/
