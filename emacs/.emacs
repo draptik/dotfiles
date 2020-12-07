@@ -56,7 +56,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(calendar-date-style (quote european))
+ '(calendar-date-style 'european)
  '(column-number-mode t)
  '(desktop-restore-eager 5)
  '(desktop-save-mode t)
@@ -67,7 +67,7 @@
  '(ido-enable-flex-matching t)
  '(inhibit-startup-buffer-menu t)
  '(inhibit-startup-screen t)
- '(package-selected-packages (quote (yaml-mode)))
+ '(package-selected-packages '(csharp-mode ## yaml-mode))
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(tool-bar-mode nil))
