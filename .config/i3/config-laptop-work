@@ -200,7 +200,7 @@ bar {
 
         # Font for i3 bar:
         # font pango:Terminus 12px
-        font pango:JetBrainsMono Nerd Font 24
+        font pango:JetBrainsMono Nerd Font 20
 }
 
 # toggle bar
