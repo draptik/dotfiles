@@ -58,6 +58,7 @@
  ;; If there is more than one, they won't work right.
  '(calendar-date-style 'european)
  '(column-number-mode t)
+ '(custom-enabled-themes '(tango-dark))
  '(desktop-restore-eager 5)
  '(desktop-save-mode t)
  '(display-time-24hr-format t)
@@ -67,7 +68,7 @@
  '(ido-enable-flex-matching t)
  '(inhibit-startup-buffer-menu t)
  '(inhibit-startup-screen t)
- '(package-selected-packages '(csharp-mode ## yaml-mode))
+ '(package-selected-packages '(i3wm-config-mode csharp-mode ## yaml-mode))
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(tool-bar-mode nil))
