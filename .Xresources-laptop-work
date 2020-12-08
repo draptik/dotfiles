@@ -1,6 +1,9 @@
 ! See Seafile Notes urxvt-terminal.md for details
 
 !PD Trying some settings for i3 & HiDPI
+!
+! For details see https://wiki.archlinux.org/index.php/HiDPI#X_Resources
+!
 ! prefer multiples of 96
 
 ! factor 1.5
@@ -13,12 +16,12 @@ Xft.dpi: 192
 !Xft.dpi: 384
 
 ! These might also be useful depending on your monitor and personal preference:
-!Xft.autohint: 0
-!Xft.lcdfilter:  lcddefault
-!Xft.hintstyle:  hintfull
-!Xft.hinting: 1
-!Xft.antialias: 1
-!Xft.rgba: rgb
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
 !PD End Xft experiments
 
 
