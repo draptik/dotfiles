@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Signal (with scale patch)
+Comment=Signal Private Messenger for Linux
+Icon=signal-desktop
+Exec=signal-desktop --force-device-scale-factor=1.7
+Terminal=false
+Categories=Network;InstantMessaging;
+StartupWMClass=Signal
