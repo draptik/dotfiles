@@ -68,7 +68,7 @@
  '(ido-enable-flex-matching t)
  '(inhibit-startup-buffer-menu t)
  '(inhibit-startup-screen t)
- '(package-selected-packages '(i3wm-config-mode csharp-mode ## yaml-mode))
+ '(package-selected-packages '(fsharp-mode i3wm-config-mode csharp-mode ## yaml-mode))
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(tool-bar-mode nil))
