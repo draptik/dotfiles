@@ -330,6 +330,9 @@ bindsym XF86AudioPrev exec playerctl previous
 # ------------------------------------------------------------
 # Autostart applications
 
+# Xresources
+exec_always --no-startup-id xrdb ~/.Xresources
+
 # network manager
 exec --no-startup-id nm-applet
 
