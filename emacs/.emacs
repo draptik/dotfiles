@@ -69,7 +69,7 @@
  '(inhibit-startup-buffer-menu t)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(markdown-mode fsharp-mode i3wm-config-mode csharp-mode ## yaml-mode))
+   '(haskell-mode markdown-mode fsharp-mode i3wm-config-mode csharp-mode ## yaml-mode))
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(tool-bar-mode nil))
