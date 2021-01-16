@@ -145,7 +145,7 @@ path=(~/.ghcup/bin $path)
 
 # NVM
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
-if [[ -a "/usr/share/nvn/nvm.sh" ]]; then
+if [[ -a "/usr/share/nvm/nvm.sh" ]]; then
     source /usr/share/nvm/nvm.sh
     source /usr/share/nvm/bash_completion
     source /usr/share/nvm/install-nvm-exec
