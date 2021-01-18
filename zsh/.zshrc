@@ -94,6 +94,8 @@ alias zshconfig="vim ~/.zshrc"
 
 # zsh-autosuggestions (installed via arch linux)
 [[ -r "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# configure color of autosuggestion
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
 
 # zsh-syntax-highlighting (installed via arch linux)
 [[ -r "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
