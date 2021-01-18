@@ -7,6 +7,8 @@ m4a:              audio
 mp3:              audio
 ogg:              audio
 wav:              audio
+csproj:           conf
+fsproj:           conf
 editorconfig:     conf
 cs:               csharp
 cshtml:           csharp
@@ -87,8 +89,6 @@ ini:              windows
 csv:              xls
 gsheet:           xls
 xlsx:             xls
-csproj:           xml
-fsproj:           xml
 xul:              xml
 yaml:             yml
 gz:               zip
