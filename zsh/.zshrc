@@ -10,7 +10,10 @@ export ZSH="~/.oh-my-zsh"
 #ZSH_THEME="avit"
 
 # Theme Liquid Prompt: Only load Liquid Prompt in interactive shells, not from a script or from scp
-[[ $- = *i* ]] && source /usr/bin/liquidprompt
+#[[ $- = *i* ]] && source /usr/bin/liquidprompt
+
+# arch package: starship-bin
+eval "$(starship init zsh)"
 
 DEFAULT_USER=patrick
 
@@ -151,5 +154,10 @@ if [[ -a "/usr/share/nvm/nvm.sh" ]]; then
     source /usr/share/nvm/nvm.sh
     source /usr/share/nvm/bash_completion
     source /usr/share/nvm/install-nvm-exec
+fi
+
+# McFly (arch package: mcfly)
+if [[ -r "/usr/share/doc/mcfly/mcfly.zsh" ]]; then
+    source "/usr/share/doc/mcfly/mcfly.zsh"
 fi
 
