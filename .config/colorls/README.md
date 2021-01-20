@@ -12,4 +12,5 @@ Copied from original gem location.
 - cs, cshtml, csx
 - fs, fsx
 - fsproj, csproj
+- toml -> conf
 
