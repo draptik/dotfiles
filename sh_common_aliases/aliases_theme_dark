@@ -2,9 +2,9 @@
 
 # aliases for `colorls`
 ## dark theme (default)
-alias lc='colorls -lA --sd --gs'
-alias lct='colorls -lA --sd --gs -t'    # sort by last-modified
-alias lctr='colorls -lA --sd --gs -tr'  # sort by last-modified reverse
+alias lc='colorls -lAG --sd --gs'
+alias lct='colorls -lAG --sd --gs -t'    # sort by last-modified
+alias lctr='colorls -lAG --sd --gs -tr'  # sort by last-modified reverse
 
 ## BAT
 alias bat='bat --theme="Monokai Extended"'

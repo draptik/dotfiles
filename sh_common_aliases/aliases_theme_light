@@ -2,9 +2,9 @@
 
 # aliases for `colorls`
 # light theme
-alias lc='colorls -lA --sd --gs --light'
-alias lct='colorls -lA --sd --gs --light -t'
-alias lctr='colorls -lA --sd --gs --light -tr'
+alias lc='colorls -lAG --sd --gs --light'
+alias lct='colorls -lAG --sd --gs --light -t'
+alias lctr='colorls -lAG --sd --gs --light -tr'
 
 ## BAT
 alias bat='bat --theme=ansi-light'
