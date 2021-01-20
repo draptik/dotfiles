@@ -9,8 +9,9 @@ Copied from original gem location.
 
 `file_aliaes.yaml` addition:
 
-- cs, cshtml, csx
-- fs, fsx
-- fsproj, csproj
-- toml -> conf
+- cs, cshtml, csx -> csharp
+- fs, fsx         -> fsharp
+- fsproj, csproj  -> conf
+- toml            -> conf
+- sln             -> conf
 

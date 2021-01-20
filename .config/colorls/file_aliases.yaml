@@ -10,6 +10,7 @@ wav:              audio
 csproj:           conf
 fsproj:           conf
 editorconfig:     conf
+sln:              conf
 toml:             conf
 cs:               csharp
 cshtml:           csharp
