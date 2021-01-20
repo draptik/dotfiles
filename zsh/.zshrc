@@ -11,9 +11,7 @@ export ZSH="~/.oh-my-zsh"
 
 # Theme Liquid Prompt: Only load Liquid Prompt in interactive shells, not from a script or from scp
 #[[ $- = *i* ]] && source /usr/bin/liquidprompt
-
-# arch package: starship-bin
-eval "$(starship init zsh)"
+## Use starship prompt instead. Starship is loaded at end of file.
 
 DEFAULT_USER=patrick
 
@@ -161,3 +159,5 @@ if [[ -r "/usr/share/doc/mcfly/mcfly.zsh" ]]; then
     source "/usr/share/doc/mcfly/mcfly.zsh"
 fi
 
+# arch package: starship-bin
+eval "$(starship init zsh)"
