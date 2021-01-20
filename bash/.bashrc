@@ -138,7 +138,10 @@ eval $(thefuck --alias)
 ## Only load Liquid Prompt in interactive shells, not from a script or from scp
 ## NOTE: See ~/.config/liquidpromtrc
 ## NOTE: Within that file: See `~/.config/liquidprompt/myliquid.theme`
-[[ $- = *i* ]] && source /usr/bin/liquidprompt
+#[[ $- = *i* ]] && source /usr/bin/liquidprompt
+
+## Starship prompt (arch package: starship-bin)
+eval "$(starship init bash)"
 
 # Set up Node Version Manager
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
