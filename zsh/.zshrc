@@ -162,3 +162,9 @@ fi
 
 # arch package: starship-bin
 eval "$(starship init zsh)"
+
+# not sure why, but somehow starship messes with auto_cd feature.
+# unsetopt/setopt seems to fix auto_cd
+unsetopt auto_cd
+setopt auto_cd
+
