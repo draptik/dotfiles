@@ -102,6 +102,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
 [[ -r "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # command-not-found (installed via arch linux: pkgfile)
+## initialize the pkgfile database once using `sudo pkgfile -u`
 [[ -r "/usr/share/doc/pkgfile/command-not-found.zsh" ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # the-fuck (installed via arch linux)
