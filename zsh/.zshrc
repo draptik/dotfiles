@@ -168,3 +168,5 @@ eval "$(starship init zsh)"
 unsetopt auto_cd
 setopt auto_cd
 
+export VISUAL=vim
+export EDITOR="$VISUAL"
