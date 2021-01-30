@@ -31,5 +31,6 @@ set backspace=indent,eol,start	" Backspace behaviour
 " added as arch package as described in
 " https://wiki.archlinux.org/index.php/Powerline#Vim
 let g:powerline_pycmd="py3"
+" always show powerline
 set laststatus=2
 
