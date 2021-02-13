@@ -6,5 +6,10 @@ alias lc='colorls -lAG --sd --gs --light'
 alias lct='colorls -lAG --sd --gs --light -t'
 alias lctr='colorls -lAG --sd --gs --light -tr'
 
+# same, but `e` (e for Extended) at end also displays the group parameter (above -G suppresses the group parameter)
+alias lce='colorls -lA --sd --gs --light'
+alias lcte='colorls -lA --sd --gs -t --light'    # sort by last-modified
+alias lctre='colorls -lA --sd --gs -tr --light'  # sort by last-modified reverse
+
 ## BAT
 alias bat='bat --theme=ansi-light'
