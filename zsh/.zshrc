@@ -72,6 +72,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # PD oh-my-zsh (installed via arch linux)
 plugins=(
     git
+    git-auto-fetch
     archlinux
     sudo
     fzf
