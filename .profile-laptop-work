@@ -1,3 +1,12 @@
-export GDK_SCALE=2
-export GDK_DPI_SCALE=0.5
+# This file should be linked from ~/.profile
+
+##export GDK_SCALE=2
+##export GDK_DPI_SCALE=0.5
+
+# Ruby Gem path - required for colorls after Arch default ruby version ugrade to v3.
+# (default ruby-colorls AUR package is installed to system-wide gems of ruby2.7)
+#
+# See https://wiki.archlinux.org/index.php/ruby#Setup
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+export PATH="$PATH:$GEM_HOME/bin"
 
