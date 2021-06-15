@@ -10,6 +10,3 @@ alias lctr='colorls -lAG --sd --gs -tr'  # sort by last-modified reverse
 alias lce='colorls -lA --sd --gs'
 alias lcte='colorls -lA --sd --gs -t'    # sort by last-modified
 alias lctre='colorls -lA --sd --gs -tr'  # sort by last-modified reverse
-
-## BAT
-alias bat='bat --theme="Monokai Extended"'

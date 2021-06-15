@@ -22,6 +22,9 @@ alias screenshot='flameshot'
 ## exa
 alias le='exa -la --icons --git --group-directories-first'
 
+## bat
+alias bat='bat --theme=ansi'
+
 ## include themes aliases
 source ~/.dotfiles/sh_common_aliases/themed_aliases
 
