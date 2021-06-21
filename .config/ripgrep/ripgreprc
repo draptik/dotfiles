@@ -1,0 +1,5 @@
+--hidden
+--ignore-file=/home/patrick/.dotfiles/.config/ripgrep/ripgrep-ignore
+--smart-case
+--sort=path
+
