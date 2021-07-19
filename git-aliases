@@ -1,0 +1,15 @@
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	ec = config --global -e
+	s = status
+	co = checkout
+	cob = checkout -b
+	up = pull --rebase
+	cm = !git add -A && git commit -m
+	save = !git add -A && git commit -m 'SAVEPOINT'
+	undo = reset HEAD~1 --mixed
+	amend = commit -a --amend
+
+        // See https://blog.jayway.com/2015/03/30/using-git-commits-to-drive-a-live-coding-session/
+        next = !git checkout `git rev-list HEAD..demo-end | tail -1`
+        prev = checkout HEAD^
