@@ -1,5 +1,5 @@
 #--theme=GitHub
 
 ## dotnet project files
---map-syntax fsproj:xml
---map-syntax csproj:xml
+--map-syntax '*.fsproj:XML'
+--map-syntax '*.csproj:XML'
