@@ -60,3 +60,6 @@ diverged = "⇡${ahead_count}⇣${behind_count}"
 [aws]
 disabled = true
 
+[directory]
+style = "bold bright-cyan"
+#fish_style_pwd_dir_length = 1
