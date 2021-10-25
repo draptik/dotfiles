@@ -1,16 +1,16 @@
 {
     "layer": "top",
-    "position": "top",
-    "height": 24,
+    "position": "bottom",
+    "height": 8,
     "modules-left": ["sway/workspaces"],
     "modules-center": ["sway/window"],
-    "modules-right": ["tray", "pulseaudio", "network", "temperature", "cpu", "memory", "battery", "clock"],
+    "modules-right": ["pulseaudio", "network", "temperature", "cpu", "memory", "battery", "clock"],
     "sway/workspaces": {
         "disable-scroll": true,
         "disable-click": true,
     },
     "tray": {
-        "spacing": 10,
+        "spacing": 8,
     },
     "clock": {
         "format": "{:%a %Y %b %d %R}"
