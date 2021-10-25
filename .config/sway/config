@@ -296,4 +296,7 @@ bindsym {
 # 'Reload Sway' option will be initially selected instead of the 'Exit Sway' option
 swaynag_command $nag -R
 
+# seafile
+exec seafile-applet
+
 include /etc/sway/config.d/*
