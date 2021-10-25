@@ -2,7 +2,8 @@
 Name=Visual Studio Code (with scaling patch)
 Comment=Code Editing. Refined.
 GenericName=Text Editor
-Exec=/opt/visual-studio-code/code --no-sandbox --unity-launch --force-device-scale-factor=1.7  %F
+#Exec=/opt/visual-studio-code/code --no-sandbox --unity-launch --force-device-scale-factor=1.7  %F
+Exec=/opt/visual-studio-code/code --no-sandbox --unity-launch --force-device-scale-factor=0.75  %F
 Icon=visual-studio-code
 Type=Application
 StartupNotify=false
