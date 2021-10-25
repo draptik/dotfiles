@@ -49,4 +49,9 @@ else
 fi
 
 # Load patched xmodmap: caps lock now behaves like windows key
-xmodmap ~/.Xmodmap
+#xmodmap ~/.Xmodmap
+
+## When using Sway, set environment for rider
+if [ "$XDG_SESSION_DESKTOP" = "sway" ]; then
+    alias riderx="_JAVA_AWT_WM_NONREPARENTING=1 /usr/share/rider/bin/rider.sh %f"
+fi
