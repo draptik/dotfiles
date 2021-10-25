@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=2021.2.21.4
+Type=Application
+Name=Rider (sway)
+Icon=/usr/share/rider/bin/rider.svg
+Exec=_JAVA_AWT_WM_NONREPARENTING=1 "/usr/share/rider/bin/rider.sh" %f
+#Exec="/usr/share/rider/bin/rider.sh" %f
+Comment=A cross-platform IDE for .NET
+Categories=Development;IDE;
+Terminal=false
+StartupWMClass=jetbrains-rider
