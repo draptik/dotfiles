@@ -14,6 +14,9 @@ input type:keyboard {
     xkb_options caps:super
 }
 
+## font (for titlebar)
+font pango:Terminus 8
+
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -32,7 +35,9 @@ set $menu wofi --show=drun --lines=5 --prompt=""
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg ~/Pictures/wallpapers/Wood.jpg fill
+
 #
 # Example configuration:
 #
@@ -79,7 +84,7 @@ output DP-3  mode 3840x2160 position 3840,0 scale 2
     bindsym $mod+Return exec $term
 
     # Kill focused window
-    #bindsym $mod+Shift+q kill
+    bindsym $mod+q kill
 
     # Start your launcher
     bindsym $mod+d exec $menu
