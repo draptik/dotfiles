@@ -273,6 +273,12 @@ set $nag exec swaynagmode
 ## Logout/Shutdown/etc using wlogout
 bindsym $mod+Shift+q exec wlogout
 
+## Custom application settings
+for_window [class="Chromium"] border none
+for_window [class="Code"] border 1px
+## mmh, this doesn't work:
+for_window [app_id="org.keepassxc.KeePassXC"] floating enable resize set 800 600
+
 # seafile
 exec seafile-applet
 
