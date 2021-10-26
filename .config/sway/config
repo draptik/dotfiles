@@ -30,7 +30,9 @@ set $term kitty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu wofi --show=drun --lines=5 --prompt=""
+#set $menu wofi --show=drun --lines=5 --prompt=""
+## Using https://github.com/lbonn/rofi
+set $menu rofi -show drun
 
 ### Output configuration
 #
@@ -268,33 +270,8 @@ bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle; pactl 
 ## https://wiki.archlinux.org/title/Sway#Control_swaynag_with_the_keyboard
 set $nag exec swaynagmode
 
-mode "nag" {
-    bindsym {
-        Ctrl+d      mode "default"
-
-        Ctrl+c      $nag --exit
-        q           $nag --exit
-        Escape      $nag --exit
-
-        Return      $nag --confirm
-
-        Tab         $nag --select prev
-        Shift+Tab   $nag --select next
-
-        Left        $nag --select prev
-        Right       $nag --select next
-
-        Up          $nag --select prev
-        Down        $nag --select next
-    }
-}
-
-bindsym {
-    $mod+Shift+q $nag -t "warning" -m "Exit Sway?" -b "Exit" "swaymsg exit" -b "Reload" "swaymsg reload"
-}
-# -R is recommended for swaynag_command so that, upon a syntax error in your sway config, the
-# 'Reload Sway' option will be initially selected instead of the 'Exit Sway' option
-swaynag_command $nag -R
+## Logout/Shutdown/etc using wlogout
+bindsym $mod+Shift+q exec wlogout
 
 # seafile
 exec seafile-applet
