@@ -3,8 +3,9 @@ Version=2021.2.21.4
 Type=Application
 Name=Rider (sway)
 Icon=/usr/share/rider/bin/rider.svg
-Exec=_JAVA_AWT_WM_NONREPARENTING=1 "/usr/share/rider/bin/rider.sh" %f
+#Exec=_JAVA_AWT_WM_NONREPARENTING=1 "/usr/share/rider/bin/rider.sh" %f
 #Exec="/usr/share/rider/bin/rider.sh" %f
+Exec="/home/patrick/.dotfiles/.local/share/applications/rider-start-sway.sh"
 Comment=A cross-platform IDE for .NET
 Categories=Development;IDE;
 Terminal=false
