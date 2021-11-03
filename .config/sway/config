@@ -273,6 +273,9 @@ set $nag exec swaynagmode
 ## Logout/Shutdown/etc using wlogout
 bindsym $mod+Shift+q exec wlogout
 
+## Screenshot (requires grimshot, grim, slurp, swappy)
+bindsym Print exec grimshot save area - | swappy -f -
+
 ## Custom application settings
 ## NOTE: get application class or app_id using something like:
 ##  swaymsg -t get_tree | rg -i chrom
