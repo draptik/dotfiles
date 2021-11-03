@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Visual Studio Code (with scaling patch)
+Name=Visual Studio Code (wayland)
 Comment=Code Editing. Refined.
 GenericName=Text Editor
 Exec=/opt/visual-studio-code/code --enable-features=UseOzonePlatform --ozone-platform=wayland %F
@@ -14,5 +14,5 @@ Keywords=vscode;
 
 [Desktop Action new-empty-window]
 Name=New Empty Window
-Exec=/opt/visual-studio-code/code --no-sandbox --new-window %F
+Exec=/opt/visual-studio-code/code ---enable-features=UseOzonePlatform --ozone-platform=wayland  -no-sandbox --new-window %F
 Icon=visual-studio-code
