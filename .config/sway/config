@@ -274,7 +274,11 @@ set $nag exec swaynagmode
 bindsym $mod+Shift+q exec wlogout
 
 ## Custom application settings
-for_window [class="Chromium"] border none
+## NOTE: get application class or app_id using something like:
+##  swaymsg -t get_tree | rg -i chrom
+##
+for_window [class="[Cc]hromium"] border none
+for_window [app_id="[Cc]hromium"] border none
 for_window [class="Code"] border 1px
 ## mmh, this doesn't work:
 for_window [app_id="org.keepassxc.KeePassXC"] floating enable resize set 800 600
