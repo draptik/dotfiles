@@ -289,4 +289,7 @@ for_window [app_id="org.keepassxc.KeePassXC"] floating enable resize set 800 600
 # seafile
 exec seafile-applet
 
+# dunst (notification daemon)
+exec dunst -config ~/.config/dunst/dunstrc
+
 include /etc/sway/config.d/*
