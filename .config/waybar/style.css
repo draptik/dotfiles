@@ -1,13 +1,18 @@
-/* inpired by https://github.com/rbnis/dotfiles/blob/master/.config/waybar/style.css */
-
+/* Reset all styles */
 * {
     border: none;
     border-radius: 0;
-    font-family: Sans;
-    font-size: 12px;
-    box-shadow: none;
-    text-shadow: none;
-    transition-duration: 0s;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* The whole bar */
+#waybar {
+    background: #323232;
+    color: white;
+    font-family: Cantarell, Noto Sans, sans-serif;
+    font-size: 14px;
 }
 
 window {
@@ -53,12 +58,14 @@ window#waybar.solo {
     min-width:  25px;
 }
 
-#clock {
-    margin: 3px 5px 0px 5px;
-    min-width: 140px;
+#clock.time {
+    margin: 0px 0px 0px 5px;
+    min-width: 60px;
+    background-color: lightgray;
+    color: black;
+    font-weight: bold;
 }
 
 #network {
-    margin: 3px 0 0 5px;
+    margin: 0px 0 0 5px;
 }
-

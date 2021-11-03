@@ -1,10 +1,24 @@
 {
     "layer": "top",
     "position": "bottom",
-    "height": 8,
-    "modules-left": ["sway/workspaces"],
-    "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "network", "temperature", "cpu", "memory", "battery", "clock", "tray"],
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode"
+    ],
+    "modules-center": [
+        "sway/window"
+    ],
+    "modules-right": [
+        "pulseaudio", 
+        "network", 
+        "temperature", 
+        "cpu", 
+        "memory", 
+        "battery", 
+        "clock#date", 
+        "clock#time", 
+        "tray"
+    ],
     "sway/workspaces": {
         "disable-scroll": true,
         "disable-click": true
@@ -12,8 +26,13 @@
     "tray": {
         "spacing": 8
     },
-    "clock": {
-        "format": "{:%a %Y %b %d %R}"
+    "clock#date": {
+        "format": " {:%e %b %Y}",
+        "tooltip-format": "{:%e %B %Y}"
+    },
+    "clock#time": {
+        "interval": 1,
+        "format": "{:%H:%M:%S}"
     },
     "cpu": {
         "format": " {usage}%"
@@ -37,7 +56,8 @@
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
-        "format-wifi": " {essid}",
+        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-ethernet": "  {ifname}: {ipaddr}/{cidr}",
         "format-disconnected": "⚠ Disconnected"
     },
     "pulseaudio": {
@@ -48,5 +68,9 @@
             "default": ["", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
+        "tooltip": false
     }
 }
