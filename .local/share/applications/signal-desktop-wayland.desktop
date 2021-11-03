@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
-Name=Signal (with scale patch)
+Name=Signal (sway)
 Comment=Signal Private Messenger for Linux
 Icon=signal-desktop
-Exec=signal-desktop --force-device-scale-factor=1.7
+Exec=signal-desktop --enable-features=UseOzonePlatform --ozone-platform=wayland
 Terminal=false
 Categories=Network;InstantMessaging;
 StartupWMClass=Signal
