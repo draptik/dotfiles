@@ -284,6 +284,9 @@ for_window [class="[Cc]hromium"] border none
 for_window [app_id="[Cc]hromium"] border none
 for_window [class="Code"] border 1px
 for_window [app_id="org.keepassxc.KeePassXC"] floating enable, resize set 800 600
+for_window [app_id="Signal"] floating enable, resize set 800 600
+for_window [class="Microsoft Teams - Preview"] floating enable, resize set 800 600
+for_window [app_id="pavucontrol"] floating enable, resize set 800 600
 
 # seafile
 exec seafile-applet
