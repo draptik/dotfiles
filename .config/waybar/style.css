@@ -11,8 +11,8 @@
 #waybar {
     background: #323232;
     color: white;
-    font-family: Cantarell, Noto Sans, sans-serif;
-    font-size: 14px;
+    font-family: 'JetBrainsMono Nerd Font','Fira Code','DejaVu Sans Mono','Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback', 'NotoEmoji Nerd Font Mono';
+    font-size: 12px;
 }
 
 window {
