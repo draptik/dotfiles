@@ -21,3 +21,11 @@ StartupWMClass=Signal
 
 Infos from [Arch Wiki HiDPI#Slack](https://wiki.archlinux.org/index.php/HiDPI#Slack).
 
+## Updating database for desktop entries
+
+- Source: https://wiki.archlinux.org/title/Desktop_entries#Update_database_of_desktop_entries
+
+```shell
+update-desktop-database ~/.local/share/applications
+```
+
