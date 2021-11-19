@@ -2,7 +2,7 @@
 Name=Visual Studio Code (wayland)
 Comment=Code Editing. Refined.
 GenericName=Text Editor
-Exec=/opt/visual-studio-code/code --enable-features=UseOzonePlatform --ozone-platform=wayland %F
+Exec=/opt/visual-studio-code/code --enable-features=UseOzonePlatform --ozone-platform=wayland --use-gl=desktop %F
 Icon=visual-studio-code
 Type=Application
 StartupNotify=false
