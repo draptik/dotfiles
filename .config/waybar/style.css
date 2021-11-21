@@ -56,6 +56,7 @@ window#waybar.solo {
 #temperature {
     margin: 0px 6px 0px 10px;
     min-width:  25px;
+    color: darkgray;
 }
 
 #clock.time {
@@ -68,4 +69,5 @@ window#waybar.solo {
 
 #network {
     margin: 0px 0 0 5px;
+    color: darkgray;
 }
