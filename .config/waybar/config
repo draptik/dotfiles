@@ -24,7 +24,8 @@
         "disable-click": true
     },
     "tray": {
-        "spacing": 8
+        "spacing": 8,
+        "icon-size": 10
     },
     "clock#date": {
         "format": " {:%e %b %Y}",
