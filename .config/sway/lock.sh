@@ -8,6 +8,7 @@
 ## Uses swaylock-effects
 
 swaylock --daemonize --screenshots --clock --indicator \
+  --color A9A9A9 \
   --indicator-radius 100 \
   --indicator-thickness 12 \
   --effect-blur 7x5 \
