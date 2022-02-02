@@ -4,7 +4,5 @@ A logout menu for wayland environments.
 
 https://github.com/ArtsyMacaw/wlogout
 
-TODO
-
-Copy configs from `/etc/wlogout/*` here...
+Copied configs from `/etc/wlogout/*` here.
 
