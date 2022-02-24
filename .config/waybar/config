@@ -72,7 +72,7 @@
         "on-click": "pavucontrol"
     },
     "sway/mode": {
-        "format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
+        "format": "<span style=\"italic\">⚡️ {}</span>",
         "tooltip": false
     }
 }
