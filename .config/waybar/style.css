@@ -72,7 +72,11 @@ window#waybar.solo {
     color: darkgray;
 }
 
+/* customize sway/mode */
 #mode {
     color: black;
-    background-color: yellowgreen;
+    background-color: magenta;
+    font-weight: bold;
+    font-style: italic;
+    padding-right: 10px;
 }

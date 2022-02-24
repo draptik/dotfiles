@@ -11,9 +11,7 @@
     "modules-right": [
         "pulseaudio", 
         "network", 
-        "temperature", 
         "cpu", 
-        "memory", 
         "battery", 
         "clock#date", 
         "clock#time", 
@@ -58,8 +56,9 @@
     },
     "network": {
         "format-wifi": " {essid}",
-        "tooltip-format-wifi": " {essid} ({signalStrength}%)",
+        "tooltip-format-wifi": " {essid} {ipaddr} ({signalStrength}%)",
         "format-ethernet": " ",
+        "tooltip-format-ethernet": "{ipaddr}",
         "format-disconnected": "⚠ Disconnected"
     },
     "pulseaudio": {
@@ -72,7 +71,7 @@
         "on-click": "pavucontrol"
     },
     "sway/mode": {
-        "format": "<span style=\"italic\">⚡️ {}</span>",
+        "format": "<span>⚡️ {}</span>",
         "tooltip": false
     }
 }
