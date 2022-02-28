@@ -41,6 +41,9 @@ if [ "$TERM" = "xterm-kitty" ]; then
     else
         alias togglekitty='~/.dotfiles/.config/kitty/switch-dark.sh'
     fi
+
+    ## https://sw.kovidgoyal.net/kitty/faq/#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-when-sshing-into-a-different-computer
+    alias ssh="kitty +kitten ssh"
 else
     # echo "not kitty"
     # only change the common aliases in gnome-terminal:
