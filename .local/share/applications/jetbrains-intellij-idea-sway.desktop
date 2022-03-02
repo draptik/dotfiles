@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=IntelliJ IDEA Community Edition (sway)
+Icon=idea
+Exec="/home/patrick/.dotfiles/.local/share/applications/intellij-idea-start-sway.sh"
+Comment=Develop with pleasure!
+Categories=Development;IDE;Java;
+Terminal=false
+StartupWMClass=jetbrains-idea-ce
+StartupNotify=true
