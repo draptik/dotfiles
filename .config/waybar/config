@@ -34,7 +34,7 @@
         "format": "{:%H:%M:%S}"
     },
     "cpu": {
-        "format": " {usage}%"
+        "format": " {usage:2}%"
     },
     "memory": {
         "format": " {}%"
@@ -51,7 +51,7 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}  {capacity}%",
+        "format": "{icon}  {capacity:3}%",
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
@@ -62,7 +62,7 @@
         "format-disconnected": "⚠ Disconnected"
     },
     "pulseaudio": {
-        "format": "{icon} {volume}%",
+        "format": "{icon} {volume:3}%",
         "format-muted": "",
         "format-icons": {
             "headphones": "",
