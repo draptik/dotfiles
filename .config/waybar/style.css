@@ -80,3 +80,8 @@ window#waybar.solo {
     font-style: italic;
     padding-right: 10px;
 }
+
+#idle_inhibitor {
+    background: @background;
+}
+

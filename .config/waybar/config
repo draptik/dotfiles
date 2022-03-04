@@ -73,5 +73,12 @@
     "sway/mode": {
         "format": "<span>⚡️ {}</span>",
         "tooltip": false
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": "🔓"
+        }
     }
 }
