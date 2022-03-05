@@ -1,15 +1,6 @@
 #!/usr/bin/zsh
 
 # Script from https://audijo.de/posts/screen-sharing-in-sway/
-
-# softlink from ~/bin/ (~/bin must be in $PATH)
-
-# share-screen
-#
-# This script starts or restarts `xdg-desktop-portal` and
-# `xdg-desktop-portal-wlr`. While doing so the currently focused output (read
-# screen) is passed to `xdg-desktop-portal-wlr`. This makes the respective
-# screen available for sharing in apps and websites that can do so.
 #
 # Usage:
 #
