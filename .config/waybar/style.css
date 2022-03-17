@@ -85,3 +85,9 @@ window#waybar.solo {
     background: @background;
 }
 
+#battery.critical {
+    color: darkred;
+}
+#battery.warning {
+    color: orange;
+}
