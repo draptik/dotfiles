@@ -112,6 +112,9 @@ eval $(thefuck --alias)
 # broot (installed via arch linux)
 source ~/.config/broot/launcher/bash/br
 
+# xkcd for kitty
+source ~/.dotfiles/zsh/.oh-my-zsh/custom/function-xkcd.zsh
+
 # Load common aliases shared between bash and zsh. Also handles light/dark theme switching.
 source ~/.dotfiles/sh_common_aliases/common_aliases.sh
 
