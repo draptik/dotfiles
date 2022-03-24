@@ -15,3 +15,6 @@ Modifications:
 - LEFT side: Swap left `Alt` and `Fn`
   - `Fn` is easier to reach, but I only use it seldemly (changing the audio level)
   - I need the `Alt` key more often in IDEs (f.ex. Rider, Emacs)
+- activate double-tap for mod-key
+  - this should reduce the pain during text-selection with ctrl+shift+alt and arrow key movement
+
