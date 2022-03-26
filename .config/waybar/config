@@ -51,6 +51,8 @@
             "critical": 15
         },
         "format": "{icon}  {capacity:3}%",
+        "format-charging": "{icon} {capacity:3}% ﮣ ",
+        "format-plugged": "{icon} {capacity:3}% ﮣ ",
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
