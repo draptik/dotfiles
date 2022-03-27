@@ -11,7 +11,8 @@
         "pulseaudio", 
         "network", 
         "cpu", 
-        "battery", 
+        "battery",
+        "sway/language",
         "clock#date", 
         "clock#time", 
         "tray"
@@ -70,6 +71,9 @@
             "default": ["", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "sway/language": {
+        "format": "{} "
     },
     "sway/mode": {
         "format": "<span>⚡️ {}</span>",

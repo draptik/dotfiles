@@ -49,6 +49,7 @@ window#waybar.solo {
 
 #mode, 
 #battery, 
+#language,
 #cpu, 
 #memory, 
 #pulseaudio, 
@@ -91,3 +92,4 @@ window#waybar.solo {
 #battery.warning {
     color: orange;
 }
+
