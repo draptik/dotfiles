@@ -49,7 +49,6 @@ window#waybar.solo {
 
 #mode, 
 #battery, 
-#language,
 #cpu, 
 #memory, 
 #pulseaudio, 
@@ -93,3 +92,7 @@ window#waybar.solo {
     color: orange;
 }
 
+#language {
+    margin: 0px 6px 0px 10px;
+    color: darkgray;
+}

@@ -73,7 +73,7 @@
         "on-click": "pavucontrol"
     },
     "sway/language": {
-        "format": "{} "
+        "format": "⌨ {} "
     },
     "sway/mode": {
         "format": "<span>⚡️ {}</span>",
