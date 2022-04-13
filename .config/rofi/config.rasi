@@ -44,8 +44,10 @@ Meeh: ==================================
 @theme "solarized"
 @theme "solarized_alternate"
 */
-@theme "Monokai"
 
+@theme "DarkBlue"
+
+/* Documentation: https://github.com/davatorium/rofi/blob/next/doc/rofi-theme.5.markdown */
 element {
 	orientation: horizontal;
 	children: [ element-icon, element-text ];
