@@ -1,0 +1,53 @@
+configuration {
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+}
+
+/*
+ 
+Themes: https://github.com/davatorium/rofi/tree/next/themes
+
+Nice: ==================================
+@theme "android-notification"
+@theme "DarkBlue"
+@theme "Monokai"
+@theme "Paper"
+@theme "Pop-Dark"
+@theme "arthur"
+@theme "fancy"
+@theme "glue_pro_blue"
+@theme "gruvbox-common"
+@theme "gruvbox-dark-hard"
+@theme "gruvbox-dark-soft"
+@theme "gruvbox-dark"
+@theme "gruvbox-light-hard"
+@theme "gruvbox-light-soft"
+@theme "gruvbox-light"
+
+Meeh: ==================================
+@theme "blue"
+@theme "c64"
+@theme "dmenu"
+@theme "docu"
+@theme "Indego"
+@theme "iggy"
+@theme "lb"
+@theme "paper-float"
+@theme "purple"
+@theme "sidebar"
+@theme "solarized"
+@theme "solarized_alternate"
+*/
+@theme "Monokai"
+
+element {
+	orientation: horizontal;
+	children: [ element-icon, element-text ];
+	spacing: 12px;
+}
