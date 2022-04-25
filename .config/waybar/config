@@ -30,8 +30,8 @@
         "tooltip-format": "{:%e %B %Y}"
     },
     "clock#time": {
-        "interval": 30,
-        "format": "{:%H:%M:%S}"
+        "interval": 60,
+        "format": "{:%H:%M}"
     },
     "cpu": {
         "format": " {usage:2}%"
