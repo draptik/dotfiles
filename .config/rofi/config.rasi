@@ -45,7 +45,7 @@ Meeh: ==================================
 @theme "solarized_alternate"
 */
 
-@theme "DarkBlue"
+@theme "gruvbox-dark-hard"
 
 /* Documentation: https://github.com/davatorium/rofi/blob/next/doc/rofi-theme.5.markdown */
 element {
