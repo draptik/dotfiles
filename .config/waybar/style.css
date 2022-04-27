@@ -61,7 +61,7 @@ window#waybar.solo {
 
 #clock.time {
     margin: 0px 0px 0px 5px;
-    min-width: 60px;
+    min-width: 50px;
     background-color: darkgray;
     color: black;
     font-weight: bold;
