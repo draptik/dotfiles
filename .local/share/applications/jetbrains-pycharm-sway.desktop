@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=PyCharm Community Edition (sway)
+Icon=pycharm
+Exec="/home/patrick/.dotfiles/.local/share/applications/pycharm-start-sway.sh"
+Comment=Python IDE for Professional Developers
+Categories=Development;IDE;Python;
+Terminal=false
+StartupWMClass=jetbrains-pycharm-ce
