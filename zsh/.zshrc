@@ -167,6 +167,13 @@ fi
 # arch package: starship-bin
 eval "$(starship init zsh)"
 
+# NNN (file manager)
+if type nnn &> /dev/null; then
+    export NNN_FIFO=/tmp/nnn.fifo
+    export NNN_PLUG="p:preview-tui"
+fi
+
+
 # not sure why, but somehow starship messes with auto_cd feature.
 # unsetopt/setopt seems to fix auto_cd
 unsetopt auto_cd
