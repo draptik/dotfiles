@@ -63,3 +63,12 @@ disabled = true
 [directory]
 style = "bold bright-cyan"
 #fish_style_pwd_dir_length = 1
+
+[perl]
+disabled = true
+
+[custom.prolog]
+command = "swipl --version | cut -d' ' -f3"
+extensions = ["pl"]
+format = "via [ v$output ](bold blue)"
+
