@@ -20,7 +20,7 @@ alias flameshot='flameshot gui -p ~/screenshots'
 alias screenshot='flameshot'
 
 ## exa
-alias le='exa -la --icons --git --group-directories-first'
+alias le='exa -la --group --color-scale --icons --git --group-directories-first'
 
 ## bat
 alias bat='bat --theme=ansi'
