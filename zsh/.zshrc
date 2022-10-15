@@ -173,6 +173,8 @@ if type nnn &> /dev/null; then
     export NNN_PLUG="p:preview-tui"
 fi
 
+# Ripgrep configuration
+export RIPGREP_CONFIG_PATH=~/.dotfiles/.config/ripgrep/ripgreprc
 
 # not sure why, but somehow starship messes with auto_cd feature.
 # unsetopt/setopt seems to fix auto_cd
