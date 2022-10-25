@@ -126,12 +126,20 @@ source ~/.dotfiles/sh_common_aliases/common_aliases.sh
 # Add .NET Core SDK tools
 export PATH="$PATH:/home/patrick/.dotnet/tools"
 
-# dotnet core completions https://khalidabuhakmeh.com/dotnet-core-tab-completion-with-zsh
+# dotnet core completions: https://learn.microsoft.com/en-us/dotnet/core/tools/enable-tab-autocomplete#zsh
 _dotnet_zsh_complete()
 {
     local completions=("$(dotnet complete "$words")")
 
-    reply=( "${(ps:\n:)completions}" )
+    # If the completion is empty, just continue with filename selection
+    if [ -z "$completions" ]
+    then
+        _arguments '*::arguments: _normal'
+        return
+    fi
+
+    # This is not a variable assignment, don't remove spaces!
+    _values = "${(ps:\n:)completions}"
 }
 
 compctl -K _dotnet_zsh_complete dotnet
