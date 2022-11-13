@@ -94,6 +94,12 @@ export LANG=en_US.UTF-8
 
 alias zshconfig="vim ~/.zshrc"
 
+# smart move/rename with zmv
+autoload zmv
+# zrename: Usage example:
+# zrename *.pdf foo-*.pdf
+alias zrename="noglob zmv -W"
+
 # zsh-autosuggestions (installed via arch linux)
 [[ -r "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # configure color of autosuggestion
