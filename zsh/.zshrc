@@ -195,8 +195,11 @@ load-nvmrc() {
     nvm use default
   fi
 }
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+# Only load nvm stuff if nvm is installed
+if [ -f /usr/share/nvm/nvm.sh ]; then
+    add-zsh-hook chpwd load-nvmrc
+    load-nvmrc
+fi
 
 # McFly (arch package: mcfly)
 if [[ -r "/usr/share/doc/mcfly/mcfly.zsh" ]]; then
