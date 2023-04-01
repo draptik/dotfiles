@@ -9,6 +9,8 @@ kitty-main.conf kitty.conf`
 
 From within kitty terminal (!)
 
+Prerequisites: Add to PATH: I currently have a `~/bin` folder in PATH, so soft-linking from there to here works.
+
 ```sh
 # to dark them...
 ./switch-dark.sh
