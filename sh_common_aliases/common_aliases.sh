@@ -25,6 +25,9 @@ alias le='exa -la --group --color-scale --icons --git --group-directories-first'
 ## bat
 alias bat='bat --theme=ansi'
 
+## ChatGPT OpenAI
+export OPENAI_KEY=`cat ~/.openai-key.txt`
+
 ## include themes aliases
 source ~/.dotfiles/sh_common_aliases/themed_aliases
 
