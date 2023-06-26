@@ -9,7 +9,8 @@
     "modules-center": [
     ],
     "modules-right": [
-        "pulseaudio", 
+        "pulseaudio",
+        "bluetooth",
         "network", 
         "cpu", 
         "battery",
@@ -72,6 +73,15 @@
             "default": ["", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "bluetooth": {
+        "format": "",
+        "format-alt": "bluetooth: {status}",
+        "format-connected": " {device_alias}",
+        "interval": 30,
+        "format-off": "",
+        "tooltip-format": "{status}",
+        "on-click": "blueman-manager"
     },
     "sway/language": {
         "format": "⌨ {} "

@@ -52,6 +52,7 @@ window#waybar.solo {
 #cpu, 
 #memory, 
 #pulseaudio, 
+#bluetooth,
 #idle_inhibitor, 
 #temperature {
     margin: 0px 6px 0px 10px;
