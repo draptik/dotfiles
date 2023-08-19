@@ -18,6 +18,7 @@ swaylock --daemonize --screenshots --clock --indicator \
   --inside-color 00000088 \
   --separator-color 00000000 \
   --datestr %Y-%m-%d \
+  --timestr %H:%M \
   --text-color ECEFF4 \
   --text-caps-lock-color ECEFF4 \
   --show-failed-attempts \
