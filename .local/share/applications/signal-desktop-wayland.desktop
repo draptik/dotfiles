@@ -3,7 +3,7 @@ Type=Application
 Name=Signal (sway)
 Comment=Signal Private Messenger for Linux
 Icon=signal-desktop
-Exec=signal-desktop --enable-features=UseOzonePlatform --ozone-platform=wayland
+Exec=signal-desktop --ozone-platform-hint=auto
 Terminal=false
 Categories=Network;InstantMessaging;
 StartupWMClass=Signal
