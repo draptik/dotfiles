@@ -218,6 +218,43 @@ fi
 # Ripgrep configuration
 export RIPGREP_CONFIG_PATH=~/.dotfiles/.config/ripgrep/ripgreprc
 
+# SSH: Echo timestamp after closing the connection -----------------------------
+#
+# Always echo the current time if the previous command starts with 'ssh'
+# 
+# Why?
+#
+# I find this info useful when restarting remote server(s) via ssh: 
+# "When can I consider testing the rebooted server/service?"
+#
+# In the past I just manually entered the current time at the prompt. 
+# This saves me the hassle.
+
+typeset -U ssh_connected # flag indicating if an ssh connection is active
+
+precmd() {
+    if [[ -n "$ssh_connected" ]]; then
+        echo "SSH connection closed at: $(date +%T)"
+        ssh_connected=() # unset the flag
+    fi
+}
+
+ssh_with_logout_time() {
+    # When using kitty terminal: 
+    # I already aliased the 'ssh' command to use kitty's kittens feature.
+    # Therefore I need to check if we are currently using zsh in kitty.
+    if [ "$TERM" = "xterm-kitty" ]; then
+        command kitty +kitten ssh "$@"
+    else
+        command ssh "$@"
+    fi
+
+    ssh_connected=1 # set the flag
+}
+
+alias ssh="ssh_with_logout_time"
+# ------------------------------------------------------------------------------
+
 # not sure why, but somehow starship messes with auto_cd feature.
 # unsetopt/setopt seems to fix auto_cd
 unsetopt auto_cd
