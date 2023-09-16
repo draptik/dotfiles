@@ -88,12 +88,21 @@ window#waybar.solo {
 
 #battery.critical {
     color: darkred;
+	animation: blinker 1s linear infinite;
 }
+
 #battery.warning {
     color: orange;
+	animation: blinker 2s linear infinite;
 }
 
 #language {
     margin: 0px 6px 0px 10px;
     color: darkgray;
+}
+
+@keyframes blinker {
+	50% {
+		opacity: 0;
+	}
 }
