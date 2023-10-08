@@ -262,3 +262,7 @@ setopt auto_cd
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+
+# Nix -------------------------------------------------------------------------
+export PATH="$PATH:$HOME/.nix-profile/bin"
