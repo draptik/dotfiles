@@ -13,3 +13,10 @@ Summary:
 - load the target in sway's config using `exec_always "systemctl --user import-environment; systemctl --user start sway-session.target"`
 - create `~/.config/systemd/user/kanshi.service`
 - enable `systemctl --user enable --now kanshi.service`
+
+## Setting environment variables
+
+Create a symlink from `~/.config/environment.d/` to file `20-my-sway-env-vars.conf`.
+
+The variable `XDG_CURRENT_DESKTOP` should now be available as environment variable.
+This is required for using xdg-portal-desktop.
