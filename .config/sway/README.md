@@ -18,5 +18,8 @@ Summary:
 
 Create a symlink from `~/.config/environment.d/` to file `20-my-sway-env-vars.conf`.
 
+Also create a symlink in `~/.config/environment.d/` pointing from `envvars.conf` to
+`20-my-sway-env-vars.conf`. This is needed for firefox to pickup the wayland flag.
+
 The variable `XDG_CURRENT_DESKTOP` should now be available as environment variable.
 This is required for using xdg-portal-desktop.
