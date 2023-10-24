@@ -4,7 +4,7 @@ profile laptop-work-homeoffice {
     output "Dell Inc. DELL U2720Q 850WV13"  mode 3840x2160 position 3840,0 scale 2
     exec swaymsg workspace 1, move workspace to eDP-1
     exec swaymsg workspace 2, move workspace to output '"Dell Inc. DELL U2720Q 69D3W13"'
-    exec swaymsg workspace 6, move workspace to output '"Dell Inc. DELL U2720Q 850WV13"'
+    exec swaymsg workspace 7, move workspace to output '"Dell Inc. DELL U2720Q 850WV13"'
 }
 
 profile laptop-work-homeoffice-single-monitor-left {
@@ -23,7 +23,7 @@ profile laptop-work-office-2-external-monitors {
     output "AOC 24B2W1G5 AWFLC1A000416" mode 1920x1080 position 3840,0 scale 1
     exec swaymsg workspace 1, move workspace to eDP-1
     exec swaymsg workspace 2, move workspace to output '"Samsung Electric Company U28E590 H4ZMA03488"'
-    exec swaymsg workspace 6, move workspace to output '"AOC 24B2W1G5 AWFLC1A000416"'
+    exec swaymsg workspace 7, move workspace to output '"AOC 24B2W1G5 AWFLC1A000416"'
 }
 
 profile laptop-work-no-external-monitors {
