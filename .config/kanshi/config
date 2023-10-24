@@ -21,6 +21,9 @@ profile laptop-work-office-2-external-monitors {
     output eDP-1 enable mode 3840x2400 position 0,0    scale 2
     output "Samsung Electric Company U28E590 H4ZMA03488" mode 3840x2160 position 1920,0 scale 2
     output "AOC 24B2W1G5 AWFLC1A000416" mode 1920x1080 position 3840,0 scale 1
+    exec swaymsg workspace 1, move workspace to eDP-1
+    exec swaymsg workspace 2, move workspace to output '"Samsung Electric Company U28E590 H4ZMA03488"'
+    exec swaymsg workspace 3, move workspace to output '"AOC 24B2W1G5 AWFLC1A000416"'
 }
 
 profile laptop-work-no-external-monitors {
