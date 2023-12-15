@@ -4,7 +4,7 @@
 # some more ls aliases
 alias ll='ls -lAF'
 alias la='ls -lAh'
-alias l='ls -CF'
+#alias l='ls -CF'
 alias lt='ls -Alhrt'
 
 ## Projecteur
@@ -21,6 +21,9 @@ alias screenshot='flameshot'
 
 ## exa
 alias le='exa -la --group --color-scale --icons --git --group-directories-first'
+
+## eza
+alias l='eza --all --long --group --icons --git --git-repos --group-directories-first'
 
 ## bat
 alias bat='bat --theme=ansi'
