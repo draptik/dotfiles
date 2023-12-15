@@ -256,6 +256,12 @@ ssh_with_logout_time() {
 }
 
 alias ssh="ssh_with_logout_time"
+
+# direnv https://direnv.net
+if [ -e "/usr/bin/direnv" ]; then
+    eval "$(direnv hook zsh)"
+fi
+
 # ------------------------------------------------------------------------------
 
 # not sure why, but somehow starship messes with auto_cd feature.
