@@ -8,3 +8,9 @@ The different profiles should be ordered from the most specific to the most gene
 
 Also see `../sway/sway.d/01_general.conf` for clamshell handling (open/close laptop lid).
 
+## Current status
+
+```sh
+systemctl --user status kanshi
+```
+
