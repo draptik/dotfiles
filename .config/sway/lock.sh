@@ -22,7 +22,8 @@ swaylock --daemonize --screenshots --clock --indicator \
   --text-color ECEFF4 \
   --text-caps-lock-color ECEFF4 \
   --show-failed-attempts \
-  --fade-in 0.1 \
+  --fade-in 3 \
+  --grace 10 \
   --effect-scale 0.5 --effect-blur 8x3 --effect-scale 2 \
   --effect-vignette 0.5:0.5 \
   --effect-compose "1.5%,1.5%;-1x10%;$HOME/.config/sway/sway.d/lock.png"
