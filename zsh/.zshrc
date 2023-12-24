@@ -116,7 +116,9 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
 [[ -r "/usr/share/doc/pkgfile/command-not-found.zsh" ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # the-fuck (installed via arch linux)
-eval $(thefuck --alias)
+if (( ${+commands[thefuck]} )); then
+    eval $(thefuck --alias)
+fi
 
 # broot (installed via arch linux)
 source ~/.config/broot/launcher/bash/br
@@ -210,7 +212,9 @@ if [[ -r "/usr/share/doc/mcfly/mcfly.zsh" ]]; then
 fi
 
 # arch package: starship-bin
-eval "$(starship init zsh)"
+if (( ${+commands[thefuck]} )); then
+    eval "$(starship init zsh)"
+fi
 
 # NNN (file manager)
 if type nnn &> /dev/null; then
