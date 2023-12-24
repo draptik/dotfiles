@@ -23,7 +23,10 @@ alias screenshot='flameshot'
 alias le='exa -la --group --color-scale --icons --git --group-directories-first'
 
 ## eza
-alias l='eza --all --long --group --icons --git --git-repos --group-directories-first'
+## NOTE: In case the option `--color-scale` crashes in certain folders,
+## make sure there are no files/folders with an invalid btime.
+## This can be checked using `ls -altr --time=birth .`.
+alias l='eza --all --long --group --icons --git --git-repos --group-directories-first --color-scale'
 
 ## bat
 alias bat='bat --theme=ansi'
