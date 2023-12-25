@@ -71,3 +71,8 @@ fi
 if [ "$XDG_SESSION_DESKTOP" = "sway" ]; then
     alias riderx="_JAVA_AWT_WM_NONREPARENTING=1 /usr/share/rider/bin/rider.sh %f"
 fi
+
+## dotnet stryker alias
+## Requires dotnet and openssl 1.1
+## See https://github.com/stryker-mutator/stryker-net/issues/2799#issuecomment-1868658083 for details
+alias stryker='export CLR_OPENSSL_VERSION_OVERRIDE=1.1 && dotnet stryker'
