@@ -27,10 +27,31 @@ set ruler	        " Show row and column ruler information
 set undolevels=1000	" Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
 
-" powerline
-" added as arch package as described in
-" https://wiki.archlinux.org/index.php/Powerline#Vim
-let g:powerline_pycmd="py3"
-" always show powerline
-set laststatus=2
+" Airline
+"
+" Installed via arch package:
+"
+" yay -S vim-airline powerline-fonts
+"
+" Idea from https://tuckerchapman.com/posts/getting-started-vim-airline/
+"
+let g:airline#extensions#tabline#enabled=1 " Enable the list of buffers
 
+" Note: You must define the dictionary first before setting values.
+" Also, it's a good idea to check whether it exists as to avoid
+" accidentally overwriting its contents.
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.dirty='⚡'
