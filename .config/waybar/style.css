@@ -1,3 +1,4 @@
+/* General settings ------------------------------------------------- */
 * {
     border: none;
     border-radius: 0;
@@ -6,9 +7,44 @@
     padding: 0;
 }
 
+/* Some colors */
+
+/* Colors (gruvbox) */
+@define-color black     #282828;
+@define-color red       #cc241d;
+@define-color green     #98971a;
+@define-color yellow    #d79921;
+@define-color blue      #458588;
+@define-color purple    #b16286;
+@define-color aqua      #689d6a;
+@define-color gray      #a89984;
+@define-color brgray    #928374;
+@define-color brred     #fb4934;
+@define-color brgreen   #b8bb26;
+@define-color bryellow  #fabd2f;
+@define-color brblue    #83a598;
+@define-color brpurple  #d3869b;
+@define-color braqua    #8ec07c;
+@define-color white     #ebdbb2;
+@define-color bg2       #504945;
+
+@define-color sound           @brpurple;
+@define-color network         @purple;
+@define-color cpu             @green;
+@define-color battery         @aqua;
+@define-color batteryWarning  orange;
+@define-color batteryCritical darkred;
+@define-color language        @brblue;
+@define-color date            @white;
+@define-color clock           @black;
+@define-color clockbg         @white;
+@define-color arrow-dark      #1a1a1a;
+@define-color arrow-light     #292b2e;
+@define-color barBg           #292b2e;
+
 /* The whole bar */
 #waybar {
-    background: #323232;
+    background: @barBg;
     color: white;
     font-family: 'JetBrainsMono Nerd Font','Fira Code','DejaVu Sans Mono','Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback', 'NotoEmoji Nerd Font Mono';
     font-size: 12px;
@@ -24,6 +60,7 @@ window#waybar.solo {
     background: rgba(35, 31, 32, 0.85);
 }
 
+/* left side -------------------------------------------------------- */
 #workspaces {
     color: rgba(217, 216, 216, 1);
     margin: 0 5px;
@@ -46,22 +83,16 @@ window#waybar.solo {
     color: rgba(238, 46, 36, 1);
 }
 
-/* Some colors */
-@define-color sound lightgray;
-@define-color bluetooth lightgray;
-@define-color network lightgray;
-@define-color cpu lightgray;
-@define-color battery white;
-@define-color batteryWarning orange;
-@define-color batteryCritical darkred;
-@define-color language lightgray;
-@define-color date white;
-@define-color clock black;
-@define-color clockbg darkgray;
-@define-color arrow-dark #1a1a1a;
-@define-color arrow-light #292b2e;
+/* customize sway/mode */
+#mode {
+    color: black;
+    background-color: magenta;
+    font-weight: bold;
+    font-style: italic;
+    padding-right: 10px;
+}
 
-
+/* right side ------------------------------------------------------- */
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
     color: @arrow-dark;
@@ -103,10 +134,6 @@ window#waybar.solo {
     color: @sound;
 }
 
-#bluetooth {
-    color: @bluetooth;
-}
-
 #cpu {
     color: @cpu;
 }
@@ -134,6 +161,8 @@ window#waybar.solo {
 }
 
 #clock.date {
+    padding-left: 5px;
+    padding-right: 5px;
     color: @date;
 }
 
@@ -150,11 +179,3 @@ window#waybar.solo {
     }
 }
 
-/* customize sway/mode */
-#mode {
-    color: black;
-    background-color: magenta;
-    font-weight: bold;
-    font-style: italic;
-    padding-right: 10px;
-}
