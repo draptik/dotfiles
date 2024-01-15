@@ -1,4 +1,3 @@
-/* Reset all styles */
 * {
     border: none;
     border-radius: 0;
@@ -47,30 +46,108 @@ window#waybar.solo {
     color: rgba(238, 46, 36, 1);
 }
 
-#mode, 
-#battery, 
-#cpu, 
-#memory, 
-#pulseaudio, 
-#bluetooth,
-#idle_inhibitor, 
-#temperature {
-    margin: 0px 6px 0px 10px;
-    min-width:  25px;
-    color: darkgray;
+/* Some colors */
+@define-color sound lightgray;
+@define-color bluetooth lightgray;
+@define-color network lightgray;
+@define-color cpu lightgray;
+@define-color battery white;
+@define-color batteryWarning orange;
+@define-color batteryCritical darkred;
+@define-color language lightgray;
+@define-color date white;
+@define-color clock black;
+@define-color clockbg darkgray;
+@define-color arrow-dark #1a1a1a;
+@define-color arrow-light #292b2e;
+
+
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+    color: @arrow-dark;
+}
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+    color: @arrow-light;
+    background: @arrow-dark;
 }
 
-#clock.time {
-    margin: 0px 0px 0px 5px;
-    min-width: 50px;
-    background-color: darkgray;
-    color: black;
-    font-weight: bold;
+#custom-left-arrow-dark-time {
+    color: @clockbg;
+    background: @arrow-dark;
+}
+
+#custom-left-arrow-light-time {
+    color: @arrow-light;
+    background: @clockbg;
+}
+
+#mode,
+#battery,
+#cpu,
+#memory,
+#pulseaudio,
+#bluetooth,
+#idle_inhibitor,
+#network,
+#language,
+#clock.date,
+#tray,
+#temperature {
+    margin: 0;
+    min-width:  25px;
+    background: #1a1a1a;
+}
+
+#pulseaudio {
+    color: @sound;
+}
+
+#bluetooth {
+    color: @bluetooth;
+}
+
+#cpu {
+    color: @cpu;
 }
 
 #network {
-    margin: 0px 0 0 5px;
-    color: darkgray;
+    color: @network;
+}
+
+#battery {
+    color: @battery;
+}
+
+#battery.critical {
+    color: @batteryCritical;
+    animation: blinker 1s linear infinite;
+}
+
+#battery.warning {
+    color: @batteryWarning;
+    animation: blinker 2s linear infinite;
+}
+
+#language {
+    color: @language;
+}
+
+#clock.date {
+    color: @date;
+}
+
+#clock.time {
+    min-width: 50px;
+    background-color: @clockbg;
+    color: @clock;
+    font-weight: bold;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
 }
 
 /* customize sway/mode */
@@ -80,29 +157,4 @@ window#waybar.solo {
     font-weight: bold;
     font-style: italic;
     padding-right: 10px;
-}
-
-#idle_inhibitor {
-    background: @background;
-}
-
-#battery.critical {
-    color: darkred;
-	animation: blinker 1s linear infinite;
-}
-
-#battery.warning {
-    color: orange;
-	animation: blinker 2s linear infinite;
-}
-
-#language {
-    margin: 0px 6px 0px 10px;
-    color: darkgray;
-}
-
-@keyframes blinker {
-	50% {
-		opacity: 0;
-	}
 }

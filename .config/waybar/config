@@ -9,16 +9,58 @@
     "modules-center": [
     ],
     "modules-right": [
+        "custom/left-arrow-dark",
         "pulseaudio",
+        "custom/left-arrow-light",
+        "custom/left-arrow-dark",
         "bluetooth",
-        "network", 
-        "cpu", 
+        "custom/left-arrow-light",
+        "custom/left-arrow-dark",
+        "network",
+        "custom/left-arrow-light",
+        "custom/left-arrow-dark",
+        "cpu",
+        "custom/left-arrow-light",
+        "custom/left-arrow-dark",
         "battery",
+        "custom/left-arrow-light",
+        "custom/left-arrow-dark",
         "sway/language",
-        "clock#date", 
-        "clock#time", 
+        "custom/left-arrow-light",
+        "custom/left-arrow-dark",
+        "clock#date",
+        "custom/left-arrow-dark-time",
+        "clock#time",
+        "custom/left-arrow-light-time",
+        "custom/left-arrow-dark",
         "tray"
     ],
+
+    "custom/left-arrow-dark": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/left-arrow-light": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/right-arrow-dark": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/right-arrow-light": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/left-arrow-dark-time": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/left-arrow-light-time": {
+        "format": "",
+        "tooltip": false
+    },
+
     "sway/workspaces": {
         "disable-scroll": true,
         "disable-click": true
@@ -36,7 +78,7 @@
         "format": "{:%H:%M}"
     },
     "cpu": {
-        "format": " {usage:2}%"
+        "format": "cpu:{usage:2}%"
     },
     "memory": {
         "format": " {}%"
@@ -100,7 +142,7 @@
     "custom/scratchpad_indicator": {
         "interval": 3,
         "return-type": "json",
-        "exec": "swaymsg -t get_tree | jq --unbuffered --compact-output '(recurse(.nodes[]) | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [..  | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | if ($scratch_nodes|length) > 0 then { text: \"\\($scratch_nodes | length)\", tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") } else empty end'", 
+        "exec": "swaymsg -t get_tree | jq --unbuffered --compact-output '(recurse(.nodes[]) | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [..  | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | if ($scratch_nodes|length) > 0 then { text: \"\\($scratch_nodes | length)\", tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") } else empty end'",
         "format": "{}📓",
         "on-click": "exec swaymsg 'scratchpad show'",
         "on-click-right": "exec swaymsg 'move scratchpad'"
