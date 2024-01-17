@@ -143,6 +143,7 @@ window#waybar.solo {
 }
 
 #battery {
+    min-width: 30px;
     color: @battery;
 }
 

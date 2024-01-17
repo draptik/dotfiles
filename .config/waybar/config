@@ -94,7 +94,7 @@
         },
         "format": "{icon}  {capacity:3}%",
         "format-charging": "{icon} {capacity:3}% ﮣ ",
-        "format-discharging": "🔋{icon} {capacity}% ",
+        "format-discharging": "🔋{icon}  {capacity}% ",
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
