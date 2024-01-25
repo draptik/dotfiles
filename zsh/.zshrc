@@ -279,3 +279,5 @@ export EDITOR="$VISUAL"
 
 # Nix -------------------------------------------------------------------------
 export PATH="$PATH:$HOME/.nix-profile/bin"
+
+source /home/patrick/.config/broot/launcher/bash/br
