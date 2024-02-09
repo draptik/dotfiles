@@ -63,6 +63,8 @@
         "disable-scroll": true,
         "disable-click": true
     },
+    "hyprland/workspaces": {
+    },
     "tray": {
         "spacing": 8,
         "icon-size": 10

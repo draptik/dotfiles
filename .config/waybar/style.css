@@ -79,6 +79,10 @@ window#waybar.solo {
     background-color: darkred;
 }
 
+#workspaces button.active {
+    background-color: darkred;
+}
+
 #workspaces button.urgent {
     color: rgba(238, 46, 36, 1);
 }
