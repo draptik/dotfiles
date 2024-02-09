@@ -3,6 +3,7 @@
     "position": "bottom",
     "modules-left": [
         "custom/scratchpad_indicator",
+        "hyprland/workspaces",
         "sway/workspaces",
         "sway/mode"
     ],
