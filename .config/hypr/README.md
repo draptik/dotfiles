@@ -11,3 +11,4 @@ I have been using sway for a long time and I am very happy with it. I am trying 
 - [ ] setup default workspaces per monitor
   - i.e. laptop monitor has workspace 1, first external monitor has workspace 2, second external monitor has workspace 7
 - [ ] wlogout: `bindsym $mod+Shift+q exec wlogout`
+- [ ] sway "scratchpad" like feature: how does it work in hypr?
