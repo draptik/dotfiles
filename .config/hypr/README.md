@@ -8,7 +8,7 @@ I have been using sway for a long time and I am very happy with it. I am trying 
 - [ ] switching between stacked and tabbed layout
   - in sway I use `super+e` and `super+w` to switch between stacked and tabbed layout
   - https://wiki.hyprland.org/0.35.0/Configuring/Dispatchers/#grouped-tabbed-windows
-- [ ] setup default workspaces per monitor
+- [x] setup default workspaces per monitor
   - i.e. laptop monitor has workspace 1, first external monitor has workspace 2, second external monitor has workspace 7
 - [ ] wlogout: `bindsym $mod+Shift+q exec wlogout`
 - [ ] sway "scratchpad" like feature: how does it work in hypr?
