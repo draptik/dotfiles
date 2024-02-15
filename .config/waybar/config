@@ -10,51 +10,14 @@
     "modules-center": [
     ],
     "modules-right": [
-        "custom/left-arrow-dark",
         "battery",
-        "custom/left-arrow-light",
-        "custom/left-arrow-dark",
         "cpu",
-        "custom/left-arrow-light",
-        "custom/left-arrow-dark",
         "network",
-        "custom/left-arrow-light",
-        "custom/left-arrow-dark",
         "pulseaudio",
-        "custom/left-arrow-light",
-        "custom/left-arrow-dark",
         "clock#date",
-        "custom/left-arrow-dark-time",
         "clock#time",
-        "custom/left-arrow-light-time",
-        "custom/left-arrow-dark",
         "tray"
     ],
-
-    "custom/left-arrow-dark": {
-        "format": "",
-        "tooltip": false
-    },
-    "custom/left-arrow-light": {
-        "format": "",
-        "tooltip": false
-    },
-    "custom/right-arrow-dark": {
-        "format": "",
-        "tooltip": false
-    },
-    "custom/right-arrow-light": {
-        "format": "",
-        "tooltip": false
-    },
-    "custom/left-arrow-dark-time": {
-        "format": "",
-        "tooltip": false
-    },
-    "custom/left-arrow-light-time": {
-        "format": "",
-        "tooltip": false
-    },
 
     "sway/workspaces": {
         "disable-scroll": true,
@@ -93,8 +56,8 @@
             "critical": 15
         },
         "format": "{icon}  {capacity:3}%",
-        "format-charging": "{icon} {capacity:3}% ﮣ ",
-        "format-discharging": "🔋{icon} {capacity:3}% ",
+        "format-charging":    "{icon} {capacity:3}% ﮣ ",
+        "format-discharging": "{icon} {capacity:3}%🔋 ",
         "format-icons": ["", "", "", "", ""]
     },
     "network": {

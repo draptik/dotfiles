@@ -38,8 +38,6 @@
 @define-color date            @white;
 @define-color clock           @black;
 @define-color clockbg         @white;
-@define-color arrow-dark      #1a1a1a;
-@define-color arrow-light     #292b2e;
 @define-color barBg           #292b2e;
 
 /* The whole bar */
@@ -97,26 +95,6 @@ window#waybar.solo {
 }
 
 /* right side ------------------------------------------------------- */
-#custom-right-arrow-dark,
-#custom-left-arrow-dark {
-    color: @arrow-dark;
-}
-#custom-right-arrow-light,
-#custom-left-arrow-light {
-    color: @arrow-light;
-    background: @arrow-dark;
-}
-
-#custom-left-arrow-dark-time {
-    color: @clockbg;
-    background: @arrow-dark;
-}
-
-#custom-left-arrow-light-time {
-    color: @arrow-light;
-    background: @clockbg;
-}
-
 #mode,
 #battery,
 #cpu,
@@ -130,8 +108,9 @@ window#waybar.solo {
 #tray,
 #temperature {
     margin: 0;
+    margin-right: 5px;
     min-width:  25px;
-    background: #1a1a1a;
+    background: @barBg;
 }
 
 #pulseaudio {
@@ -144,6 +123,7 @@ window#waybar.solo {
 
 #network {
     color: @network;
+    margin-left: 3px;
 }
 
 #battery {
