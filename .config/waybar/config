@@ -30,8 +30,8 @@
         "icon-size": 10
     },
     "clock#date": {
-        "format": " {:%e %b %Y}",
-        "tooltip-format": "{:%e %B %Y}"
+        "format": " {:%a %e %b %Y}",
+        "tooltip-format": "{:%a %e %B %Y}"
     },
     "clock#time": {
         "interval": 60,

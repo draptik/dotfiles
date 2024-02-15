@@ -126,21 +126,6 @@ window#waybar.solo {
     margin-left: 3px;
 }
 
-#battery {
-    min-width: 30px;
-    color: @battery;
-}
-
-#battery.critical {
-    color: @batteryCritical;
-    animation: blinker 1s linear infinite;
-}
-
-#battery.warning {
-    color: @batteryWarning;
-    animation: blinker 2s linear infinite;
-}
-
 #language {
     color: @language;
 }
@@ -156,6 +141,22 @@ window#waybar.solo {
     background-color: @clockbg;
     color: @clock;
     font-weight: bold;
+}
+
+#battery {
+    min-width: 30px;
+    color: @battery;
+}
+
+#battery.critical {
+    color: @batteryCritical;
+    background-color: white;
+    animation: blinker 0.5s linear infinite;
+}
+
+#battery.warning {
+    color: @batteryWarning;
+    animation: blinker 2s linear infinite;
 }
 
 @keyframes blinker {
