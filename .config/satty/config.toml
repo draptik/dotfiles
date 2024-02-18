@@ -1,0 +1,5 @@
+[general]
+fullscreen = true
+initial-tool = "rectangle"
+output-filename = "~/screenshots/satty-$(date '+%Y%m%d-%H%M%S').png"
+
