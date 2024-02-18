@@ -86,7 +86,9 @@ ZSH="/usr/share/oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
 # git plugin: Unset `gdu` alias (it's in conflict with the tool `gdu`)
-unalias gdu
+case $(type gdu) in
+    (*alias*) unalias gdu;;
+esac
 
 # User configuration
 
