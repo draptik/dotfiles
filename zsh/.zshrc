@@ -285,6 +285,9 @@ export PATH="$PATH:$HOME/.nix-profile/bin"
 # broot -----------------------------------------------------------------------
 source /home/patrick/.config/broot/launcher/bash/br
 
+# zoxide ----------------------------------------------------------------------
+eval "$(zoxide init zsh)"
+
 # tmux history ----------------------------------------------------------------
 # This ensures that zsh within tmux writes to history
 setopt inc_append_history
