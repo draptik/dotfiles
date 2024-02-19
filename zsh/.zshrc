@@ -214,7 +214,7 @@ if [[ -r "/usr/share/doc/mcfly/mcfly.zsh" ]]; then
 fi
 
 # arch package: starship-bin
-if (( ${+commands[thefuck]} )); then
+if (( ${+commands[starship]} )); then
     eval "$(starship init zsh)"
 fi
 
@@ -286,7 +286,9 @@ export PATH="$PATH:$HOME/.nix-profile/bin"
 source /home/patrick/.config/broot/launcher/bash/br
 
 # zoxide ----------------------------------------------------------------------
-eval "$(zoxide init zsh)"
+if (( ${+commands[zoxide]} )); then
+    eval "$(zoxide init zsh)"
+fi
 
 # tmux history ----------------------------------------------------------------
 # This ensures that zsh within tmux writes to history
