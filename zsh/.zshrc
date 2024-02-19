@@ -78,7 +78,6 @@ plugins=(
     fzf
     extract
     emoji
-    z
 )
 
 ZSH="/usr/share/oh-my-zsh"
