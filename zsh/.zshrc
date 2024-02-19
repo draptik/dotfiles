@@ -271,15 +271,11 @@ fi
 
 # not sure why, but somehow starship messes with auto_cd feature.
 # unsetopt/setopt seems to fix auto_cd
-unsetopt auto_cd
-setopt auto_cd
+#unsetopt auto_cd
+#setopt auto_cd
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
-
-
-# Nix -------------------------------------------------------------------------
-export PATH="$PATH:$HOME/.nix-profile/bin"
 
 # broot -----------------------------------------------------------------------
 source /home/patrick/.config/broot/launcher/bash/br
@@ -292,3 +288,6 @@ fi
 # tmux history ----------------------------------------------------------------
 # This ensures that zsh within tmux writes to history
 setopt inc_append_history
+
+# Nix -------------------------------------------------------------------------
+export PATH="$PATH:$HOME/.nix-profile/bin"
