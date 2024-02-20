@@ -282,7 +282,7 @@ source /home/patrick/.config/broot/launcher/bash/br
 
 # zoxide ----------------------------------------------------------------------
 if (( ${+commands[zoxide]} )); then
-    eval "$(zoxide init zsh)"
+    eval "$(zoxide init --cmd cd zsh)"
 fi
 
 # tmux history ----------------------------------------------------------------
