@@ -49,6 +49,7 @@
     },
     "battery": {
         "bat": "BAT0",
+        "interval": 30,
         "full-at": 95,
         "states": {
             "good": 95,
