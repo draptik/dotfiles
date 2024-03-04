@@ -208,9 +208,12 @@ if [ -f /usr/share/nvm/nvm.sh ]; then
 fi
 
 # McFly (arch package: mcfly)
-if [[ -r "/usr/share/doc/mcfly/mcfly.zsh" ]]; then
-    source "/usr/share/doc/mcfly/mcfly.zsh"
-fi
+#if [[ -r "/usr/share/doc/mcfly/mcfly.zsh" ]]; then
+#    source "/usr/share/doc/mcfly/mcfly.zsh"
+#fi
+
+# atuin (alternative to McFly)
+eval "$(atuin init zsh)"
 
 # arch package: starship-bin
 if (( ${+commands[starship]} )); then
