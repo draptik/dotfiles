@@ -33,8 +33,8 @@ alias bat='bat --theme=ansi'
 
 ## ChatGPT OpenAI
 if [ -f ~/.openai-key.txt ]; then
-    OPENAI_KEY=$(cat ~/.openai-key.txt)
-    export OPENAI_KEY
+	OPENAI_KEY=$(cat ~/.openai-key.txt)
+	export OPENAI_KEY
 fi
 
 ## include themes aliases
@@ -44,24 +44,24 @@ source ~/.dotfiles/sh_common_aliases/themed_aliases
 ## Switch between kitty themes
 
 if [ "$TERM" = "xterm-kitty" ]; then
-    # echo "Kitty rules"
+	# echo "Kitty rules"
 
-    alias darkkitty='~/.dotfiles/.config/kitty/switch-dark.sh'
-    alias lightkitty='~/.dotfiles/.config/kitty/switch-light.sh'
+	alias darkkitty='~/.dotfiles/.config/kitty/switch-dark.sh'
+	alias lightkitty='~/.dotfiles/.config/kitty/switch-light.sh'
 
-    if [ "$KITTY_THEME" = "DARK" ]; then
-        alias togglekitty='~/.dotfiles/.config/kitty/switch-light.sh'
-    else
-        alias togglekitty='~/.dotfiles/.config/kitty/switch-dark.sh'
-    fi
+	if [ "$KITTY_THEME" = "DARK" ]; then
+		alias togglekitty='~/.dotfiles/.config/kitty/switch-light.sh'
+	else
+		alias togglekitty='~/.dotfiles/.config/kitty/switch-dark.sh'
+	fi
 
-    ## https://sw.kovidgoyal.net/kitty/faq/#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-when-sshing-into-a-different-computer
-    alias ssh="kitty +kitten ssh"
+	## https://sw.kovidgoyal.net/kitty/faq/#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-when-sshing-into-a-different-computer
+	alias ssh="kitty +kitten ssh"
 else
-    # echo "not kitty"
-    # only change the common aliases in gnome-terminal:
-    #echo "not a kitty terminal"
-    true
+	# echo "not kitty"
+	# only change the common aliases in gnome-terminal:
+	#echo "not a kitty terminal"
+	true
 fi
 
 # Load patched xmodmap: caps lock now behaves like windows key
@@ -69,10 +69,15 @@ fi
 
 ## When using Sway, set environment for rider
 if [ "$XDG_SESSION_DESKTOP" = "sway" ]; then
-    alias riderx="_JAVA_AWT_WM_NONREPARENTING=1 /usr/share/rider/bin/rider.sh %f"
+	alias riderx="_JAVA_AWT_WM_NONREPARENTING=1 /usr/share/rider/bin/rider.sh %f"
 fi
 
 ## dotnet stryker alias
 ## Requires dotnet and openssl 1.1
 ## See https://github.com/stryker-mutator/stryker-net/issues/2799#issuecomment-1868658083 for details
 alias stryker='export CLR_OPENSSL_VERSION_OVERRIDE=1.1 && dotnet stryker'
+
+# Custom aliases for current projects
+if [ -f ~/cloud/Nextcloud/klog-time-tracker/aliases.sh ]; then
+	. ~/cloud/Nextcloud/klog-time-tracker/aliases.sh
+fi
