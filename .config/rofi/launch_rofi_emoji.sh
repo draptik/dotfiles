@@ -1,5 +1,5 @@
 #!/bin/bash
-#
-# Requires arch packages rofi-emoji, wl-clipboard, wtype
 
-rofi -modi emoji -show emoji -emoji-mode copy
+# Requires arch packages rofimoji
+#
+rofi -modi "emoji:rofimoji" -show emoji
