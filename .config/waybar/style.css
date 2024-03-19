@@ -74,6 +74,7 @@ window#waybar.solo {
 }
 
 #workspaces button.focused {
+    color: white;
     background-color: darkred;
 }
 
