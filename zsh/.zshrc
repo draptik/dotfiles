@@ -280,9 +280,6 @@ fi
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-# broot -----------------------------------------------------------------------
-source /home/patrick/.config/broot/launcher/bash/br
-
 # zoxide ----------------------------------------------------------------------
 if (( ${+commands[zoxide]} )); then
     eval "$(zoxide init --cmd cd zsh)"
