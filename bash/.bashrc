@@ -170,3 +170,7 @@ export EDITOR="$VISUAL"
 source ~/.config/broot/launcher/bash/br
 
 source /home/patrick/.config/broot/launcher/bash/br
+
+if [ -f "$HOME/.local/share/dnvm/env" ]; then
+    . "$HOME/.local/share/dnvm/env"
+fi

@@ -291,3 +291,7 @@ setopt inc_append_history
 
 # Nix -------------------------------------------------------------------------
 export PATH="$PATH:$HOME/.nix-profile/bin"
+
+if [ -f "$HOME/.local/share/dnvm/env" ]; then
+    . "$HOME/.local/share/dnvm/env"
+fi
