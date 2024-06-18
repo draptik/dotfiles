@@ -170,5 +170,11 @@ enter_accept = false
 #  "kubectl",
 #]
 #
+common_subcommands = [
+  "git",
+  "npm",
+  "dotnet",
+  "systemctl",
+]
 # Set commands that should be totally stripped and ignored from stats
 #common_prefix = ["sudo"]
