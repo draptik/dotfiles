@@ -295,3 +295,8 @@ export PATH="$PATH:$HOME/.nix-profile/bin"
 if [ -f "$HOME/.local/share/dnvm/env" ]; then
     . "$HOME/.local/share/dnvm/env"
 fi
+
+# klog ------------------------------------------------------------------------
+if (( ${+commands[klog]} )); then
+  source <(klog completion -c zsh)
+fi
