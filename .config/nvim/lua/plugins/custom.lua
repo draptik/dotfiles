@@ -5,17 +5,17 @@ return {
       close_if_last_window = true,
     },
   },
-  {
-    "folke/noice.nvim",
-    opts = {
-      presets = {
-        bottom_search = true,
-      },
-      cmdline = {
-        view = "cmdline",
-      },
-    },
-  },
+  -- {
+  --   "folke/noice.nvim",
+  --   opts = {
+  --     presets = {
+  --       bottom_search = true,
+  --     },
+  --     cmdline = {
+  --       view = "cmdline",
+  --     },
+  --   },
+  -- },
   {
     "ionide/Ionide-vim",
   },
@@ -46,6 +46,13 @@ return {
       disabled_fts = {
         "startify",
       },
+    },
+  },
+  {
+    "m4xshen/hardtime.nvim",
+    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+    opts = {
+      hint = true,
     },
   },
 }
