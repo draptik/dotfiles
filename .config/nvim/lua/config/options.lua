@@ -5,3 +5,4 @@ local opt = vim.opt
 
 -- required for 'hardtime' plugin
 opt.showmode = false
+opt.cmdheight = 2

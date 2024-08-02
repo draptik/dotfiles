@@ -21,7 +21,6 @@ return {
   },
   {
     "tris203/precognition.nvim",
-    event = "VeryLazy",
     opts = {
       startVisible = true,
       showBlankVirtLine = true,
@@ -51,7 +50,6 @@ return {
   },
   {
     "m4xshen/hardtime.nvim",
-    event = "VeryLazy",
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
     opts = {},
   },
