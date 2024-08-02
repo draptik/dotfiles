@@ -3,5 +3,5 @@
 -- Add any additional options here
 
 -- required for 'hardtime' plugin
-vim.opt.showmode = false
-vim.opt.cmdheight = 2
+-- vim.opt.showmode = false
+-- vim.opt.cmdheight = 2
