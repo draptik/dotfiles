@@ -5,22 +5,23 @@ return {
       close_if_last_window = true,
     },
   },
-  -- {
-  --   "folke/noice.nvim",
-  --   opts = {
-  --     presets = {
-  --       bottom_search = true,
-  --     },
-  --     cmdline = {
-  --       view = "cmdline",
-  --     },
-  --   },
-  -- },
+  {
+    "folke/noice.nvim",
+    opts = {
+      presets = {
+        bottom_search = true,
+      },
+      cmdline = {
+        view = "cmdline",
+      },
+    },
+  },
   {
     "ionide/Ionide-vim",
   },
   {
     "tris203/precognition.nvim",
+    event = "VeryLazy",
     opts = {
       startVisible = true,
       showBlankVirtLine = true,
@@ -50,9 +51,8 @@ return {
   },
   {
     "m4xshen/hardtime.nvim",
+    event = "VeryLazy",
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-    opts = {
-      hint = true,
-    },
+    opts = {},
   },
 }
