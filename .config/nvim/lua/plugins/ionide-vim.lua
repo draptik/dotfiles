@@ -1,0 +1,6 @@
+return {
+
+  {
+    "ionide/Ionide-vim",
+  },
+}
