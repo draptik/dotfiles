@@ -277,7 +277,7 @@ fi
 #unsetopt auto_cd
 #setopt auto_cd
 
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 # zoxide ----------------------------------------------------------------------
