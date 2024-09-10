@@ -5,6 +5,8 @@
 # some ideas from https://gist.github.com/ryo-ARAKI/48a11585299f9032fa4bda60c9bba593
 #
 
+command_timeout = 5000
+
 # [character]
 # success_symbol = "🚀"
 # error_symbol = "🤯"
