@@ -1,0 +1,115 @@
+""" My first ideavimrc
+
+""" Default settings ==========================================================
+"""
+""" These settings are recommended by IdeaVim:
+""" https://github.com/JetBrains/ideavim?tab=readme-ov-file#files
+
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+" PDTODO I have no idea what this does
+map Q gq
+
+""" Custom settings ===========================================================
+set relativenumber " Set the relative line numbers
+
+" The Leader Key
+let mapleader=" "
+
+""" Settings from YT tutorial "IdeaVim Casts" =================================
+""" https://www.youtube.com/playlist?list=PLYDrCnplQfmG2aoNeu5_RP3GfcBiD1wl7
+"""
+""" This page describes the supported plugins for IdeaVim:
+""" https://github.com/JetBrains/ideavim/blob/master/doc/IdeaVim%20Plugins.md
+
+" IdeaVim Casts #1: Actions ---------------------------------------------------
+nnoremap <c-f> :action GotoFile<CR>
+" PDTODO This is the place to map further IntelliJ/Rider `Actions` !!
+" PDTODO Everything including the `:action` references IDE (here: Rider) Actions
+
+" IdeaVim Casts #2: Distraction Free Mode -------------------------------------
+nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
+
+" IdeaVim Casts #3: Terminal --------------------------------------------------
+nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
+nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
+
+" IdeaVim Casts #4: Window Navigation -----------------------------------------
+nnoremap <c-\> :action SplitVertically<CR>
+nnoremap <c--> :action SplitHorizontally<CR>
+nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
+
+sethandler <c-j> a:IdeaVim " This seems to have changed. The original tutorial uses `a:vim`
+sethandler <c-k> a:IdeaVim
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+
+nnoremap <TAB> :action PreviousTab<CR>
+nnoremap <s-TAB> :action NextTab<CR>
+
+nnoremap <leader>q :action CloseContent<CR> " Closes the focused window
+nnoremap <leader>a :action CloseAllEditors<CR> " Closes all windows in current group
+
+" IdeaVim Casts #5: Easy Motion -----------------------------------------------
+" Requires the following IntelliJ/Rider Plugins:
+" - AceJump
+" - IdeaVim-EasyMotion
+Plug 'easymotion/vim-easymotion'
+map <leader>J <Plug>(easymotion-s)
+map <leader>j <Plug>(easymotion-f)
+
+" IdeaVim Casts #6: NERDTree --------------------------------------------------
+" No additional Rider plugin required
+" This is from the tutorial author's dotfiles at https://github.com/Am1n3e/dotfiles/blob/main/.ideavimrc
+"
+" Emulates NERDTree
+" Basic Commands:
+"   Ctrl-n  Open NERDTree (mapped bellow)
+"   q	    Close the NERDTree window
+"   o   	Open files, directories and bookmarks
+"   go   	Open selected file, but leave cursor in the NERDTree
+"   i   	Open selected file in a split window
+"   gi   	Same as i, but leave the cursor on the NERDTree
+"   s   	Open selected file in a new vsplit
+"   gs   	Same as s, but leave the cursor on the NERDTree
+"   <C-J>	Jump down to next sibling of the current directory
+"   <C-K>	Jump up to previous sibling of the current directory
+"   R	    Recursively refresh the current root
+"   m	    Display the NERDTree menu
+" See  https://github.com/JetBrains/ideavim/wiki/NERDTree-support for details
+Plug 'preservim/nerdtree'
+map <c-n> :NERDTreeToggle<CR>
+" Other useful commands:
+":NERDTreeFocus
+":NERDTreeToggle
+":NERDTreeClose
+":NERDTreeFind
+":NERDTreeRefreshRoot
+
+" IdeaVim Casts #7: Surround --------------------------------------------------
+" No additional Rider plugin required
+" Emulates vim-surround. Mappings to easily delete, change and add such surroundings in pairs
+" Basic Commands:
+"   cs   Change surroundings
+"   cst  Change surroundings tag
+"   ds   Delete surroundings
+"   dst  Delete surroundings tag
+"   ys   Surround text object
+" See https://github.com/tpope/vim-surround/blob/master/doc/surround.txt for details
+"
+Plug 'tpope/vim-surround'
+
+" IdeaVim Casts #8: Multiple-Cursors ------------------------------------------
+" No additional Rider plugin required
+Plug 'terryma/vim-multiple-cursors'
+map mc <A-n>
+map mx <A-x>
+map mp <A-p>
