@@ -45,8 +45,8 @@ nnoremap <c-\> :action SplitVertically<CR>
 nnoremap <c--> :action SplitHorizontally<CR>
 nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
 
-sethandler <c-j> a:IdeaVim " This seems to have changed. The original tutorial uses `a:vim`
-sethandler <c-k> a:IdeaVim
+sethandler <c-j> a:vim
+sethandler <c-k> a:vim
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 nnoremap <c-j> <c-w>j
