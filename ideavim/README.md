@@ -11,7 +11,14 @@ Link the desired configuration file (f. ex. `ideavimrc_experiment0`) to the `$HO
 ln -s ~/.dotfiles/ideavim/ideavimrc_experiment0 ~/.ideavimrc
 ```
 
-## Resolving conflicts between IdeaVim and JetBrains default keybindings
+## Keybindings for JetBrains IDE (f. ex. Rider) actions
+
+Example:
+- `nmap <leader>fg <Action>(GotoFile)`
+  - `<Action(*)` map IDE action `*`
+- How to get the name of the action?
+
+## Resolving conflicts between IdeaVim and JetBrains (f. ex. Rider) default keybindings
 
 There are two ways to resolve keybinding conflicts between IDE and IdeaVim:
 - using the IDE: Settings -> Editor -> Vim. Choose preference in dropdown
