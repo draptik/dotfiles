@@ -304,21 +304,21 @@ let g:WhichKeyDesc_language_generate = "<leader>lG Generate"
 
 
 """ Bookmarks
-nmap <leader>bm <Action>(Bookmarks)
-nmap <leader>bs <Action>(ShowBookmarks)
-nmap <leader>bt <Action>(ActivateBookmarksToolWindow)
-nmap <leader>bb <Action>(ToggleBookmark)
-nmap <leader>be <Action>(EditBookmark)
-nmap <leader>bp <Action>(GotoPreviousBookmark)
-nmap <leader>bn <Action>(GotoNextBookmark)
-let g:WhichKeyDesc_bookmarks = "<leader>b Bookmarks"
-let g:WhichKeyDesc_bookmarks_menu = "<leader>bm Bookmark Menu"
-let g:WhichKeyDesc_bookmarks_show = "<leader>bs Show Bookmarks"
-let g:WhichKeyDesc_bookmarks_tool = "<leader>bt Bookmark Tool"
-let g:WhichKeyDesc_bookmarks_toggle_bookmark = "<leader>bb Toggle Bookmark"
-let g:WhichKeyDesc_bookmarks_edit = "<leader>be Edit Bookmark"
-let g:WhichKeyDesc_bookmarks_prev = "<leader>bp Previous Bookmark"
-let g:WhichKeyDesc_bookmarks_next = "<leader>bn Next Bookmark"
+" nmap <leader>bm <Action>(Bookmarks)
+" nmap <leader>bs <Action>(ShowBookmarks)
+" nmap <leader>bt <Action>(ActivateBookmarksToolWindow)
+" nmap <leader>bb <Action>(ToggleBookmark)
+" nmap <leader>be <Action>(EditBookmark)
+" nmap <leader>bp <Action>(GotoPreviousBookmark)
+" nmap <leader>bn <Action>(GotoNextBookmark)
+" let g:WhichKeyDesc_bookmarks = "<leader>b Bookmarks"
+" let g:WhichKeyDesc_bookmarks_menu = "<leader>bm Bookmark Menu"
+" let g:WhichKeyDesc_bookmarks_show = "<leader>bs Show Bookmarks"
+" let g:WhichKeyDesc_bookmarks_tool = "<leader>bt Bookmark Tool"
+" let g:WhichKeyDesc_bookmarks_toggle_bookmark = "<leader>bb Toggle Bookmark"
+" let g:WhichKeyDesc_bookmarks_edit = "<leader>be Edit Bookmark"
+" let g:WhichKeyDesc_bookmarks_prev = "<leader>bp Previous Bookmark"
+" let g:WhichKeyDesc_bookmarks_next = "<leader>bn Next Bookmark"
 
 
 " Go To
