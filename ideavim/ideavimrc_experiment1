@@ -356,31 +356,32 @@ let g:WhichKeyDesc_search_text = "<leader>st Search Text"
 
 
 " Case Conversion
-vmap <leader>cm <Action>(me.laria.code.idea_caseconv.convert_case_menu)
-vmap <leader>cc <Action>(me.laria.code.idea_caseconv.CamelCaseAction)
-vmap <leader>cp <Action>(me.laria.code.idea_caseconv.PascalCaseAction)
-vmap <leader>cs <Action>(me.laria.code.idea_caseconv.SnakeCaseAction)
-vmap <leader>cS <Action>(me.laria.code.idea_caseconv.ScreamingSnakeCaseAction)
-vmap <leader>cl <Action>(me.laria.code.idea_caseconv.LowerCaseAction)
-vmap <leader>cu <Action>(me.laria.code.idea_caseconv.UpperCaseAction)
-vmap <leader>c. <Action>(me.laria.code.idea_caseconv.DotCaseAction)
-vmap <leader>cw <Action>(me.laria.code.idea_caseconv.SeparateWordsAction)
-vmap <leader>ct <Action>(me.laria.code.idea_caseconv.TitleCaseAction)
-vmap <leader>c- <Action>(me.laria.code.idea_caseconv.DashCaseAction)
-vmap <leader>cd <Action>(me.laria.code.idea_caseconv.SentenceCaseAction)
-let g:WhichKeyDesc_case_conversion = "<leader>c Case Conversion"
-let g:WhichKeyDesc_change_case_menu = "<leader>cm Case Menu"
-let g:WhichKeyDesc_case_conversion_camel = "<leader>cc camelCase"
-let g:WhichKeyDesc_case_conversion_pascal = "<leader>cp PascalCase"
-let g:WhichKeyDesc_case_conversion_snake = "<leader>cs snake_case"
-let g:WhichKeyDesc_case_conversion_screaming_snake = "<leader>cS SCREAMING_SNAKE_CASE"
-let g:WhichKeyDesc_case_conversion_lower = "<leader>cl lowercase"
-let g:WhichKeyDesc_case_conversion_upper = "<leader>cu UPPERCASE"
-let g:WhichKeyDesc_case_conversion_dot = "<leader>c. dot.case"
-let g:WhichKeyDesc_case_conversion_words = "<leader>cw Separate Words"
-let g:WhichKeyDesc_case_conversion_title = "<leader>ct Title Case"
-let g:WhichKeyDesc_case_conversion_dash = "<leader>c- dash-case"
-let g:WhichKeyDesc_case_conversion_sentence = "<leader>cd Sentence case"
+" TODO Not sure if `me.laria.*` is part of Rider.
+" vmap <leader>cm <Action>(me.laria.code.idea_caseconv.convert_case_menu)
+" vmap <leader>cc <Action>(me.laria.code.idea_caseconv.CamelCaseAction)
+" vmap <leader>cp <Action>(me.laria.code.idea_caseconv.PascalCaseAction)
+" vmap <leader>cs <Action>(me.laria.code.idea_caseconv.SnakeCaseAction)
+" vmap <leader>cS <Action>(me.laria.code.idea_caseconv.ScreamingSnakeCaseAction)
+" vmap <leader>cl <Action>(me.laria.code.idea_caseconv.LowerCaseAction)
+" vmap <leader>cu <Action>(me.laria.code.idea_caseconv.UpperCaseAction)
+" vmap <leader>c. <Action>(me.laria.code.idea_caseconv.DotCaseAction)
+" vmap <leader>cw <Action>(me.laria.code.idea_caseconv.SeparateWordsAction)
+" vmap <leader>ct <Action>(me.laria.code.idea_caseconv.TitleCaseAction)
+" vmap <leader>c- <Action>(me.laria.code.idea_caseconv.DashCaseAction)
+" vmap <leader>cd <Action>(me.laria.code.idea_caseconv.SentenceCaseAction)
+" let g:WhichKeyDesc_case_conversion = "<leader>c Case Conversion"
+" let g:WhichKeyDesc_change_case_menu = "<leader>cm Case Menu"
+" let g:WhichKeyDesc_case_conversion_camel = "<leader>cc camelCase"
+" let g:WhichKeyDesc_case_conversion_pascal = "<leader>cp PascalCase"
+" let g:WhichKeyDesc_case_conversion_snake = "<leader>cs snake_case"
+" let g:WhichKeyDesc_case_conversion_screaming_snake = "<leader>cS SCREAMING_SNAKE_CASE"
+" let g:WhichKeyDesc_case_conversion_lower = "<leader>cl lowercase"
+" let g:WhichKeyDesc_case_conversion_upper = "<leader>cu UPPERCASE"
+" let g:WhichKeyDesc_case_conversion_dot = "<leader>c. dot.case"
+" let g:WhichKeyDesc_case_conversion_words = "<leader>cw Separate Words"
+" let g:WhichKeyDesc_case_conversion_title = "<leader>ct Title Case"
+" let g:WhichKeyDesc_case_conversion_dash = "<leader>c- dash-case"
+" let g:WhichKeyDesc_case_conversion_sentence = "<leader>cd Sentence case"
 
 
 " Git
