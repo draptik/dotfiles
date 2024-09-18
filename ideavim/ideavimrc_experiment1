@@ -1,0 +1,102 @@
+"" ==============================================
+"" Base settings
+"" ==============================================
+set scrolloff=5
+set history=1000
+set number relativenumber
+set showmode
+set showcmd
+set smartcase
+set incsearch
+set hlsearch
+set visualbell
+
+" Clipboard Integration
+set clipboard+=unnamed
+
+" Leader key
+"let mapleader="\<space>"
+let mapleader=" "
+
+" Default Behaviour
+set gdefault
+
+" IdeaVim specific settings
+" https://github.com/JetBrains/ideavim/wiki/set-commands#ideavim-only-options
+set ideajoin
+" set ideamarks " default is true anyway
+" set idearefactormode=normal
+" set ideastatusicon=gray
+
+"" ==============================================
+"" Plugin settings
+"" ==============================================
+set commentary
+set surround
+
+" Searching Plugins -----------------------------
+" Sneak
+" Requires IdeaVim-Sneak from JetBrains Marketplace
+set sneak
+
+" EasyMotion
+" Requires IdeaVim-EasyMotion and AceJump from JetBrains Marketplace
+set easymotion
+let g:WhichKeyDesc_easymotion = "<leader><leader> EasyMotion"
+
+" Highlighting Plugins --------------------------
+set highlightedyank
+set quickscope " should be placed after 'sneak' plugin
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+" Which-key settings
+" Requires Which-Key plugin from JetBrains Marketplace
+set which-key
+set notimeout
+"let g:WhichKey_Fontsize = 20
+"let g:WhichKey_PrefixColor = "#a403fe"
+"let g:WhichKey_CommandColor = "#01ffff"
+"let g:WhichKey_PrefixStyle = "bold"
+"let g:WhichKey_KeyStyle = "italic"
+"let g:WhichKey_SortOrder = "by_key_prefix_first"
+"let g:WhichKey_ShowTypedSequence = "false"
+"let g:WhichKey_ShowVimActions = "true"
+
+"" ========================================================
+"" Key Mappings
+"" ========================================================
+" Tab navigation
+nmap <C-p> <Action>(PreviousTab)
+nmap <C-n> <Action>(NextTab)
+sethandler <C-p> a:vim
+sethandler <C-n> a:vim
+
+" Pane navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-k> <C-w>k
+nnoremap <C-j> <C-w>j
+sethandler <C-h> a:vim
+sethandler <C-l> a:vim
+sethandler <C-k> a:vim
+sethandler <C-j> a:vim
+
+" Navigation actions
+nmap <C-i> <Action>(Back)
+nmap <C-o> <Action>(Forward)
+sethandler <C-i> a:vim
+sethandler <C-o> a:vim
+
+" Jump between methods
+nmap [[ <Action>(MethodUp)
+nmap ]] <Action>(MethodDown)
+
+" Visual indentation
+vnoremap < <gv
+vnoremap > >gv
+
+" IDE interaction
+nmap <C-m> <Action>(ShowPopupMenu)
+nmap <C-S-m> <Action>(ToolWindowsGroup)
+sethandler <C-m> a:vim
+sethandler <C-S-m> a:vim
