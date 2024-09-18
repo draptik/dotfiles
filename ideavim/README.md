@@ -5,10 +5,10 @@ IdeaVim is not Vim / NeoVim - it's independently reprogrammed for Jetbrains-IDEs
 ## Configuration file
 
 
-Link the config file (`.ideavimrc`) to the `$HOME` directory:
+Link the desired configuration file (f. ex. `ideavimrc_experiment0`) to the `$HOME` directory:
 
 ``` sh
-ln -s ~/.dotfiles/ideavim/.ideavimrc ~/.ideavimrc
+ln -s ~/.dotfiles/ideavim/ideavimrc_experiment0 ~/.ideavimrc
 ```
 
 ## Resolving conflicts between IdeaVim and JetBrains default keybindings
