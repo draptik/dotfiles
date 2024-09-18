@@ -112,25 +112,25 @@ let g:WhichKeyDesc_easymotion = "<leader><leader> EasyMotion"
 
 
 " Information commands
-nmap <leader>ie <action>(ShowErrorDescription)
-nmap <leader>it <action>(ExpressionTypeInfo)
-nmap <leader>ip <action>(ParameterInfo)
-nmap <leader>ij <action>(QuickJavaDoc)
-nmap <leader>if <action>(FileStructurePopup)
-nmap <leader>iU <action>(ShowUmlDiagram)
-nmap <leader>ih <action>(CallHierarchy)
-nmap <leader>iu <action>(ShowUsages)
-nmap <leader>im <action>(MethodHierarchy)
-let g:WhichKeyDesc_info = "<leader>i Information"
-let g:WhichKeyDesc_info_error = "<leader>ie Error Description"
-let g:WhichKeyDesc_info_type = "<leader>it Expression Type"
-let g:WhichKeyDesc_info_parameter = "<leader>ip Parameter Info"
-let g:WhichKeyDesc_info_javadoc = "<leader>ij Java Doc"
-let g:WhichKeyDesc_info_file_structure = "<leader>if File Structure"
-let g:WhichKeyDesc_info_uml_diagram = "<leader>iU UML Diagram"
-let g:WhichKeyDesc_info_call_hierarchy = "<leader>ih Call Hierarchy"
-let g:WhichKeyDesc_info_show_usages = "<leader>iu Usages"
-let g:WhichKeyDesc_info_method_hierarchy = "<leader>im Method Hierarchy"
+" nmap <leader>ie <action>(ShowErrorDescription)
+" nmap <leader>it <action>(ExpressionTypeInfo)
+" nmap <leader>ip <action>(ParameterInfo)
+" nmap <leader>ij <action>(QuickJavaDoc)
+" nmap <leader>if <action>(FileStructurePopup)
+" nmap <leader>iU <action>(ShowUmlDiagram)
+" nmap <leader>ih <action>(CallHierarchy)
+" nmap <leader>iu <action>(ShowUsages)
+" nmap <leader>im <action>(MethodHierarchy)
+" let g:WhichKeyDesc_info = "<leader>i Information"
+" let g:WhichKeyDesc_info_error = "<leader>ie Error Description"
+" let g:WhichKeyDesc_info_type = "<leader>it Expression Type"
+" let g:WhichKeyDesc_info_parameter = "<leader>ip Parameter Info"
+" let g:WhichKeyDesc_info_javadoc = "<leader>ij Java Doc"
+" let g:WhichKeyDesc_info_file_structure = "<leader>if File Structure"
+" let g:WhichKeyDesc_info_uml_diagram = "<leader>iU UML Diagram"
+" let g:WhichKeyDesc_info_call_hierarchy = "<leader>ih Call Hierarchy"
+" let g:WhichKeyDesc_info_show_usages = "<leader>iu Usages"
+" let g:WhichKeyDesc_info_method_hierarchy = "<leader>im Method Hierarchy"
 
 
 " Window splits
