@@ -385,29 +385,33 @@ let g:WhichKeyDesc_search_text = "<leader>st Search Text"
 
 
 " Git
-nmap <leader>Gc <Action>(Vcs.Show.Local.Changes)
-nmap <leader>Gb <Action>(Git.Branches)
-nmap <leader>Gf <Action>(Git.Fetch)
-nmap <leader>Gp <Action>(Vcs.Push)
-nmap <leader>GP <Action>(Git.Commit.And.Push.Executor)
-nmap <leader>Go <Action>(Github.View.Pull.Request)
-nmap <leader>Gm <Action>(VcsGroups)
-nmap <leader>Gg <Action>(CheckinProject)
-nmap <leader>Ga <Action>(Annotate)
-nmap <leader>Gt <Action>(ActivateVersionControlToolWindow)
-nmap <leader>Gr <Action>(Vcs.RollbackChangedLines)
-nmap <leader>Gu <Action>(Vcs.UpdateProject)
-let g:WhichKeyDesc_git = "<leader>G Git"
-let g:WhichKeyDesc_git_checkin = "<leader>Gg Checkin"
-let g:WhichKeyDesc_git_branches = "<leader>Gb Branches"
-let g:WhichKeyDesc_git_push = "<leader>Gp Push"
-let g:WhichKeyDesc_git_commit_and_push = "<leader>GP Commit & Push"
-let g:WhichKeyDesc_git_menu = "<leader>Gm Menu"
-let g:WhichKeyDesc_git_fetch = "<leader>Gf Fetch"
-let g:WhichKeyDesc_git_annotate = "<leader>Ga Annotate"
-let g:WhichKeyDesc_git_log = "<leader>Gl Log"
-let g:WhichKeyDesc_git_tool = "<leader>Gt Tool"
-let g:WhichKeyDesc_git_rollback_changed_lines = "<leader>Gr Rollback"
-let g:WhichKeyDesc_git_open_pull_requests = "<leader>Go Open Pull Requests"
-let g:WhichKeyDesc_git_local_changes = "<leader>Gc Show Local Changes"
-let g:WhichKeyDesc_git_update_project = "<leader>Gu Update Project"
+" nmap <leader>Gc <Action>(Vcs.Show.Local.Changes)
+" nmap <leader>Gb <Action>(Git.Branches)
+" nmap <leader>Gf <Action>(Git.Fetch)
+" nmap <leader>Gp <Action>(Vcs.Push)
+" nmap <leader>GP <Action>(Git.Commit.And.Push.Executor)
+" nmap <leader>Go <Action>(Github.View.Pull.Request)
+" nmap <leader>Gm <Action>(VcsGroups)
+" nmap <leader>Gg <Action>(CheckinProject)
+" nmap <leader>Ga <Action>(Annotate)
+" nmap <leader>Gt <Action>(ActivateVersionControlToolWindow)
+" nmap <leader>Gr <Action>(Vcs.RollbackChangedLines)
+" nmap <leader>Gu <Action>(Vcs.UpdateProject)
+" let g:WhichKeyDesc_git = "<leader>G Git"
+" let g:WhichKeyDesc_git_checkin = "<leader>Gg Checkin"
+" let g:WhichKeyDesc_git_branches = "<leader>Gb Branches"
+" let g:WhichKeyDesc_git_push = "<leader>Gp Push"
+" let g:WhichKeyDesc_git_commit_and_push = "<leader>GP Commit & Push"
+" let g:WhichKeyDesc_git_menu = "<leader>Gm Menu"
+" let g:WhichKeyDesc_git_fetch = "<leader>Gf Fetch"
+" let g:WhichKeyDesc_git_annotate = "<leader>Ga Annotate"
+" let g:WhichKeyDesc_git_log = "<leader>Gl Log"
+" let g:WhichKeyDesc_git_tool = "<leader>Gt Tool"
+" let g:WhichKeyDesc_git_rollback_changed_lines = "<leader>Gr Rollback"
+" let g:WhichKeyDesc_git_open_pull_requests = "<leader>Go Open Pull Requests"
+" let g:WhichKeyDesc_git_local_changes = "<leader>Gc Show Local Changes"
+" let g:WhichKeyDesc_git_update_project = "<leader>Gu Update Project"
+
+" Rider: Unit Testing
+nmap <leader>ur <Action>(RiderUnitTestRunContextAction) " C-u C-r
+nmap <leader>ud <Action>(RiderUnitTestDebugContextAction) " C-u C-d
