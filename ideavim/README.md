@@ -17,6 +17,7 @@ Example:
 - `nmap <leader>fg <Action>(GotoFile)`
   - `<Action(*)` map IDE action `*`
 - How to get the name of the action?
+  - [Finding action IDs](https://github.com/JetBrains/ideavim?tab=readme-ov-file#finding-action-ids)
 
 ## Resolving conflicts between IdeaVim and JetBrains (f. ex. Rider) default keybindings
 
@@ -28,7 +29,7 @@ There are two ways to resolve keybinding conflicts between IDE and IdeaVim:
 ## Plugins
 
 - Overview of available [IdeaVim Plugins](https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins)
-- Some plugins are integrated IdeaVim plugins:
+- Some plugins are integrated in IdeaVim:
   - `commentary`
   - `surround`
 - Other plugins must be installed using the JetBrains Marketplace:
