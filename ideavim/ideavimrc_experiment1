@@ -48,7 +48,8 @@ set easymotion
 
 " Highlighting Plugins --------------------------
 set highlightedyank
-set quickscope " should be placed after 'sneak' plugin
+" should be placed after 'sneak' plugin:
+set quickscope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " Which-key settings
@@ -68,36 +69,36 @@ set notimeout
 "" Key Mappings
 "" ========================================================
 " Tab navigation
-nmap <C-p> <Action>(PreviousTab)
-nmap <C-n> <Action>(NextTab)
-sethandler <C-p> a:vim
-sethandler <C-n> a:vim
-
-" Pane navigation
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-nnoremap <C-k> <C-w>k
-nnoremap <C-j> <C-w>j
-sethandler <C-h> a:vim
-sethandler <C-l> a:vim
-sethandler <C-k> a:vim
-sethandler <C-j> a:vim
-
-" Navigation actions
-nmap <C-i> <Action>(Back)
-nmap <C-o> <Action>(Forward)
-sethandler <C-i> a:vim
-sethandler <C-o> a:vim
-
-" Jump between methods
-nmap [[ <Action>(MethodUp)
-nmap ]] <Action>(MethodDown)
-
-" Visual indentation
-vnoremap < <gv
-vnoremap > >gv
-
-" IDE interaction
+" nmap <C-p> <Action>(PreviousTab)
+" nmap <C-n> <Action>(NextTab)
+" sethandler <C-p> a:vim
+" sethandler <C-n> a:vim
+" 
+" " Pane navigation
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-l> <C-w>l
+" nnoremap <C-k> <C-w>k
+" nnoremap <C-j> <C-w>j
+" sethandler <C-h> a:vim
+" sethandler <C-l> a:vim
+" sethandler <C-k> a:vim
+" sethandler <C-j> a:vim
+" 
+" " Navigation actions
+" nmap <C-i> <Action>(Back)
+" nmap <C-o> <Action>(Forward)
+" sethandler <C-i> a:vim
+" sethandler <C-o> a:vim
+" 
+" " Jump between methods
+" nmap [[ <Action>(MethodUp)
+" nmap ]] <Action>(MethodDown)
+" 
+" " Visual indentation
+" vnoremap < <gv
+" vnoremap > >gv
+" 
+" " IDE interaction
 nmap <C-m> <Action>(ShowPopupMenu)
 nmap <C-S-m> <Action>(ToolWindowsGroup)
 sethandler <C-m> a:vim
@@ -134,92 +135,92 @@ let g:WhichKeyDesc_easymotion = "<leader><leader> EasyMotion"
 
 
 " Window splits
-" nmap <leader>wv <action>(SplitVertically)
-" nmap <leader>wh <action>(SplitHorizontally)
-" nmap <leader>wu <action>(Unsplit)
-" nmap <leader>wm <action>(MoveEditorToOppositeTabGroup)
-" nmap <leader>wb <action>(Back)
-" nmap <leader>wf <action>(Forward)
-" let g:WhichKeyDesc_window = "<leader>w Window splits"
-" let g:WhichKeyDesc_window_split_vertically = "<leader>wv Split vertically"
-" let g:WhichKeyDesc_window_split_horizontally = "<leader>wh Split horizontally"
-" let g:WhichKeyDesc_window_split_unsplit = "<leader>wu Unsplit"
-" let g:WhichKeyDesc_window_split_move_editor = "<leader>wm Move editor to opposite tab group"
-" let g:WhichKeyDesc_window_split_back = "<leader>wb Back split"
-" let g:WhichKeyDesc_window_split_forward = "<leader>wf Forward split"
+nmap <leader>wv <action>(SplitVertically)
+nmap <leader>wh <action>(SplitHorizontally)
+nmap <leader>wu <action>(Unsplit)
+nmap <leader>wm <action>(MoveEditorToOppositeTabGroup)
+nmap <leader>wb <action>(Back)
+nmap <leader>wf <action>(Forward)
+let g:WhichKeyDesc_window = "<leader>w Window splits"
+let g:WhichKeyDesc_window_split_vertically = "<leader>wv Split vertically"
+let g:WhichKeyDesc_window_split_horizontally = "<leader>wh Split horizontally"
+let g:WhichKeyDesc_window_split_unsplit = "<leader>wu Unsplit"
+let g:WhichKeyDesc_window_split_move_editor = "<leader>wm Move editor to opposite tab group"
+let g:WhichKeyDesc_window_split_back = "<leader>wb Back split"
+let g:WhichKeyDesc_window_split_forward = "<leader>wf Forward split"
 
 
 " Tab Navigation and Management
-" nmap <leader>tP <Action>(PinActiveEditorTab)
-" nmap <leader>tg1 <Action>(GoToTab1)
-" nmap <leader>tg2 <Action>(GoToTab2)
-" nmap <leader>tg3 <Action>(GoToTab3)
-" nmap <leader>tg4 <Action>(GoToTab4)
-" nmap <leader>tg5 <Action>(GoToTab5)
-" nmap <leader>tg6 <Action>(GoToTab6)
-" nmap <leader>tg7 <Action>(GoToTab7)
-" nmap <leader>tg8 <Action>(GoToTab8)
-" nmap <leader>tg9 <Action>(GoToTab9)
-" nmap <leader>tx <Action>(CloseContent)
-" nmap <leader>tX <Action>(CloseAllEditors)
-" nmap <leader>to <Action>(CloseAllEditorsButActive)
-" nmap <leader>ta <Action>(CloseAllUnpinnedEditors)
-" let g:WhichKeyDesc_tabs = "<leader>t Tabs"
-" let g:WhichKeyDesc_tabs_pin = "<leader>tP Pin Active Tab"
-" let g:WhichKeyDesc_tabs_go_to = "<leader>tg Go to Tab"
-" let g:WhichKeyDesc_tabs_go_to_1 = "<leader>tg1 Go to Tab 1"
-" let g:WhichKeyDesc_tabs_go_to_2 = "<leader>tg2 Go to Tab 2"
-" let g:WhichKeyDesc_tabs_go_to_3 = "<leader>tg3 Go to Tab 3"
-" let g:WhichKeyDesc_tabs_go_to_4 = "<leader>tg4 Go to Tab 4"
-" let g:WhichKeyDesc_tabs_go_to_5 = "<leader>tg5 Go to Tab 5"
-" let g:WhichKeyDesc_tabs_go_to_6 = "<leader>tg6 Go to Tab 6"
-" let g:WhichKeyDesc_tabs_go_to_7 = "<leader>tg7 Go to Tab 7"
-" let g:WhichKeyDesc_tabs_go_to_8 = "<leader>tg8 Go to Tab 8"
-" let g:WhichKeyDesc_tabs_go_to_9 = "<leader>tg9 Go to Tab 9"
-" let g:WhichKeyDesc_tabs_close = "<leader>tx Close Current Tab"
-" let g:WhichKeyDesc_tabs_close_all = "<leader>tX Close All Tabs"
-" let g:WhichKeyDesc_tabs_close_all_but_active = "<leader>to Close All Tabs But Active"
-" let g:WhichKeyDesc_tabs_close_all_unpinned = "<leader>ta Close All Unpinned Tabs"
+nmap <leader>tP <Action>(PinActiveEditorTab)
+nmap <leader>tg1 <Action>(GoToTab1)
+nmap <leader>tg2 <Action>(GoToTab2)
+nmap <leader>tg3 <Action>(GoToTab3)
+nmap <leader>tg4 <Action>(GoToTab4)
+nmap <leader>tg5 <Action>(GoToTab5)
+nmap <leader>tg6 <Action>(GoToTab6)
+nmap <leader>tg7 <Action>(GoToTab7)
+nmap <leader>tg8 <Action>(GoToTab8)
+nmap <leader>tg9 <Action>(GoToTab9)
+nmap <leader>tx <Action>(CloseContent)
+nmap <leader>tX <Action>(CloseAllEditors)
+nmap <leader>to <Action>(CloseAllEditorsButActive)
+nmap <leader>ta <Action>(CloseAllUnpinnedEditors)
+let g:WhichKeyDesc_tabs = "<leader>t Tabs"
+let g:WhichKeyDesc_tabs_pin = "<leader>tP Pin Active Tab"
+let g:WhichKeyDesc_tabs_go_to = "<leader>tg Go to Tab"
+let g:WhichKeyDesc_tabs_go_to_1 = "<leader>tg1 Go to Tab 1"
+let g:WhichKeyDesc_tabs_go_to_2 = "<leader>tg2 Go to Tab 2"
+let g:WhichKeyDesc_tabs_go_to_3 = "<leader>tg3 Go to Tab 3"
+let g:WhichKeyDesc_tabs_go_to_4 = "<leader>tg4 Go to Tab 4"
+let g:WhichKeyDesc_tabs_go_to_5 = "<leader>tg5 Go to Tab 5"
+let g:WhichKeyDesc_tabs_go_to_6 = "<leader>tg6 Go to Tab 6"
+let g:WhichKeyDesc_tabs_go_to_7 = "<leader>tg7 Go to Tab 7"
+let g:WhichKeyDesc_tabs_go_to_8 = "<leader>tg8 Go to Tab 8"
+let g:WhichKeyDesc_tabs_go_to_9 = "<leader>tg9 Go to Tab 9"
+let g:WhichKeyDesc_tabs_close = "<leader>tx Close Current Tab"
+let g:WhichKeyDesc_tabs_close_all = "<leader>tX Close All Tabs"
+let g:WhichKeyDesc_tabs_close_all_but_active = "<leader>to Close All Tabs But Active"
+let g:WhichKeyDesc_tabs_close_all_unpinned = "<leader>ta Close All Unpinned Tabs"
 
 
 " Display options
-" map <leader>Dd <action>(ToggleDistractionFreeMode)
-" map <leader>Dz <action>(ToggleZenMode)
-" map <leader>Df <action>(ToggleFullScreen)
-" let g:WhichKeyDesc_display = "<leader>D Display options"
-" let g:WhichKeyDesc_zen_mode = "<leader>Dz Toggle Zen mode"
-" let g:WhichKeyDesc_df_mode = "<leader>Dd Toggle Distraction-Free mode"
-" let g:WhichKeyDesc_fullscreen = "<leader>Df Toggle full screen"
+map <leader>Dd <action>(ToggleDistractionFreeMode)
+map <leader>Dz <action>(ToggleZenMode)
+map <leader>Df <action>(ToggleFullScreen)
+let g:WhichKeyDesc_display = "<leader>D Display options"
+let g:WhichKeyDesc_zen_mode = "<leader>Dz Toggle Zen mode"
+let g:WhichKeyDesc_df_mode = "<leader>Dd Toggle Distraction-Free mode"
+let g:WhichKeyDesc_fullscreen = "<leader>Df Toggle full screen"
 
 
 " File navigation
-" nmap <leader>fg <Action>(GotoFile)
-" nmap <leader>fr <Action>(RecentFiles)
-" nmap <leader>fc <Action>(FindInPath)
-" nmap <leader>fl <Action>(RecentLocations)
-" nmap <leader>fs <Action>(NewScratchFile)
-" nmap <leader>fe :NERDTreeToggle<CR>
-" nmap <leader>fo <Action>(OpenFile)
-" nmap <leader>fy <Action>(CopyAbsolutePath)
-" nmap <leader>fp <Action>(ManageRecentProjects)
-" nmap <leader>fh <Action>(LocalHistory.ShowHistory)
-" nmap <leader>ff <Action>(ShowFilePath)
-" nmap <leader>fi <Action>(SelectIn)
-" nmap <leader>fp <Action>(ReplaceInPath)
-" let g:WhichKeyDesc_file_opt = "<leader>f File navigation"
-" let g:WhichKeyDesc_file_opt_goto_file = "<leader>fg Go To File"
-" let g:WhichKeyDesc_file_opt_goto_content = "<leader>fc Find In Files"
-" let g:WhichKeyDesc_file_opt_show_recent_files = "<leader>fr Recent Files"
-" let g:WhichKeyDesc_file_opt_show_recent_locations = "<leader>fl Recent Locations"
-" let g:WhichKeyDesc_file_opt_new_scratch_file = "<leader>fs New Scratch File"
-" let g:WhichKeyDesc_file_opt_toggle_nerdtree = "<leader>fe Toggle NERDTree"
-" let g:WhichKeyDesc_file_opt_open_file = "<leader>fo Open File"
-" let g:WhichKeyDesc_file_opt_copy_path = "<leader>fy Copy Absolute Path"
-" let g:WhichKeyDesc_file_opt_recent_projects = "<leader>fp Manage Recent Projects"
-" let g:WhichKeyDesc_file_opt_history = "<leader>fh Show Local History"
-" let g:WhichKeyDesc_file_opt_show_path = "<leader>ff Show File Path"
-" let g:WhichKeyDesc_file_opt_select_in = "<leader>fi Select In"
-" let g:WhichKeyDesc_file_opt_replace_in_path = "<leader>fp Replace In Path"
+nmap <leader>fg <Action>(GotoFile)
+nmap <leader>fr <Action>(RecentFiles)
+nmap <leader>fc <Action>(FindInPath)
+nmap <leader>fl <Action>(RecentLocations)
+nmap <leader>fs <Action>(NewScratchFile)
+nmap <leader>fe :NERDTreeToggle<CR>
+nmap <leader>fo <Action>(OpenFile)
+nmap <leader>fy <Action>(CopyAbsolutePath)
+nmap <leader>fp <Action>(ManageRecentProjects)
+nmap <leader>fh <Action>(LocalHistory.ShowHistory)
+nmap <leader>ff <Action>(ShowFilePath)
+nmap <leader>fi <Action>(SelectIn)
+nmap <leader>fp <Action>(ReplaceInPath)
+let g:WhichKeyDesc_file_opt = "<leader>f File navigation"
+let g:WhichKeyDesc_file_opt_goto_file = "<leader>fg Go To File"
+let g:WhichKeyDesc_file_opt_goto_content = "<leader>fc Find In Files"
+let g:WhichKeyDesc_file_opt_show_recent_files = "<leader>fr Recent Files"
+let g:WhichKeyDesc_file_opt_show_recent_locations = "<leader>fl Recent Locations"
+let g:WhichKeyDesc_file_opt_new_scratch_file = "<leader>fs New Scratch File"
+let g:WhichKeyDesc_file_opt_toggle_nerdtree = "<leader>fe Toggle NERDTree"
+let g:WhichKeyDesc_file_opt_open_file = "<leader>fo Open File"
+let g:WhichKeyDesc_file_opt_copy_path = "<leader>fy Copy Absolute Path"
+let g:WhichKeyDesc_file_opt_recent_projects = "<leader>fp Manage Recent Projects"
+let g:WhichKeyDesc_file_opt_history = "<leader>fh Show Local History"
+let g:WhichKeyDesc_file_opt_show_path = "<leader>ff Show File Path"
+let g:WhichKeyDesc_file_opt_select_in = "<leader>fi Select In"
+let g:WhichKeyDesc_file_opt_replace_in_path = "<leader>fp Replace In Path"
 
 
 " Run Actions
@@ -414,7 +415,7 @@ let g:WhichKeyDesc_easymotion = "<leader><leader> EasyMotion"
 
 " Rider: Unit Testing
 set notimeout
-nmap <leader>Ur <Action>(RiderUnitTestRunContextAction) " C-u C-r
-nmap <leader>Ud <Action>(RiderUnitTestDebugContextAction) " C-u C-d
+nmap <leader>ur <Action>(RiderUnitTestRunContextAction)
+nmap <leader>ud <Action>(RiderUnitTestDebugContextAction)
 let g:WhichKeyDesc_unit_test_run = "<leader>Ur Run test"
 let g:WhichKeyDesc_unit_test_debug = "<leader>Ud Debug test"
