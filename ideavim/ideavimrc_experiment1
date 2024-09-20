@@ -36,6 +36,7 @@ set ideajoin
 "" ==============================================
 set commentary
 set surround
+set nerdtree
 
 " Searching Plugins -----------------------------
 " Sneak
