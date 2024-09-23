@@ -1,4 +1,0 @@
-let mapleader=" "
-set notimeout
-nmap <leader>ur <Action>(RiderUnitTestRunContextAction)
-nmap <leader>ud <Action>(RiderUnitTestDebugContextAction)
