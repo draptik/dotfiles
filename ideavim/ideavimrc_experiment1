@@ -34,28 +34,34 @@ set ideajoin
 "" ==============================================
 "" Plugin settings
 "" ==============================================
-set commentary
-set surround
-set nerdtree
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'preservim/nerdtree'
 
 " Searching Plugins -----------------------------
+
 " Sneak
 " Requires IdeaVim-Sneak from JetBrains Marketplace
-set sneak
+"
+" Behaves similar to 'f|t', except we can search by 2 chars instead of 1 char.
+"
+" Usage:
+" s|S followed by 2 chars
+Plug 'justinmk/vim-sneak'
 
 " EasyMotion
 " Requires IdeaVim-EasyMotion and AceJump from JetBrains Marketplace
-set easymotion
+Plug 'easymotion/vim-easymotion'
 
 " Highlighting Plugins --------------------------
-set highlightedyank
+Plug 'machakann/vim-highlightedyank'
 " should be placed after 'sneak' plugin:
-set quickscope
+Plug 'joshestein/ideavim-quickscope'
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " Which-key settings
 " Requires Which-Key plugin from JetBrains Marketplace
-set which-key
+Plug 'TheBlob42/idea-which-key'
 set notimeout
 "let g:WhichKey_Fontsize = 20
 "let g:WhichKey_PrefixColor = "#a403fe"
@@ -418,5 +424,5 @@ let g:WhichKeyDesc_file_opt_replace_in_path = "<leader>fp Replace In Path"
 set notimeout
 nmap <leader>ur <Action>(RiderUnitTestRunContextAction)
 nmap <leader>ud <Action>(RiderUnitTestDebugContextAction)
-let g:WhichKeyDesc_unit_test_run = "<leader>Ur Run test"
-let g:WhichKeyDesc_unit_test_debug = "<leader>Ud Debug test"
+let g:WhichKeyDesc_unit_test_run = "<leader>ur Run test"
+let g:WhichKeyDesc_unit_test_debug = "<leader>ud Debug test"
