@@ -1,0 +1,129 @@
+"" Inspired by 
+"" https://raw.githubusercontent.com/dbilici/IdeaVim/refs/heads/main/.ideavimrc
+
+"" ==============================================
+"" Base settings
+"" ==============================================
+set scrolloff=5
+set history=1000
+set number relativenumber
+set showmode
+set showcmd
+set smartcase
+set incsearch
+set hlsearch
+set visualbell
+
+" Clipboard Integration
+set clipboard+=unnamed
+
+" Leader key
+"let mapleader="\<space>"
+let mapleader=" "
+
+" Default Behaviour
+set gdefault
+
+" IdeaVim specific settings
+" https://github.com/JetBrains/ideavim/wiki/set-commands#ideavim-only-options
+set ideajoin
+" set ideamarks " default is true anyway
+" set idearefactormode=normal
+" set ideastatusicon=gray
+
+"" ==============================================
+"" Plugin settings
+"" ==============================================
+
+" surround
+"
+" Purpose: Delete, change, and add "surroundings"
+"
+" Usage:
+" - ds{char}: delete surrounding {char}
+" - cs{chars}: change surrounding {chars}
+" - ys{motion}{char}: add surrounding {char} to {motion}
+"
+" Further examples: https://github.com/tpope/vim-surround/blob/3d188ed2113431cf8dac77be61b842acb64433d9/doc/surround.txt
+Plug 'tpope/vim-surround'
+
+" nerdtree
+"
+" Purpose: File navigation in tree view. Replaces default "project explorer"
+"
+" Usage: see custom mappings below.
+Plug 'preservim/nerdtree'
+
+" Searching Plugins -----------------------------
+
+" Sneak
+" Requires IdeaVim-Sneak from JetBrains Marketplace
+"
+" Purpose:
+" Behaves similar to 'f|t', except we can search by 2 chars instead of 1 char.
+"
+" Usage:
+" - s|S{char1}{char2} followed by 2 chars
+Plug 'justinmk/vim-sneak'
+
+" EasyMotion
+" Requires IdeaVim-EasyMotion and AceJump from JetBrains Marketplace
+"
+" Purpose: Simplify character searching - results are highlighted with easy to
+" navigate indicators.
+"
+" Usage:
+" - <leader><leader>f{char}: show indicators for search matches
+" - <leader><leader>f{char}{char}: show indicators for search matches
+Plug 'easymotion/vim-easymotion'
+
+" Highlighting Plugins --------------------------
+
+" highlightedyank
+"
+" Purpose: Highlights yanked selections
+Plug 'machakann/vim-highlightedyank'
+
+" which-key 
+" Requires Which-Key plugin from JetBrains Marketplace
+Plug 'TheBlob42/idea-which-key'
+set notimeout
+
+"" ========================================================
+"" Key Mappings
+"" ========================================================
+" Tab navigation
+" nmap <C-p> <Action>(PreviousTab)
+" nmap <C-n> <Action>(NextTab)
+" sethandler <C-p> a:vim
+" sethandler <C-n> a:vim
+" 
+" " Pane navigation
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-l> <C-w>l
+" nnoremap <C-k> <C-w>k
+" nnoremap <C-j> <C-w>j
+" sethandler <C-h> a:vim
+" sethandler <C-l> a:vim
+" sethandler <C-k> a:vim
+" sethandler <C-j> a:vim
+" 
+" " Navigation actions
+" nmap <C-i> <Action>(Back)
+" nmap <C-o> <Action>(Forward)
+" sethandler <C-i> a:vim
+" sethandler <C-o> a:vim
+" 
+" " Jump between methods
+" nmap [[ <Action>(MethodUp)
+" nmap ]] <Action>(MethodDown)
+" 
+" " Visual indentation
+" vnoremap < <gv
+" vnoremap > >gv
+" 
+" " IDE interaction
+nmap <C-m> <Action>(ShowPopupMenu)
+nmap <C-S-m> <Action>(ToolWindowsGroup)
+sethandler <C-m> a:vim
+sethandler <C-S-m> a:vim
