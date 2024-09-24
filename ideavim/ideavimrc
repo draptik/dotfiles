@@ -249,3 +249,6 @@ let g:WhichKeyDesc_search_file = "<leader>sf Search File"
 let g:WhichKeyDesc_search_symbol = "<leader>ss Search Symbol"
 let g:WhichKeyDesc_search_text = "<leader>st Search Text"
 
+" Folding/Collapsing vs Unfolding/Expanding
+nmap <leader>cr <Action>(CollapseRegion)
+
