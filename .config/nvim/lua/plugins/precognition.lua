@@ -1,3 +1,8 @@
+if true then
+  return {}
+end
+
+-- ignore for now
 return {
   {
     "tris203/precognition.nvim",
