@@ -40,7 +40,7 @@ set ideajoin
 " - ys{motion}{char}: add surrounding {char} to {motion}
 "
 " Further examples: https://github.com/tpope/vim-surround/blob/3d188ed2113431cf8dac77be61b842acb64433d9/doc/surround.txt
-Plug 'tpope/vim-surround'
+"Plug 'tpope/vim-surround'
 
 " highlightedyank
 "
@@ -57,6 +57,16 @@ nmap <C-n> <Action>(NextTab)
 sethandler <C-p> a:vim
 sethandler <C-n> a:vim
 
+" Pane navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-k> <C-w>k
+nnoremap <C-j> <C-w>h
+sethandler <C-h> a:vim
+sethandler <C-l> a:vim
+sethandler <C-k> a:vim
+sethandler <C-j> a:vim
+
 " Jump between methods
 nmap [[ <Action>(MethodUp)
 nmap ]] <Action>(MethodDown)
@@ -66,6 +76,10 @@ nmap <C-m> <Action>(ShowPopupMenu)
 nmap <C-S-m> <Action>(ToolWindowsGroup)
 sethandler <C-m> a:vim
 sethandler <C-S-m> a:vim
+
+" Visual indentation
+vnoremap < <gv
+vnoremap > >gv
 
 "" ========================================================
 "" Leader Commands
@@ -78,3 +92,38 @@ nmap <leader>wu <Action>(Unsplit)
 nmap <leader>wm <Action>(MoveEditorToOppositeTabGroup)
 nmap <leader>wb <Action>(Back)
 nmap <leader>wf <Action>(Forward)
+
+" Tab Navigation and Management
+nmap <leader>tP <Action>(PinActiveEditorTab)
+nmap <leader>tg1 <Action>(GoToTab1)
+nmap <leader>tg2 <Action>(GoToTab2)
+nmap <leader>tg3 <Action>(GoToTab3)
+nmap <leader>tg4 <Action>(GoToTab4)
+nmap <leader>tg5 <Action>(GoToTab5)
+nmap <leader>tg6 <Action>(GoToTab6)
+nmap <leader>tg7 <Action>(GoToTab7)
+nmap <leader>tg8 <Action>(GoToTab8)
+nmap <leader>tg9 <Action>(GoToTab9)
+
+" Display options
+map <leader>Dd <Action>(ToggleDistractionFreeMode)
+map <leader>Dz <Action>(ToggleZenMode)
+map <leader>Df <Action>(ToggleFullScreen)
+
+" File navigation
+nmap <leader>fg <Action>(GotoFile)
+nmap <leader>fr <Action>(RecentFiles)
+nmap <leader>fc <Action>(FindInPath)
+nmap <leader>fl <Action>(RecentLocations)
+nmap <leader>fs <Action>(NewScratchFile)
+nmap <leader>fo <Action>(OpenFile)
+nmap <leader>fy <Action>(CopyAbsolutePath)
+nmap <leader>fh <Action>(LocalHistory.ShowHistory)
+nmap <leader>ff <Action>(ShowFilePath)
+nmap <leader>fi <Action>(SelectIn)
+nmap <leader>fp <Action>(ReplaceInPath)
+
+" Run Actions
+nmap <leader>rm <Action>(RunMenu)
+"nmap <leader>rn <Action>(RunClass)
+
