@@ -29,6 +29,8 @@ There are two ways to resolve keybinding conflicts between IDE and IdeaVim:
 ## Plugins
 
 - Overview of available [IdeaVim Plugins](https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins)
+- There seem to be more plugins available:
+  - [CamelCasePlugin](https://github.com/netnexus/camelcaseplugin)
 - Some plugins are integrated in IdeaVim:
   - `commentary`
   - `surround`
