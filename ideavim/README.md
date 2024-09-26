@@ -24,7 +24,7 @@ Example:
 There are two ways to resolve keybinding conflicts between IDE and IdeaVim:
 - using the IDE: Settings -> Editor -> Vim. Choose preference in dropdown
 - defining the preference within the config file (`~/.ideavimrc`) using `sethandler`:
-  - Example: `sethandler <c-k> a:IdeaVim` (This ensures that `c-k` is mapped to IdeaVim instead of the default IDE keybinding)
+  - Example: `sethandler <c-k> a:vim` (This ensures that `c-k` is mapped to IdeaVim instead of the default IDE keybinding)
 
 ## Plugins
 
