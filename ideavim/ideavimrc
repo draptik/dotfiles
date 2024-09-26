@@ -64,6 +64,14 @@ Plug 'machakann/vim-highlightedyank'
 set which-key
 set notimeout
 
+" NERDTree ------------------------------------
+"
+" Purpose: File navigation in tree-like structure
+"
+" Keybindings: https://github.com/JetBrains/ideavim/wiki/NERDTree-support
+"
+Plug 'preservim/nerdtree'
+
 "" ========================================================
 "" Key Mappings
 "" ========================================================
@@ -253,6 +261,20 @@ let g:WhichKeyDesc_search_class = "<leader>sc Search Class"
 let g:WhichKeyDesc_search_file = "<leader>sf Search File"
 let g:WhichKeyDesc_search_symbol = "<leader>ss Search Symbol"
 let g:WhichKeyDesc_search_text = "<leader>st Search Text"
+
+" NERDTree
+nmap <leader>nt :NERDTreeToggle<CR>
+nmap <leader>nf :NERDTreeFocus<CR>
+nmap <leader>nc :NERDTreeClose<CR>
+nmap <leader>nF :NERDTreeFind<CR>
+nmap <leader>nr :NERDTreeRefreshRoot<CR>
+
+let g:WhichKeyDesc_nerdtree = "<leader>n NERDTree"
+let g:WhichKeyDesc_nerdtree_toggle = "<leader>nt NERDTree Toggle"
+let g:WhichKeyDesc_nerdtree_focus = "<leader>nf NERDTree Focus"
+let g:WhichKeyDesc_nerdtree_close = "<leader>nc NERDTree Close"
+let g:WhichKeyDesc_nerdtree_find = "<leader>nF NERDTree Find"
+let g:WhichKeyDesc_nerdtree_refresh_root = "<leader>nr NERDTree Refresh Root"
 
 " Folding/Collapsing vs Unfolding/Expanding
 nmap <leader>cr <Action>(CollapseRegion)
