@@ -30,7 +30,7 @@ set ideajoin
 "" Plugin settings (without key bindings!)
 "" ==============================================
 
-" surround
+" surround --------------------------------------
 "
 " Purpose: Delete, change, and add "surroundings"
 "
@@ -40,14 +40,16 @@ set ideajoin
 " - ys{motion}{char}: add surrounding {char} to {motion}
 "
 " Further examples: https://github.com/tpope/vim-surround/blob/3d188ed2113431cf8dac77be61b842acb64433d9/doc/surround.txt
+"
 "Plug 'tpope/vim-surround'
 
-" highlightedyank
+" highlightedyank ------------------------------
 "
 " Purpose: Highlights yanked selections
+"
 Plug 'machakann/vim-highlightedyank'
 
-" Which-key settings
+" Which-key settings ---------------------------
 "
 " Purpose: Shows a popup-menu of customized key-bindings when pressing the
 " <keader> key.
@@ -58,6 +60,7 @@ Plug 'machakann/vim-highlightedyank'
 "Plug 'TheBlob42/idea-which-key'
 "
 " see below: all the setting dealing with `let g:WhichKeyDesc*`
+"
 set which-key
 set notimeout
 
