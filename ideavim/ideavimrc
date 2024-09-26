@@ -161,12 +161,14 @@ nmap <leader>rm <Action>(RunMenu)
 nmap <leader>rt <Action>(RiderUnitTestRunSolutionAction)
 nmap <leader>rf <Action>(RiderUnitTestSessionRerunFailedTestsAction)
 nmap <leader>rs <Action>(Stop)
+nmap <leader>rr <Action>(Run)
 
 let g:WhichKeyDesc_run = "<leader>r Run"
 let g:WhichKeyDesc_run_menu = "<leader>rm Run Menu"
 let g:WhichKeyDesc_run_tests = "<leader>rt Run Tests"
 let g:WhichKeyDesc_run_failed = "<leader>rf Rerun Failed Tests"
 let g:WhichKeyDesc_run_stop = "<leader>rs Stop"
+let g:WhichKeyDesc_run_run = "<leader>rr Run"
 
 " Debug Actions
 nmap <leader>dx <Action>(RiderUnitTestDebugContextAction)
