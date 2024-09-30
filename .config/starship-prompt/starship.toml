@@ -64,8 +64,8 @@ disabled = true
 
 [directory]
 style = "bold bright-cyan"
-#fish_style_pwd_dir_length = 1
-truncation_symbol = "…/"
+fish_style_pwd_dir_length = 1
+#truncation_symbol = "…/"
 
 [perl]
 disabled = true
