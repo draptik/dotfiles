@@ -9,10 +9,6 @@ export ZSH="~/.oh-my-zsh"
 #ZSH_THEME="robbyrussel"
 #ZSH_THEME="avit"
 
-# Theme Liquid Prompt: Only load Liquid Prompt in interactive shells, not from a script or from scp
-#[[ $- = *i* ]] && source /usr/bin/liquidprompt
-## Use starship prompt instead. Starship is loaded at end of file.
-
 DEFAULT_USER=patrick
 
 # Uncomment the following line to use case-sensitive completion.
