@@ -36,9 +36,6 @@ source ~/.dotfiles/sh_common_aliases/themed_aliases
 
 ## Switch between kitty themes
 if [ "$TERM" = "xterm-kitty" ]; then
-  alias darkkitty='~/.dotfiles/.config/kitty/switch-dark.sh'
-  alias lightkitty='~/.dotfiles/.config/kitty/switch-light.sh'
-
   if [ "$KITTY_THEME" = "DARK" ]; then
     alias togglekitty='~/.dotfiles/.config/kitty/switch-light.sh'
   else
