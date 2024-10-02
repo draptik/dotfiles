@@ -4,11 +4,7 @@
 # some more ls aliases
 alias ll='ls -lAF'
 alias la='ls -lAh'
-#alias l='ls -CF'
 alias lt='ls -Alhrt'
-
-## Projecteur
-alias projecteur='projecteur --cfg ~/.dotfiles/projecteur-logitech-spotlight/projecteur.config'
 
 ## ripgrep, fd, and fzf
 ## https://bluz71.github.io/2018/06/07/ripgrep-fd-command-line-search-tools.html
@@ -39,10 +35,7 @@ fi
 source ~/.dotfiles/sh_common_aliases/themed_aliases
 
 ## Switch between kitty themes
-
 if [ "$TERM" = "xterm-kitty" ]; then
-  # echo "Kitty rules"
-
   alias darkkitty='~/.dotfiles/.config/kitty/switch-dark.sh'
   alias lightkitty='~/.dotfiles/.config/kitty/switch-light.sh'
 
@@ -54,19 +47,6 @@ if [ "$TERM" = "xterm-kitty" ]; then
 
   ## https://sw.kovidgoyal.net/kitty/faq/#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-when-sshing-into-a-different-computer
   alias ssh="kitty +kitten ssh"
-else
-  # echo "not kitty"
-  # only change the common aliases in gnome-terminal:
-  #echo "not a kitty terminal"
-  true
-fi
-
-# Load patched xmodmap: caps lock now behaves like windows key
-#xmodmap ~/.Xmodmap
-
-## When using Sway, set environment for rider
-if [ "$XDG_SESSION_DESKTOP" = "sway" ]; then
-  alias riderx="_JAVA_AWT_WM_NONREPARENTING=1 /usr/share/rider/bin/rider.sh %f"
 fi
 
 ## dotnet stryker alias
