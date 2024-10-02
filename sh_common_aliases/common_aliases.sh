@@ -19,9 +19,6 @@ export FZF_ALT_C_COMMAND='fd --type d . --color=never'
 alias flameshot='flameshot gui -p ~/screenshots'
 alias screenshot='flameshot'
 
-## exa
-alias le='exa -la --group --color-scale --icons --git --group-directories-first'
-
 ## eza
 ## NOTE: In case the option `--color-scale` crashes in certain folders,
 ## make sure there are no files/folders with an invalid btime.
