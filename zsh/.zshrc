@@ -1,3 +1,5 @@
+# vim:ft=zsh:ts=2:sw=2:
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -67,13 +69,13 @@ HIST_STAMPS="yyyy-mm-dd"
 #
 # PD oh-my-zsh (installed via arch linux)
 plugins=(
-    git
-    git-auto-fetch
-    archlinux
-    sudo
-    fzf
-    extract
-    emoji
+  git
+  git-auto-fetch
+  archlinux
+  sudo
+  fzf
+  extract
+  emoji
 )
 
 ZSH="/usr/share/oh-my-zsh"
@@ -82,7 +84,7 @@ source $ZSH/oh-my-zsh.sh
 
 # git plugin: Unset `gdu` alias (it's in conflict with the tool `gdu`)
 case $(type gdu) in
-    (*alias*) unalias gdu;;
+  (*alias*) unalias gdu;;
 esac
 
 # User configuration
@@ -114,7 +116,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
 
 # the-fuck (installed via arch linux)
 if (( ${+commands[thefuck]} )); then
-    eval $(thefuck --alias)
+  eval $(thefuck --alias)
 fi
 
 # broot (installed via arch linux)
@@ -137,17 +139,17 @@ export PATH="$PATH:/home/patrick/.dotnet/tools"
 # dotnet core completions: https://learn.microsoft.com/en-us/dotnet/core/tools/enable-tab-autocomplete#zsh
 _dotnet_zsh_complete()
 {
-    local completions=("$(dotnet complete "$words")")
+  local completions=("$(dotnet complete "$words")")
 
-    # If the completion is empty, just continue with filename selection
-    if [ -z "$completions" ]
-    then
-        _arguments '*::arguments: _normal'
-        return
-    fi
+  # If the completion is empty, just continue with filename selection
+  if [ -z "$completions" ]
+  then
+    _arguments '*::arguments: _normal'
+    return
+  fi
 
-    # This is not a variable assignment, don't remove spaces!
-    _values = "${(ps:\n:)completions}"
+  # This is not a variable assignment, don't remove spaces!
+  _values = "${(ps:\n:)completions}"
 }
 
 compctl -K _dotnet_zsh_complete dotnet
@@ -170,9 +172,9 @@ path=(~/.ghcup/bin $path)
 # NVM
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
 if [[ -a "/usr/share/nvm/nvm.sh" ]]; then
-    source /usr/share/nvm/nvm.sh
-    source /usr/share/nvm/bash_completion
-    source /usr/share/nvm/install-nvm-exec
+  source /usr/share/nvm/nvm.sh
+  source /usr/share/nvm/bash_completion
+  source /usr/share/nvm/install-nvm-exec
 fi
 
 # place this after nvm initialization!
@@ -199,27 +201,22 @@ load-nvmrc() {
 }
 # Only load nvm stuff if nvm is installed
 if [ -f /usr/share/nvm/nvm.sh ]; then
-    add-zsh-hook chpwd load-nvmrc
-    load-nvmrc
+  add-zsh-hook chpwd load-nvmrc
+  load-nvmrc
 fi
-
-# McFly (arch package: mcfly)
-#if [[ -r "/usr/share/doc/mcfly/mcfly.zsh" ]]; then
-#    source "/usr/share/doc/mcfly/mcfly.zsh"
-#fi
 
 # atuin (alternative to McFly)
 eval "$(atuin init zsh)"
 
 # arch package: starship-bin
 if (( ${+commands[starship]} )); then
-    eval "$(starship init zsh)"
+  eval "$(starship init zsh)"
 fi
 
 # NNN (file manager)
 if type nnn &> /dev/null; then
-    export NNN_FIFO=/tmp/nnn.fifo
-    export NNN_PLUG="p:preview-tui"
+  export NNN_FIFO=/tmp/nnn.fifo
+  export NNN_PLUG="p:preview-tui"
 fi
 
 # Ripgrep configuration
@@ -236,34 +233,33 @@ export RIPGREP_CONFIG_PATH=~/.dotfiles/.config/ripgrep/ripgreprc
 #
 # In the past I just manually entered the current time at the prompt. 
 # This saves me the hassle.
-
 typeset -U ssh_connected # flag indicating if an ssh connection is active
 
 precmd() {
-    if [[ -n "$ssh_connected" ]]; then
-        echo "SSH connection closed at: $(date +%T)"
-        ssh_connected=() # unset the flag
-    fi
+  if [[ -n "$ssh_connected" ]]; then
+    echo "SSH connection closed at: $(date +%T)"
+    ssh_connected=() # unset the flag
+  fi
 }
 
 ssh_with_logout_time() {
-    # When using kitty terminal: 
-    # I already aliased the 'ssh' command to use kitty's kittens feature.
-    # Therefore I need to check if we are currently using zsh in kitty.
-    if [ "$TERM" = "xterm-kitty" ]; then
-        command kitty +kitten ssh "$@"
-    else
-        command ssh "$@"
-    fi
+  # When using kitty terminal: 
+  # I already aliased the 'ssh' command to use kitty's kittens feature.
+  # Therefore I need to check if we are currently using zsh in kitty.
+  if [ "$TERM" = "xterm-kitty" ]; then
+    command kitty +kitten ssh "$@"
+  else
+    command ssh "$@"
+  fi
 
-    ssh_connected=1 # set the flag
+  ssh_connected=1 # set the flag
 }
 
 alias ssh="ssh_with_logout_time"
 
 # direnv https://direnv.net
 if [ -e "/usr/bin/direnv" ]; then
-    eval "$(direnv hook zsh)"
+  eval "$(direnv hook zsh)"
 fi
 
 # ------------------------------------------------------------------------------
@@ -278,7 +274,7 @@ export EDITOR="$VISUAL"
 
 # zoxide ----------------------------------------------------------------------
 if (( ${+commands[zoxide]} )); then
-    eval "$(zoxide init --cmd cd zsh)"
+  eval "$(zoxide init --cmd cd zsh)"
 fi
 
 # tmux history ----------------------------------------------------------------
