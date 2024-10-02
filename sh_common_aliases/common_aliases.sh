@@ -46,11 +46,6 @@ if [ "$TERM" = "xterm-kitty" ]; then
   alias ssh="kitty +kitten ssh"
 fi
 
-## dotnet stryker alias
-## Requires dotnet and openssl 1.1
-## See https://github.com/stryker-mutator/stryker-net/issues/2799#issuecomment-1868658083 for details
-alias stryker='export CLR_OPENSSL_VERSION_OVERRIDE=1.1 && dotnet stryker'
-
 # Custom aliases for current projects
 if [ -f ~/cloud/Nextcloud/klog-time-tracker/aliases.sh ]; then
   # shellcheck disable=SC1090
