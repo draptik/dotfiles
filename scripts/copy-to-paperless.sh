@@ -17,7 +17,7 @@ fi
 # This file should only contain the name of the VPN connection
 PAPERLESS_FILE="${HOME}/.my-paperless-inbox.txt"
 
-# Check if VPN_FILE exists
+# Check if PAPERLESS_FILE exists
 if [ ! -f "$PAPERLESS_FILE" ]; then
   echo "The file does not exist: $PAPERLESS_FILE"
   exit 1
