@@ -1,15 +1,4 @@
 # -*- mode: sh -*-
-
-# aliases for `colorls`
-## dark theme (default)
-alias lc='colorls -lAG --sd --gs'
-alias lct='colorls -lAG --sd --gs -t'    # sort by last-modified
-alias lctr='colorls -lAG --sd --gs -tr'  # sort by last-modified reverse
-
-# same, but `e` (e for Extended) at end also displays the group parameter (above -G suppresses the group parameter)
-alias lce='colorls -lA --sd --gs'
-alias lcte='colorls -lA --sd --gs -t'    # sort by last-modified
-alias lctre='colorls -lA --sd --gs -tr'  # sort by last-modified reverse
-
+#
 # McFly
 export MCFLY_LIGHT=FALSE
