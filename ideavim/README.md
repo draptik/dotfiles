@@ -1,6 +1,6 @@
 # IdeaVim
 
-IdeaVim is not Vim / NeoVim - it's independently reprogrammed for Jetbrains-IDEs. It offers many of the same features as the original.
+IdeaVim is reprogrammed for Jetbrains-IDEs (in Java). It offers many of the same features as the original.
 
 ## Configuration file
 
@@ -11,9 +11,10 @@ Link the desired configuration file (f. ex. `ideavimrc_experiment0`) to the `$HO
 ln -s ~/.dotfiles/ideavim/ideavimrc_experiment0 ~/.ideavimrc
 ```
 
-## Keybindings for JetBrains IDE (f. ex. Rider) actions
+## Keybindings for JetBrains IDE (f. ex. Rider) "Actions"
 
 Example:
+
 - `nmap <leader>fg <Action>(GotoFile)`
   - `<Action(*)` map IDE action `*`
 - How to get the name of the action?
@@ -22,6 +23,7 @@ Example:
 ## Resolving conflicts between IdeaVim and JetBrains (f. ex. Rider) default keybindings
 
 There are two ways to resolve keybinding conflicts between IDE and IdeaVim:
+
 - using the IDE: Settings -> Editor -> Vim. Choose preference in dropdown
 - defining the preference within the config file (`~/.ideavimrc`) using `sethandler`:
   - Example: `sethandler <c-k> a:vim` (This ensures that `c-k` is mapped to IdeaVim instead of the default IDE keybinding)
@@ -35,7 +37,7 @@ There are two ways to resolve keybinding conflicts between IDE and IdeaVim:
   - `commentary`
   - `surround`
 - Other plugins must be installed using the JetBrains Marketplace:
-  - `easymotion` (also requires `AceJumo`)
+  - `easymotion` (also requires `AceJump`)
   - `sneak`
   - `which-key`
 - Syntax: `set` vs `Plug` - both are equivalent. Here is an example:
