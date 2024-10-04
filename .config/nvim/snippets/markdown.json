@@ -1,0 +1,7 @@
+{
+  "bash code block": {
+    "prefix": "bash",
+    "body": ["```bash", "$1", "```"],
+    "description": "Insert a bash code block"
+  }
+}
