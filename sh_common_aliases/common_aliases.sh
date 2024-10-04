@@ -4,7 +4,6 @@
 # some more ls aliases
 alias ll='ls -lAF'
 alias la='ls -lAh'
-alias lt='ls -Alhrt'
 
 ## ripgrep, fd, and fzf
 ## https://bluz71.github.io/2018/06/07/ripgrep-fd-command-line-search-tools.html
@@ -20,6 +19,8 @@ alias screenshot='flameshot'
 ## make sure there are no files/folders with an invalid btime.
 ## This can be checked using `ls -altr --time=birth .`.
 alias l='eza --all --long --group --icons --git --git-repos --group-directories-first --color-scale'
+alias lt='l --sort=modified'
+alias ltr='lt --reverse'
 
 ## bat
 alias bat='bat --theme=ansi'
