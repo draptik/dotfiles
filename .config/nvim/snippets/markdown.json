@@ -3,5 +3,25 @@
     "prefix": "bash",
     "body": ["```bash", "$1", "```"],
     "description": "Insert a bash code block"
+  },
+  "sh code block": {
+    "prefix": "sh",
+    "body": ["```sh", "$1", "```"],
+    "description": "Insert a sh code block"
+  },
+  "json code block": {
+    "prefix": "json",
+    "body": ["```json", "$1", "```"],
+    "description": "Insert a json code block"
+  },
+  "fsharp code block": {
+    "prefix": "fsharp",
+    "body": ["```fsharp", "$1", "```"],
+    "description": "Insert a fsharp code block"
+  },
+  "csharp code block": {
+    "prefix": "csharp",
+    "body": ["```csharp", "$1", "```"],
+    "description": "Insert a csharp code block"
   }
 }
