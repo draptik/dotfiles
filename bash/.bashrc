@@ -103,8 +103,9 @@ source /usr/share/nvm/nvm.sh
 source /usr/share/nvm/bash_completion
 source /usr/share/nvm/install-nvm-exec
 
-## Exercism.io
-export PATH=$PATH:~/bin/
+# Custom scripts
+export PATH=$PATH:~/.config/$USER/
+export PATH=$PATH:~/.config/$USER-work/
 
 ## ranger file manager
 export RANGER_LOAD_DEFAULT_RC="FALSE"
@@ -126,4 +127,3 @@ source "${HOME}"/.config/broot/launcher/bash/br
 if [ -f "$HOME/.local/share/dnvm/env" ]; then
   . "$HOME/.local/share/dnvm/env"
 fi
-

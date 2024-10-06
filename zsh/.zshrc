@@ -161,9 +161,9 @@ unset JAVA_HOME
 # https://unix.stackexchange.com/a/62599/57915
 typeset -U path
 
-# add ~/bin to PATH
-path+=(~/bin)
-#path+=(~/.dotnet)
+# add custom script folders to PATH
+path+=(~/.config/$USER)
+path+=(~/.config/$USER-work)
 
 # Haskell ghcup
 # prepend to path (don't append)
