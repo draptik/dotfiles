@@ -29,6 +29,11 @@
     "body": ["```txt", "$1", "```"],
     "description": "Insert a txt code block"
   },
+  "markdown code block": {
+    "prefix": "markdown",
+    "body": ["```markdown", "$1", "```"],
+    "description": "Insert a markdown code block"
+  },
   "sql code block": {
     "prefix": "sql",
     "body": ["```sql", "$1", "```"],
