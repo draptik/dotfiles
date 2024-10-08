@@ -9,10 +9,30 @@
     "body": ["```sh", "$1", "```"],
     "description": "Insert a sh code block"
   },
+  "lua code block": {
+    "prefix": "lua",
+    "body": ["```lua", "$1", "```"],
+    "description": "Insert a lua code block"
+  },
   "json code block": {
     "prefix": "json",
     "body": ["```json", "$1", "```"],
     "description": "Insert a json code block"
+  },
+  "yaml code block": {
+    "prefix": "yaml",
+    "body": ["```yaml", "$1", "```"],
+    "description": "Insert a yaml code block"
+  },
+  "txt code block": {
+    "prefix": "txt",
+    "body": ["```txt", "$1", "```"],
+    "description": "Insert a txt code block"
+  },
+  "sql code block": {
+    "prefix": "sql",
+    "body": ["```sql", "$1", "```"],
+    "description": "Insert a sql code block"
   },
   "fsharp code block": {
     "prefix": "fsharp",
