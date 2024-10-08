@@ -4,7 +4,7 @@
 
 -- Markdown navigation ========================================================
 --
--- TODO These keybindings should only be active in markdown files. Maybe `after/ftplugin` or something similar?
+-- TODO: These keybindings should only be active in markdown files. Maybe `after/ftplugin` or something similar?
 --
 -- Idea from:
 --
