@@ -127,3 +127,38 @@ vim.keymap.set("n", "z;", function()
   vim.cmd("normal! zR")
   fold_markdown_headings({ 6, 5, 4 })
 end, { desc = "[P]Fold all headings level 4 or above" })
+
+-- Markdown links =============================================================
+--
+-- Inspired by:
+--
+-- https://github.com/linkarzu/dotfiles-latest/blob/f06a965f8545d9769d9f3be046c9960d5d168aef/neovim/neobean/lua/config/keymaps.lua#L1013
+--
+-- Summary:
+--
+-- `<leader>mll`: convert selection to markdown link
+-- `<leader>mlt`: convert selection to markdown link (new tab)
+--
+-- Usage:
+--
+-- - Copy a link from somewhere (i.e. browser)
+-- - Select word in visual mode (for example: `ve` to select a word)
+-- - Execute keybinding `<leader>mll` or `<leader>mlt`
+
+vim.keymap.set("v", "<leader>mll", function()
+  vim.cmd("let @a = getreg('+')")
+  vim.cmd("normal d")
+  vim.api.nvim_put({ "[]()" }, "c", false, true)
+  vim.cmd("normal! F[pf(")
+  vim.cmd("call setreg('+', @a)")
+  vim.cmd("normal p")
+end, { desc = "[P]Convert to link" })
+
+vim.keymap.set("v", "<leader>mlt", function()
+  vim.cmd("let @a = getreg('+')")
+  vim.cmd("normal d")
+  vim.api.nvim_put({ '[](){:target="_blank"} ' }, "c", false, true)
+  vim.cmd("normal F[pf(")
+  vim.cmd("call setreg('+', @a)")
+  vim.cmd("normal p")
+end, { desc = "[P]Convert to link (new tab)" })
