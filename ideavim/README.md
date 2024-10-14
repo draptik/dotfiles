@@ -1,9 +1,8 @@
 # IdeaVim
 
-IdeaVim is reprogrammed for Jetbrains-IDEs (in Java). It offers many of the same features as the original.
+IdeaVim is a VIM engine for Jetbrains-IDEs (written in Java). It offers many of the same features as the original.
 
 ## Configuration file
-
 
 Link the desired configuration file (f. ex. `ideavimrc_experiment0`) to the `$HOME` directory:
 
@@ -33,9 +32,11 @@ There are two ways to resolve keybinding conflicts between IDE and IdeaVim:
 - Overview of available [IdeaVim Plugins](https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins)
 - There seem to be more plugins available:
   - [CamelCasePlugin](https://github.com/netnexus/camelcaseplugin)
-- Some plugins are integrated in IdeaVim:
+- Some plugins are bundled with IdeaVim:
   - `commentary`
   - `surround`
+  - `highlightedyank`
+  - `nerdtree`
 - Other plugins must be installed using the JetBrains Marketplace:
   - `easymotion` (also requires `AceJump`)
   - `sneak`
@@ -54,4 +55,4 @@ There are two ways to resolve keybinding conflicts between IDE and IdeaVim:
 - [A practical IdeaVim setup for IntelliJ IDEA](https://medium.com/@dbilici/a-practical-ideavim-setup-for-intellij-idea-cf74222e7b45)
 - [A practical IdeaVim setup for IntelliJ IDEA (config file)](hhttps://github.com/dbilici/IdeaVim/blob/main/.ideavimrc)
 - [YT: IdeaVim Casts](https://www.youtube.com/playlist?list=PLYDrCnplQfmG2aoNeu5_RP3GfcBiD1wl7)
-
+- [The ultimate IdeaVim setup](https://www.cyberwizard.io/posts/the-ultimate-ideavim-setup/)
