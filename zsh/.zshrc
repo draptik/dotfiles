@@ -293,3 +293,8 @@ export PATH="$PATH:$HOME/.nix-profile/bin"
 if (( ${+commands[klog]} )); then
   source <(klog completion -c zsh)
 fi
+
+# Rust ------------------------------------------------------------------------
+if [ -d "$HOME/.cargo/bin" ]; then
+  export PATH="$PATH:$HOME/.cargo/bin"
+fi
