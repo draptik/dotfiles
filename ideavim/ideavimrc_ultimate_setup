@@ -226,4 +226,5 @@ nmap <leader>Q <Action>(IdeaVim.ReloadVimRc.reload)
 " Hide NERDTree
 " Collapse Methods
 " more collapse functions
-" 
+" Navigate between IDE windows (Git, Code, Tests)
+" Close other IDE windows (Git, Tests, etc)
