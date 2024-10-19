@@ -1,5 +1,10 @@
 return {
   {
+    "miikanissi/modus-themes.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
     "folke/tokyonight.nvim",
     lazy = false,
     opts = {
@@ -9,6 +14,13 @@ return {
       on_colors = function(colors)
         colors.border = "#565f89"
       end,
+    },
+  },
+
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "modus",
     },
   },
 }
