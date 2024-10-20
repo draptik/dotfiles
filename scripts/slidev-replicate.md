@@ -35,3 +35,4 @@ The [bash script](./slidev-replicate.bash) currently handles everything except t
   - logo
   - qr code
 - token handling
+- I still have to add the newly generated repo to the `SLIDEV_TOKEN` manually. This implies that the first run will always fail.
