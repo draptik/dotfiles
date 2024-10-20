@@ -1,4 +1,9 @@
 #!/bin/bash
+##
+## The script automates setting up a new GitHub repository and branch to deploy Slidev presentations via GitHub Pages.
+## It streamlines the process by validating inputs, creating the repository, setting up a local branch,
+## and generating a GitHub Actions workflow for automated deployment.
+## This reduces manual setup, ensures consistent configuration, and guides users on managing deployment permissions.
 
 # Exit script if any command fails
 set -euo pipefail
