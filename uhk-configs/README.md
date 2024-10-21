@@ -18,3 +18,4 @@ Modifications:
 - activate double-tap for mod-key
   - this should reduce the pain during text-selection with ctrl+shift+alt and arrow key movement
 - First macro: "linux toggle vpn" (mapped to `Fn+v`)
+- Disable mouse toggle. Instead re enable RShift and RControl. Also change backlight color of those keys back to white.
