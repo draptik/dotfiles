@@ -1,9 +1,9 @@
 return {
-  {
-    "miikanissi/modus-themes.nvim",
-    lazy = false,
-    priority = 1000,
-  },
+  -- {
+  --   "miikanissi/modus-themes.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  -- },
   {
     "folke/tokyonight.nvim",
     lazy = false,
@@ -20,7 +20,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "modus",
+      colorscheme = "tokyonight",
     },
   },
 }
