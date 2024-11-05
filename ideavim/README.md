@@ -2,6 +2,20 @@
 
 IdeaVim is a VIM engine for Jetbrains-IDEs (written in Java). It offers many of the same features as the original.
 
+## Audience
+
+There are 2 types of people using IdeaVim. Power users of:
+
+- JetBrains IDEs
+- (N)Vim
+
+Both groups will want to continue using keyboard shortcuts they are used to.
+
+## Jetbrains power keybindings don't have to be remapped
+
+- `Alt+Enter`: still works!
+- As long as the 'Jetbrains' keybinding does not conflict with any Vim keybindings it will work.
+
 ## Configuration file
 
 Link the desired configuration file (f. ex. `ideavimrc_experiment0`) to the `$HOME` directory:

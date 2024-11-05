@@ -43,6 +43,9 @@ let g:WhichKey_CommandColor = "#41ead4"
 let g:WhichKey_PrefixColor = "#f335b2"
 let g:WhichKey_SortOrder = "by_key_prefix_first"
 
+" The key `g` lists all keys
+let g:WhichKey_ShowVimActions = "true"
+
 let g:WhichKeyDesc_leader = "<leader> Leader key"
 
 "" Key mappings
@@ -97,15 +100,16 @@ map <leader>c <Action>(CommentByLineComment)
 let g:WhichKeyDesc_comment = "<leader>c Comment line"
 
 " Jump around with easymotion -----------------------------
-map <leader>j <Plug>(easymotion-s)
+" map <leader>j <Plug>(easymotion-s)
+map s <Plug>(easymotion-s)
 
-let g:WhichKeyDesc_easymotion = "<leader>j Jump with Easymotion"
+let g:WhichKeyDesc_easymotion = "s Jump with Easymotion"
 " let g:WhichKeyDesc_easymotion_prefix = "<leader><leader>"
 
 " Open NERDTree (use q to exit) ---------------------------
 map <leader>x :NERDTreeToggle<CR>
 
-let g:WhichKeyDesc_NerdTree_toggle = "<leader>x Toggle NerdTree""
+let g:WhichKeyDesc_NerdTree_toggle = "<leader>x Toggle NerdTree (Solution Explorer)"
 
 " Folding -------------------------------------------------
 map <leader>zc <Action>(CollapseAllRegions)
@@ -138,12 +142,13 @@ let g:WhichKeyDesc_df_mode = "<leader>dd Toggle Distraction-Free mode"
 let g:WhichKeyDesc_fullscreen = "<leader>df Toggle full screen"
 
 " Actions -------------------------------------------------
+" TODO Check if we really need this. Default IntelliJ keybindings still work.
 map <leader>am <Action>(ShowIntentionActions)
 map <leader>as <Action>(SearchEverywhere)
 
 let g:WhichKeyDesc_action= "<leader>a Actions"
-let g:WhichKeyDesc_action_context_menu = "<leader>am Open context menu"
-let g:WhichKeyDesc_action_search = "<leader>as Open command modal"
+let g:WhichKeyDesc_action_context_menu = "<leader>am Open context menu (Alt+Enter)"
+let g:WhichKeyDesc_action_search = "<leader>as Search Everywhere (Ctrl+t)"
 
 " File navigation -----------------------------------------
 " (I don't use most of these -> SearchEverywhere is fine for me)
