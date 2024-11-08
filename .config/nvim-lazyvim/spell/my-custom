@@ -1,4 +1,5 @@
 AUR
+CLI
 IdeaVim
 JSON
 LazyVim
@@ -9,6 +10,7 @@ Proxmox
 SBC
 SSD
 ShellCheck
+Slidev
 TLDR
 TODO
 TODOs
@@ -22,5 +24,3 @@ dotnet
 fanless
 hypervisor
 reddit
-CLI
-Slidev
