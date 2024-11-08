@@ -3,7 +3,8 @@ return {
     "MeanderingProgrammer/render-markdown.nvim",
     opts = {
       heading = {
-        -- icons = { "󰲡 ", "󰲣 ", "󰲥 ", "󰲧 ", "󰲩 ", "󰲫 " },
+        icons = { "󰲡 ", "󰲣 ", "󰲥 ", "󰲧 ", "󰲩 ", "󰲫 " },
+        position = "inline",
       },
     },
   },
