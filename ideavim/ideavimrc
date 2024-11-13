@@ -132,7 +132,7 @@ let g:WhichKeyDesc_window_split_move_editor = "<leader>wm Move editor to opposit
 
 " Display options -----------------------------------------
 " NOTE: Zen mode = DistractionFreeMode + Fullscreen. This has no effect when
-" using a tiling manager like SwayVM.
+" using a tiling manager like SwayWM.
 map <leader>dd <Action>(ToggleDistractionFreeMode)
 map <leader>dz <Action>(ToggleZenMode)
 map <leader>df <Action>(ToggleFullScreen)
