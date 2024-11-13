@@ -136,11 +136,13 @@ let g:WhichKeyDesc_window_split_move_editor = "<leader>wm Move editor to opposit
 map <leader>dd <Action>(ToggleDistractionFreeMode)
 map <leader>dz <Action>(ToggleZenMode)
 map <leader>df <Action>(ToggleFullScreen)
+map <leader>dh <Action>(HideAllWindows)
 
 let g:WhichKeyDesc_display = "<leader>d Display options"
 let g:WhichKeyDesc_zen_mode = "<leader>dz Toggle Zen mode"
 let g:WhichKeyDesc_df_mode = "<leader>dd Toggle Distraction-Free mode"
 let g:WhichKeyDesc_fullscreen = "<leader>df Toggle full screen"
+let g:WhichKeyDesc_hide_all_windows = "<leader>dh Hide all (other) windows"
 
 " Actions -------------------------------------------------
 " TODO: Check if we really need this. Default IntelliJ keybindings still work.
