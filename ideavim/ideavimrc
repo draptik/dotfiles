@@ -100,7 +100,6 @@ map <leader>c <Action>(CommentByLineComment)
 let g:WhichKeyDesc_comment = "<leader>c Comment line"
 
 " Jump around with easymotion -----------------------------
-" map <leader>j <Plug>(easymotion-s)
 map s <Plug>(easymotion-s)
 
 let g:WhichKeyDesc_easymotion = "s Jump with Easymotion"
@@ -121,7 +120,7 @@ let g:WhichKeyDesc_unfold_all = "<leader>zo Unfold all regions"
 
 " Window splits -------------------------------------------
 map <leader>wv <Action>(SplitVertically)
-map <leader>ws <Action>(SplitHorizontally)
+map <leader>wh <Action>(SplitHorizontally)
 map <leader>wu <Action>(Unsplit)
 map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
 
@@ -132,6 +131,8 @@ let g:WhichKeyDesc_window_split_unsplit = "<leader>wu Unsplit"
 let g:WhichKeyDesc_window_split_move_editor = "<leader>wm Move editor to opposite tab group"
 
 " Display options -----------------------------------------
+" NOTE: Zen mode = DistractionFreeMode + Fullscreen. This has no effect when
+" using a tiling manager like SwayVM.
 map <leader>dd <Action>(ToggleDistractionFreeMode)
 map <leader>dz <Action>(ToggleZenMode)
 map <leader>df <Action>(ToggleFullScreen)
@@ -142,7 +143,7 @@ let g:WhichKeyDesc_df_mode = "<leader>dd Toggle Distraction-Free mode"
 let g:WhichKeyDesc_fullscreen = "<leader>df Toggle full screen"
 
 " Actions -------------------------------------------------
-" TODO Check if we really need this. Default IntelliJ keybindings still work.
+" TODO: Check if we really need this. Default IntelliJ keybindings still work.
 map <leader>am <Action>(ShowIntentionActions)
 map <leader>as <Action>(SearchEverywhere)
 
@@ -151,7 +152,7 @@ let g:WhichKeyDesc_action_context_menu = "<leader>am Open context menu (Alt+Ente
 let g:WhichKeyDesc_action_search = "<leader>as Search Everywhere (Ctrl+t)"
 
 " File navigation -----------------------------------------
-" (I don't use most of these -> SearchEverywhere is fine for me)
+" NOTE: I don't use most of these -> SearchEverywhere is fine for me
 map <leader><leader> <Action>(RecentFiles)
 " map <leader>ff <Action>(GotoFile)
 " map <leader>fr <Action>(RecentFiles)
