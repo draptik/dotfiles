@@ -110,6 +110,12 @@ map <leader>x :NERDTreeToggle<CR>
 
 let g:WhichKeyDesc_NerdTree_toggle = "<leader>x Toggle NerdTree (Solution Explorer)"
 
+" Formatting ----------------------------------------------
+map <leader>ec <Action>(CodeCleanup)
+
+let g:WhichKeyDesc_cleanup = "<leader>e Code CleanupUp (using Rider's memnotic)..."
+let g:WhichKeyDesc_cleanup_cleanup = "<leader>ec Code CleanupUp..."
+
 " Folding -------------------------------------------------
 map <leader>zc <Action>(CollapseAllRegions)
 map <leader>zo <Action>(ExpandAllRegions)
@@ -218,12 +224,12 @@ let g:WhichKeyDesc_git_status = "<leader>Gs Open Git status dialog"
 let g:WhichKeyDesc_git_branches = "<leader>Gb Open Git branches list"
 
 " Errors --------------------------------------------------
-map <leader>en <Action>(ReSharperGotoNextErrorInSolution)
-map <leader>ep <Action>(ReSharperGotoPrevErrorInSolution)
+map <leader>En <Action>(ReSharperGotoNextErrorInSolution)
+map <leader>Ep <Action>(ReSharperGotoPrevErrorInSolution)
 
-let g:WhichKeyDesc_errors = "<leader>e Error navigation"
-let g:WhichKeyDesc_errors_next = "<leader>en Go to next error in solution"
-let g:WhichKeyDesc_errors_prev = "<leader>ep Go to previous error in solution"
+let g:WhichKeyDesc_errors = "<leader>E Error navigation"
+let g:WhichKeyDesc_errors_next = "<leader>En Go to next error in solution"
+let g:WhichKeyDesc_errors_prev = "<leader>Ep Go to previous error in solution"
 
 " Unit Testing --------------------------------------------
 nmap <leader>ur <Action>(RiderUnitTestRunContextAction)
