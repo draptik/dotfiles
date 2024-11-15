@@ -44,7 +44,7 @@ let g:WhichKey_PrefixColor = "#f335b2"
 let g:WhichKey_SortOrder = "by_key_prefix_first"
 
 " The key `g` lists all keys
-let g:WhichKey_ShowVimActions = "true"
+" let g:WhichKey_ShowVimActions = "true"
 
 let g:WhichKeyDesc_leader = "<leader> Leader key"
 
