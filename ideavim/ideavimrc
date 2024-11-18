@@ -151,13 +151,14 @@ let g:WhichKeyDesc_fullscreen = "<leader>df Toggle full screen"
 let g:WhichKeyDesc_hide_all_windows = "<leader>dh Hide all (other) windows"
 
 " Actions -------------------------------------------------
-" TODO: Check if we really need this. Default IntelliJ keybindings still work.
 map <leader>am <Action>(ShowIntentionActions)
 map <leader>as <Action>(SearchEverywhere)
+map <leader>ae <Action>(EditorSelectWord)
 
-let g:WhichKeyDesc_action= "<leader>a Actions"
+let g:WhichKeyDesc_action = "<leader>a Actions"
 let g:WhichKeyDesc_action_context_menu = "<leader>am Open context menu (Alt+Enter)"
 let g:WhichKeyDesc_action_search = "<leader>as Search Everywhere (Ctrl+t)"
+let g:WhichKeyDesc_action_extend_selection = "<leader>ae Extend selection (Ctrl+w)"
 
 " File navigation -----------------------------------------
 " NOTE: I don't use most of these -> SearchEverywhere is fine for me
@@ -186,6 +187,7 @@ map <leader>rv <Action>(IntroduceVariable)
 map <leader>rf <Action>(IntroduceField)
 map <leader>rs <Action>(ChangeSignature)
 map <leader>rx <Action>(Refactorings.QuickListPopupAction)
+map <leader>ri <Action>(Inline)
 
 let g:WhichKeyDesc_refactoring = "<leader>r Refactoring menu"
 let g:WhichKeyDesc_refactoring_rename = "<leader>rr Rename element"
@@ -194,6 +196,7 @@ let g:WhichKeyDesc_refactoring_variable = "<leader>rv Introduce variable"
 let g:WhichKeyDesc_refactoring_field = "<leader>rf Introduce field"
 let g:WhichKeyDesc_refactoring_signature = "<leader>rs Change signature"
 let g:WhichKeyDesc_refactoring_all = "<leader>rx Open refactorings list"
+let g:WhichKeyDesc_refactoring_inline = "<leader>ri Inline"
 
 " Go to code ----------------------------------------------
 nmap <leader>gd <Action>(GotoDeclaration)
