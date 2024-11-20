@@ -31,6 +31,7 @@ set surround
 set highlightedyank
 set sneak
 set nerdtree
+set vim-paragraph-motion
 
 " Easymotion settings
 set easymotion
@@ -251,6 +252,3 @@ let g:WhichKeyDesc_reload_config = "<leader>Q Reload IdeaVim config"
 
 " TODO
 " Collapse Methods
-" more collapse functions
-" Navigate between IDE windows (Git, Code, Tests)
-" Close other IDE windows (Git, Tests, etc)
