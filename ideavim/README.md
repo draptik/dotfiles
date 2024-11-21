@@ -60,6 +60,41 @@ There are two ways to resolve keybinding conflicts between IDE and IdeaVim:
   - `Plug 'easymotion/vim-easymotion'`
   - The former is shorter, the later has the advantage that it includes the git repo which makes looking up the documentation easier.
 
+## surround Plugin usage
+
+Documentation: <https://github.com/tpope/vim-surround/blob/master/doc/surround.txt>
+
+In example below, `*` indicates the cursor position.
+
+### Delete surroundings: `ds`
+
+```txt
+x
+Old text                  Command     New text ~
+"Hello *world!"           ds"         Hello world!
+(123+4*56)/2              ds)         123+456/2
+<div>Yo!*</div>           dst         Yo!
+```
+
+### Change surroundings: `cs`
+
+```txt
+Old text                  Command     New text ~
+"Hello *world!"           cs"'        'Hello world!'
+"Hello *world!"           cs"<q>      <q>Hello world!</q>
+(123+4*56)/2              cs)]        [123+456]/2
+(123+4*56)/2              cs)[        [ 123+456 ]/2
+<div>Yo!*</div>           cst<p>      <p>Yo!</p>
+```
+
+### Add surroundings: `ys`
+
+```txt
+Old text                  Command     New text ~
+Hello w*orld!             ysiw)       Hello (world)!
+     Hello w*orld!        yssB            {Hello world!}
+```
+
 ## Resources
 
 - [IdeaVim Marketing](https://lp.jetbrains.com/ideavim/)
