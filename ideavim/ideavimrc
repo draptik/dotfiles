@@ -245,6 +245,12 @@ let g:WhichKeyDesc_unit_testing_run_test = "<leader>ur Run unit test"
 let g:WhichKeyDesc_unit_testing_debug_test = "<leader>ud Debug unit test"
 let g:WhichKeyDesc_unit_testing_run_all_tests = "<leader>ul Run all unit tests"
 
+" F# Interactive -----------------------------------------
+map <leader>Fi <Action>(IntentionActionAsAction_com.jetbrains.rider.plugins.fsharp.services.fsi.SendLineToFsiIntentionAction)
+
+let g:WhichKeyDesc_FInteractive = "<leader>F FSharp Interactive"
+let g:WhichKeyDesc_FInteractive_send_line = "<leader>Fi Send line to FSharp Interactive"
+
 " Reload IdeaVim Config -----------------------------------
 nmap <leader>Q <Action>(IdeaVim.ReloadVimRc.reload)
 
