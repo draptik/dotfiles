@@ -79,7 +79,9 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Execute macro saved in 'q' register
-nnoremap qj @q
+" Excluding this for now, because on my keyboard the escape-key is accessed with a modifier key, and sometimes
+" I make a mistake while typing, which places me in the macro recording mode...
+" nnoremap qj @q
 
 " IDE interaction
 nmap <C-m> <Action>(ShowPopupMenu)
