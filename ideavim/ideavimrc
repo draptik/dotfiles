@@ -8,7 +8,7 @@
 
 set scrolloff=10
 set linenumber
-set relativenumber
+" set relativenumber
 set showmode
 set showcmd
 
