@@ -52,3 +52,5 @@ if [ -f ~/cloud/Nextcloud/klog-time-tracker/aliases.sh ]; then
   # shellcheck disable=SC1090
   . ~/cloud/Nextcloud/klog-time-tracker/aliases.sh
 fi
+
+alias task='go-task'
