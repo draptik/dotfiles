@@ -54,3 +54,9 @@ if [ -f ~/cloud/Nextcloud/klog-time-tracker/aliases.sh ]; then
 fi
 
 alias task='go-task'
+
+# PNPM
+if [ -d "$HOME/.local/share/pnpm" ]; then
+  export PNPM_HOME="$HOME/.local/share/pnpm"
+  export PATH="$PNPM_HOME:$PATH"
+fi
