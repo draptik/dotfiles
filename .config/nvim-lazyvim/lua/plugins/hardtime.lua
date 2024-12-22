@@ -12,16 +12,6 @@ return {
       { "j", 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"' },
       { "k", 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"' },
     },
-
-    -- TODO disable left/right arrow key warning when in insert mode ("i")
-    -- See https://github.com/m4xshen/hardtime.nvim/discussions/107
-    -- TODO This Doesn't work:
-    -- opts = {
-    --   disabled_keys = {
-    --     ["<Left>"] = {},
-    --     ["<Right>"] = {},
-    --   },
-    -- },
     opts = {},
   },
 }
