@@ -6,7 +6,7 @@
 "" Base Settings
 "" ========================================================
 
-set scrolloff=5
+set scrolloff=2
 set linenumber
 " set relativenumber
 set showmode
