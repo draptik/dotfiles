@@ -120,12 +120,18 @@ let g:WhichKeyDesc_cleanup = "<leader>e Code CleanupUp (using Rider's memnotic).
 let g:WhichKeyDesc_cleanup_cleanup = "<leader>ec Code CleanupUp..."
 
 " Folding -------------------------------------------------
-map <leader>zc <Action>(CollapseAllRegions)
-map <leader>zo <Action>(ExpandAllRegions)
+" map <leader>zc <Action>(CollapseAllRegions)
+" map <leader>zo <Action>(ExpandAllRegions)
+map <leader>zd <Action>(RiderCollapseToDefinitions)
+map <leader>zc <Action>(CollapseRegion)
+map <leader>ze <Action>(ExpandRegion)
 
 let g:WhichKeyDesc_fold = "<leader>z Folding"
-let g:WhichKeyDesc_fold_all = "<leader>zc Fold all regions"
-let g:WhichKeyDesc_unfold_all = "<leader>zo Unfold all regions"
+" let g:WhichKeyDesc_fold_all = "<leader>zc Fold all regions"
+" let g:WhichKeyDesc_unfold_all = "<leader>zo Unfold all regions"
+let g:WhichKeyDesc_collapse_to_definitions = "<leader>zd Collapse to definitions"
+let g:WhichKeyDesc_collapse_region = "<leader>zc Collapse region"
+let g:WhichKeyDesc_expand_region = "<leader>ze Expand region"
 
 " Window splits -------------------------------------------
 map <leader>wv <Action>(SplitVertically)
