@@ -33,6 +33,10 @@ require("lazy").setup({
   -- install = { colorscheme = { "modus-vivendi", "tokyonight" } },
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
+    check = {
+      enabled = true,
+      interval = 86400, -- 24 hours in seconds
+    },
     rtp = {
       -- disable some rtp plugins
       disabled_plugins = {
