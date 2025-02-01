@@ -119,6 +119,11 @@ map <leader>ec <Action>(CodeCleanup)
 let g:WhichKeyDesc_cleanup = "<leader>e Code CleanupUp (using Rider's memnotic)..."
 let g:WhichKeyDesc_cleanup_cleanup = "<leader>ec Code CleanupUp..."
 
+" Extend selection ----------------------------------------
+" I use this a lot in Rider
+nmap <C-w> <Action>(EditorSelectWord)
+sethandler <C-w> a:ide
+
 " Folding -------------------------------------------------
 " map <leader>zc <Action>(CollapseAllRegions)
 " map <leader>zo <Action>(ExpandAllRegions)
@@ -162,12 +167,10 @@ let g:WhichKeyDesc_hide_all_windows = "<leader>dh Hide all (other) windows"
 " Actions -------------------------------------------------
 map <leader>am <Action>(ShowIntentionActions)
 map <leader>as <Action>(SearchEverywhere)
-map <leader>ae <Action>(EditorSelectWord)
 
 let g:WhichKeyDesc_action = "<leader>a Actions"
 let g:WhichKeyDesc_action_context_menu = "<leader>am Open context menu (Alt+Enter)"
 let g:WhichKeyDesc_action_search = "<leader>as Search Everywhere (Ctrl+t)"
-let g:WhichKeyDesc_action_extend_selection = "<leader>ae Extend selection (Ctrl+w)"
 
 " File navigation -----------------------------------------
 " NOTE: I don't use most of these -> SearchEverywhere is fine for me
