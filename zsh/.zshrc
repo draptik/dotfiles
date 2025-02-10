@@ -132,6 +132,7 @@ source ~/.dotfiles/sh_common_aliases/common_aliases.sh
 #export PATH=$PATH:/opt/dotnet
 #export DOTNET_ROOT="$(dirname $(which dotnet))"
 #export DOTNET_ROOT=/opt/dotnet
+export DOTNET_ROOT=/usr/share/dotnet
 
 # Add .NET Core SDK tools
 export PATH="$PATH:/home/patrick/.dotnet/tools"
