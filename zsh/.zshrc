@@ -299,3 +299,10 @@ fi
 if [ -d "$HOME/.cargo/bin" ]; then
   export PATH="$PATH:$HOME/.cargo/bin"
 fi
+
+# jujutsu (jj) ----------------------------------------------------------------
+if (( ${+commands[jj]} )); then
+  autoload -U compinit
+  compinit
+  source <(jj util completion zsh)
+fi
