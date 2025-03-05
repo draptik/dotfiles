@@ -268,6 +268,3 @@ let g:WhichKeyDesc_FInteractive_send_selection = "<leader>Fs Send selection to F
 nmap <leader>Q <Action>(IdeaVim.ReloadVimRc.reload)
 
 let g:WhichKeyDesc_reload_config = "<leader>Q Reload IdeaVim config"
-
-" TODO
-" Collapse Methods
