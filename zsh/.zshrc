@@ -175,7 +175,7 @@ path=(~/.ghcup/bin $path)
 if [[ -a "/usr/share/nvm/nvm.sh" ]]; then
   source /usr/share/nvm/nvm.sh
   source /usr/share/nvm/bash_completion
-  source /usr/share/nvm/install-nvm-exec
+  #source /usr/share/nvm/install-nvm-exec
 fi
 
 # place this after nvm initialization!
