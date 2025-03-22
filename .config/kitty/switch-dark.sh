@@ -6,10 +6,10 @@ echo 'export KITTY_THEME="DARK"' >~/.zshenv
 kitty @ set-background-opacity 1
 
 ## This line must be executed from within kitty
-kitty @ set-colors -a ~/.config/kitty/kitty-themes/themes/Tango_Dark.conf
+kitty @ set-colors -a ~/.config/kitty/kitty-themes/themes/gruvbox_dark.conf
 
 ln -sf \
-  ~/.dotfiles/.config/kitty/kitty-themes/themes/Tango_Dark.conf \
+  ~/.dotfiles/.config/kitty/kitty-themes/themes/gruvbox_dark.conf \
   ~/.dotfiles/.config/kitty/theme.conf
 
 ~/.dotfiles/sh_common_aliases/switch-to-dark.sh

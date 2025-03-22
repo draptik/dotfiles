@@ -1,17 +1,17 @@
 #!/bin/sh
 
-echo 'export KITTY_THEME="LIGHT"' > ~/.zshenv
+echo 'export KITTY_THEME="LIGHT"' >~/.zshenv
 
 # This script must be executed from within kitty
 # Light background is used in presentations: so no opacity!
 kitty @ set-background-opacity 1
 
 # This script must be executed from within kitty
-kitty @ set-colors -a ~/.config/kitty/kitty-themes/mythemes/Tango_Light_patched.conf
+kitty @ set-colors -a ~/.config/kitty/kitty-themes/themes/gruvbox_light.conf
 
 ln -sf \
-    ~/.dotfiles/.config/kitty/kitty-themes/mythemes/Tango_Light_patched.conf \
-    ~/.dotfiles/.config/kitty/theme.conf
+  ~/.dotfiles/.config/kitty/kitty-themes/themes/gruvbox_light.conf \
+  ~/.dotfiles/.config/kitty/theme.conf
 
 # switch shell aliases
 ~/.dotfiles/sh_common_aliases/switch-to-light.sh
@@ -20,7 +20,7 @@ ln -sf \
 ~/.dotfiles/.config/ranger/switch-to-kitty-light.sh
 
 ## "Sourcing" `source ~/.zshrc` didn't work. Use `exec /bin/zsh` instead:
-exec /bin/zsh 
+exec /bin/zsh
 
 ## Same for bash...
 exec /bin/bash
