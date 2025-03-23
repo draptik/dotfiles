@@ -9,3 +9,6 @@ ln -sf "${DIR}"/../.config/btop/btop_light.conf "${DIR}"/../.config/btop/btop.co
 
 # switch klog's theme
 ln -sf "${DIR}"/../.config/klog/klog_light.ini "${DIR}"/../.config/klog/config.ini
+
+# switch eza
+ln -sf "${DIR}"/../.config/eza/theme-light.yml "${DIR}"/../.config/eza/theme.yml
