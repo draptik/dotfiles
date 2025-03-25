@@ -1,7 +1,7 @@
 profile laptop-work-homeoffice {
-    output eDP-1 enable mode 3840x2400 position 0,0    scale 2
-    output "Dell Inc. DELL U2720Q 69D3W13"  mode 3840x2160 position 1920,0 scale 2
-    output "Dell Inc. DELL U2720Q 850WV13"  mode 3840x2160 position 3840,0 scale 2
+    output eDP-1 enable mode 3840x2400 position 0,0    scale 2.4
+    output "Dell Inc. DELL U2720Q 69D3W13"  mode 3840x2160 position 1920,0 scale 2.2
+    output "Dell Inc. DELL U2720Q 850WV13"  mode 3840x2160 position 3840,0 scale 2.2
     exec swaymsg workspace 1, move workspace to eDP-1
     exec swaymsg workspace 2, move workspace to output '"Dell Inc. DELL U2720Q 69D3W13"'
     exec swaymsg workspace 7, move workspace to output '"Dell Inc. DELL U2720Q 850WV13"'
