@@ -33,5 +33,5 @@ profile laptop-presenter {
     exec swaymsg workspace 9, move workspace to output HDMI-A-1
 }
 profile laptop-work-no-external-monitors {
-    output eDP-1 mode 3840x2400 position 0,0    scale 2
+    output eDP-1 mode 3840x2400 position 0,0    scale 2.4
 }
