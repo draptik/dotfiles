@@ -54,10 +54,14 @@ let g:WhichKeyDesc_leader = "<leader> Leader key"
 
 " inoremap jk <Esc>
 
+" Disable search highlighting when pressing Esc
+nnoremap <Esc> :nohl<CR>
+
 " Tab navigation
 nmap <C-n> <Action>(NextTab)
 nmap <C-p> <Action>(PreviousTab)
 sethandler <C-n> a:vim
+
 sethandler <C-p> a:vim
 
 " Pane navigation
