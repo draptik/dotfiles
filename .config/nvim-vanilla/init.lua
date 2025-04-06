@@ -44,6 +44,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Lazyvim Plugin Manager =====================================================
+--
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
@@ -54,8 +56,11 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end --@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
+-- Plugins ====================================================================
+--
 require('lazy').setup({
 
+  -- Color Scheme
   {
     'folke/tokyonight.nvim',
     priority = 1000,
@@ -65,8 +70,10 @@ require('lazy').setup({
     end,
   },
 
+  -- Detect tabstops and shiftwidth automatically
   'tpope/vim-sleuth',
 
+  -- Which Key
   {
     'folke/which-key.nvim',
     events = 'VimEnter',
@@ -99,9 +106,22 @@ require('lazy').setup({
         { '<leader>s', group = '[S]earch' },
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle' },
-        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
     },
+  },
+
+  -- Mini plugins
+  {
+    'echasnovski/mini.nvim',
+    config = function()
+
+      -- Status line
+      local statusline = require 'mini.statusline'
+      statusline.setup { use_icons = vim.g.have_nerd_font }
+      statusline.section_location = function()
+        return '%2l:%-2v'
+      end
+    end,
   },
 
 })
