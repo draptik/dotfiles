@@ -124,6 +124,56 @@ require('lazy').setup({
     end,
   },
 
+  -- Mini.Icons
+  {
+    'echasnovski/mini.icons',
+    lazy = true,
+    opts = {
+      file = {
+        ['.keep'] = { glyph = '󰊢', hl = 'MiniIconsGrey' },
+        ['devcontainer.json'] = { glyph = '', hl = 'MiniIconsAzure' },
+      },
+      filetype = {
+        dotenv = { glyph = '', hl = 'MiniIconsYellow' },
+      },
+    },
+    init = function()
+      package.preload['nvim-web-devicons'] = function()
+        require('mini.icons').mock_nvim_web_devicons()
+        return package.loaded['nvim-web-devicons']
+      end
+    end,
+  },
+
+  -- Treesitter
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
+    main = 'nvim-treesitter.configs',
+    opts = {
+      ensure_installed = {
+        'bash',
+        'c',
+        'diff',
+        'html',
+        'lua',
+        'luadoc',
+        'markdown',
+        'markdown_inline',
+        'query',
+        'vim',
+        'vimdoc'
+      },
+      auto_install = true,
+      highlight = {
+        enable = true,
+      },
+      indent = {
+        enable = true,
+      },
+    },
+  },
+
 })
 
 -- vim: ts=2 sts=2 sw=2 et
