@@ -1,6 +1,6 @@
 # README
 
-This folder should be soft-linked to `~/.config/$USER`.
+This folder should be soft-linked from `~/.config/$USER`.
 
 Reasoning: Try to prevent cluttering the `$HOME` folder.
 
