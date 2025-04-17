@@ -42,8 +42,9 @@ internal_kb_disabled=false
 #
 #   homer ALL=(ALL) NOPASSWD: /usr/bin/tee
 set_backlight() {
-  echo "$1" | sudo tee "/sys/class/leds/$BACKLIGHT_DEVICE/brightness" >/dev/null
-  log "Set keyboard backlight to $1"
+  log "Skipping backlight function ..."
+  #echo "$1" | sudo tee "/sys/class/leds/$BACKLIGHT_DEVICE/brightness" >/dev/null
+  #log "Set keyboard backlight to $1"
 }
 
 disable_internal_keyboard() {
