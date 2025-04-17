@@ -1,0 +1,10 @@
+[Unit]
+Description=Toggle internal laptop keyboard when ZSA Voyager is connecting/disconnecting
+After=graphical-session.target
+
+[Service]
+ExecStart=%h/.dotfiles/zsa-voyager-configs/keyboard-monitor.sh
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
