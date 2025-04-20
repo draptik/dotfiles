@@ -32,15 +32,7 @@ fi
 
 # Internal keyboard identifier from swaymsg -t get_inputs
 INTERNAL_KB="1:1:AT_Translated_Set_2_keyboard"
-
-# How to determine the ZSA Voyager Id?
-#
-#   lsusb | grep -i voyager
-#
-# Example output:
-#
-#   Bus 007 Device 002: ID 3297:1977 ZSA Technology Labs Voyager
-VOYAGER_ID="3297:1977"
+VOYAGER_ID=$(lsusb | grep -i voyager | awk '{print $6}')
 
 # Backlight device name is located in `/sys/class/leds/`
 # Search for a folder containing "kbd_backlight"
