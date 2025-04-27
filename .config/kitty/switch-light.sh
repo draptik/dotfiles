@@ -7,10 +7,10 @@ echo 'export KITTY_THEME="LIGHT"' >~/.zshenv
 kitty @ set-background-opacity 1
 
 # This script must be executed from within kitty
-kitty @ set-colors -a ~/.config/kitty/kitty-themes/themes/gruvbox_light.conf
+kitty @ set-colors -a ~/.config/kitty/kitty-themes/themes/3024_Day.conf
 
 ln -sf \
-  ~/.dotfiles/.config/kitty/kitty-themes/themes/gruvbox_light.conf \
+  ~/.dotfiles/.config/kitty/kitty-themes/themes/3024_Day.conf \
   ~/.dotfiles/.config/kitty/theme.conf
 
 # switch shell aliases
