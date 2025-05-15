@@ -38,3 +38,8 @@ Light themes which work ok-ish with programs like `bat`, `ranger`, `colorls`, `e
 - Material
 - Tango Light
 - Tomorrow
+
+## Image preview
+
+- image preview will work in `tmux`
+- image preview requires `python-pillow`
