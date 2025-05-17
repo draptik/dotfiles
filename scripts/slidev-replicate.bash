@@ -95,7 +95,7 @@ EOF
 
 # Add and commit the new workflow file
 git add "$WORKFLOW_FILE"
-git commit -m "Add GitHub Actions workflow for branch '$BRANCH_NAME'"
+git commit -m "💚 chore(ci): add gitHub actions workflow for branch '$BRANCH_NAME'"
 
 # Push the workflow to the remote branch
 if ! git push origin "$BRANCH_NAME"; then
