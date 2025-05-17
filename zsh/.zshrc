@@ -307,7 +307,7 @@ if (( ${+commands[jj]} )); then
   source <(jj util completion zsh)
 fi
 
-# pay-respects
+# pay-respects ----------------------------------------------------------------
 if (( ${+commands[pay-respects]} )); then
   eval "$(pay-respects zsh)"
 fi
