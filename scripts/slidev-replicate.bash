@@ -63,41 +63,34 @@ jobs:
       PRESENTATION_FOLDER: 'presentation'
       TARGET_REPO_NAME: '$REPO_NAME'
       TARGET_GITHUB_OWNER: '$GITHUB_USER'
+      NODE_VERSION: 'lts/*'
 
     runs-on: ubuntu-latest
 
     steps:
-
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 'lts/*'
+          node-version: \${{ env.NODE_VERSION }}
 
       - name: Install dependencies
         run: |
           cd \${{ env.PRESENTATION_FOLDER }}
-          npm install
+          npm ci
 
-      - name: Install slidev
-        run: |
-          cd \${{ env.PRESENTATION_FOLDER }}
-          npm i -g @slidev/cli
-          npm i -g @slidev/theme-default unplugin-icons @iconify/json playwright-chromium
-
-      # Ensure to set the base directory to the current branch name
       - name: Build
         run: |
           cd \${{ env.PRESENTATION_FOLDER }}
-          slidev build --base '/\${{ env.TARGET_REPO_NAME }}/'
+          npm run build -- --base '/\${{ env.TARGET_REPO_NAME }}/'
 
       - name: Deploy to target repository
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: crazy-max/ghaction-github-pages@v4
         with:
-          single-commit: true
-          folder: \${{ env.PRESENTATION_FOLDER }}/dist # The folder the action should deploy
-          repository-name: '\${{ env.TARGET_GITHUB_OWNER }}/\${{ env.TARGET_REPO_NAME }}'
-          token: \${{ secrets.SLIDEV_TOKEN }}
+          build_dir: \${{ env.PRESENTATION_FOLDER }}/dist
+          repo: '\${{ env.TARGET_GITHUB_OWNER }}/\${{ env.TARGET_REPO_NAME }}'
+        env:
+          GITHUB_TOKEN: \${{ secrets.SLIDEV_TOKEN }}
 EOF
 
 # Add and commit the new workflow file
