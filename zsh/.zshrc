@@ -306,3 +306,8 @@ if (( ${+commands[jj]} )); then
   compinit
   source <(jj util completion zsh)
 fi
+
+# pay-respects
+if (( ${+commands[pay-respects]} )); then
+  eval "$(pay-respects zsh)"
+fi
