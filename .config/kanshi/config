@@ -19,7 +19,7 @@ profile laptop-work-homeoffice-single-monitor-right {
 
 profile laptop-work-homeoffice-single-portable-monitor-right {
     output eDP-1 enable mode 3840x2400 position 0,0    scale 2.4
-    output DP-2 mode 1920x1080 position 1920,0 scale 1
+    output DP-1 mode 1920x1080 position 1920,0 scale 1
 }
 
 profile laptop-work-office-2-external-monitors {
