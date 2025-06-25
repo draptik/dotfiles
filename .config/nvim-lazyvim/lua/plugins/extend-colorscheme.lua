@@ -9,6 +9,14 @@ return {
       on_colors = function(colors)
         colors.border = "#565f89"
       end,
+      -- The default color for flash's label (`FlashLabel`) are difficult to read.
+      -- The original values are defined here:
+      -- https://github.com/folke/tokyonight.nvim/blob/057ef5d260c1931f1dffd0f052c685dcd14100a3/extras/lua/tokyonight_night.lua#L926
+      on_highlights = function(highlights)
+        highlights.FlashLabel.bold = true
+        highlights.FlashLabel.bg = "#fefbbd"
+        highlights.FlashLabel.fg = "black"
+      end,
     },
   },
 
