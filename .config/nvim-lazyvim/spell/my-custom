@@ -6,6 +6,7 @@ Expecto
 FizzBuzz
 FsCheck
 IdeaVim
+Immich
 JSON
 Kata
 LazyVim
@@ -35,6 +36,7 @@ deserialize
 dotnet
 fanless
 hypervisor
+immich
 parameterize
 parameterized
 reddit
