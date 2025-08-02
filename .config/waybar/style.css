@@ -106,12 +106,16 @@ window#waybar.solo {
 #network,
 #language,
 #clock.date,
+#clock.time,
 #tray,
 #temperature {
     margin: 0;
-    margin-right: 5px;
+    margin-right: 4px;
     min-width:  25px;
-    background: @barBg;
+    background: black;
+    border-radius: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
 #pulseaudio {
@@ -132,8 +136,6 @@ window#waybar.solo {
 }
 
 #clock.date {
-    padding-left: 5px;
-    padding-right: 5px;
     color: @date;
 }
 

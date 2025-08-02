@@ -1,100 +1,107 @@
 {
-    "layer": "top",
-    "position": "bottom",
-    "modules-left": [
-        "custom/scratchpad_indicator",
-        "sway/workspaces",
-        "sway/mode"
-    ],
-    "modules-center": [
-    ],
-    "modules-right": [
-        "battery",
-        "cpu",
-        "network",
-        "pulseaudio",
-        "clock#date",
-        "clock#time",
-        "tray"
-    ],
-
-    "sway/workspaces": {
-        "disable-scroll": true,
-        "disable-click": true
+  "layer": "top",
+  "position": "bottom",
+  "modules-left": [
+    "custom/scratchpad_indicator",
+    "sway/workspaces",
+    "sway/mode"
+  ],
+  "modules-center": [],
+  "modules-right": [
+    "battery",
+    "cpu",
+    "network",
+    "pulseaudio",
+    "clock#date",
+    "clock#time",
+    "tray"
+  ],
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "disable-click": true
+  },
+  "tray": {
+    "spacing": 8,
+    "icon-size": 10
+  },
+  "clock#date": {
+    "format": " {:%a %e %b %Y}",
+    "tooltip-format": "{:%a %e %B %Y}"
+  },
+  "clock#time": {
+    "interval": 60,
+    "format": "{:%H:%M}"
+  },
+  "cpu": {
+    "format": "cpu:{usage:2}%"
+  },
+  "memory": {
+    "format": " {}%"
+  },
+  "temperature": {
+    "critical-threshold": 75,
+    "format": " {temperatureC}°C"
+  },
+  "battery": {
+    "bat": "BAT0",
+    "interval": 30,
+    "full-at": 95,
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
     },
-    "tray": {
-        "spacing": 8,
-        "icon-size": 10
+    "format": "{icon}  {capacity:3}%",
+    "format-charging": "{icon} {capacity:3}% &#128268; ",
+    "format-plugged": "{icon} {capacity:3}% &#128268;&#127793; ",
+    "format-discharging": "{icon} {capacity:3}%🔋 ",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "network": {
+    "format-wifi": " {essid}",
+    "tooltip-format-wifi": "  {essid} {ipaddr} ({signalStrength}%)",
+    "format-ethernet": " ",
+    "tooltip-format-ethernet": "{ipaddr}",
+    "format-disconnected": "⚠ Disconnected"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume:3}%",
+    "format-muted": "",
+    "format-icons": {
+      "headphones": "",
+      "default": [
+        "",
+        ""
+      ]
     },
-    "clock#date": {
-        "format": " {:%a %e %b %Y}",
-        "tooltip-format": "{:%a %e %B %Y}"
-    },
-    "clock#time": {
-        "interval": 60,
-        "format": "{:%H:%M}"
-    },
-    "cpu": {
-        "format": "cpu:{usage:2}%"
-    },
-    "memory": {
-        "format": " {}%"
-    },
-    "temperature": {
-        "critical-threshold": 75,
-        "format": " {temperatureC}°C"
-    },
-    "battery": {
-        "bat": "BAT0",
-        "interval": 30,
-        "full-at": 95,
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon}  {capacity:3}%",
-        "format-charging":    "{icon} {capacity:3}% &#128268; ",
-        "format-plugged":    "{icon} {capacity:3}% &#128268;&#127793; ",
-        "format-discharging": "{icon} {capacity:3}%🔋 ",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "network": {
-        "format-wifi": " {essid}",
-        "tooltip-format-wifi": " {essid} {ipaddr} ({signalStrength}%)",
-        "format-ethernet": " ",
-        "tooltip-format-ethernet": "{ipaddr}",
-        "format-disconnected": "⚠ Disconnected"
-    },
-    "pulseaudio": {
-        "format": "{icon} {volume:3}%",
-        "format-muted": "",
-        "format-icons": {
-            "headphones": "",
-            "default": ["", ""]
-        },
-        "on-click": "pavucontrol"
-    },
-    "sway/language": {
-        "format": "⌨ {} "
-    },
-    "sway/mode": {
-        "format": "<span>⚡️ {}</span>",
-        "tooltip": false
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": "🔓"
-        }
-    },
-    "custom/scratchpad_indicator": {
-        "interval": 3,
-        "return-type": "json",
-        "exec": "swaymsg -t get_tree | jq --unbuffered --compact-output '(recurse(.nodes[]) | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [..  | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | if ($scratch_nodes|length) > 0 then { text: \"\\($scratch_nodes | length)\", tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") } else empty end'",
-        "format": "{}📓",
-        "on-click": "exec swaymsg 'scratchpad show'",
-        "on-click-right": "exec swaymsg 'move scratchpad'"
+    "on-click": "pavucontrol"
+  },
+  "sway/language": {
+    "format": "⌨ {} "
+  },
+  "sway/mode": {
+    "format": "<span>⚡️ {}</span>",
+    "tooltip": false
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": "🔓"
     }
+  },
+  "custom/scratchpad_indicator": {
+    "interval": 3,
+    "return-type": "json",
+    "exec": "swaymsg -t get_tree | jq --unbuffered --compact-output '(recurse(.nodes[]) | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [..  | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | if ($scratch_nodes|length) > 0 then { text: \"\\($scratch_nodes | length)\", tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") } else empty end'",
+    "format": "{}📓",
+    "on-click": "exec swaymsg 'scratchpad show'",
+    "on-click-right": "exec swaymsg 'move scratchpad'"
+  }
 }
