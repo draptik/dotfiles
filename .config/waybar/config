@@ -3,7 +3,6 @@
     "position": "bottom",
     "modules-left": [
         "custom/scratchpad_indicator",
-        "hyprland/workspaces",
         "sway/workspaces",
         "sway/mode"
     ],
@@ -22,8 +21,6 @@
     "sway/workspaces": {
         "disable-scroll": true,
         "disable-click": true
-    },
-    "hyprland/workspaces": {
     },
     "tray": {
         "spacing": 8,
