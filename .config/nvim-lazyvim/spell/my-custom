@@ -18,6 +18,7 @@ Immich
 JSON
 Kata
 LazyVim
+Linter
 NUnit
 NVMe
 NeoVim
@@ -64,6 +65,7 @@ hypervisor
 i18n
 immich
 kubernetes
+linter
 onboarding
 parameterize
 parameterized
