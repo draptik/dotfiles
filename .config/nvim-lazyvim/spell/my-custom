@@ -12,6 +12,7 @@ Dropdown
 Expecto
 FizzBuzz
 FsCheck
+GitHub
 I18N
 IdeaVim
 Immich
@@ -19,6 +20,7 @@ JSON
 Kata
 LazyVim
 Linter
+Linters
 NUnit
 NVMe
 NeoVim
@@ -49,6 +51,7 @@ Unraid
 VM
 VMs
 VPN
+VSCode
 ansible
 arbitraries
 arbitrary
@@ -61,11 +64,13 @@ dotnet
 dropdown
 ed25519
 fanless
+github
 hypervisor
 i18n
 immich
 kubernetes
 linter
+linters
 onboarding
 parameterize
 parameterized
@@ -78,5 +83,6 @@ shrinker
 sudo
 unconference
 unifi
+vscode
 xUnit
 zst
