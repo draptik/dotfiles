@@ -12,6 +12,7 @@ Dropdown
 Expecto
 FizzBuzz
 FsCheck
+I18N
 IdeaVim
 Immich
 JSON
@@ -21,6 +22,7 @@ NUnit
 NVMe
 NeoVim
 Nextcloud
+Onboarding
 PBT
 PCIe
 Podman
@@ -42,7 +44,6 @@ UHD
 UI
 USB3
 Unifi
-Unifi
 Unraid
 VM
 VMs
@@ -60,8 +61,10 @@ dropdown
 ed25519
 fanless
 hypervisor
+i18n
 immich
 kubernetes
+onboarding
 parameterize
 parameterized
 podman
