@@ -1,5 +1,5 @@
 return {
-  "echasnovski/mini.icons",
+  "nvim-mini/mini.icons",
   opts = {
     -- When using `csharp` in markdown code blocks, use the correct icon
     filetype = {

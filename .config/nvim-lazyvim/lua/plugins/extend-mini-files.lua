@@ -1,5 +1,5 @@
 return {
-  "echasnovski/mini.files",
+  "nvim-mini/mini.files",
   opts = {
     windows = {
       width_nofocus = 20,
