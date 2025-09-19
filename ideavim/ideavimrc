@@ -114,8 +114,10 @@ let g:WhichKeyDesc_easymotion = "s Jump with Easymotion"
 
 " Open NERDTree (use q to exit) ---------------------------
 map <leader>x :NERDTreeToggle<CR>
+map <leader>X :NERDTreeFocus<CR>
 
 let g:WhichKeyDesc_NerdTree_toggle = "<leader>x Toggle NerdTree (Solution Explorer)"
+let g:WhichKeyDesc_NerdTree_focus = "<leader>X Focus NerdTree (Solution Explorer)"
 
 " Formatting ----------------------------------------------
 map <leader>ec <Action>(CodeCleanup)
