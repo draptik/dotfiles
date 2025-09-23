@@ -72,7 +72,7 @@
   },
   "pulseaudio": {
     "format": "{icon} {volume:3}%",
-    "format-muted": "",
+    "format-muted": "🔇",
     "format-icons": {
       "headphones": "",
       "default": [
