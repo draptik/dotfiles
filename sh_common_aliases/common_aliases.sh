@@ -48,9 +48,9 @@ if [ "$TERM" = "xterm-kitty" ]; then
 fi
 
 # Custom aliases for current projects
-if [ -f ~/cloud/Nextcloud/klog-time-tracker/aliases.sh ]; then
+if [ -f ~/cloud/Nextcloud_wolke/klog-time-tracker/aliases.sh ]; then
   # shellcheck disable=SC1090
-  . ~/cloud/Nextcloud/klog-time-tracker/aliases.sh
+  . ~/cloud/Nextcloud_wolke/klog-time-tracker/aliases.sh
 fi
 
 alias task='go-task'
