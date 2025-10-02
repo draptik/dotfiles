@@ -178,20 +178,18 @@ let g:WhichKeyDesc_action = "<leader>a Actions"
 let g:WhichKeyDesc_action_context_menu = "<leader>am Open context menu (Alt+Enter)"
 let g:WhichKeyDesc_action_search = "<leader>as Search Everywhere (Ctrl+t)"
 
-" File navigation -----------------------------------------
+" Filesmotion-prefix)  navigation -----------------------------------------
 " NOTE: I don't use most of these -> SearchEverywhere is fine for me
-map <leader><leader> <Action>(RecentFiles)
-" map <leader>ff <Action>(GotoFile)
-" map <leader>fr <Action>(RecentFiles)
-" map <leader>fc <Action>(FindInPath)
-" map <leader>fl <Action>(RecentLocations)
+map <leader>ff <Action>(GotoFile)
+map <leader>fr <Action>(RecentFiles)
+map <leader>fc <Action>(FindInPath)
+map <leader>fl <Action>(RecentLocations)
 
-let g:WhichKeyDesc_file_quickLook = "<leader><leader> Recent files"
-" let g:WhichKeyDesc_file_nav = "<leader>f File navigation"
-" let g:WhichKeyDesc_file_nav_goto_file = "<leader>ff Go to file"
-" let g:WhichKeyDesc_file_nav_goto_content = "<leader>fc Search for file content"
-" let g:WhichKeyDesc_file_nav_show_recent_files = "<leader>fr Show recent files"
-" let g:WhichKeyDesc_file_nav_show_recent_locations = "<leader>fl Show recent locations"
+let g:WhichKeyDesc_file_nav = "<leader>f File navigation"
+let g:WhichKeyDesc_file_nav_goto_file = "<leader>ff Go to file"
+let g:WhichKeyDesc_file_nav_goto_content = "<leader>fc Search for file content"
+let g:WhichKeyDesc_file_nav_show_recent_files = "<leader>fr Show recent files"
+let g:WhichKeyDesc_file_nav_show_recent_locations = "<leader>fl Show recent locations"
 
 " Close active tab ----------------------------------------
 map <leader>q <Action>(CloseContent)
@@ -222,8 +220,8 @@ nmap <leader>gy <Action>(GotoTypeDeclaration)
 nmap <leader>gi <Action>(GotoImplementation)
 nmap <leader>gu <Action>(ShowUsages)
 nmap <leader>gt <Action>(GotoTest)
-nmap <leader>gf <Action>(Back)
-nmap <leader>gb <Action>(Forward)
+nmap <leader>gb <Action>(Back)
+nmap <leader>gf <Action>(Forward)
 
 let g:WhichKeyDesc_goto = "<leader>g Go to ..."
 let g:WhichKeyDesc_goto_declaration = "<leader>gd Go to Definition"
@@ -256,11 +254,13 @@ let g:WhichKeyDesc_errors_prev = "<leader>Ep Go to previous error in solution"
 nmap <leader>ur <Action>(RiderUnitTestRunContextAction)
 nmap <leader>ud <Action>(RiderUnitTestDebugContextAction)
 nmap <leader>ul <Action>(RiderUnitTestRunSolutionAction)
+nmap <leader>uu <Action>(RiderUnitTestRepeatPreviousRunAction)
 
 let g:WhichKeyDesc_unit_testing = "<leader>u Unit testing"
 let g:WhichKeyDesc_unit_testing_run_test = "<leader>ur Run unit test"
 let g:WhichKeyDesc_unit_testing_debug_test = "<leader>ud Debug unit test"
-let g:WhichKeyDesc_unit_testing_run_all_tests = "<leader>ul Run all unit tests"
+let g:WhichKeyDesc_unit_testing_run_all_tests = "<leader>ul Run all unit tests "
+let g:WhichKeyDesc_unit_testing_repeat_previous_run_action = "<leader>uu Repeat previous test run"
 
 " F# Interactive -----------------------------------------
 map <leader>Fi <Action>(IntentionActionAsAction_com.jetbrains.rider.plugins.fsharp.services.fsi.SendLineToFsiIntentionAction)
