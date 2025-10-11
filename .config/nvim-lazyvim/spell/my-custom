@@ -1,3 +1,5 @@
+3D
+3d
 AUR
 Ansible
 Audiojack
@@ -10,6 +12,7 @@ CsCheck
 DDR4
 Dropdown
 Expecto
+FOMO
 FizzBuzz
 FsCheck
 GitHub
@@ -18,15 +21,21 @@ IdeaVim
 Immich
 JSON
 Kata
+Keycaps
 LazyVim
+LinkedIn
 Linter
 Linters
+Mechanicon
+Meetup
 NUnit
 NVMe
 NeoVim
 Nextcloud
 Onboarding
 PBT
+PCB
+PCBs
 PCIe
 Podman
 Popup
@@ -45,6 +54,7 @@ TODOs
 TTL
 Terraform
 UHD
+UHKv2
 UI
 USB3
 Unifi
@@ -53,6 +63,7 @@ VM
 VMs
 VPN
 VSCode
+ZSA
 ansible
 arbitraries
 arbitrary
@@ -69,9 +80,11 @@ github
 hypervisor
 i18n
 immich
+keycaps
 kubernetes
 linter
 linters
+meetup
 onboarding
 parameterize
 parameterized
