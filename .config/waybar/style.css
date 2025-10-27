@@ -112,7 +112,7 @@ window#waybar.solo {
     margin: 0;
     margin-right: 4px;
     min-width:  25px;
-    background: black;
+    background: @barBg;
     border-radius: 3px;
     padding-left: 3px;
     padding-right: 3px;
