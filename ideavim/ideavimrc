@@ -131,14 +131,14 @@ nmap <C-w> <Action>(EditorSelectWord)
 sethandler <C-w> a:ide
 
 " Folding -------------------------------------------------
-" map <leader>zc <Action>(CollapseAllRegions)
+map <leader>za <Action>(CollapseAllRegions)
 " map <leader>zo <Action>(ExpandAllRegions)
 map <leader>zd <Action>(RiderCollapseToDefinitions)
 map <leader>zc <Action>(CollapseRegion)
 map <leader>ze <Action>(ExpandRegion)
 
 let g:WhichKeyDesc_fold = "<leader>z Folding"
-" let g:WhichKeyDesc_fold_all = "<leader>zc Fold all regions"
+let g:WhichKeyDesc_fold_all = "<leader>zc Fold all"
 " let g:WhichKeyDesc_unfold_all = "<leader>zo Unfold all regions"
 let g:WhichKeyDesc_collapse_to_definitions = "<leader>zd Collapse to definitions"
 let g:WhichKeyDesc_collapse_region = "<leader>zc Collapse region"
