@@ -1,4 +1,4 @@
-# ZSA Voyager Keyboard configs
+# ZSA Voyager Keyboard configurations
 
 Customization for the [ZSA Voyager Keyboard](https://www.zsa.io/voyager)
 
@@ -6,7 +6,9 @@ This folder contains config files for flashing the keyboard.
 
 ## History of config files
 
-- 2025-11-02 Move `left-alt` to right bottom pinky position: `zsa-voyaer-ZPeb7z_sanity2.bin`
+Try to add a time stamp to the binary files.
+
+- Move `left-alt` to right bottom pinky position: `zsa_voyager_2025-11-02_OWNAa_ZPeb7z_sanity2.bin`
 
 ## Toggle internal laptop keyboard using user systemd
 
