@@ -163,12 +163,14 @@ map <leader>dd <Action>(ToggleDistractionFreeMode)
 map <leader>dz <Action>(ToggleZenMode)
 map <leader>df <Action>(ToggleFullScreen)
 map <leader>dh <Action>(HideAllWindows)
+map <leader>dt <Action>(ChangeLaf)
 
 let g:WhichKeyDesc_display = "<leader>d Display options"
 let g:WhichKeyDesc_zen_mode = "<leader>dz Toggle Zen mode"
 let g:WhichKeyDesc_df_mode = "<leader>dd Toggle Distraction-Free mode"
 let g:WhichKeyDesc_fullscreen = "<leader>df Toggle full screen"
 let g:WhichKeyDesc_hide_all_windows = "<leader>dh Hide all (other) windows"
+let g:WhichKeyDesc_change_color_theme = "<leader>dt Change color theme"
 
 " Actions -------------------------------------------------
 map <leader>am <Action>(ShowIntentionActions)
