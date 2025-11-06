@@ -37,6 +37,8 @@ set vim-paragraph-motion
 set easymotion
 set notimeout
 
+set anyobject
+
 " Which-key settings
 set which-key
 let g:WhichKey_FontSize = 16
