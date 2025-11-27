@@ -16,6 +16,9 @@ return {
         highlights.FlashLabel.bold = true
         highlights.FlashLabel.bg = "#fefbbd"
         highlights.FlashLabel.fg = "black"
+
+        -- improve readability of comments
+        highlights.Comment.fg = "#e9c88a"
       end,
     },
   },
