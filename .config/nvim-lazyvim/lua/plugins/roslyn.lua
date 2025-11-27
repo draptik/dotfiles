@@ -19,10 +19,13 @@ return {
     },
   },
 
-  -- NOTE: The following code is copied from `~/.local/share/nvim-lazyvim/lazy/lazyvim/plugins/extras/lang/dotnet.lua`
+  -- NOTE: The following code is copied and adapted from `~/.local/share/nvim-lazyvim/lazy/lazyvim/plugins/extras/lang/dotnet.lua`
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = { ensure_installed = { "c_sharp", "fsharp" } },
+    opts = function(_, opts)
+      opts.ensure_installed = opts.ensure_installed or {}
+      vim.list_extend(opts.ensure_installed, { "c_sharp", "fsharp" })
+    end,
   },
   {
     "nvimtools/none-ls.nvim",
@@ -30,16 +33,16 @@ return {
     opts = function(_, opts)
       local nls = require("null-ls")
       opts.sources = opts.sources or {}
-      table.insert(opts.sources, nls.builtins.formatting.csharpier)
-      table.insert(opts.sources, nls.builtins.formatting.fantomas)
+      -- NOTE: Let none-ls handle everything except formatting. Formatting is done by conform.nvim.
     end,
   },
   {
     "stevearc/conform.nvim",
-    -- optional = true,
     opts = {
       formatters_by_ft = {
         cs = { "csharpier" },
+        csproj = { "csharpier" },
+        fsproj = { "csharpier" },
         fsharp = { "fantomas" },
       },
     },
@@ -50,7 +53,6 @@ return {
   },
   {
     "mfussenegger/nvim-dap",
-    -- optional = true,
     opts = function()
       local dap = require("dap")
       if not dap.adapters["netcoredbg"] then
@@ -94,7 +96,6 @@ return {
 
       -- ✅ configure neotest-vstest (and ensure it’s present)
       local vstest_cfg = opts.adapters["neotest-vstest"] or {}
-      -- you can tweak this timeout if you like
       vstest_cfg.timeout_ms = 5 * 60 * 1000
       opts.adapters["neotest-vstest"] = vstest_cfg
     end,
