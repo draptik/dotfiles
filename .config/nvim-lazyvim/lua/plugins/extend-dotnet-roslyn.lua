@@ -36,5 +36,15 @@ return {
       vstest_cfg.timeout_ms = vstest_cfg.timeout_ms or 5 * 60 * 1000
       opts.adapters["neotest-vstest"] = vstest_cfg
     end,
+
+    keys = {
+      {
+        "<leader>tT",
+        function()
+          require("neotest").run.run({ suite = true })
+        end,
+        desc = "Run all Test files (Neotest suite)",
+      },
+    },
   },
 }
