@@ -14,6 +14,7 @@
 #     avoid capturing an inconsistent live filesystem.
 #   • Uses bs=4M and conv=noerror,sync for reliable reads with padding on
 #     errors, and shows progress during the copy.
+#   • Compresses the image with xz.
 #
 # Usage:
 #     sudo ./fit-backup.sh /dev/mmcblk0 rpi-backup.img
