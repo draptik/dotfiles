@@ -33,6 +33,8 @@ NUnit
 NVMe
 NeoVim
 Nextcloud
+Nix
+NixOS
 Onboarding
 PBT
 PCB
@@ -88,6 +90,8 @@ kubernetes
 linter
 linters
 meetup
+nix
+nixos
 onboarding
 parameterize
 parameterized
