@@ -311,3 +311,23 @@ fi
 if (( ${+commands[pay-respects]} )); then
   eval "$(pay-respects zsh)"
 fi
+
+# cliphist (Clipboard history manager) ----------------------------------------
+if (( ${+commands[cliphist]} && ${+commands[fzf]} )); then
+
+  # Paste last clip to stdout
+  pst() {
+    local id
+    id="$(cliphist list | head -n1 | awk '{print $1}' | tr -d '\r\n')"
+    [[ -n "$id" ]] || return 1
+    cliphist decode "$id"
+  }
+
+  # Show tui for selecting from clipboard
+  cclip() {
+    local id
+    id="$(cliphist list | fzf --reverse | awk '{print $1}' | tr -d '\r\n')"
+    [[ -n "$id" ]] || return 0
+    cliphist decode "$id" | wl-copy
+  }
+fi
