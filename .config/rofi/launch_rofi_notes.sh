@@ -4,7 +4,7 @@ set -Eeuo pipefail
 IFS=$'\n\t'
 
 TERMINAL=kitty
-readonly folder="$HOME/notes" # base notes directory (no trailing slash)
+readonly folder="$HOME/cloud/Nextcloud_wolke/wiki" # base notes directory (no trailing slash)
 
 menu() {
   # usage: menu "Prompt" [lines]
@@ -69,7 +69,7 @@ selected() {
       find "$folder" -type f -printf '%T@ %P\n' 2>/dev/null |
         sort -nr |
         cut -d' ' -f2-
-    } | menu "Choose note or create new" 10
+    } | menu "Choose note or create new" 20
   )" || exit 0
 
   case "$choice" in
