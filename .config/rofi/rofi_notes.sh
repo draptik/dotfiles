@@ -1,6 +1,24 @@
 #!/usr/bin/env bash
-
+#
+# notes.sh — Rofi-based note launcher and creator for Markdown notes
+#
+# Usage:
+#   notes.sh [NOTES_DIR]
+#
+# If NOTES_DIR is not provided, defaults to ~/notes.
+# All notes and subdirectories are constrained to NOTES_DIR.
+#
+# Features:
+# - Select or create notes via rofi (dmenu mode)
+# - Create new notes in existing or typed subdirectories
+# - Prevents directory traversal outside NOTES_DIR
+# - Opens notes in Neovim inside the configured terminal
+#
+# Dependencies:
+#   bash, rofi, nvim, realpath, find, sort, cut
+#
 set -Eeuo pipefail
+
 IFS=$'\n\t'
 
 TERMINAL=kitty
@@ -60,6 +78,12 @@ newnote() {
   : "${name:=$(date +%F_%H-%M-%S)}"
 
   file="$dir_abs/$name.md"
+
+  # Add default heading with current date (`# 2026-01-31`) to the new file
+  if [[ ! -e "$file" ]]; then
+    printf '# %s\n\n' "$(date +%F)" >"$file"
+  fi
+
   setsid -f "$TERMINAL" -e nvim "$file" >/dev/null 2>&1
 }
 
