@@ -5,6 +5,13 @@
 alias ll='ls -lAF'
 alias la='ls -lAh'
 
+## misc
+alias c='clear'
+alias v='nvim'
+
+# requires arch package `bat-extras`
+alias man='batman'
+
 ## ripgrep, fd, and fzf
 ## https://bluz71.github.io/2018/06/07/ripgrep-fd-command-line-search-tools.html
 export FZF_DEFAULT_COMMAND='fd --type f --color=never'
