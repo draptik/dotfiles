@@ -4,7 +4,10 @@ set -Eeuo pipefail
 IFS=$'\n\t'
 
 TERMINAL=kitty
-readonly folder="$HOME/cloud/Nextcloud_wolke/wiki" # base notes directory (no trailing slash)
+
+# Folder is passed in as $1, fallback to ~/notes
+folder="$(realpath -m -- "${1:-$HOME/notes}")"
+readonly folder
 
 menu() {
   # usage: menu "Prompt" [lines]
