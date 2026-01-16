@@ -7,54 +7,10 @@
 
 command_timeout = 5000
 
-# [character]
-# success_symbol = "🚀"
-# error_symbol = "🤯"
-# error_symbol = "[✖](bold red) "
-
-# use_symbol_for_status = true
-
-# [battery]
-# full_symbol = "🔋"
-# charging_symbol = "🔌"
-# discharging_symbol = "⚡"
-
 [git_status]
 ahead = "⇡${count}"
 behind = "⇣${count}"
 diverged = "⇡${ahead_count}⇣${behind_count}"
-# conflicted = "⚔️ "
-# ahead = "🏎️ 💨 ×${count}"
-# behind = "🐢 ×${count}"
-# diverged = "🔱 🏎️ 💨 ×${ahead_count} 🐢 ×${behind_count}"
-# untracked = "🛤️  ×${count}"
-# stashed = "📦 "
-# modified = "📝 ×${count}"
-# staged = "🗃️  ×${count}"
-# renamed = "📛 ×${count}"
-# deleted = "🗑️  ×${count}"
-# style = "bright-white"
-# format = "$all_status$ahead_behind"
-# format = "[\\[$all_status$ahead_behind\\]]($style) "
-# style = "bold purple"
-
-# [memory_usage]
-# format = "$symbol[${ram}( | ${swap})]($style) "
-# show_percentage = true
-# show_swap = true
-# threshold = 70
-# style = "bold dimmed white"
-# disabled = false
-# 
-# [time]
-# time_format = "%T"
-# format = "🕙 $time($style) "
-# style = "bright-white"
-# disabled = false
-# 
-# [username]
-# style_user = "bold dimmed blue"
-# show_always = false
 
 ## CUSTOM SETTINGS ================================================
 
@@ -65,7 +21,6 @@ disabled = true
 [directory]
 style = "bold bright-cyan"
 fish_style_pwd_dir_length = 1
-#truncation_symbol = "…/"
 
 [perl]
 disabled = true
