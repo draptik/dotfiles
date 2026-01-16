@@ -46,8 +46,12 @@ source ~/.dotfiles/sh_common_aliases/themed_aliases
 if [ "$TERM" = "xterm-kitty" ]; then
   if [ "$KITTY_THEME" = "DARK" ]; then
     alias togglekitty='~/.dotfiles/.config/kitty/switch-light.sh'
+    # use the default alias for eza
+    alias l='eza --all --long --group --icons --git --git-repos --group-directories-first --color-scale'
   else
     alias togglekitty='~/.dotfiles/.config/kitty/switch-dark.sh'
+    # eza's `color-scale` uses the color white (!) for 'newest' and 'largest' on light themes. This is unreadable.
+    alias l='eza --all --long --group --icons --git --git-repos --group-directories-first'
   fi
 
   ## https://sw.kovidgoyal.net/kitty/faq/#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-when-sshing-into-a-different-computer
