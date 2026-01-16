@@ -21,6 +21,25 @@ return {
           org_priority_down = "<Leader>op",
         },
       },
+
+      -- Optional: set what the *default* built-in agenda shows
+      org_agenda_span = "week",
+
+      -- These will show as extra choices in <Leader>oa
+      org_agenda_custom_commands = {
+        d = {
+          description = "Agenda (day)",
+          types = {
+            { type = "agenda", org_agenda_span = "day" },
+          },
+        },
+        w = {
+          description = "Agenda (week)",
+          types = {
+            { type = "agenda", org_agenda_span = "week" },
+          },
+        },
+      },
     })
   end,
 }
