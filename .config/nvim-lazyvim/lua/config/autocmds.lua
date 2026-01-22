@@ -24,6 +24,7 @@ vim.api.nvim_create_autocmd("FileType", {
       vim.notify("Updating Org clocktables…")
       vim.fn.system({
         "emacs",
+        "-Q",
         "--batch",
         "-l",
         vim.fn.expand("~/.dotfiles/emacs/update-clocktables.el"),
