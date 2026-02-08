@@ -88,9 +88,6 @@ fi
 ## activate autocd
 shopt -s autocd
 
-## activate autojump
-source /etc/profile.d/autojump.bash
-
 ## the fuck
 eval "$(thefuck --alias)"
 
@@ -101,7 +98,6 @@ eval "$(starship init bash)"
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
 source /usr/share/nvm/nvm.sh
 source /usr/share/nvm/bash_completion
-source /usr/share/nvm/install-nvm-exec
 
 # Custom scripts
 export PATH=$PATH:~/.config/$USER/
@@ -119,10 +115,6 @@ source /usr/share/fzf/completion.bash
 
 ## alwaysontop
 #. ~/projects/alwaysontop/alwaysontop.sh
-
-## broot: Get an overview of a directory, even a big one. Command: `br`
-## https://dystroy.org/broot/
-source "${HOME}"/.config/broot/launcher/bash/br
 
 if [ -f "$HOME/.local/share/dnvm/env" ]; then
   . "$HOME/.local/share/dnvm/env"

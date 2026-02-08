@@ -119,9 +119,6 @@ if (( ${+commands[thefuck]} )); then
   eval $(thefuck --alias)
 fi
 
-# broot (installed via arch linux)
-source ~/.config/broot/launcher/bash/br
-
 # xkcd for kitty
 source ~/.dotfiles/zsh/.oh-my-zsh/custom/function-xkcd.zsh
 

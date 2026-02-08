@@ -17,10 +17,6 @@ alias man='batman'
 export FZF_DEFAULT_COMMAND='fd --type f --color=never'
 export FZF_ALT_C_COMMAND='fd --type d . --color=never'
 
-## flameshot (screenshot tool)
-alias flameshot='flameshot gui -p ~/screenshots'
-alias screenshot='flameshot'
-
 ## eza
 ## NOTE: In case the option `--color-scale` crashes in certain folders,
 ## make sure there are no files/folders with an invalid btime.
