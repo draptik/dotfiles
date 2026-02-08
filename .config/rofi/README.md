@@ -25,3 +25,9 @@ Here some more advanced examples using custom python scripts:
 
 - [`./launch_rofi_websites.sh`](./launch_rofi_websites.sh): A demo launcher for websites
 - [`./launch_rofi_bc.sh`](./launch_rofi_bc.sh): An interactive calculator using `bc`
+
+## Fonts
+
+```bash
+yay -S noto-fonts otf-fira-sans
+```
