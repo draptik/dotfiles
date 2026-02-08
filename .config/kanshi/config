@@ -1,3 +1,7 @@
+profile laptop-thinkpad-t14 {
+    output "Lenovo Group Limited 0x41C4 Unknown" mode 1920x1200 position 0,0 scale 1.4
+}
+
 profile laptop-work-homeoffice {
     output eDP-1 enable mode 3840x2400 position 0,0    scale 2
     output "Dell Inc. DELL U2720Q 69D3W13"  mode 3840x2160 position 1920,0 scale 2
