@@ -1,5 +1,58 @@
+output "Lenovo Group Limited 0x41C4 Unknown" {
+  mode 1920x1200
+  position 0,0
+  alias $T14
+}
+
+output "Dell Inc. DELL U2720Q 69D3W13" {
+  mode 3840x2160
+  scale 2
+  alias $HOME_LEFT
+}
+
+output "Dell Inc. DELL U2720Q 850WV13" {
+  mode 3840x2160
+  scale 2
+  alias $HOME_RIGHT
+}
+output "Invalid Vendor Codename - RTK 0x1920 demoset-1" {
+  mode 1920x1080
+  position 1920,0
+  scale 1
+  alias $PORTABLE
+}
+
 profile laptop-thinkpad-t14 {
-    output "Lenovo Group Limited 0x41C4 Unknown" mode 1920x1200 position 0,0 scale 1.4
+    output $T14 scale 1.4
+}
+
+profile laptop-thinkpad-t14-homeoffice {
+    # eDP-1 is scaled 1.4, so its logical width is 1371
+    output $T14 scale 1.4
+
+    # Place DP-1 directly to the right of eDP-1 (no gap)
+    output $HOME_LEFT  position 1371,0
+    output $HOME_RIGHT position 3291,0
+
+    # kanshi aliases can't be passed to swaymsg...
+    exec swaymsg workspace 1, move workspace to output eDP-1
+    exec swaymsg workspace 2, move workspace to output '"Dell Inc. DELL U2720Q 69D3W13"'
+    exec swaymsg workspace 7, move workspace to output '"Dell Inc. DELL U2720Q 850WV13"'
+}
+
+profile laptop-thinkpad-t14-homeoffice-single-monitor-left {
+    output $T14 scale 1.4
+    output $HOME_LEFT  position 1371,0
+}
+
+profile laptop-thinkpad-t14-homeoffice-single-monitor-right {
+    output $T14 scale 1.4
+    output $HOME_RIGHT  position 1371,0
+}
+
+profile laptop-thinkpad-t14-homeoffice-single-portable-monitor-right {
+    output $T14 scale 1.4
+    output $PORTABLE    position 1371,0
 }
 
 profile laptop-work-homeoffice {
