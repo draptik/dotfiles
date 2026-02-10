@@ -33,6 +33,7 @@ for i in /mnt/archive; do
       --exclude='/sys/*' \
       --exclude='/tmp/*' \
       --exclude='/var/.snapshots/*' \
+      --exclude='/var/lib/docker/overlay*/*' \
       --exclude='/var/lib/docker/volumes/*' \
       --exclude='/var/lib/libvirt/images/*' \
       --acls --xattrs -cpaf "$i/backup/$HOSTNAME/bsdtar/current.tar.zst" / | tee -a "$logfile"
