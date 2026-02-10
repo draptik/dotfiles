@@ -9,7 +9,9 @@ for i in /mnt/archive; do
     sudo cp -a --reflink=auto "$i/backup/$HOSTNAME/rsync/current" "$i/backup/$HOSTNAME/rsync/last"
     sudo mkdir -p "$i/backup/$HOSTNAME/rsync/current/"
     sudo rsync -aAXHq --delete-before \
+      --exclude="$HOME/.ICAClient/*" \
       --exclude="$HOME/.cache/ibus/*" \
+      --exclude="$HOME/.cache/Jetbrains/*" \
       --exclude="$HOME/.dropbox/*" \
       --exclude="$HOME/.local/share/JetBrains/Toolbox/apps/*" \
       --exclude="$HOME/.ollama/*" \
