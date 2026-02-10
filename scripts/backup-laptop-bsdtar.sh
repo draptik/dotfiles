@@ -1,9 +1,11 @@
+#!/bin/bash
+# shellcheck disable=SC2043
 for i in /mnt/archive; do
-  if [[ -d $i/backup/$HOSTNAME/bsdtar ]] ; then
+  if [[ -d $i/backup/$HOSTNAME/bsdtar ]]; then
     echo "#### $(date +%T) bsdtar ${i} starting ######################################"
     logfile="/tmp/.bsdtar-$(basename $i).log"
-    sudo touch $i/backup/$HOSTNAME/bsdtar/current.tar.zst
-    sudo mv $i/backup/$HOSTNAME/bsdtar/current.tar.zst $i/backup/$HOSTNAME/bsdtar/last.tar.zst
+    sudo touch "$i/backup/$HOSTNAME/bsdtar/current.tar.zst"
+    sudo mv "$i/backup/$HOSTNAME/bsdtar/current.tar.zst" "$i/backup/$HOSTNAME/bsdtar/last.tar.zst"
     sudo bsdtar \
       --exclude='/etc/pacman.d/gnupg/*' \
       --exclude='/dev/*' \
@@ -30,7 +32,7 @@ for i in /mnt/archive; do
       --exclude='/tmp/*' \
       --exclude='/var/lib/libvirt/images/*' \
       --exclude='/var/.snapshots/*' \
-      --acls --xattrs -cpaf $i/backup/$HOSTNAME/bsdtar/current.tar.zst /
+      --acls --xattrs -cpaf "$i/backup/$HOSTNAME/bsdtar/current.tar.zst" / | tee -a "$logfile"
   else
     echo "#### $(date +%T) bsdtar ${i} is unavailabe ######################################"
   fi
