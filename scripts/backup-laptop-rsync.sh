@@ -38,6 +38,7 @@ for i in /mnt/archive; do
       --exclude='/var/lib/docker/overlay*/*' \
       --exclude='/var/lib/docker/volumes/*' \
       --exclude='/var/lib/libvirt/images/*' \
+      --exclude='/var/lib/ollama/*' \
       / "$i/backup/$HOSTNAME/rsync/current/" | tee -a "$logfile"
   else
     echo "#### $(date +%T) rsync full system backup not possible #######################################"

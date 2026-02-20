@@ -36,6 +36,7 @@ for i in /mnt/archive; do
       --exclude='/var/lib/docker/overlay*/*' \
       --exclude='/var/lib/docker/volumes/*' \
       --exclude='/var/lib/libvirt/images/*' \
+      --exclude='/var/lib/ollama/*' \
       --acls --xattrs -cpaf "$i/backup/$HOSTNAME/bsdtar/current.tar.zst" / | tee -a "$logfile"
   else
     echo "#### $(date +%T) bsdtar ${i} is unavailabe ######################################"
