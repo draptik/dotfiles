@@ -67,3 +67,10 @@ if [ -d "$HOME/.local/share/pnpm" ]; then
   export PNPM_HOME="$HOME/.local/share/pnpm"
   export PATH="$PNPM_HOME:$PATH"
 fi
+
+# Claude Code w/ ollama
+if [ -x "$(command -v ollama)" ]; then
+  export ANTHROPIC_AUTH_TOKEN=ollama
+  export ANTHROPIC_API_KEY=""
+  export ANTHROPIC_BASE_URL=http://localhost:11434
+fi
