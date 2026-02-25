@@ -18,10 +18,11 @@ return {
         highlights.FlashLabel.fg = "black"
 
         -- improve readability of comments
-        highlights.Comment = {
-          fg = "#a5a29f",
-          bg = "#1a1d2a",
-        }
+        if vim.o.background == "dark" then
+          highlights.Comment = { fg = "#a5a29f", bg = "#1a1d2a" }
+        else
+          highlights.Comment = { fg = "#6b6b6b", bg = "NONE" }
+        end
       end,
     },
   },
