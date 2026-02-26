@@ -11,6 +11,7 @@ for i in /mnt/archive; do
       --exclude="$HOME/.cache/ibus/*" \
       --exclude="$HOME/.cache/Jetbrains/*" \
       --exclude="$HOME/.dropbox/*" \
+      --exclude="$HOME/.local/share/gvfs-metadata/*" \
       --exclude="$HOME/.local/share/JetBrains/Toolbox/apps/*" \
       --exclude="$HOME/.ollama/*" \
       --exclude="$HOME/Documents/private-git/*" \

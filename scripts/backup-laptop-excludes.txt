@@ -2,6 +2,7 @@
 /home/patrick/.cache/ibus/*
 /home/patrick/.cache/Jetbrains/*
 /home/patrick/.dropbox/*
+/home/patrick/.local/share/gvfs-metadata/*
 /home/patrick/.local/share/JetBrains/Toolbox/apps/*
 /home/patrick/.ollama/*
 /home/patrick/Documents/private-git/*
