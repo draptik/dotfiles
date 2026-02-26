@@ -7,7 +7,7 @@
 {
     "label" : "hibernate",
     "action" : "systemctl hibernate",
-    "text" : "Hibernate (not supported)",
+    "text" : "Hibernate (h)",
     "keybind" : "h"
 }
 {
