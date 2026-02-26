@@ -1,6 +1,6 @@
 /home/patrick/.ICAClient/*
 /home/patrick/.cache/ibus/*
-/home/patrick/.cache/Jetbrains/*
+/home/patrick/.cache/JetBrains/*
 /home/patrick/.dropbox/*
 /home/patrick/.local/share/gvfs-metadata/*
 /home/patrick/.local/share/JetBrains/Toolbox/apps/*

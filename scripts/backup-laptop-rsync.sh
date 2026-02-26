@@ -11,7 +11,7 @@ for i in /mnt/archive; do
     sudo rsync -aAXHq --delete-before \
       --exclude="$HOME/.ICAClient/*" \
       --exclude="$HOME/.cache/ibus/*" \
-      --exclude="$HOME/.cache/Jetbrains/*" \
+      --exclude="$HOME/.cache/JetBrains/*" \
       --exclude="$HOME/.dropbox/*" \
       --exclude="$HOME/.local/share/gvfs-metadata/*" \
       --exclude="$HOME/.local/share/JetBrains/Toolbox/apps/*" \
