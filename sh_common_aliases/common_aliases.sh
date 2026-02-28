@@ -75,10 +75,11 @@ if [ -d "$HOME/.local/share/pnpm" ]; then
 fi
 
 # Claude Code w/ ollama
-if [ -x "$(command -v ollama)" ]; then
-  export ANTHROPIC_AUTH_TOKEN=ollama
-  export ANTHROPIC_API_KEY=""
-  export ANTHROPIC_BASE_URL=http://localhost:11434
-  export CLAUDE_CODE_MAX_OUTPUT_TOKENS=16000
-  export ANTHROPIC_MODEL=gptoss-fast
-fi
+# if [ -x "$(command -v ollama)" ]; then
+#   # export ANTHROPIC_AUTH_TOKEN=ollama
+#   # export ANTHROPIC_API_KEY=""
+#   # export ANTHROPIC_BASE_URL=http://localhost:11434
+#
+#   # export CLAUDE_CODE_MAX_OUTPUT_TOKENS=16000
+#   # export ANTHROPIC_MODEL=gptoss-fast
+# fi
