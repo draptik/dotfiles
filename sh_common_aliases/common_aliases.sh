@@ -25,9 +25,6 @@ alias l='eza --all --long --group --icons --git --git-repos --group-directories-
 alias lt='l --sort=modified'
 alias ltr='lt --reverse'
 
-## bat
-alias bat='bat --theme=ansi'
-
 ## ChatGPT OpenAI
 if [ -f ~/.openai-key.txt ]; then
   OPENAI_KEY=$(cat ~/.openai-key.txt)

@@ -1,4 +1,5 @@
-#--theme=GitHub
+## Default themes:
+# Monokai Extended / Monokai Extended Light
 
 ## dotnet project files
 --map-syntax '*.fsproj:XML'
