@@ -14,7 +14,7 @@ if [ $# -eq 0 ]; then
   return 1
 fi
 
-# This file should only contain the name of the VPN connection
+# This file should only contain the name of the SSH connection
 PAPERLESS_FILE="${HOME}/.my-paperless-inbox.txt"
 
 # Check if PAPERLESS_FILE exists
