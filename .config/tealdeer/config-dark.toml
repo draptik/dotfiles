@@ -1,0 +1,12 @@
+[style.command_name]
+foreground = "cyan"
+
+[style.example_text]
+foreground = "green"
+
+[style.example_code]
+foreground = "cyan"
+bold = true
+
+[style.example_variable]
+foreground = "cyan"

@@ -15,3 +15,6 @@ ln -sf "${DIR}"/../.config/eza/theme-light.yml "${DIR}"/../.config/eza/theme.yml
 
 # switch starship
 ln -sf "${DIR}"/../.config/starship-prompt/starship-light.toml "${DIR}"/../.config/starship-prompt/starship.toml
+
+# switch tldr
+ln -sf "${DIR}"/../.config/tealdeer/config-light.toml "${DIR}"/../.config/tealdeer/config.toml
