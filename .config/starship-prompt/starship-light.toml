@@ -1,0 +1,55 @@
+# This file should be linked from ~/.config/starship.toml
+#
+# Documentation: https://starship.rs/config/#prompt
+#
+# some ideas from https://gist.github.com/ryo-ARAKI/48a11585299f9032fa4bda60c9bba593
+#
+
+command_timeout = 5000
+
+palette = "my-light-theme"
+
+[cmd_duration]
+format = "took [$duration](bold fg:myduration)"
+
+[git_status]
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇡${ahead_count}⇣${behind_count}"
+
+## CUSTOM SETTINGS ================================================
+
+## I don't want my aws region in the prompt...
+[aws]
+disabled = true
+
+
+[directory]
+style = "bold fg:mydir"
+fish_style_pwd_dir_length = 1
+
+[perl]
+disabled = true
+
+[python]
+style = "bold fg:color_python"
+
+[direnv]
+style = "bold fg:color_direnv"
+
+[custom.prolog]
+command = "swipl --version | cut -d' ' -f3"
+extensions = ["pl"]
+format = "via [ v$output ](bold blue)"
+
+[palettes.my-dark-theme]
+mydir = "bright-cyan"
+myduration = "yellow"
+color_python = "yellow"
+color_direnv = "bright-yellow"
+
+[palettes.my-light-theme]
+mydir = "blue"
+myduration = "purple"
+color_python = "purple"
+color_direnv = "bright-purple"

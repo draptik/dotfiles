@@ -12,3 +12,6 @@ ln -sf "${DIR}"/../.config/klog/klog_light.ini "${DIR}"/../.config/klog/config.i
 
 # switch eza
 ln -sf "${DIR}"/../.config/eza/theme-light.yml "${DIR}"/../.config/eza/theme.yml
+
+# switch starship
+ln -sf "${DIR}"/../.config/starship-prompt/starship-light.toml "${DIR}"/../.config/starship-prompt/starship.toml
