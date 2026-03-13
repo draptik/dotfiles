@@ -270,11 +270,6 @@ fi
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
-# zoxide ----------------------------------------------------------------------
-if (( ${+commands[zoxide]} )); then
-  eval "$(zoxide init --cmd cd zsh)"
-fi
-
 # tmux history ----------------------------------------------------------------
 # This ensures that zsh within tmux writes to history
 setopt inc_append_history
@@ -328,3 +323,9 @@ if (( ${+commands[cliphist]} && ${+commands[fzf]} )); then
     cliphist decode "$id" | wl-copy
   }
 fi
+
+# zoxide (should be at the end of zhrc) ----------------------------------------
+if (( ${+commands[zoxide]} )); then
+  eval "$(zoxide init --cmd cd zsh)"
+fi
+

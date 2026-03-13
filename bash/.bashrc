@@ -119,3 +119,6 @@ source /usr/share/fzf/completion.bash
 if [ -f "$HOME/.local/share/dnvm/env" ]; then
   . "$HOME/.local/share/dnvm/env"
 fi
+
+## zoxide
+eval "$(zoxide init bash)"
