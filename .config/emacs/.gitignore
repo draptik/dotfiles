@@ -1,0 +1,11 @@
+# Package installations — reproduced automatically on first launch
+elpa/
+
+# Native compilation cache — machine-specific compiled bytecode
+eln-cache/
+
+# Files generated at runtime by Emacs
+custom.el
+history
+places
+recentf

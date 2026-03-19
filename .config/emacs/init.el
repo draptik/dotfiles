@@ -1,107 +1,92 @@
-(package-initialize)
+;; init.el --- Main initialization -*- lexical-binding: t -*-
+
+;;; Package setup
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
 
-;; ===================================================================
-;; BACKUP FILES (see https://www.emacswiki.org/emacs/BackupDirectory)
-;; ===================================================================
-;; NOTE: `temporary-file-directory' on linux is: `/tmp'
-(setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
 
-;; ===================================================================
-;; DISABLE CTRL-Z MINIMIZATION/SUSPENSION OF EMACS ===================
-;; ===================================================================
-(global-set-key [(control z)] nil)
+(require 'use-package)
+(setq use-package-always-ensure t)
 
-;; ===================================================================
-;; ANSWER Y INSTEAD OF YES ON PROMPTS ================================
-;; ===================================================================
-(defalias 'yes-or-no-p 'y-or-n-p)
+;;; Sane defaults
+(setq-default
+ inhibit-startup-screen t
+ ring-bell-function     'ignore          ; no bell
+ make-backup-files      nil              ; no foo~ clutter
+ auto-save-default      nil
+ indent-tabs-mode       nil              ; spaces, not tabs
+ fill-column            80)
 
-;; ===================================================================
-;; COMMENT REGION ====================================================
-;; ===================================================================
-(global-set-key (kbd "C-M-;") 'comment-or-uncomment-region)
+(setq scroll-conservatively 101)         ; smooth scrolling
+(delete-selection-mode 1)                ; typing replaces selection
+(global-auto-revert-mode 1)              ; reload files changed on disk
+(savehist-mode 1)                        ; persist minibuffer history
+(recentf-mode 1)                         ; track recent files
 
-;; ===================================================================
-;; FRAME TITLE =======================================================
-;; ===================================================================
-;; Display complete path + filename in title (ie
-;; ~/dirA/dirB/fileX.txt)
-(setq frame-title-format
-      '("%S" (buffer-file-name "%f"
-			       (dired-directory dired-directory "%b"))))
+;;; Theme — detect light/dark from KITTY_THEME env var
+(defun my/apply-theme ()
+  (let ((theme (getenv "KITTY_THEME")))
+    (if (string-equal theme "LIGHT")
+        (progn (setq frame-background-mode 'light)
+               (load-theme 'modus-operandi t))
+      (progn (setq frame-background-mode 'dark)
+             (load-theme 'modus-vivendi t)))))
 
-;; ===================================================================
-;; TAB-WIDTH =========================================================
-;; ===================================================================
-(setq-default tab-width 4)
+(my/apply-theme)
 
-;; ===================================================================
-;; SKELETON PAIR MODE ================================================
-;; ===================================================================
-(setq skeleton-pair t)
-(global-set-key "(" 'skeleton-pair-insert-maybe)
-(global-set-key "[" 'skeleton-pair-insert-maybe)
-(global-set-key "\"" 'skeleton-pair-insert-maybe)
-(global-set-key "{" 'skeleton-pair-insert-maybe)
+;;; Re-apply theme for new frames (needed when running as daemon)
+(add-hook 'after-make-frame-functions
+          (lambda (frame)
+            (with-selected-frame frame
+              (my/apply-theme))))
 
-;; ===================================================================
-;; SCRATCH BUFFER ====================================================
-;; ===================================================================
-;(setq initial-major-mode 'org-mode)
-(setq initial-scratch-message "")
+;;; Line numbers in programming modes
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
 
-;; ===================================================================
-;; Wayland: paste from clipboard =====================================
-;; ===================================================================
-;; https://www.emacswiki.org/emacs/CopyAndPaste#h5o-4
-;;
-;; credit: yorickvP on Github
-(setq wl-copy-process nil)
-(defun wl-copy (text)
-  (setq wl-copy-process (make-process :name "wl-copy"
-                                      :buffer nil
-                                      :command
-                                      '("wl-copy"
-                                        "-f" "-n")
-                                      :connection-type
-                                      'pipe))
-  (process-send-string wl-copy-process text)
-  (process-send-eof wl-copy-process))
-(defun wl-paste ()
-  (if (and wl-copy-process (process-live-p wl-copy-process))
-      nil ; should return nil if we're the current paste owner
-    (shell-command-to-string "wl-paste -n | tr -d \r")))
-(setq interprogram-cut-function 'wl-copy)
-(setq interprogram-paste-function 'wl-paste)
+;;; Completion — the modern "minad stack"
+(use-package vertico
+  :init (vertico-mode))
 
+(use-package orderless
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-overrides '((file (styles basic partial-completion)))))
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(calendar-date-style 'european)
- '(column-number-mode t)
- '(desktop-restore-eager 5)
- '(desktop-save-mode t)
- '(display-time-24hr-format t)
- '(display-time-mode t)
- '(fancy-splash-image "nil")
- '(global-auto-revert-mode t)
- '(ido-enable-flex-matching t)
- '(inhibit-startup-buffer-menu t)
- '(inhibit-startup-screen t)
- '(show-paren-mode t)
- '(size-indication-mode t)
- '(tool-bar-mode nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(use-package marginalia
+  :init (marginalia-mode))
+
+(use-package consult
+  :bind (("C-x b"   . consult-buffer)
+         ("C-x r b" . consult-bookmark)
+         ("M-y"     . consult-yank-pop)
+         ("M-s r"   . consult-ripgrep)
+         ("M-s l"   . consult-line)))
+
+(use-package embark
+  :bind (("C-." . embark-act)
+         ("M-." . embark-dwim)))
+
+(use-package embark-consult
+  :hook (embark-collect-mode . consult-preview-at-point-mode))
+
+;;; Git
+(use-package magit
+  :bind ("C-x g" . magit-status))
+
+;;; LSP (built-in eglot, activate per language as needed)
+;; (add-hook 'python-mode-hook #'eglot-ensure)
+;; (add-hook 'c-mode-hook      #'eglot-ensure)
+
+;;; Persist cursor position
+(save-place-mode 1)
+
+;;; Keep customizations out of this file
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(when (file-exists-p custom-file)
+  (load custom-file))
+
+;;; init.el ends here
