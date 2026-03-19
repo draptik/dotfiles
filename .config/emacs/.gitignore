@@ -6,6 +6,8 @@ eln-cache/
 
 # Files generated at runtime by Emacs
 custom.el
+bookmarks
 history
+org-clock-save.el
 places
 recentf

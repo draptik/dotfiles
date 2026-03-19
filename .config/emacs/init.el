@@ -73,6 +73,37 @@
 (use-package embark-consult
   :hook (embark-collect-mode . consult-preview-at-point-mode))
 
+;;; Org-mode
+(defvar my/org-dir (or (getenv "ORG_DIR") "~/org")
+  "Root directory for org files. Set via ORG_DIR environment variable.")
+
+(use-package org
+  :hook (org-mode . visual-line-mode)
+  :bind (("C-c a" . org-agenda)
+         ("C-c c" . org-capture)
+         ("C-c l" . org-store-link))
+  :custom
+  (org-directory my/org-dir)
+  (org-default-notes-file (expand-file-name "inbox.org" my/org-dir))
+  (org-agenda-files (list (expand-file-name "inbox.org" my/org-dir)
+                          (expand-file-name "journal.org" my/org-dir)))
+  (org-startup-indented t)
+  (org-hide-leading-stars t)
+  (org-todo-keywords
+   '((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+  (org-clock-persist 'history)
+  :config
+  (org-clock-persistence-insinuate)
+  (setq org-capture-templates
+        `(("t" "Task" entry (file+headline org-default-notes-file "Tasks")
+           "* TODO %?\n  %U\n")
+          ("n" "Note" entry (file+headline org-default-notes-file "Notes")
+           "* %?\n  %U\n")
+          ("j" "Journal" entry (file+datetree ,(expand-file-name "journal.org" my/org-dir))
+           "* %?\n  %U\n")
+          ("c" "Clock" entry (file+headline org-default-notes-file "Tasks")
+           "* TODO %?\n  %U\n" :clock-in t :clock-resume t))))
+
 ;;; Git
 (use-package magit
   :bind ("C-x g" . magit-status))
