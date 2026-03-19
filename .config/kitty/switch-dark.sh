@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 echo 'export KITTY_THEME="DARK"' >~/.zshenv
 
 # This script must be executed from within kitty
@@ -20,6 +20,3 @@ ln -sf \
 ##
 ## "Sourcing" `source ~/.zshrc` didn't work. Use `exec /bin/zsh` instead:
 exec /bin/zsh
-
-## Same for bash...
-exec /bin/bash

@@ -21,7 +21,16 @@ export FZF_ALT_C_COMMAND='fd --type d . --color=never'
 ## NOTE: In case the option `--color-scale` crashes in certain folders,
 ## make sure there are no files/folders with an invalid btime.
 ## This can be checked using `ls -altr --time=birth .`.
-alias l='eza --all --long --group --icons --git --git-repos --group-directories-first --color-scale'
+if [ "$TERM" = "xterm-kitty" ] || [ "$TERM" = "screen-256color" ]; then
+  if [ "$KITTY_THEME" = "LIGHT" ]; then
+    # eza's `color-scale` uses the color white (!) for 'newest' and 'largest' on light themes. This is unreadable.
+    alias l='eza --all --long --group --icons --git --git-repos --group-directories-first'
+  else
+    alias l='eza --all --long --group --icons --git --git-repos --group-directories-first --color-scale'
+  fi
+else
+  alias l='eza --all --long --group --icons --git --git-repos --group-directories-first --color-scale'
+fi
 alias lt='l --sort=modified'
 alias ltr='lt --reverse'
 
@@ -45,16 +54,6 @@ if [ "$TERM" = "xterm-kitty" ]; then
 
   ## https://sw.kovidgoyal.net/kitty/faq/#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-when-sshing-into-a-different-computer
   alias ssh="kitty +kitten ssh"
-fi
-
-if [ "$TERM" = "xterm-kitty" ] || [ "$TERM" = "screen-256color" ]; then
-  if [ "$KITTY_THEME" = "DARK" ]; then
-    # use the default alias for eza
-    alias l='eza --all --long --group --icons --git --git-repos --group-directories-first --color-scale'
-  else
-    # eza's `color-scale` uses the color white (!) for 'newest' and 'largest' on light themes. This is unreadable.
-    alias l='eza --all --long --group --icons --git --git-repos --group-directories-first'
-  fi
 fi
 
 # Custom aliases for current projects

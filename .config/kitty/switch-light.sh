@@ -7,7 +7,7 @@ echo 'export KITTY_THEME="LIGHT"' >~/.zshenv
 kitty @ set-background-opacity 1
 
 # This script must be executed from within kitty
-kitty @ set-colors -a ~/.config/kitty/kitty-themes/themes/3024_Day.conf
+kitty @ set-colors -a ~/.config/kitty/kitty-themes/mythemes/3024_Day_patched.conf
 
 ln -sf \
   ~/.dotfiles/.config/kitty/kitty-themes/mythemes/3024_Day_patched.conf \
@@ -21,6 +21,3 @@ ln -sf \
 
 ## "Sourcing" `source ~/.zshrc` didn't work. Use `exec /bin/zsh` instead:
 exec /bin/zsh
-
-## Same for bash...
-exec /bin/bash
