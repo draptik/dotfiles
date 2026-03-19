@@ -104,6 +104,11 @@
           ("c" "Clock" entry (file+headline org-default-notes-file "Tasks")
            "* TODO %?\n  %U\n" :clock-in t :clock-resume t))))
 
+;;; Markdown
+(use-package markdown-mode
+  :mode ("README\\.md\\'" . gfm-mode)
+  :hook (markdown-mode . visual-line-mode))
+
 ;;; Git
 (use-package magit
   :bind ("C-x g" . magit-status))

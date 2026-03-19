@@ -151,6 +151,11 @@ Files live in `$ORG_DIR/`:
 | `C-c C-x C-i`     | Clock in                      |
 | `C-c C-x C-o`     | Clock out                     |
 
+### Markdown
+
+- `markdown-mode`: syntax highlighting and editing support for `.md` files.
+  `README.md` files open in `gfm-mode` (GitHub Flavored Markdown).
+
 ### Other
 
 - `magit`: Git interface. Widely considered the best Git UI of any editor.
