@@ -324,8 +324,13 @@ if (( ${+commands[cliphist]} && ${+commands[fzf]} )); then
   }
 fi
 
-# zoxide (should be at the end of zhrc) ----------------------------------------
+# zoxide (should be at the end of ~/.zshrc) -----------------------------------
 if (( ${+commands[zoxide]} )); then
-  eval "$(zoxide init --cmd cd zsh)"
+  # Although zoxide initialization is last, claude code still complains about
+  # it not be loaded last. Maybe adding `_ZO_DOCTOR` helps?
+  # _ZO_DOCTOR=0 eval "$(zoxide init zsh --cmd cd)"
+  if [[ "$CLAUDECODE" != "1" ]]; then
+    eval "$(zoxide init --cmd cd zsh)"
+  fi
 fi
 

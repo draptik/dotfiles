@@ -121,4 +121,6 @@ if [ -f "$HOME/.local/share/dnvm/env" ]; then
 fi
 
 ## zoxide
-eval "$(zoxide init bash)"
+# Although zoxide initialization is last, claude code still complains about
+# it not be loaded last. Maybe adding `_ZO_DOCTOR` helps?
+_ZO_DOCTOR=0 eval "$(zoxide init bash --cmd cd)"
