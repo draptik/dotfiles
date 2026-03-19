@@ -5,6 +5,19 @@
 - Comply to XDG conventions: Use `~/.config/emacs/init.el`.
 - Make sure there are no configuration files at the old locations (for example `~/.emacs`).
 
+## Gitignored files
+
+| Path | Reason |
+|------|--------|
+| `elpa/` | Installed packages — reproduced automatically on first launch |
+| `eln-cache/` | Native compilation cache — machine-specific compiled bytecode |
+| `custom.el` | Written by Emacs's customize system at runtime |
+| `bookmarks` | Bookmark list saved by Emacs at runtime |
+| `history` | Minibuffer history saved by `savehist-mode` |
+| `org-clock-save.el` | Clock history saved by org's clock persistence |
+| `places` | Cursor positions saved by `save-place-mode` |
+| `recentf` | Recent file list saved by `recentf-mode` |
+
 ## Starting Emacs with different configuration files
 
 - `emacs -Q load ~/.config/emacs/experimental-init.el`
