@@ -10,7 +10,7 @@ kitty @ set-background-opacity 1
 kitty @ set-colors -a ~/.config/kitty/kitty-themes/themes/3024_Day.conf
 
 ln -sf \
-  ~/.dotfiles/.config/kitty/kitty-themes/themes/3024_Day.conf \
+  ~/.dotfiles/.config/kitty/kitty-themes/mythemes/3024_Day_patched.conf \
   ~/.dotfiles/.config/kitty/theme.conf
 
 # switch shell aliases

@@ -135,23 +135,6 @@ if [[ -r "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting
   fi
 fi
 
-# color switching of yay/pacman output
-# TODO: This does not work yet. The double arrow `==>` is not visible on light background!
-#
-# The following one-liner can be used for debugging:
-# yay --color always 2>&1 | cat -v | head -40
-# yay() {
-#   if [[ "$KITTY_THEME" == "DARK" ]]; then
-#     # keep default colors for dark themes
-#     command yay "$@"
-#   else
-#     # replace some colors from yay/pacman for light background themes
-#     command yay --color always "$@" 2>&1 | sed \
-#       -e 's/\x1b\[33m/\x1b[0;34m/g' \
-#       -e 's/\x1b\[36m/\x1b[0;34m/g'
-#   fi
-# }
-
 # command-not-found (installed via arch linux: pkgfile)
 ## initialize the pkgfile database once using `sudo pkgfile -u`
 [[ -r "/usr/share/doc/pkgfile/command-not-found.zsh" ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
