@@ -135,6 +135,15 @@ if [[ -r "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting
   fi
 fi
 
+# LS_COLOR: color switch for soft links
+if [[ "$KITTY_THEME" == "DARK" ]]; then
+  # default color
+  export LS_COLORS="${LS_COLORS}:ln=01;36"
+else
+  # more readable color
+  export LS_COLORS="${LS_COLORS}:ln=01;34"
+fi
+
 # command-not-found (installed via arch linux: pkgfile)
 ## initialize the pkgfile database once using `sudo pkgfile -u`
 [[ -r "/usr/share/doc/pkgfile/command-not-found.zsh" ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
