@@ -108,7 +108,32 @@ alias zrename="noglob zmv -W"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
 
 # zsh-syntax-highlighting (installed via arch linux)
-[[ -r "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [[ -r "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
+
+  # load the plugin
+  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+  # Enable color switching
+  # To get a preview of all 256 colors in the terminal, run the following one-liner:
+  # for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
+  if [[ "$KITTY_THEME" == "DARK" ]]; then
+    ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=yellow'
+    ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=yellow'
+    ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=yellow'
+    ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=cyan'
+    ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]='fg=yellow'
+    ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=yellow'
+    ZSH_HIGHLIGHT_STYLES[redirection]='fg=yellow'
+  else
+    ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=24'
+    ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=24'
+    ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=26'
+    ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=30'
+    ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]='fg=32'
+    ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=26,bold'
+    ZSH_HIGHLIGHT_STYLES[redirection]='fg=26,bold'
+  fi
+fi
 
 # command-not-found (installed via arch linux: pkgfile)
 ## initialize the pkgfile database once using `sudo pkgfile -u`
