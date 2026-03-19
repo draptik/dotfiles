@@ -156,6 +156,52 @@ Files live in `$ORG_DIR/`:
 - `markdown-mode`: syntax highlighting and editing support for `.md` files.
   `README.md` files open in `gfm-mode` (GitHub Flavored Markdown).
 
+**Navigation:**
+
+| Keys        | Action                          |
+|-------------|---------------------------------|
+| `TAB`       | Cycle heading visibility        |
+| `S-TAB`     | Cycle all headings visibility   |
+| `C-c C-n`   | Next heading                    |
+| `C-c C-p`   | Previous heading                |
+| `C-c C-f`   | Next heading (same level)       |
+| `C-c C-b`   | Previous heading (same level)   |
+| `C-c C-u`   | Up to parent heading            |
+| `C-c C-o`   | Follow link at point            |
+
+**Formatting** (`C-c C-s` prefix):
+
+| Keys          | Action              |
+|---------------|---------------------|
+| `C-c C-s b`   | Bold                |
+| `C-c C-s i`   | Italic              |
+| `C-c C-s c`   | Inline code         |
+| `C-c C-s C`   | Code block (GFM)    |
+| `C-c C-s q`   | Blockquote          |
+| `C-c C-s s`   | Strikethrough       |
+| `C-c C-s 1-6` | Heading level 1–6   |
+| `C-c C-s -`   | Horizontal rule     |
+| `C-c C-s t`   | Insert table        |
+| `C-c C-s [`   | GFM checkbox        |
+
+**Insertion:**
+
+| Keys        | Action                  |
+|-------------|-------------------------|
+| `C-c C-l`   | Insert link             |
+| `C-c C-i`   | Insert image            |
+| `C-c C-j`   | Insert list item        |
+| `C-c '`     | Edit code block (native mode) |
+
+**Export / Preview** (`C-c C-c` prefix):
+
+| Keys          | Action                          |
+|---------------|---------------------------------|
+| `C-c C-c p`   | Preview (requires processor)    |
+| `C-c C-c l`   | Live preview mode               |
+| `C-c C-c e`   | Export to HTML                  |
+| `C-c C-c v`   | Export and open in browser      |
+
 ### Other
 
 - `magit`: Git interface. Widely considered the best Git UI of any editor.
