@@ -47,6 +47,9 @@
 ;;; Line numbers in programming modes
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 
+;;; Highlight current line
+(global-hl-line-mode 1)
+
 ;;; Completion — the modern "minad stack"
 (use-package vertico
   :init (vertico-mode))
