@@ -8,7 +8,7 @@
 ## Gitignored files
 
 | Path | Reason |
-|------|--------|
+| ------ | -------- |
 | `elpa/` | Installed packages — reproduced automatically on first launch |
 | `eln-cache/` | Native compilation cache — machine-specific compiled bytecode |
 | `custom.el` | Written by Emacs's customize system at runtime |
@@ -116,6 +116,7 @@ export ORG_DIR="$HOME/cloud/Nextcloud_wolke/org"
 ```
 
 Files live in `$ORG_DIR/`:
+
 - `inbox.org` — tasks and notes captured during the day
 - `journal.org` — dated journal entries (date tree: year → month → day)
 
@@ -185,6 +186,7 @@ Files live in `$ORG_DIR/`:
 | `C-c C-s [`   | GFM checkbox        |
 
 **Insertion:**
+<!-- markdownlint-disable MD060 -->
 
 | Keys        | Action                  |
 |-------------|-------------------------|
