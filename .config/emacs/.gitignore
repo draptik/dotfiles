@@ -5,6 +5,7 @@ elpa/
 eln-cache/
 
 # Files generated at runtime by Emacs
+auto-save-list/
 custom.el
 bookmarks
 history
