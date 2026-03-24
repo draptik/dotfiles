@@ -100,8 +100,14 @@ source /usr/share/nvm/nvm.sh
 source /usr/share/nvm/bash_completion
 
 # Custom scripts
+export PATH=$PATH:~/.dotfiles/bin
 export PATH=$PATH:~/.config/$USER/
 export PATH=$PATH:~/.config/$USER-work/
+
+# Color theme (shared with zsh)
+if [ -f ~/.config/current-theme ]; then
+  export KITTY_THEME=$(cat ~/.config/current-theme | tr '[:lower:]' '[:upper:]')
+fi
 
 ## ranger file manager
 export RANGER_LOAD_DEFAULT_RC="FALSE"

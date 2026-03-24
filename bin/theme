@@ -23,6 +23,7 @@ esac
 
 # Persist the new theme
 echo "export KITTY_THEME=\"$TARGET\"" > ~/.zshenv
+echo "$TARGET" | tr '[:upper:]' '[:lower:]' > ~/.config/current-theme
 
 # --- Always update all terminal config symlinks ---
 
