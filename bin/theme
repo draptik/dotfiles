@@ -39,6 +39,13 @@ else
   ln -sf "$DOTFILES/.config/tmux/tmux-theme-light.conf" "$DOTFILES/.config/tmux/theme.conf"
 fi
 
+# Claude Code theme
+CLAUDE_THEME=$(echo "$TARGET" | tr '[:upper:]' '[:lower:]')
+if [ -f ~/.claude/settings.json ]; then
+  jq --arg t "$CLAUDE_THEME" '.theme = $t' ~/.claude/settings.json > ~/.claude/settings.json.tmp \
+    && mv ~/.claude/settings.json.tmp ~/.claude/settings.json
+fi
+
 # Reload tmux theme in all running sessions
 tmux source-file "$DOTFILES/.config/tmux/theme.conf" 2>/dev/null
 
