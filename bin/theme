@@ -30,11 +30,16 @@ if [ "$TARGET" = "DARK" ]; then
   KITTY_THEME_FILE="$DOTFILES/.config/kitty/kitty-themes/themes/gruvbox_dark.conf"
   ln -sf "$KITTY_THEME_FILE" "$DOTFILES/.config/kitty/theme.conf"
   ln -sf "$DOTFILES/.config/ghostty/config-dark" "$DOTFILES/.config/ghostty/theme.conf"
+  ln -sf "$DOTFILES/.config/tmux/tmux-theme-dark.conf" "$DOTFILES/.config/tmux/theme.conf"
 else
   KITTY_THEME_FILE="$DOTFILES/.config/kitty/kitty-themes/mythemes/3024_Day_patched.conf"
   ln -sf "$KITTY_THEME_FILE" "$DOTFILES/.config/kitty/theme.conf"
   ln -sf "$DOTFILES/.config/ghostty/config-light" "$DOTFILES/.config/ghostty/theme.conf"
+  ln -sf "$DOTFILES/.config/tmux/tmux-theme-light.conf" "$DOTFILES/.config/tmux/theme.conf"
 fi
+
+# Reload tmux theme in all running sessions
+tmux source-file "$DOTFILES/.config/tmux/theme.conf" 2>/dev/null
 
 # --- Live reload for the current terminal ---
 
