@@ -113,36 +113,14 @@ if [[ -r "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting
   # load the plugin
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-  # Enable color switching
-  # To get a preview of all 256 colors in the terminal, run the following one-liner:
-  # for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
-  if [[ "$KITTY_THEME" == "DARK" ]]; then
-    ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=yellow'
-    ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=yellow'
-    ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=yellow'
-    ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=cyan'
-    ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]='fg=yellow'
-    ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=yellow'
-    ZSH_HIGHLIGHT_STYLES[redirection]='fg=yellow'
-  else
-    ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=24'
-    ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=24'
-    ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=26'
-    ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=30'
-    ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]='fg=32'
-    ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=26,bold'
-    ZSH_HIGHLIGHT_STYLES[redirection]='fg=26,bold'
-  fi
+  # Enable color switching — colors applied in theme-env.zsh below
 fi
 
-# LS_COLOR: color switch for soft links
-if [[ "$KITTY_THEME" == "DARK" ]]; then
-  # default color
-  export LS_COLORS="${LS_COLORS}:ln=01;36"
-else
-  # more readable color
-  export LS_COLORS="${LS_COLORS}:ln=01;34"
-fi
+# Capture base LS_COLORS before theme additions (used by theme-env.zsh to stay idempotent)
+_BASE_LS_COLORS="${LS_COLORS}"
+
+# Apply theme-sensitive config (highlight styles, LS_COLORS)
+source ~/.dotfiles/zsh/theme-env.zsh
 
 # command-not-found (installed via arch linux: pkgfile)
 ## initialize the pkgfile database once using `sudo pkgfile -u`

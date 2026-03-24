@@ -62,5 +62,3 @@ else
   "$DOTFILES/sh_common_aliases/switch-to-light.sh"
   "$DOTFILES/.config/ranger/switch-to-kitty-light.sh"
 fi
-
-exec /bin/zsh

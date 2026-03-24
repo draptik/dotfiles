@@ -45,7 +45,21 @@ fi
 source ~/.dotfiles/sh_common_aliases/themed_aliases
 
 ## Switch color theme (works in kitty, ghostty, tmux, or plain shell)
-alias theme='~/.dotfiles/bin/theme'
+## Defined as a function so it can update the current shell session without restart
+unalias theme 2>/dev/null
+theme() {
+  ~/.dotfiles/bin/theme "$@" || return 1
+  # Propagate new theme into the current shell
+  KITTY_THEME="$(cat ~/.config/current-theme | tr '[:lower:]' '[:upper:]')"
+  export KITTY_THEME
+  # shellcheck disable=SC3046,SC1090
+  source ~/.dotfiles/sh_common_aliases/themed_aliases
+  # Re-apply zsh-specific theme config (highlight styles, LS_COLORS)
+  if [ -n "$ZSH_VERSION" ]; then
+    # shellcheck disable=SC3046,SC1090
+    source ~/.dotfiles/zsh/theme-env.zsh
+  fi
+}
 
 ## kitty-specific aliases
 if [ "$TERM" = "xterm-kitty" ]; then
