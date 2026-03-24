@@ -39,8 +39,10 @@ fi
 # --- Live reload for the current terminal ---
 
 if [ -n "$KITTY_WINDOW_ID" ]; then
-  kitty @ set-background-opacity 1
-  kitty @ set-colors -a "$KITTY_THEME_FILE"
+  for socket in /tmp/kitty-*; do
+    kitty @ --to "unix:$socket" set-colors -a "$KITTY_THEME_FILE" 2>/dev/null
+    kitty @ --to "unix:$socket" set-background-opacity 1 2>/dev/null
+  done
 elif [ "$TERM" = "xterm-ghostty" ]; then
   echo "Press Ctrl+Shift+, to apply the new theme to running Ghostty windows"
 fi
