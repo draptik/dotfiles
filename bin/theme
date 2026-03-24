@@ -28,7 +28,7 @@ echo "$TARGET" | tr '[:upper:]' '[:lower:]' > ~/.config/current-theme
 # --- Always update all terminal config symlinks ---
 
 if [ "$TARGET" = "DARK" ]; then
-  KITTY_THEME_FILE="$DOTFILES/.config/kitty/kitty-themes/themes/gruvbox_dark.conf"
+  KITTY_THEME_FILE="$DOTFILES/.config/kitty/kitty-themes/mythemes/gruvbox_dark_hard.conf"
   ln -sf "$KITTY_THEME_FILE" "$DOTFILES/.config/kitty/theme.conf"
   ln -sf "$DOTFILES/.config/ghostty/config-dark" "$DOTFILES/.config/ghostty/theme.conf"
   ln -sf "$DOTFILES/.config/tmux/tmux-theme-dark.conf" "$DOTFILES/.config/tmux/theme.conf"
