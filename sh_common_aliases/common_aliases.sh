@@ -21,7 +21,7 @@ export FZF_ALT_C_COMMAND='fd --type d . --color=never'
 ## NOTE: In case the option `--color-scale` crashes in certain folders,
 ## make sure there are no files/folders with an invalid btime.
 ## This can be checked using `ls -altr --time=birth .`.
-if [ "$TERM" = "xterm-kitty" ] || [ "$TERM" = "screen-256color" ]; then
+if [ "$TERM" = "xterm-kitty" ] || [ "$TERM" = "screen-256color" ] || [ "$TERM" = "xterm-ghostty" ]; then
   if [ "$KITTY_THEME" = "LIGHT" ]; then
     # eza's `color-scale` uses the color white (!) for 'newest' and 'largest' on light themes. This is unreadable.
     alias l='eza --all --long --group --icons --git --git-repos --group-directories-first'
@@ -54,6 +54,15 @@ if [ "$TERM" = "xterm-kitty" ]; then
 
   ## https://sw.kovidgoyal.net/kitty/faq/#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-when-sshing-into-a-different-computer
   alias ssh="kitty +kitten ssh"
+fi
+
+## Switch between ghostty themes
+if [ "$TERM" = "xterm-ghostty" ]; then
+  if [ "$KITTY_THEME" = "DARK" ]; then
+    alias toggleghostty='~/.dotfiles/.config/ghostty/switch-light.sh'
+  else
+    alias toggleghostty='~/.dotfiles/.config/ghostty/switch-dark.sh'
+  fi
 fi
 
 # Custom aliases for current projects
