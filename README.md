@@ -11,22 +11,15 @@ I am aware of the great resource site [dotfiles.github.io/](https://dotfiles.git
 ## Color Theme switching
 
 - My default setup is: `kitty` -> `tmux` -> `zsh`.
-- My default color scheme is dark.
-- The main reasons for using a light theme are:
-  - outdoors
-  - presentations (!)
-- I have invested a lot of time in color theme switching
-  - the main script for triggering color theme switching is `togglekitty`.
-  - `togglekitty` must be called from the `kitty` terminal before `tmux` is invoked.
-  - `togglekitty` is located at: `./sh_common_aliases/common_aliases.sh`
-    ```sh
-    # `KITTY_THEME` is my custom environment variable
-    if [ "$KITTY_THEME" = "DARK" ]; then
-      alias togglekitty='~/.dotfiles/.config/kitty/switch-light.sh'
-      # ...
-    else
-      alias togglekitty='~/.dotfiles/.config/kitty/switch-dark.sh'
-      # ...
-    fi
-    ```
-  - there are many derived color theme switches from there on...
+- My default color scheme is dark (gruvbox).
+- The main reasons for using a light theme are: outdoors, presentations.
+- Theme switching is handled by a single `theme` command (`~/.dotfiles/bin/theme`):
+  ```sh
+  theme        # toggle
+  theme dark
+  theme light
+  ```
+- Works from kitty, ghostty, tmux, bash, or any plain shell.
+- Switches: kitty (live IPC to all windows), ghostty (config reload), tmux (live),
+  starship, eza, btop, tealdeer, mcfly, ranger, zsh-syntax-highlighting.
+- Active theme is persisted in `~/.zshenv` (zsh) and `~/.config/current-theme` (all shells).
