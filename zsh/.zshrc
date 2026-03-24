@@ -194,6 +194,7 @@ unset JAVA_HOME
 typeset -U path
 
 # add custom script folders to PATH
+path+=(~/.dotfiles/bin)
 path+=(~/.config/$USER)
 path+=(~/.config/$USER-work)
 

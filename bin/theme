@@ -1,0 +1,58 @@
+#!/bin/sh
+# Unified theme switcher — works from kitty, ghostty, tmux, or plain shell
+# Usage: theme [dark|light|toggle]
+
+DOTFILES="$HOME/.dotfiles"
+
+# Determine target theme
+case "$1" in
+  dark)  TARGET="DARK" ;;
+  light) TARGET="LIGHT" ;;
+  toggle|"")
+    if [ "$KITTY_THEME" = "DARK" ]; then
+      TARGET="LIGHT"
+    else
+      TARGET="DARK"
+    fi
+    ;;
+  *)
+    echo "Usage: theme [dark|light|toggle]" >&2
+    exit 1
+    ;;
+esac
+
+# Persist the new theme
+echo "export KITTY_THEME=\"$TARGET\"" > ~/.zshenv
+
+# --- Always update all terminal config symlinks ---
+
+if [ "$TARGET" = "DARK" ]; then
+  KITTY_THEME_FILE="$DOTFILES/.config/kitty/kitty-themes/themes/gruvbox_dark.conf"
+  ln -sf "$KITTY_THEME_FILE" "$DOTFILES/.config/kitty/theme.conf"
+  ln -sf "$DOTFILES/.config/ghostty/config-dark" "$DOTFILES/.config/ghostty/theme.conf"
+else
+  KITTY_THEME_FILE="$DOTFILES/.config/kitty/kitty-themes/mythemes/3024_Day_patched.conf"
+  ln -sf "$KITTY_THEME_FILE" "$DOTFILES/.config/kitty/theme.conf"
+  ln -sf "$DOTFILES/.config/ghostty/config-light" "$DOTFILES/.config/ghostty/theme.conf"
+fi
+
+# --- Live reload for the current terminal ---
+
+if [ -n "$KITTY_WINDOW_ID" ]; then
+  kitty @ set-background-opacity 1
+  kitty @ set-colors -a "$KITTY_THEME_FILE"
+elif [ "$TERM" = "xterm-ghostty" ]; then
+  echo "Press Ctrl+Shift+, to apply the new theme to running Ghostty windows"
+fi
+
+# --- Shared tool switches ---
+
+if [ "$TARGET" = "DARK" ]; then
+  "$DOTFILES/sh_common_aliases/switch-to-dark.sh"
+  "$DOTFILES/.config/ranger/switch-to-kitty-dark.sh"
+else
+  "$DOTFILES/sh_common_aliases/switch-to-light.sh"
+  "$DOTFILES/.config/ranger/switch-to-kitty-light.sh"
+fi
+
+exec /bin/zsh

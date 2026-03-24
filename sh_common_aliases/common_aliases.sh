@@ -44,25 +44,13 @@ fi
 # shellcheck disable=SC3046,SC1090
 source ~/.dotfiles/sh_common_aliases/themed_aliases
 
-## Switch between kitty themes
-if [ "$TERM" = "xterm-kitty" ]; then
-  if [ "$KITTY_THEME" = "DARK" ]; then
-    alias togglekitty='~/.dotfiles/.config/kitty/switch-light.sh'
-  else
-    alias togglekitty='~/.dotfiles/.config/kitty/switch-dark.sh'
-  fi
+## Switch color theme (works in kitty, ghostty, tmux, or plain shell)
+alias theme='~/.dotfiles/bin/theme'
 
+## kitty-specific aliases
+if [ "$TERM" = "xterm-kitty" ]; then
   ## https://sw.kovidgoyal.net/kitty/faq/#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-when-sshing-into-a-different-computer
   alias ssh="kitty +kitten ssh"
-fi
-
-## Switch between ghostty themes
-if [ "$TERM" = "xterm-ghostty" ]; then
-  if [ "$KITTY_THEME" = "DARK" ]; then
-    alias toggleghostty='~/.dotfiles/.config/ghostty/switch-light.sh'
-  else
-    alias toggleghostty='~/.dotfiles/.config/ghostty/switch-dark.sh'
-  fi
 fi
 
 # Custom aliases for current projects

@@ -1,1 +1,8 @@
-/home/patrick/.dotfiles/.config/ghostty/config-light
+font-family = "Jetbrains Mono"
+font-size = 10
+title = " "
+window-decoration = none
+cursor-style = block
+shell-integration-features = no-cursor
+
+config-file = ./theme.conf
