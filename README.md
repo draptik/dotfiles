@@ -21,15 +21,15 @@ I am aware of the great resource site [dotfiles.github.io/](https://dotfiles.git
   ```
 - Works from kitty, ghostty, tmux, bash, or any plain shell.
 - Switches: kitty (live IPC to all windows), ghostty (config reload), tmux (live),
-  starship, eza, btop, tealdeer, mcfly, ranger, zsh-syntax-highlighting.
+  starship, eza, btop, tealdeer, klog, shell aliases, ranger, Claude Code.
 - Active theme is persisted in `~/.zshenv` (zsh) and `~/.config/current-theme` (all shells).
 
 ### Theme symlinks and git
 
-Each tool's `theme.conf` inside `.dotfiles/` is a symlink that points to the active dark/light variant.
+Each themed tool has a symlink inside `.dotfiles/` pointing to the active dark/light variant.
 Switching themes rewrites these symlinks, which git would otherwise flag as modifications.
 
-To prevent git from tracking theme switches, the three `theme.conf` symlinks are marked with `skip-worktree`.
+To prevent git from tracking theme switches, all theme symlinks are marked with `skip-worktree`.
 This is stored in `.git/index` — it persists on the current clone but must be re-run after cloning on a new machine:
 
 ```sh
