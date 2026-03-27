@@ -19,7 +19,7 @@ Work through these in order — each builds on the previous.
 In `~/test.org`:
 
 1. Create a top-level heading: `* Projects`
-2. Below it, create a subheading: press `RET`, then `M-RET` — notice it creates `** `
+2. Below it, create a subheading: press `RET`, then `M-RET` — notice it creates `**`
 3. Type `My first project`
 4. Add another subheading under that: `*** A task inside the project`
 5. Navigate between headings with `C-c C-n` (next) and `C-c C-p` (previous)
