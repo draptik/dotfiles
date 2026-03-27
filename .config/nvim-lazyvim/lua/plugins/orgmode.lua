@@ -19,6 +19,7 @@ return {
           org_todo_prev = "<Leader>oS",
           org_priority_up = "<Leader>oP",
           org_priority_down = "<Leader>op",
+          org_toggle_checkbox = "<Leader>o[",
         },
       },
 
