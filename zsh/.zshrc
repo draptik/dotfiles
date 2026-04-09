@@ -305,6 +305,11 @@ if [ -d "$HOME/.cargo/bin" ]; then
   export PATH="$PATH:$HOME/.cargo/bin"
 fi
 
+# Go --------------------------------------------------------------------------
+if [ -d "$HOME/go/bin" ]; then
+  export PATH="$PATH:$HOME/go/bin"
+fi
+
 # jujutsu (jj) ----------------------------------------------------------------
 if (( ${+commands[jj]} )); then
   autoload -U compinit
