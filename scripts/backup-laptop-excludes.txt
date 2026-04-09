@@ -26,7 +26,9 @@
 /sys/*
 /tmp/*
 /var/.snapshots/*
+/var/lib/containerd/*
 /var/lib/docker/overlay*/*
 /var/lib/docker/volumes/*
+/var/lib/docker/rootfs/*
 /var/lib/libvirt/images/*
 /var/lib/ollama/*

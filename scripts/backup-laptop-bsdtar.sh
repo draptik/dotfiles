@@ -34,7 +34,9 @@ for i in /mnt/archive; do
       --exclude='/sys/*' \
       --exclude='/tmp/*' \
       --exclude='/var/.snapshots/*' \
+      --exclude='/var/lib/containerd/*' \
       --exclude='/var/lib/docker/overlay*/*' \
+      --exclude='/var/lib/docker/rootfs*/*' \
       --exclude='/var/lib/docker/volumes/*' \
       --exclude='/var/lib/libvirt/images/*' \
       --exclude='/var/lib/ollama/*' \
