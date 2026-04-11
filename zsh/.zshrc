@@ -322,6 +322,11 @@ if (( ${+commands[pay-respects]} )); then
   eval "$(pay-respects zsh)"
 fi
 
+# mise ------------------------------------------------------------------------
+if (( ${+commands[mise]} )); then
+  eval "$(mise activate zsh)"
+fi
+
 # cliphist (Clipboard history manager) ----------------------------------------
 if (( ${+commands[cliphist]} && ${+commands[fzf]} )); then
 
