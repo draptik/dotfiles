@@ -94,7 +94,7 @@ esac
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
-alias zshconfig="vim ~/.zshrc"
+alias zshconfig="nvim ~/.zshrc"
 
 # smart move/rename with zmv
 autoload zmv
@@ -126,11 +126,6 @@ source ~/.dotfiles/zsh/theme-env.zsh
 ## initialize the pkgfile database once using `sudo pkgfile -u`
 [[ -r "/usr/share/doc/pkgfile/command-not-found.zsh" ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
 
-# the-fuck (installed via arch linux)
-if (( ${+commands[thefuck]} )); then
-  eval $(thefuck --alias)
-fi
-
 # xkcd for kitty
 source ~/.dotfiles/zsh/.oh-my-zsh/custom/function-xkcd.zsh
 
@@ -138,31 +133,33 @@ source ~/.dotfiles/zsh/.oh-my-zsh/custom/function-xkcd.zsh
 source ~/.dotfiles/sh_common_aliases/common_aliases.sh
 
 # dotnet
-#export PATH=$PATH:/opt/dotnet
-#export DOTNET_ROOT="$(dirname $(which dotnet))"
-#export DOTNET_ROOT=/opt/dotnet
-export DOTNET_ROOT=/usr/share/dotnet
-
-# Add .NET Core SDK tools
-export PATH="$PATH:/home/patrick/.dotnet/tools"
-
-# dotnet core completions: https://learn.microsoft.com/en-us/dotnet/core/tools/enable-tab-autocomplete#zsh
-_dotnet_zsh_complete()
-{
-  local completions=("$(dotnet complete "$words")")
-
-  # If the completion is empty, just continue with filename selection
-  if [ -z "$completions" ]
-  then
-    _arguments '*::arguments: _normal'
-    return
-  fi
-
-  # This is not a variable assignment, don't remove spaces!
-  _values = "${(ps:\n:)completions}"
-}
-
-compctl -K _dotnet_zsh_complete dotnet
+if (( ${+commands[dotnet]} )); then
+  #export PATH=$PATH:/opt/dotnet
+  #export DOTNET_ROOT="$(dirname $(which dotnet))"
+  #export DOTNET_ROOT=/opt/dotnet
+  export DOTNET_ROOT=/usr/share/dotnet
+  
+  # Add .NET Core SDK tools
+  export PATH="$PATH:/home/patrick/.dotnet/tools"
+  
+  # dotnet core completions: https://learn.microsoft.com/en-us/dotnet/core/tools/enable-tab-autocomplete#zsh
+  _dotnet_zsh_complete()
+  {
+    local completions=("$(dotnet complete "$words")")
+  
+    # If the completion is empty, just continue with filename selection
+    if [ -z "$completions" ]
+    then
+      _arguments '*::arguments: _normal'
+      return
+    fi
+  
+    # This is not a variable assignment, don't remove spaces!
+    _values = "${(ps:\n:)completions}"
+  }
+  
+  compctl -K _dotnet_zsh_complete dotnet
+fi
 
 # java: use system default (set via `archlinux-java`)
 unset JAVA_HOME
@@ -217,7 +214,9 @@ if [ -f /usr/share/nvm/nvm.sh ]; then
 fi
 
 # atuin (alternative to McFly)
-eval "$(atuin init zsh)"
+if (( ${+commands[atuin]} )); then
+  eval "$(atuin init zsh)"
+fi
 
 # arch package: starship-bin
 if (( ${+commands[starship]} )); then
@@ -275,11 +274,6 @@ fi
 
 # ------------------------------------------------------------------------------
 
-# not sure why, but somehow starship messes with auto_cd feature.
-# unsetopt/setopt seems to fix auto_cd
-#unsetopt auto_cd
-#setopt auto_cd
-
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
@@ -288,7 +282,9 @@ export EDITOR="$VISUAL"
 setopt inc_append_history
 
 # Nix -------------------------------------------------------------------------
-export PATH="$PATH:$HOME/.nix-profile/bin"
+if [ -d "$HOME/.nix-profile" ]; then
+  export PATH="$PATH:$HOME/.nix-profile/bin"
+fi
 
 # dnvm (dotnet version manager) -----------------------------------------------
 #if [ -f "$HOME/.local/share/dnvm/env" ]; then
