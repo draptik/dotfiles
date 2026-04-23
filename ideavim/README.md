@@ -95,6 +95,21 @@ Hello w*orld!             ysiw)       Hello (world)!
      Hello w*orld!        yssB            {Hello world!}
 ```
 
+## Conditional sourcing (Rider vs IntelliJ)
+
+Use `&ide` to check which IDE is in use:
+
+```vim
+" IDE-specific
+if &ide =~? 'rider'
+  " C#/.NET mappings
+  map <leader>t <Action>(RiderUnitTestRunContextAction)
+elseif &ide =~? 'idea'
+  " Java mappings
+  map <leader>t <Action>(RunClass)
+endif
+```
+
 ## Resources
 
 - [IdeaVim Marketing](https://lp.jetbrains.com/ideavim/)

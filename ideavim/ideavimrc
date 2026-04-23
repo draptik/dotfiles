@@ -124,8 +124,8 @@ let g:WhichKeyDesc_NerdTree_focus = "<leader>X Focus NerdTree (Solution Explorer
 " Formatting ----------------------------------------------
 map <leader>ec <Action>(CodeCleanup)
 
-let g:WhichKeyDesc_cleanup = "<leader>e Code CleanupUp (using Rider's memnotic)..."
-let g:WhichKeyDesc_cleanup_cleanup = "<leader>ec Code CleanupUp..."
+let g:WhichKeyDesc_cleanup = "<leader>e Code CleanUp (using Rider's memnotic)..."
+let g:WhichKeyDesc_cleanup_cleanup = "<leader>ec Code CleanUp..."
 
 " Extend selection ----------------------------------------
 " I use this a lot in Rider
@@ -135,7 +135,9 @@ sethandler <C-w> a:ide
 " Folding -------------------------------------------------
 map <leader>za <Action>(CollapseAllRegions)
 " map <leader>zo <Action>(ExpandAllRegions)
-map <leader>zd <Action>(RiderCollapseToDefinitions)
+if &ide =~? 'rider'
+  map <leader>zd <Action>(RiderCollapseToDefinitions)
+endif
 map <leader>zc <Action>(CollapseRegion)
 map <leader>ze <Action>(ExpandRegion)
 
@@ -247,32 +249,51 @@ let g:WhichKeyDesc_git_status = "<leader>Gs Open Git status dialog"
 let g:WhichKeyDesc_git_branches = "<leader>Gb Open Git branches list"
 
 " Errors --------------------------------------------------
-map <leader>En <Action>(ReSharperGotoNextErrorInSolution)
-map <leader>Ep <Action>(ReSharperGotoPrevErrorInSolution)
+if &ide =~? 'rider'
+  map <leader>En <Action>(ReSharperGotoNextErrorInSolution)
+  map <leader>Ep <Action>(ReSharperGotoPrevErrorInSolution)
 
-let g:WhichKeyDesc_errors = "<leader>E Error navigation"
-let g:WhichKeyDesc_errors_next = "<leader>En Go to next error in solution"
-let g:WhichKeyDesc_errors_prev = "<leader>Ep Go to previous error in solution"
+  let g:WhichKeyDesc_errors = "<leader>E Error navigation"
+  let g:WhichKeyDesc_errors_next = "<leader>En Go to next error in solution"
+  let g:WhichKeyDesc_errors_prev = "<leader>Ep Go to previous error in solution"
+endif
 
 " Unit Testing --------------------------------------------
-nmap <leader>ur <Action>(RiderUnitTestRunContextAction)
-nmap <leader>ud <Action>(RiderUnitTestDebugContextAction)
-nmap <leader>ul <Action>(RiderUnitTestRunSolutionAction)
-nmap <leader>uu <Action>(RiderUnitTestRepeatPreviousRunAction)
+if &ide =~? 'rider'
+  nmap <leader>ur <Action>(RiderUnitTestRunContextAction)
+  nmap <leader>ud <Action>(RiderUnitTestDebugContextAction)
+  nmap <leader>ul <Action>(RiderUnitTestRunSolutionAction)
+  nmap <leader>uu <Action>(RiderUnitTestRepeatPreviousRunAction)
 
-let g:WhichKeyDesc_unit_testing = "<leader>u Unit testing"
-let g:WhichKeyDesc_unit_testing_run_test = "<leader>ur Run unit test"
-let g:WhichKeyDesc_unit_testing_debug_test = "<leader>ud Debug unit test"
-let g:WhichKeyDesc_unit_testing_run_all_tests = "<leader>ul Run all unit tests "
-let g:WhichKeyDesc_unit_testing_repeat_previous_run_action = "<leader>uu Repeat previous test run"
+  let g:WhichKeyDesc_unit_testing = "<leader>u Unit testing"
+  let g:WhichKeyDesc_unit_testing_run_test = "<leader>ur Run unit test"
+  let g:WhichKeyDesc_unit_testing_debug_test = "<leader>ud Debug unit test"
+  let g:WhichKeyDesc_unit_testing_run_all_tests = "<leader>ul Run all unit tests "
+  let g:WhichKeyDesc_unit_testing_repeat_previous_run_action = "<leader>uu Repeat previous test run"
+elseif &ide =~? 'idea'
+  nmap <leader>uc <Action>(RunClass)
+  nmap <leader>ur <Action>(ContextRun)
+  nmap <leader>ud <Action>(ContextDebug)
+  nmap <leader>ul <Action>(ChooseRunConfiguration)
+  nmap <leader>uu <Action>(RerunTests)
+
+  let g:WhichKeyDesc_unit_testing = "<leader>u Unit testing"
+  let g:WhichKeyDesc_unit_testing_run_class = "<leader>uc Run unit test in current file"
+  let g:WhichKeyDesc_unit_testing_run_test = "<leader>ur Run unit test"
+  let g:WhichKeyDesc_unit_testing_debug_test = "<leader>ud Debug unit test"
+  let g:WhichKeyDesc_unit_testing_run_all_tests = "<leader>ul Choose run configuration"
+  let g:WhichKeyDesc_unit_testing_repeat_previous_run_action = "<leader>uu Repeat previous run"
+endif
 
 " F# Interactive -----------------------------------------
-map <leader>Fi <Action>(IntentionActionAsAction_com.jetbrains.rider.plugins.fsharp.services.fsi.SendLineToFsiIntentionAction)
-map <leader>Fs <Action>(Rider.Plugins.FSharp.SendToFsi)
+if &ide =~? 'rider'
+  map <leader>Fi <Action>(IntentionActionAsAction_com.jetbrains.rider.plugins.fsharp.services.fsi.SendLineToFsiIntentionAction)
+  map <leader>Fs <Action>(Rider.Plugins.FSharp.SendToFsi)
 
-let g:WhichKeyDesc_FInteractive = "<leader>F FSharp Interactive"
-let g:WhichKeyDesc_FInteractive_send_line = "<leader>Fi Send line to FSharp Interactive"
-let g:WhichKeyDesc_FInteractive_send_selection = "<leader>Fs Send selection to FSharp Interactive"
+  let g:WhichKeyDesc_FInteractive = "<leader>F FSharp Interactive"
+  let g:WhichKeyDesc_FInteractive_send_line = "<leader>Fi Send line to FSharp Interactive"
+  let g:WhichKeyDesc_FInteractive_send_selection = "<leader>Fs Send selection to FSharp Interactive"
+endif
 
 " Reload IdeaVim Config -----------------------------------
 nmap <leader>Q <Action>(IdeaVim.ReloadVimRc.reload)
