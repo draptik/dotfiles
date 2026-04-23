@@ -23,7 +23,6 @@ diverged = "⇡${ahead_count}⇣${behind_count}"
 [aws]
 disabled = true
 
-
 [directory]
 style = "bold fg:mydir"
 fish_style_pwd_dir_length = 1
@@ -37,6 +36,9 @@ style = "bold fg:color_python"
 [direnv]
 style = "bold fg:color_direnv"
 
+[java]
+style = "bold fg:color_java"
+
 [custom.prolog]
 command = "swipl --version | cut -d' ' -f3"
 extensions = ["pl"]
@@ -47,9 +49,11 @@ mydir = "bright-cyan"
 myduration = "yellow"
 color_python = "yellow"
 color_direnv = "bright-yellow"
+color_java = "172" # light brown
 
 [palettes.my-light-theme]
 mydir = "blue"
 myduration = "purple"
 color_python = "purple"
 color_direnv = "bright-purple"
+color_java = "52" # dark brown
