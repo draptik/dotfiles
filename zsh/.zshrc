@@ -306,6 +306,11 @@ if [ -d "$HOME/go/bin" ]; then
   export PATH="$PATH:$HOME/go/bin"
 fi
 
+# Jetbrains Toolbox -----------------------------------------------------------
+if [ -d "$HOME/.local/share/JetBrains/Toolbox/scripts" ]; then
+  export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
+fi
+
 # jujutsu (jj) ----------------------------------------------------------------
 if (( ${+commands[jj]} )); then
   autoload -U compinit
