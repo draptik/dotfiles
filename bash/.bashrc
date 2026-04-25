@@ -88,9 +88,6 @@ fi
 ## activate autocd
 shopt -s autocd
 
-## the fuck
-eval "$(thefuck --alias)"
-
 ## Starship prompt (arch package: starship-bin)
 eval "$(starship init bash)"
 
@@ -124,6 +121,11 @@ source /usr/share/fzf/completion.bash
 
 if [ -f "$HOME/.local/share/dnvm/env" ]; then
   . "$HOME/.local/share/dnvm/env"
+fi
+
+# JetBrains Toolbox
+if [ -d "$HOME/.local/share/JetBrains/Toolbox/scripts" ]; then
+  export PATH=$PATH:~/.local/share/JetBrains/Toolbox/scripts
 fi
 
 ## zoxide
