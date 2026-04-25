@@ -1,0 +1,3 @@
+# Waybar Niri
+
+TODO: Niri needs updated waybar configuration...
