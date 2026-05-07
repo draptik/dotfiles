@@ -1,6 +1,9 @@
 ## Default themes:
 # Monokai Extended / Monokai Extended Light
 
+## dotnet solution files
+--map-syntax '*.slnx:XML'
+
 ## dotnet project files
 --map-syntax '*.fsproj:XML'
 --map-syntax '*.csproj:XML'
