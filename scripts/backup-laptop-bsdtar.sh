@@ -7,40 +7,40 @@ for i in /mnt/archive; do
     sudo touch "$i/backup/$HOSTNAME/bsdtar/current.tar.zst"
     sudo mv "$i/backup/$HOSTNAME/bsdtar/current.tar.zst" "$i/backup/$HOSTNAME/bsdtar/last.tar.zst"
     sudo bsdtar \
-      --exclude="$HOME/.ICAClient/*" \
-      --exclude="$HOME/.cache/ibus/*" \
-      --exclude="$HOME/.cache/JetBrains/*" \
-      --exclude="$HOME/.cache/mozilla/firefox/*" \
-      --exclude="$HOME/.dropbox/*" \
-      --exclude="$HOME/.local/share/gvfs-metadata/*" \
-      --exclude="$HOME/.local/share/JetBrains/Toolbox/apps/*" \
-      --exclude="$HOME/.ollama/*" \
-      --exclude="$HOME/Documents/private-git/*" \
-      --exclude="$HOME/Downloads/*" \
-      --exclude="$HOME/Music/*" \
-      --exclude="$HOME/Public/os/*" \
-      --exclude="$HOME/cloud/*" \
-      --exclude="$HOME/projects/*" \
-      --exclude="$HOME/transient/*" \
-      --exclude='/.snapshots/*' \
+      --exclude="$HOME/.ICAClient" \
+      --exclude="$HOME/.cache/ibus" \
+      --exclude="$HOME/.cache/JetBrains" \
+      --exclude="$HOME/.cache/mozilla/firefox" \
+      --exclude="$HOME/.dropbox" \
+      --exclude="$HOME/.local/share/gvfs-metadata" \
+      --exclude="$HOME/.local/share/JetBrains/Toolbox/apps" \
+      --exclude="$HOME/.ollama" \
+      --exclude="$HOME/Documents/private-git" \
+      --exclude="$HOME/Downloads" \
+      --exclude="$HOME/Music" \
+      --exclude="$HOME/Public/os" \
+      --exclude="$HOME/cloud" \
+      --exclude="$HOME/projects" \
+      --exclude="$HOME/transient" \
+      --exclude='/.snapshots' \
       --exclude='/dev/*' \
-      --exclude='/etc/pacman.d/gnupg/*' \
-      --exclude='/home/.snapshots/*' \
+      --exclude='/etc/pacman.d/gnupg' \
+      --exclude='/home/.snapshots' \
       --exclude='/lost+found/' \
       --exclude='/media/*' \
       --exclude='/mnt/*' \
       --exclude='/proc/*' \
       --exclude='/run/*' \
-      --exclude='/srv/minio/*' \
+      --exclude='/srv/minio' \
       --exclude='/sys/*' \
       --exclude='/tmp/*' \
-      --exclude='/var/.snapshots/*' \
-      --exclude='/var/lib/containerd/*' \
-      --exclude='/var/lib/docker/overlay*/*' \
-      --exclude='/var/lib/docker/rootfs*/*' \
-      --exclude='/var/lib/docker/volumes/*' \
-      --exclude='/var/lib/libvirt/images/*' \
-      --exclude='/var/lib/ollama/*' \
+      --exclude='/var/.snapshots' \
+      --exclude='/var/lib/containerd' \
+      --exclude='/var/lib/docker/overlay*' \
+      --exclude='/var/lib/docker/rootfs*' \
+      --exclude='/var/lib/docker/volumes' \
+      --exclude='/var/lib/libvirt/images' \
+      --exclude='/var/lib/ollama' \
       --acls --xattrs -cpaf "$i/backup/$HOSTNAME/bsdtar/current.tar.zst" / | tee -a "$logfile"
   else
     echo "#### $(date +%T) bsdtar ${i} is unavailabe ######################################"
