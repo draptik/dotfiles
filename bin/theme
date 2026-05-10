@@ -65,7 +65,9 @@ fi
 if [ "$TARGET" = "DARK" ]; then
   "$DOTFILES/sh_common_aliases/switch-to-dark.sh"
   "$DOTFILES/.config/ranger/switch-to-kitty-dark.sh"
+  gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' 2>/dev/null
 else
   "$DOTFILES/sh_common_aliases/switch-to-light.sh"
   "$DOTFILES/.config/ranger/switch-to-kitty-light.sh"
+  gsettings set org.gnome.desktop.interface color-scheme 'prefer-light' 2>/dev/null
 fi
