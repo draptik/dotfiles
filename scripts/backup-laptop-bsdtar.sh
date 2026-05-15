@@ -7,21 +7,21 @@ for i in /mnt/archive; do
     sudo touch "$i/backup/$HOSTNAME/bsdtar/current.tar.zst"
     sudo mv "$i/backup/$HOSTNAME/bsdtar/current.tar.zst" "$i/backup/$HOSTNAME/bsdtar/last.tar.zst"
     sudo bsdtar \
-      --exclude="$HOME/.ICAClient" \
-      --exclude="$HOME/.cache/ibus" \
-      --exclude="$HOME/.cache/JetBrains" \
-      --exclude="$HOME/.cache/mozilla/firefox" \
-      --exclude="$HOME/.dropbox" \
-      --exclude="$HOME/.local/share/gvfs-metadata" \
-      --exclude="$HOME/.local/share/JetBrains/Toolbox/apps" \
-      --exclude="$HOME/.ollama" \
-      --exclude="$HOME/Documents/private-git" \
-      --exclude="$HOME/Downloads" \
-      --exclude="$HOME/Music" \
-      --exclude="$HOME/Public/os" \
-      --exclude="$HOME/cloud" \
-      --exclude="$HOME/projects" \
-      --exclude="$HOME/transient" \
+      --exclude="/home/patrick/.ICAClient" \
+      --exclude="/home/patrick/.cache/ibus" \
+      --exclude="/home/patrick/.cache/JetBrains" \
+      --exclude="/home/patrick/.cache/mozilla/firefox" \
+      --exclude="/home/patrick/.dropbox" \
+      --exclude="/home/patrick/.local/share/gvfs-metadata" \
+      --exclude="/home/patrick/.local/share/JetBrains/Toolbox/apps" \
+      --exclude="/home/patrick/.ollama" \
+      --exclude="/home/patrick/Documents/private-git" \
+      --exclude="/home/patrick/Downloads" \
+      --exclude="/home/patrick/Music" \
+      --exclude="/home/patrick/Public/os" \
+      --exclude="/home/patrick/cloud" \
+      --exclude="/home/patrick/projects" \
+      --exclude="/home/patrick/transient" \
       --exclude='/.snapshots' \
       --exclude='/dev/*' \
       --exclude='/etc/pacman.d/gnupg' \
