@@ -117,6 +117,6 @@ endif
 - [IdeaVim Wiki](https://github.com/JetBrains/ideavim/wiki)
 - [IdeaVim Wiki - Plugins](https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins)
 - [A practical IdeaVim setup for IntelliJ IDEA](https://medium.com/@dbilici/a-practical-ideavim-setup-for-intellij-idea-cf74222e7b45)
-- [A practical IdeaVim setup for IntelliJ IDEA (config file)](hhttps://github.com/dbilici/IdeaVim/blob/main/.ideavimrc)
+- [A practical IdeaVim setup for IntelliJ IDEA (config file)](https://github.com/dbilici/IdeaVim/blob/main/.ideavimrc)
 - [YT: IdeaVim Casts](https://www.youtube.com/playlist?list=PLYDrCnplQfmG2aoNeu5_RP3GfcBiD1wl7)
 - [The ultimate IdeaVim setup](https://www.cyberwizard.io/posts/the-ultimate-ideavim-setup/)
