@@ -32,6 +32,7 @@ Example:
   - `<Action(*)` map IDE action `*`
 - How to get the name of the action?
   - [Finding action IDs](https://github.com/JetBrains/ideavim?tab=readme-ov-file#finding-action-ids)
+    - search for "action id"
 
 ## Resolving conflicts between IdeaVim and JetBrains (f. ex. Rider) default keybindings
 

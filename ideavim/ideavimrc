@@ -179,7 +179,10 @@ let g:WhichKeyDesc_change_color_theme = "<leader>dt Change color theme"
 " Actions -------------------------------------------------
 map <leader>am <Action>(ShowIntentionActions)
 map <leader>as <Action>(SearchEverywhere)
-if &ide =~? 'idea'
+if &ide =~? 'rider'
+  nmap <leader>ar <Action>(Run)
+  nmap <leader>aS <Action>(Stop)
+elseif &ide =~? 'idea'
   nmap <leader>ar <Action>(RunMenu)
   nmap <leader>ac <Action>(RunClass)
   nmap <leader>aC <Action>(ContextRun)
@@ -189,7 +192,10 @@ let g:WhichKeyDesc_action = "<leader>a Actions"
 let g:WhichKeyDesc_action_context_menu = "<leader>am Open context menu (Alt+Enter)"
 let g:WhichKeyDesc_action_search = "<leader>as Search Everywhere (Ctrl+t)"
 
-if &ide =~? 'idea'
+if &ide =~? 'rider'
+  let g:WhichKeyDesc_run = "<leader>ar Run"
+  let g:WhichKeyDesc_stop = "<leader>aS Stop"
+elseif &ide =~? 'idea'
   let g:WhichKeyDesc_run_menu = "<leader>ar Run Menu"
   let g:WhichKeyDesc_run_class = "<leader>ac Run Class"
   let g:WhichKeyDesc_run_context = "<leader>aC Context Run"
