@@ -38,21 +38,25 @@ profile laptop-thinkpad-t14-homeoffice {
     exec swaymsg workspace 1, move workspace to output eDP-1
     exec swaymsg workspace 2, move workspace to output '"Dell Inc. DELL U2720Q 69D3W13"'
     exec swaymsg workspace 7, move workspace to output '"Dell Inc. DELL U2720Q 850WV13"'
+    exec pkill -SIGUSR2 waybar
 }
 
 profile laptop-thinkpad-t14-homeoffice-single-monitor-left {
     output $T14 scale 1.4
     output $HOME_LEFT  position 1371,0
+    exec pkill -SIGUSR2 waybar
 }
 
 profile laptop-thinkpad-t14-homeoffice-single-monitor-right {
     output $T14 scale 1.4
     output $HOME_RIGHT  position 1371,0
+    exec pkill -SIGUSR2 waybar
 }
 
 profile laptop-thinkpad-t14-homeoffice-single-portable-monitor-right {
     output $T14 scale 1.4
     output $PORTABLE    position 1371,0
+    exec pkill -SIGUSR2 waybar
 }
 
 profile laptop-work-homeoffice {
@@ -62,21 +66,25 @@ profile laptop-work-homeoffice {
     exec swaymsg workspace 1, move workspace to eDP-1
     exec swaymsg workspace 2, move workspace to output '"Dell Inc. DELL U2720Q 69D3W13"'
     exec swaymsg workspace 7, move workspace to output '"Dell Inc. DELL U2720Q 850WV13"'
+    exec pkill -SIGUSR2 waybar
 }
 
 profile laptop-work-homeoffice-single-monitor-left {
     output eDP-1 enable mode 3840x2400 position 0,0    scale 2
     output "Dell Inc. DELL U2720Q 69D3W13"  mode 3840x2160 position 1920,0 scale 2
+    exec pkill -SIGUSR2 waybar
 }
 
 profile laptop-work-homeoffice-single-monitor-right {
     output eDP-1 enable mode 3840x2400 position 0,0    scale 2
     output "Dell Inc. DELL U2720Q 850WV13"  mode 3840x2160 position 1920,0 scale 2
+    exec pkill -SIGUSR2 waybar
 }
 
 profile laptop-work-homeoffice-single-portable-monitor-right {
     output eDP-1 enable mode 3840x2400 position 0,0    scale 2.4
     output "Invalid Vendor Codename - RTK 0x1920 demoset-1" mode 1920x1080 position 1920,0 scale 1
+    exec pkill -SIGUSR2 waybar
 }
 
 profile laptop-work-office-2-external-monitors {
@@ -86,6 +94,7 @@ profile laptop-work-office-2-external-monitors {
     exec swaymsg workspace 1, move workspace to eDP-1
     exec swaymsg workspace 2, move workspace to output '"Samsung Electric Company U28E590 H4ZMA03488"'
     exec swaymsg workspace 7, move workspace to output '"AOC 24B2W1G5 AWFLC1A000416"'
+    exec pkill -SIGUSR2 waybar
 }
 
 profile laptop-presenter {
@@ -93,6 +102,7 @@ profile laptop-presenter {
     output HDMI-A-1        mode 1920x1080 position 1920,0 scale 2
     exec swaymsg workspace 1, move workspace to eDP-1
     exec swaymsg workspace 9, move workspace to output HDMI-A-1
+    exec pkill -SIGUSR2 waybar
 }
 
 profile laptop-work-no-external-monitors {
