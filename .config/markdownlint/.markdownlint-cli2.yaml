@@ -2,3 +2,4 @@ config:
   MD013: false # line length
   MD024:
     siblings_only: true # allow duplication of headings with different parents
+  MD060: false # table column style
