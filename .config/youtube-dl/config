@@ -1,2 +1,2 @@
-# Save in ~/Videos
--o ~/Videos/%(title)s.%(ext)s
+# Save to:
+-o ~/temp/Videos/%(title)s.%(ext)s
