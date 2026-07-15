@@ -34,3 +34,35 @@ vim.api.nvim_create_autocmd("FileType", {
     end, { buffer = true, desc = "Org: Update clocktables (Emacs batch)" })
   end,
 })
+
+-- Jinja files
+local function jinja_host_from_name(name)
+  if name:match("^Caddyfile%.j2$") or name:match("^Caddyfile%..+%.j2$") then
+    return "caddyfile"
+  end
+  if name:match("^Dockerfile%.j2$") or name:match("^Dockerfile%..+%.j2$") then
+    return "dockerfile"
+  end
+  return name:match("%.([%w_]+)%.j2$") -- e.g. deploy.bash.j2 -> bash
+end
+
+-- Whenever jinja.vim's ftdetect sets filetype=jinja, immediately upgrade it
+-- to a compound "host.jinja" filetype based on the actual filename.
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "jinja",
+  callback = function(args)
+    local name = vim.fn.fnamemodify(args.file, ":t")
+    local host = jinja_host_from_name(name)
+    if host then
+      vim.bo[args.buf].filetype = host .. ".jinja"
+    end
+  end,
+})
+
+-- Force legacy :syntax alongside Tree-sitter so jinja.vim's rules render.
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*.jinja",
+  callback = function()
+    vim.cmd("syntax on")
+  end,
+})
