@@ -69,9 +69,9 @@ if [ "$TERM" = "xterm-kitty" ]; then
 fi
 
 # Custom aliases for current projects
-if [ -f ~/cloud/Nextcloud_wolke/klog-time-tracker/aliases.sh ]; then
+if [ -f ~/cloud/klog-time-tracker/aliases.sh ]; then
   # shellcheck disable=SC1090
-  . ~/cloud/Nextcloud_wolke/klog-time-tracker/aliases.sh
+  . ~/cloud/klog-time-tracker/aliases.sh
 fi
 
 alias task='go-task'
@@ -80,6 +80,12 @@ alias task='go-task'
 if [ -d "$HOME/.local/share/pnpm" ]; then
   export PNPM_HOME="$HOME/.local/share/pnpm"
   export PATH="$PNPM_HOME:$PATH"
+fi
+
+# Difftastic
+if command -v difft >/dev/null 2>&1; then
+  # For details, see https://github.com/Wilfred/difftastic#why-arent-colours-appearing-in-my-terminal
+  export DFT_BACKGROUND=light
 fi
 
 # Claude Code w/ ollama
