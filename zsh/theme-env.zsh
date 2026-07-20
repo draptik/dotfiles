@@ -32,8 +32,4 @@ else
 fi
 
 # LS_COLORS: always derive from the base captured at startup to stay idempotent
-if [[ "$KITTY_THEME" == "DARK" ]]; then
-  export LS_COLORS="${_BASE_LS_COLORS}:ln=01;36"
-else
-  export LS_COLORS="${_BASE_LS_COLORS}:ln=01;34"
-fi
+export LS_COLORS="${_BASE_LS_COLORS}:ln=01;36"
