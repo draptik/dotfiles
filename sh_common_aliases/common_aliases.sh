@@ -24,6 +24,7 @@ export FZF_ALT_C_COMMAND='fd --type d . --color=never'
 if [ "$TERM" = "xterm-kitty" ] || [ "$TERM" = "screen-256color" ] || [ "$TERM" = "xterm-ghostty" ]; then
   if [ "$KITTY_THEME" = "LIGHT" ]; then
     # eza's `color-scale` uses the color white (!) for 'newest' and 'largest' on light themes. This is unreadable.
+    # There is an open PR which might resolve the issue: <https://github.com/eza-community/eza/pull/1380>
     alias l='eza --all --long --group --icons --git --git-repos --group-directories-first'
   else
     alias l='eza --all --long --group --icons --git --git-repos --group-directories-first --color-scale'
