@@ -88,6 +88,11 @@ if command -v difft >/dev/null 2>&1; then
   export DFT_BACKGROUND=light
 fi
 
+# Zathura PDF Viewr
+if command -v zathura >/dev/null 2>&1; then
+  alias pdf="zathura"
+fi
+
 # Claude Code w/ ollama
 # if [ -x "$(command -v ollama)" ]; then
 #   # export ANTHROPIC_AUTH_TOKEN=ollama
