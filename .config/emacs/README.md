@@ -112,7 +112,7 @@ The org directory is read from the `ORG_DIR` environment variable (set in `.zshe
 with `~/org` as fallback. Set it in `.zshenv`:
 
 ```sh
-export ORG_DIR="$HOME/cloud/Nextcloud_wolke/org"
+export ORG_DIR="$HOME/cloud/org"
 ```
 
 Files live in `$ORG_DIR/`:

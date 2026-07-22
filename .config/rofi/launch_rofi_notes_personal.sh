@@ -3,4 +3,4 @@ set -Eeuo pipefail
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 
-exec "$SCRIPT_DIR/rofi_notes.sh" "$HOME/cloud/Nextcloud_wolke/personal-notes"
+exec "$SCRIPT_DIR/rofi_notes.sh" "$HOME/cloud/personal-notes"
