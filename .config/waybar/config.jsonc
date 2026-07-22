@@ -3,6 +3,7 @@
   "position": "bottom",
   "modules-left": [
     "custom/scratchpad_indicator",
+    "idle_inhibitor",
     "sway/workspaces",
     "sway/mode"
   ],
@@ -92,7 +93,7 @@
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
-      "activated": "",
+      "activated": "🖥️",
       "deactivated": "🔓"
     }
   },
