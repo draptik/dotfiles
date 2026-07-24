@@ -348,6 +348,11 @@ if (( ${+commands[cliphist]} && ${+commands[fzf]} )); then
   }
 fi
 
+# uv path (python stuff) ------------------------------------------------------
+if (( ${+commands[uv]} )); then
+  path=(${UV_TOOL_BIN_DIR:-~/.local/bin} $path)
+fi
+
 # zoxide (should be at the end of ~/.zshrc) -----------------------------------
 if (( ${+commands[zoxide]} )); then
   # Although zoxide initialization is last, claude code still complains about
@@ -357,4 +362,3 @@ if (( ${+commands[zoxide]} )); then
     eval "$(zoxide init --cmd cd zsh)"
   fi
 fi
-
