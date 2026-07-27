@@ -8,7 +8,7 @@ for i in /mnt/archive; do
     sudo mkdir -p "$i/backup/$HOSTNAME/rsync/current/"
     sudo cp -a --reflink=auto "$i/backup/$HOSTNAME/rsync/current" "$i/backup/$HOSTNAME/rsync/last"
     sudo mkdir -p "$i/backup/$HOSTNAME/rsync/current/"
-    sudo rsync -aAXHq --delete-before \
+    sudo rsync -aAXHq --delete-before --force \
       --exclude="$HOME/.ICAClient/*" \
       --exclude="$HOME/.cache/ibus/*" \
       --exclude="$HOME/.cache/JetBrains/*" \
