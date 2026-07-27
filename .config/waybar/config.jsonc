@@ -19,7 +19,7 @@
   ],
   "sway/workspaces": {
     "disable-scroll": true,
-    "disable-click": true
+    "disable-click": false
   },
   "tray": {
     "spacing": 8,
