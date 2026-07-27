@@ -15,7 +15,7 @@ for i in /mnt/archive; do
       --exclude="/home/patrick/.local/share/gvfs-metadata" \
       --exclude="/home/patrick/.local/share/JetBrains/Toolbox/apps" \
       --exclude="/home/patrick/.ollama" \
-      --exclude="/home/patrick/Documents/private-git" \
+      --exclude="/home/patrick/permanent/private-git" \
       --exclude="/home/patrick/Downloads" \
       --exclude="/home/patrick/Music" \
       --exclude="/home/patrick/Public/os" \

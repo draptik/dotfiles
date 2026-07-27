@@ -6,7 +6,7 @@
 /home/patrick/.local/share/gvfs-metadata/*
 /home/patrick/.local/share/JetBrains/Toolbox/apps/*
 /home/patrick/.ollama/*
-/home/patrick/Documents/private-git/*
+/home/patrick/permanent/private-git/*
 /home/patrick/Downloads/*
 /home/patrick/Music/*
 /home/patrick/Public/os/*
