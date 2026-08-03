@@ -93,6 +93,13 @@ if command -v zathura >/dev/null 2>&1; then
   alias pdf="zathura"
 fi
 
+# Calibre official binary (not the arch package)
+# Why? The Arch package is compiled without the speech plugin.
+if [ -d "$HOME/library/calibre-official/calibre" ]; then
+  alias calibre-official="~/library/calibre-official/calibre/calibre"
+  alias ebook-viewer-official="~/library/calibre-official/calibre/ebook-viewer"
+fi
+
 # Claude Code w/ ollama
 # if [ -x "$(command -v ollama)" ]; then
 #   # export ANTHROPIC_AUTH_TOKEN=ollama
