@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 TERMINAL=kitty
-folder=$HOME/notes/
+folder=$HOME/cloud/personal-notes/
 
 newnote() {
   dir="$(

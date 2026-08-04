@@ -24,7 +24,7 @@ IFS=$'\n\t'
 TERMINAL=kitty
 
 # Folder is passed in as $1, fallback to ~/notes
-folder="$(realpath -m -- "${1:-$HOME/notes}")"
+folder="$(realpath -m -- "${1:-$HOME/cloud/personal-notes}")"
 readonly folder
 
 menu() {
