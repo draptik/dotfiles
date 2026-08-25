@@ -13,6 +13,8 @@ for i in /mnt/archive; do
       --exclude="$HOME/.cache/ibus/*" \
       --exclude="$HOME/.cache/JetBrains/*" \
       --exclude="$HOME/.cache/mozilla/firefox/*" \
+      --exclude="$HOME/.cache/yay/*" \
+      --exclude="$HOME/.config/Claude/vm_bundles/*" \
       --exclude="$HOME/.dropbox/*" \
       --exclude="$HOME/.local/share/gvfs-metadata/*" \
       --exclude="$HOME/.local/share/JetBrains/Toolbox/apps/*" \

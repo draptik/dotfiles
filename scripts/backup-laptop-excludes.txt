@@ -2,6 +2,8 @@
 /home/patrick/.cache/ibus/*
 /home/patrick/.cache/JetBrains/*
 /home/patrick/.cache/mozilla/firefox/*
+/home/patrick/.cache/yay/*
+/home/patrick/.config/Claude/vm_bundles/*
 /home/patrick/.dropbox/*
 /home/patrick/.local/share/gvfs-metadata/*
 /home/patrick/.local/share/JetBrains/Toolbox/apps/*
