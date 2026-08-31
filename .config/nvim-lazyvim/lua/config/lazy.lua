@@ -7,6 +7,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
+-- LazyVim's packages are located here: `~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/`
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
@@ -28,6 +29,8 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.ui.treesitter-context" },
     { import = "lazyvim.plugins.extras.test.core" },
     { import = "lazyvim.plugins.extras.dap.core" },
+    { import = "lazyvim.plugins.extras.lang.ansible" },
+    { import = "lazyvim.plugins.extras.lang.terraform" },
     -- import/override with your plugins
     { import = "plugins" },
   },
