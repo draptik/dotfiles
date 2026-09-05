@@ -7,14 +7,15 @@
     "sway/workspaces",
     "sway/mode"
   ],
-  "modules-center": [],
+  "modules-center": [
+    "clock#date",
+    "clock#time"
+  ],
   "modules-right": [
-    "battery",
     "cpu",
     "network",
     "pulseaudio",
-    "clock#date",
-    "clock#time",
+    "battery",
     "tray"
   ],
   "sway/workspaces": {
