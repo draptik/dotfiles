@@ -35,4 +35,10 @@
 @define-color defaultForeground        @black;
 @define-color defaultForegroundOpaque  alpha(@black, 0.85);
 
+@define-color memory      @bryellow;
+@define-color tray        @brgreen;
+@define-color bluetooth   @braqua;
+@define-color idleInhibitor @brgray;
+@define-color temperature @brred;
+
 @import "common.css";

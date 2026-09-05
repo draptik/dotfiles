@@ -64,29 +64,58 @@ window#waybar.solo {
 #clock.date,
 #clock.time,
 #tray,
-#temperature {
+#temperature,
+#custom-scratchpad_indicator {
     margin: 0;
     margin-right: 4px;
     min-width:  25px;
-    background: @barBg;
     border-radius: 3px;
     padding-left: 3px;
     padding-right: 3px;
+    box-shadow: inset 0 0 0 1px @bg2;
+}
+#custom-scratchpad_indicator {
+    background-color: alpha(@bg2, 0.5);
+    color: @defaultBackground;
 }
 #pulseaudio {
+    background-color: alpha(@sound, 0.18);
     color: @sound;
 }
 #cpu {
+    background-color: alpha(@cpu, 0.18);
     color: @cpu;
 }
 #network {
+    background-color: alpha(@network, 0.18);
     color: @network;
     margin-left: 3px;
 }
 #language {
+    background-color: alpha(@language, 0.18);
     color: @language;
 }
+#memory {
+    background-color: alpha(@memory, 0.18);
+    color: @memory;
+}
+#tray {
+    background-color: alpha(@tray, 0.18);
+}
+#bluetooth {
+    background-color: alpha(@bluetooth, 0.18);
+    color: @bluetooth;
+}
+#idle_inhibitor {
+    background-color: alpha(@idleInhibitor, 0.18);
+    color: @idleInhibitor;
+}
+#temperature {
+    background-color: alpha(@temperature, 0.18);
+    color: @temperature;
+}
 #clock.date {
+    background-color: alpha(@date, 0.18);
     color: @date;
 }
 #clock.time {
@@ -97,6 +126,7 @@ window#waybar.solo {
 }
 #battery {
     min-width: 30px;
+    background-color: alpha(@battery, 0.18);
     color: @battery;
 }
 #battery.critical {
@@ -106,6 +136,7 @@ window#waybar.solo {
 }
 #battery.warning {
     color: @batteryWarning;
+    background-color: alpha(@batteryWarning, 0.25);
     animation: blinker 2s linear infinite;
 }
 @keyframes blinker {
