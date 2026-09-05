@@ -1,0 +1,38 @@
+/* Colors (gruvbox light) */
+@define-color black     #3c3836;
+@define-color red       #cc241d;
+@define-color green     #98971a;
+@define-color yellow    #d79921;
+@define-color blue      #458588;
+@define-color purple    #b16286;
+@define-color aqua      #689d6a;
+@define-color gray      #a89984;
+@define-color brgray    #928374;
+@define-color brred     #fb4934;
+@define-color brgreen   #b8bb26;
+@define-color bryellow  #fabd2f;
+@define-color brblue    #83a598;
+@define-color brpurple  #d3869b;
+@define-color braqua    #8ec07c;
+@define-color white     #fbf1c7;
+@define-color bg2       #ebdbb2;
+
+@define-color sound           @purple;
+@define-color network         @purple;
+@define-color cpu             @green;
+@define-color battery         @aqua;
+@define-color batteryWarning  @yellow;
+@define-color batteryCritical @red;
+@define-color language        @blue;
+@define-color date            @black;
+@define-color clock           @white;
+@define-color clockbg         @black;
+@define-color barBg           @white;
+@define-color urgentRed       @red;
+
+@define-color defaultBackground        @black;
+@define-color defaultBackgroundOpaque  alpha(@black, 0.4);
+@define-color defaultForeground        @white;
+@define-color defaultForegroundOpaque  alpha(@white, 0.85);
+
+@import "common.css";

@@ -6,48 +6,10 @@
     margin: 0;
     padding: 0;
 }
-/* Colors (gruvbox) */
-@define-color black     #282828;
-@define-color red       #cc241d;
-@define-color green     #98971a;
-@define-color yellow    #d79921;
-@define-color blue      #458588;
-@define-color purple    #b16286;
-@define-color aqua      #689d6a;
-@define-color gray      #a89984;
-@define-color brgray    #928374;
-@define-color brred     #fb4934;
-@define-color brgreen   #b8bb26;
-@define-color bryellow  #fabd2f;
-@define-color brblue    #83a598;
-@define-color brpurple  #d3869b;
-@define-color braqua    #8ec07c;
-@define-color white     #ebdbb2;
-@define-color bg2       #504945;
-
-/* Semantic aliases, all drawn from the gruvbox palette above */
-@define-color sound           @brpurple;
-@define-color network         @purple;
-@define-color cpu             @green;
-@define-color battery         @aqua;
-@define-color batteryWarning  @yellow;
-@define-color batteryCritical @brred;
-@define-color language        @brblue;
-@define-color date            @white;
-@define-color clock           @black;
-@define-color clockbg         @white;
-@define-color barBg           @black;
-@define-color urgentRed       @brred;
-
-@define-color defaultBackground        @white;
-@define-color defaultBackgroundOpaque  alpha(@white, 0.4);
-@define-color defaultForeground        @black;
-@define-color defaultForegroundOpaque  alpha(@black, 0.85);
-
 /* The whole bar */
 #waybar {
     background: @barBg;
-    color: @white;
+    color: @defaultBackground;
     font-family: 'JetBrainsMono Nerd Font','Fira Code','DejaVu Sans Mono','Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback', 'NotoEmoji Nerd Font Mono';
     font-size: 12px;
 }
