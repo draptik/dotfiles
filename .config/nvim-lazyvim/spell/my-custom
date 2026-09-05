@@ -6,6 +6,7 @@ Audiojack
 BT
 CLI
 CNAME
+CSS
 CSharpier
 Caddy
 Checkbox
@@ -16,6 +17,7 @@ Expecto
 FOMO
 FizzBuzz
 FsCheck
+GTK
 GitHub
 I18N
 IdeaVim
@@ -70,6 +72,7 @@ VM
 VMs
 VPN
 VSCode
+Waybar
 Wayland
 XWayland
 ZSA
@@ -81,12 +84,14 @@ caddy
 checkbox
 config
 csharpier
+css
 deserialize
 dotnet
 dropdown
 ed25519
 fanless
 github
+gtk
 hypervisor
 i18n
 immich
@@ -112,6 +117,7 @@ terraform
 unconference
 unifi
 vscode
+waybar
 wayland
 xUnit
 zst
