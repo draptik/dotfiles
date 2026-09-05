@@ -73,10 +73,10 @@ window#waybar.solo {
 }
 #workspaces button.focused {
     color: @white;
-    background-color: @bg2;
+    background-color: @blue;
 }
 #workspaces button.active {
-    background-color: @bg2;
+    background-color: @blue;
 }
 #workspaces button.urgent {
     color: @urgentRed;
