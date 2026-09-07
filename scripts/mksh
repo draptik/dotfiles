@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Idea from <https://evanhahn.com/scripts-i-wrote-that-i-use-all-the-time/>
+# <https://codeberg.org/EvanHahn/dotfiles/src/commit/f7a9d94ae2254cb7e5f67e6e5bdb74b6467f6dec/home/bin/bin/mksh>
+set -euo pipefail
+
+if [ ! $# -eq 1 ]; then
+  echo 'mksh takes one argument' 1>&2
+  exit 1
+elif [[ -e "$1" ]]; then
+  echo "$1 already exists" 1>&2
+  exit 1
+fi
+
+echo '#!/usr/bin/env bash
+set -eou pipefail
+
+' >"$1"
+
+chmod u+x "$1"
+
+"$EDITOR" "$1"
