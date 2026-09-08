@@ -7,11 +7,12 @@
 
 ## Uses swaylock-effects
 
-swaylock --daemonize --screenshots --clock --indicator \
-  --color 333333 \
+## No --screenshots / --effect-*: swaylock-effects mishandles outputs
+## hotplugged after locking (red screen, wedged input, hard reboot).
+swaylock --daemonize --clock --indicator \
+  --color 2E3440 \
   --indicator-radius 100 \
   --indicator-thickness 12 \
-  --effect-blur 7x5 \
   --ring-color 2E3440 \
   --key-hl-color ECEFF4 \
   --line-color 88C0D0 \
@@ -23,7 +24,4 @@ swaylock --daemonize --screenshots --clock --indicator \
   --text-caps-lock-color ECEFF4 \
   --show-failed-attempts \
   --fade-in 3 \
-  --grace 10 \
-  --effect-scale 0.5 --effect-blur 8x3 --effect-scale 2 \
-  --effect-vignette 0.5:0.5 \
-  --effect-compose "1.5%,1.5%;-1x10%;$HOME/.config/sway/sway.d/lock.png"
+  --grace 10
