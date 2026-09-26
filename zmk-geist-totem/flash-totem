@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+#
+# Usage: ../flash-totem left|right
+#
+# Flash one half of the TOTEM keyboard (Seeed XIAO BLE).
+# Run from inside a firmware folder, e.g.:
+#
+#   cd 2026-09-26_1_add-quotes-grave-equal-layernames-keymap
+#   ../flash-totem left
+#   ../flash-totem right
+#
+# Copies ./*<side>*.uf2 from the current directory to the XIAO-SENSE
+# bootloader drive. Double-tap the reset button on that half when prompted.
+#
+set -eou pipefail
+
+side="${1:?usage: flash-totem left|right}"
+dev=/dev/disk/by-label/XIAO-SENSE
+mnt=/run/media/$USER/XIAO-SENSE
+
+echo "YOU MUST DOUBLE-TAP THE RESET BUTTON on the $side half..."
+until [ -e "$dev" ]; do sleep 0.5; done
+
+[ -d "$mnt" ] || udiskie-mount "$dev"
+until [ -d "$mnt" ]; do sleep 0.5; done
+
+cp ./*"$side"*.uf2 "$mnt/" && sync
+echo "Done. $side half is rebooting."
+echo "You can unplug the keyboard"
