@@ -1,22 +1,60 @@
 #!/usr/bin/env bash
 #
-# Usage: ../flash-totem left|right
+# Usage: ./flash-totem left|right
 #
 # Flash one half of the TOTEM keyboard (Seeed XIAO BLE).
-# Run from inside a firmware folder, e.g.:
 #
-#   cd 2026-09-26_1_add-quotes-grave-equal-layernames-keymap
-#   ../flash-totem left
-#   ../flash-totem right
+# If a firmware.zip (downloaded from the GitHub Actions build) lies next to
+# this script, it asks for a short description and unpacks the zip into a new
+# firmware folder named <date>_<n>-<description>, e.g.:
 #
-# Copies ./*<side>*.uf2 from the current directory to the XIAO-SENSE
-# bootloader drive. Double-tap the reset button on that half when prompted.
+#   2026-09-27_1-update-keymap
+#
+# Otherwise it uses the current directory if it contains .uf2 files, or else
+# the newest firmware folder next to this script.
+#
+# Copies <folder>/*<side>*.uf2 to the XIAO-SENSE bootloader drive. Double-tap
+# the reset button on that half when prompted.
 #
 set -eou pipefail
 
 side="${1:?usage: flash-totem left|right}"
+case "$side" in left|right) ;; *) echo "usage: flash-totem left|right" >&2; exit 1 ;; esac
+
+here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+zip="$here/firmware.zip"
 dev=/dev/disk/by-label/XIAO-SENSE
 mnt=/run/media/$USER/XIAO-SENSE
+
+if [ -f "$zip" ]; then
+  today="$(date +%F)"
+  n=1
+  while compgen -G "$here/${today}_${n}[-_]*" >/dev/null; do n=$((n + 1)); done
+
+  read -rp "Folder name for this firmware: " name
+  shopt -s extglob
+  name="${name##+([[:space:]])}"
+  name="${name%%+([[:space:]])}"
+  name="${name//+([[:space:]])/-}"
+  [ -n "$name" ] || { echo "No folder name given." >&2; exit 1; }
+
+  fwdir="$here/${today}_${n}-${name}"
+  mkdir "$fwdir"
+  cp "$zip" "$fwdir/"
+  unzip -oj "$fwdir/firmware.zip" '*.uf2' -d "$fwdir"
+  rm "$fwdir/firmware.zip" "$zip"
+  echo "Unpacked firmware to $(basename "$fwdir")"
+elif compgen -G "./*.uf2" >/dev/null; then
+  fwdir="$PWD"
+else
+  fwdir="$(find "$here" -mindepth 1 -maxdepth 1 -type d -name '20*' | sort | tail -n1)"
+  [ -n "$fwdir" ] || { echo "No firmware.zip and no firmware folder found." >&2; exit 1; }
+  read -rp "Flash from $(basename "$fwdir")? [Y/n] " ok
+  [[ "${ok:-y}" =~ ^[Yy]$ ]] || exit 1
+fi
+
+uf2=("$fwdir"/*"$side"*.uf2)
+[ -f "${uf2[0]}" ] || { echo "No $side .uf2 in $fwdir" >&2; exit 1; }
 
 echo "YOU MUST DOUBLE-TAP THE RESET BUTTON on the $side half..."
 until [ -e "$dev" ]; do sleep 0.5; done
@@ -24,6 +62,6 @@ until [ -e "$dev" ]; do sleep 0.5; done
 [ -d "$mnt" ] || udiskie-mount "$dev"
 until [ -d "$mnt" ]; do sleep 0.5; done
 
-cp ./*"$side"*.uf2 "$mnt/" && sync
+cp "${uf2[@]}" "$mnt/" && sync
 echo "Done. $side half is rebooting."
 echo "You can unplug the keyboard"
