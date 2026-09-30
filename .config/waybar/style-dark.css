@@ -40,5 +40,7 @@
 @define-color bluetooth   @braqua;
 @define-color idleInhibitor @brgray;
 @define-color temperature @brred;
+@define-color agenda      @brblue;
+@define-color agendaSoon  @bryellow;
 
 @import "common.css";

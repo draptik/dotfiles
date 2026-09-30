@@ -8,6 +8,7 @@
     "sway/mode"
   ],
   "modules-center": [
+    "custom/agenda",
     "clock#date",
     "clock#time"
   ],
@@ -38,6 +39,12 @@
   "tray": {
     "spacing": 8,
     "icon-size": 10
+  },
+  "custom/agenda": {
+    "exec": "~/.config/waybar/scripts/agenda.sh",
+    "return-type": "json",
+    "interval": 60,
+    "on-click": "kitty --title ikhal ikhal"
   },
   "clock#date": {
     "format": " {:%a %e %b %Y}",

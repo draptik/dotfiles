@@ -65,6 +65,7 @@ window#waybar.solo {
 #clock.time,
 #tray,
 #temperature,
+#custom-agenda,
 #custom-scratchpad_indicator {
     margin: 0;
     margin-right: 4px;
@@ -143,4 +144,12 @@ window#waybar.solo {
     50% {
         opacity: 0;
     }
+}
+#custom-agenda {
+    background-color: alpha(@agenda, 0.18);
+    color: @agenda;
+}
+#custom-agenda.soon {
+    background-color: @agendaSoon;
+    color: @defaultForeground;
 }
