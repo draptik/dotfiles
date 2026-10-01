@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 # Waybar custom/agenda: next event of today as text, the coming 7 days as tooltip.
 # Reads the local vdir synced by vdirsyncer (see ../../khal/README.md).
+# In minimal mode (toggled by agenda-toggle.sh) only the icon is shown.
 set -uo pipefail
 
 export PYTHONWARNINGS=ignore
-icon=""
+icon=$'\U000f00f0' # nf-md-calendar_clock
 soon_minutes=15
+minimal_flag=${XDG_STATE_HOME:-$HOME/.local/state}/waybar-agenda/minimal
 
 escape() { sed -e 's/&/\&amp;/g' -e 's/</\&lt;/g' -e 's/>/\&gt;/g'; }
 
@@ -23,6 +25,7 @@ if [[ -n $next ]]; then
     minutes_left=$((($(date -d "$start" +%s) - $(date +%s)) / 60))
     ((minutes_left <= soon_minutes)) && class="soon"
 fi
+[[ -e $minimal_flag ]] && text=$icon
 
 tooltip=$(khal list now 7d --format '{start-end-time-style} {title}' --day-format '@@{name}, {date}' 2>/dev/null |
     escape |

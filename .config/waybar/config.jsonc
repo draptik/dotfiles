@@ -44,7 +44,9 @@
     "exec": "~/.config/waybar/scripts/agenda.sh",
     "return-type": "json",
     "interval": 60,
-    "on-click": "kitty --title ikhal ikhal"
+    "signal": 8,
+    "on-click": "kitty --title ikhal ikhal",
+    "on-click-right": "~/.config/waybar/scripts/agenda-toggle.sh"
   },
   "clock#date": {
     "format": " {:%a %e %b %Y}",
