@@ -1,15 +1,14 @@
 #!/usr/bin/env bash
 
 ## Lockscreen script
-## Lockicon downloaded from https://creazilla.com/nodes/58783-locked-emoji-clipart
-## No modifications were made on the lockicon
-## Lockicon License: https://creativecommons.org/licenses/by/4.0/
 
-## Uses swaylock-effects
-
-## No --screenshots / --effect-*: swaylock-effects mishandles outputs
-## hotplugged after locking (red screen, wedged input, hard reboot).
-swaylock --daemonize --clock --indicator \
+## Uses upstream swaylock, not swaylock-effects: swaylock-effects takes
+## screenshots (even without --screenshots, e.g. for --fade-in) and
+## segfaults when an output is hotplugged while locked. sway then keeps
+## the session locked with red outputs and no input.
+swaylock --daemonize --indicator-idle-visible \
+  --ignore-empty-password \
+  --indicator-caps-lock \
   --color 2E3440 \
   --indicator-radius 100 \
   --indicator-thickness 12 \
@@ -18,10 +17,6 @@ swaylock --daemonize --clock --indicator \
   --line-color 88C0D0 \
   --inside-color 00000088 \
   --separator-color 00000000 \
-  --datestr %Y-%m-%d \
-  --timestr %H:%M \
   --text-color ECEFF4 \
   --text-caps-lock-color ECEFF4 \
-  --show-failed-attempts \
-  --fade-in 3 \
-  --grace 10
+  --show-failed-attempts
