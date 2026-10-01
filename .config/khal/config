@@ -14,3 +14,7 @@ firstweekday = 0
 
 [default]
 highlight_event_days = True
+
+[palette]
+# default "edit focus" is white on light blue — unreadable while typing
+edit focus = black, yellow, bold, '#000000', '#ffd75f'
