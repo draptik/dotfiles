@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Waybar custom/agenda: next event of today as text, the coming 7 days as tooltip.
+# Waybar custom/agenda: next timed event as text, the coming 7 days as tooltip.
 # Reads the local vdir synced by vdirsyncer (see ../../khal/README.md).
 # In minimal mode (toggled by agenda-toggle.sh) only the icon is shown.
 # Calendars hidden via agenda-calendars.sh are excluded.
@@ -26,19 +26,25 @@ fi
 
 escape() { sed -e 's/&/\&amp;/g' -e 's/</\&lt;/g' -e 's/>/\&gt;/g'; }
 
-# Next timed event today that has not started yet ("HH:MM|title").
-next=$($all_hidden || khal list now eod "${exclude[@]}" --notstarted --format '{start-time}|{title}' --day-format '' 2>/dev/null |
-    grep -m1 -E '^[0-9]{2}:[0-9]{2}\|')
+# Next timed event of the coming 7 days that has not started yet ("DD.MM.YYYY|HH:MM|title").
+next=$($all_hidden || khal list now 7d "${exclude[@]}" --notstarted --format '{start-date}|{start-time}|{title}' --day-format '' 2>/dev/null |
+    grep -m1 -E '^[0-9.]+\|[0-9]{2}:[0-9]{2}\|')
 
 text=$icon
 class=""
 if [[ -n $next ]]; then
-    start=${next%%|*}
-    title=${next#*|}
+    IFS='|' read -r start_date start title <<<"$next"
+    IFS=. read -r day month year <<<"$start_date"
+    start_iso="$year-$month-$day $start"
     ((${#title} > 30)) && title="${title:0:29}…"
-    text="$icon $start $(escape <<<"$title")"
-    minutes_left=$((($(date -d "$start" +%s) - $(date +%s)) / 60))
-    ((minutes_left <= soon_minutes)) && class="soon"
+    if [[ $year-$month-$day == "$(date +%F)" ]]; then
+        when=$start
+        minutes_left=$((($(date -d "$start_iso" +%s) - $(date +%s)) / 60))
+        ((minutes_left <= soon_minutes)) && class="soon"
+    else
+        when="$(date -d "$start_iso" +%a) $start"
+    fi
+    text="$icon $when $(escape <<<"$title")"
 fi
 [[ -e $minimal_flag ]] && text=$icon
 
