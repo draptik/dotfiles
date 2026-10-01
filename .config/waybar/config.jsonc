@@ -46,7 +46,8 @@
     "interval": 60,
     "signal": 8,
     "on-click": "kitty --title ikhal ikhal",
-    "on-click-right": "~/.config/waybar/scripts/agenda-toggle.sh"
+    "on-click-right": "~/.config/waybar/scripts/agenda-toggle.sh",
+    "on-click-middle": "~/.config/waybar/scripts/agenda-calendars.sh"
   },
   "clock#date": {
     "format": " {:%a %e %b %Y}",

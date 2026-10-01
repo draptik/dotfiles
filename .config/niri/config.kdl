@@ -630,4 +630,5 @@ binds {
   // PD-CHANGE
   Mod+Return { spawn "kitty"; }
   Mod+Shift+G hotkey-overlay-title="Toggle waybar agenda" { spawn-sh "~/.config/waybar/scripts/agenda-toggle.sh"; }
+  Mod+Ctrl+G hotkey-overlay-title="Pick waybar agenda calendars" { spawn-sh "~/.config/waybar/scripts/agenda-calendars.sh"; }
 }
