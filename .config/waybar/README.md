@@ -22,7 +22,7 @@ this is used during live-reloads in my `kanshi` (see [`../kanshi/config`](../kan
 - Usage: provide a `color-[dark|light].css` file: The theme switches automatically when the GTK theme changes.
 - Both CSS files import [`common.css`](./common.css) for all other, non-color related CSS settings.
 
-## Why do I used to keep waybar at the bottom?
+## Why I used to keep waybar at the bottom?
 
 - It's an easy way to determine if the screen resolution works.
   Think about external monitor during a presentation, or setting up a with new monitors:
