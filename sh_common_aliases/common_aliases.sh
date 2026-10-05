@@ -18,6 +18,9 @@ export FZF_DEFAULT_COMMAND='fd --type f --color=never'
 export FZF_ALT_C_COMMAND='fd --type d . --color=never'
 
 ## eza
+## This increases spacing of icons - useful for wide icons, like the markdown icon.
+export EZA_ICON_SPACING=2
+
 ## NOTE: In case the option `--color-scale` crashes in certain folders,
 ## make sure there are no files/folders with an invalid btime.
 ## This can be checked using `ls -altr --time=birth .`.
