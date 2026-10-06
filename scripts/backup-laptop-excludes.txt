@@ -9,6 +9,7 @@
 /home/patrick/.local/share/JetBrains/Toolbox/apps/*
 /home/patrick/.ollama/*
 /home/patrick/permanent/private-git/*
+/home/patrick/permanent/anleitungen/*
 /home/patrick/Downloads/*
 /home/patrick/Music/*
 /home/patrick/Public/os/*

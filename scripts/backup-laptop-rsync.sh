@@ -20,6 +20,7 @@ for i in /mnt/archive; do
       --exclude="$HOME/.local/share/JetBrains/Toolbox/apps/*" \
       --exclude="$HOME/.ollama/*" \
       --exclude="$HOME/permanent/private-git/*" \
+      --exclude="$HOME/permanent/anleitungen/*" \
       --exclude="$HOME/Downloads/*" \
       --exclude="$HOME/Music/*" \
       --exclude="$HOME/Public/os/*" \
