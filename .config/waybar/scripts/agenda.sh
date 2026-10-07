@@ -57,6 +57,13 @@ elif [[ -z $tooltip ]]; then
   tooltip="No events in the next 7 days"
 fi
 
+# Dimmed footer with the click actions and their sway/niri keybindings.
+divider="<span alpha='40%'>────────────────────────────</span>"
+hints="<span alpha='60%' size='small'>Left: ikhal
+Right · Mod+Shift+G: minimal
+Middle · Mod+Ctrl+G: calendars</span>"
+tooltip+=$'\n'"$divider"$'\n'"$hints"
+
 jq --compact-output --null-input \
   --arg text "$text" --arg tooltip "$tooltip" --arg class "$class" \
   '{text: $text, tooltip: $tooltip, class: $class}'
