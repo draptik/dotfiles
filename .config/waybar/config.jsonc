@@ -9,8 +9,8 @@
   ],
   "modules-center": [
     "custom/agenda",
-    "clock#date",
-    "clock#time"
+    "clock#time",
+    "clock#date"
   ],
   "modules-right": [
     "cpu",

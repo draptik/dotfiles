@@ -11,8 +11,8 @@
     "network",
     "pulseaudio",
     "custom/agenda",
-    "clock#date",
     "clock#time",
+    "clock#date",
     "tray"
   ],
   "niri/workspaces": {
