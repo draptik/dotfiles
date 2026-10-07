@@ -17,46 +17,46 @@ hidden_file=$state_dir/hidden-calendars
 exclude=()
 all_hidden=false
 if [[ -s $hidden_file ]]; then
-    mapfile -t calendars < <(khal printcalendars 2>/dev/null)
-    for cal in "${calendars[@]}"; do
-        grep -qFx -- "$cal" "$hidden_file" && exclude+=(-d "$cal")
-    done
-    ((${#calendars[@]} && ${#exclude[@]} == 2 * ${#calendars[@]})) && all_hidden=true
+  mapfile -t calendars < <(khal printcalendars 2>/dev/null)
+  for cal in "${calendars[@]}"; do
+    grep -qFx -- "$cal" "$hidden_file" && exclude+=(-d "$cal")
+  done
+  ((${#calendars[@]} && ${#exclude[@]} == 2 * ${#calendars[@]})) && all_hidden=true
 fi
 
 escape() { sed -e 's/&/\&amp;/g' -e 's/</\&lt;/g' -e 's/>/\&gt;/g'; }
 
 # Next timed event of the coming 7 days that has not started yet ("DD.MM.YYYY|HH:MM|title").
 next=$($all_hidden || khal list now 7d "${exclude[@]}" --notstarted --format '{start-date}|{start-time}|{title}' --day-format '' 2>/dev/null |
-    grep -m1 -E '^[0-9.]+\|[0-9]{2}:[0-9]{2}\|')
+  grep -m1 -E '^[0-9.]+\|[0-9]{2}:[0-9]{2}\|')
 
 text=$icon
 class=""
 if [[ -n $next ]]; then
-    IFS='|' read -r start_date start title <<<"$next"
-    IFS=. read -r day month year <<<"$start_date"
-    start_iso="$year-$month-$day $start"
-    ((${#title} > 30)) && title="${title:0:29}…"
-    if [[ $year-$month-$day == "$(date +%F)" ]]; then
-        when=$start
-        minutes_left=$((($(date -d "$start_iso" +%s) - $(date +%s)) / 60))
-        ((minutes_left <= soon_minutes)) && class="soon"
-    else
-        when="$(date -d "$start_iso" +%a) $start"
-    fi
-    text="$icon $when $(escape <<<"$title")"
+  IFS='|' read -r start_date start title <<<"$next"
+  IFS=. read -r day month year <<<"$start_date"
+  start_iso="$year-$month-$day $start"
+  ((${#title} > 30)) && title="${title:0:29}…"
+  if [[ $year-$month-$day == "$(date +%F)" ]]; then
+    when=$start
+    minutes_left=$((($(date -d "$start_iso" +%s) - $(date +%s)) / 60))
+    ((minutes_left <= soon_minutes)) && class="soon"
+  else
+    when="$(date -d "$start_iso" +%a) $start"
+  fi
+  text="$icon $when $(escape <<<"$title")"
 fi
 [[ -e $minimal_flag ]] && text=$icon
 
 tooltip=$($all_hidden || khal list now 7d "${exclude[@]}" --format '{start-end-time-style} {title}' --day-format '@@{name}, {date}' 2>/dev/null |
-    escape |
-    sed -E -e 's/^@@(.*)$/<b>\1<\/b>/' -e 's/^ /all day /')
+  escape |
+  sed -E -e 's/^@@(.*)$/<b>\1<\/b>/' -e 's/^ /all day /')
 if $all_hidden; then
-    tooltip="All calendars hidden (middle-click to pick)"
+  tooltip="All calendars hidden (middle-click to pick)"
 elif [[ -z $tooltip ]]; then
-    tooltip="No events in the next 7 days"
+  tooltip="No events in the next 7 days"
 fi
 
 jq --compact-output --null-input \
-    --arg text "$text" --arg tooltip "$tooltip" --arg class "$class" \
-    '{text: $text, tooltip: $tooltip, class: $class}'
+  --arg text "$text" --arg tooltip "$tooltip" --arg class "$class" \
+  '{text: $text, tooltip: $tooltip, class: $class}'

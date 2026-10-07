@@ -16,22 +16,22 @@ mapfile -t calendars < <(khal printcalendars 2>/dev/null)
 
 row=0
 while true; do
-    menu=$(for cal in "${calendars[@]}"; do
-        if grep -qFx -- "$cal" "$hidden_file"; then
-            echo "$hidden  $cal"
-        else
-            echo "$shown  $cal"
-        fi
-    done)
-    row=$(rofi -dmenu -i -no-custom -format i -selected-row "$row" \
-        -p "Agenda calendars" -mesg "Enter: show/hide · Esc: close" <<<"$menu") || break
-    cal=${calendars[row]}
+  menu=$(for cal in "${calendars[@]}"; do
     if grep -qFx -- "$cal" "$hidden_file"; then
-        grep -vFx -- "$cal" "$hidden_file" >"$hidden_file.tmp"
-        mv "$hidden_file.tmp" "$hidden_file"
+      echo "$hidden  $cal"
     else
-        echo "$cal" >>"$hidden_file"
+      echo "$shown  $cal"
     fi
-    # Must match "signal" of custom/agenda in the waybar config.
-    pkill -RTMIN+8 -x waybar
+  done)
+  row=$(rofi -dmenu -i -no-custom -format i -selected-row "$row" \
+    -p "Agenda calendars" -mesg "Enter: show/hide · Esc: close" <<<"$menu") || break
+  cal=${calendars[row]}
+  if grep -qFx -- "$cal" "$hidden_file"; then
+    grep -vFx -- "$cal" "$hidden_file" >"$hidden_file.tmp"
+    mv "$hidden_file.tmp" "$hidden_file"
+  else
+    echo "$cal" >>"$hidden_file"
+  fi
+  # Must match "signal" of custom/agenda in the waybar config.
+  pkill -RTMIN+8 -x waybar
 done

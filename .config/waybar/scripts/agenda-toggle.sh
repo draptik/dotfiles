@@ -7,9 +7,9 @@ state_dir=${XDG_STATE_HOME:-$HOME/.local/state}/waybar-agenda
 flag=$state_dir/minimal
 
 if [[ -e $flag ]]; then
-    rm -f "$flag"
+  rm -f "$flag"
 else
-    mkdir -p "$state_dir" && touch "$flag"
+  mkdir -p "$state_dir" && touch "$flag"
 fi
 
 # Must match "signal" of custom/agenda in the waybar config.
