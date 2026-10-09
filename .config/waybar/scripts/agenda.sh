@@ -59,9 +59,9 @@ fi
 
 # Dimmed footer with the click actions and their sway/niri keybindings.
 divider="<span alpha='40%'>────────────────────────────</span>"
-hints="<span alpha='60%' size='small'>Left: ikhal
-Right · Mod+Shift+G: minimal
-Middle · Mod+Ctrl+G: calendars</span>"
+hints="<span alpha='60%' size='small'>Left: open ikhal
+Right · Mod+Shift+G: minimize display
+Middle · Mod+Ctrl+G: pick calendars</span>"
 tooltip+=$'\n'"$divider"$'\n'"$hints"
 
 jq --compact-output --null-input \
