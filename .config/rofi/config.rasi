@@ -11,7 +11,7 @@ configuration {
   }
 }
 
-@theme "gruvbox-dark-hard"
+@import "theme.rasi"
 
 /* Documentation: https://github.com/davatorium/rofi/blob/next/doc/rofi-theme.5.markdown */
 element {

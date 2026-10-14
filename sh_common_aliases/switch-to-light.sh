@@ -21,3 +21,6 @@ ln -sf "${DIR}"/../.config/tealdeer/config-light.toml "${DIR}"/../.config/tealde
 
 # switch glow
 ln -sf "${DIR}"/../.config/glow/glow-light.yml "${DIR}"/../.config/glow/glow.yml
+
+# switch rofi
+ln -sf "${DIR}"/../.config/rofi/theme-light.rasi "${DIR}"/../.config/rofi/theme.rasi
