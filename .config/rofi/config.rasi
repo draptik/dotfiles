@@ -12,10 +12,6 @@ configuration {
   kb-row-up:        "Up,Control+p,Control+k";
 
   combi-modi: "drun,run";
-  timeout {
-      action: "kb-cancel";
-      delay:  0;
-  }
   filebrowser {
       directories-first: true;
       sorting-method:    "name";
