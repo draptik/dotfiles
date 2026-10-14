@@ -101,6 +101,13 @@ handle_extension() {
     exit 1
     ;;
 
+  ## Markdown
+  md | markdown)
+    ## Strip OSC 8 hyperlinks, ranger only understands SGR color codes
+    glow --style=light --width="${PV_WIDTH}" -- "${FILE_PATH}" |
+      sed 's/\x1b\]8;[^\x07]*\x07//g' && exit 5
+    ;; # Continue with next handler on failure
+
   ## HTML
   htm | html | xhtml)
     ## Preview as text conversion
