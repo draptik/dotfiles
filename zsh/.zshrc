@@ -223,12 +223,6 @@ if (( ${+commands[starship]} )); then
   eval "$(starship init zsh)"
 fi
 
-# NNN (file manager)
-if type nnn &> /dev/null; then
-  export NNN_FIFO=/tmp/nnn.fifo
-  export NNN_PLUG="p:preview-tui"
-fi
-
 # Ripgrep configuration
 export RIPGREP_CONFIG_PATH=~/.dotfiles/.config/ripgrep/ripgreprc
 
