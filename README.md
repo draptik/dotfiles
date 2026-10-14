@@ -21,7 +21,7 @@ I am aware of the great resource site [dotfiles.github.io/](https://dotfiles.git
   ```
 - Works from kitty, ghostty, tmux, bash, or any plain shell.
 - Switches: kitty (live IPC to all windows), ghostty (config reload), tmux (live),
-  starship, eza, btop, tealdeer, klog, shell aliases, ranger, Claude Code.
+  starship, eza, btop, tealdeer, glow, klog, shell aliases, ranger, Claude Code.
 - Active theme is persisted in `~/.zshenv` (zsh) and `~/.config/current-theme` (all shells).
 
 ### Theme symlinks and git
@@ -41,7 +41,8 @@ git update-index --skip-worktree \
   .config/eza/theme.yml \
   .config/klog/config.ini \
   .config/starship-prompt/starship.toml \
-  .config/tealdeer/config.toml
+  .config/tealdeer/config.toml \
+  .config/glow/glow.yml
 ```
 
 The committed targets represent the **default dark theme**. To inspect which files have this flag:

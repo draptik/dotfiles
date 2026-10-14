@@ -18,3 +18,6 @@ ln -sf "${DIR}"/../.config/starship-prompt/starship-dark.toml "${DIR}"/../.confi
 
 # switch tldr
 ln -sf "${DIR}"/../.config/tealdeer/config-dark.toml "${DIR}"/../.config/tealdeer/config.toml
+
+# switch glow
+ln -sf "${DIR}"/../.config/glow/glow-dark.yml "${DIR}"/../.config/glow/glow.yml
