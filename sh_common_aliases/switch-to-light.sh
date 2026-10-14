@@ -24,3 +24,7 @@ ln -sf "${DIR}"/../.config/glow/glow-light.yml "${DIR}"/../.config/glow/glow.yml
 
 # switch rofi
 ln -sf "${DIR}"/../.config/rofi/theme-light.rasi "${DIR}"/../.config/rofi/theme.rasi
+
+# switch dunst
+ln -sf "${DIR}"/../.config/dunst/theme-light.conf "${DIR}"/../.config/dunst/dunstrc.d/50-theme.conf
+dunstctl reload 2>/dev/null
