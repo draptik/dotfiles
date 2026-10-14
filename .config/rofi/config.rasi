@@ -1,6 +1,16 @@
 configuration {
   modi: "drun,run,combi";
   show-icons: true;
+
+  matching:       "fuzzy";
+  sort:           true;
+  sorting-method: "fzf";
+
+  kb-accept-entry:  "Control+m,Return,KP_Enter";
+  kb-remove-to-eol: "";
+  kb-row-down:      "Down,Control+n,Control+j";
+  kb-row-up:        "Up,Control+p,Control+k";
+
   combi-modi: "drun,run";
   timeout {
       action: "kb-cancel";
