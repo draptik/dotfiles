@@ -27,7 +27,7 @@ vim.api.nvim_create_autocmd("FileType", {
         "-Q",
         "--batch",
         "-l",
-        vim.fn.expand("~/.dotfiles/emacs/update-clocktables.el"),
+        vim.fn.expand("~/.dotfiles/.config/emacs/update-clocktables.el"),
         file,
       })
       vim.cmd("edit!")

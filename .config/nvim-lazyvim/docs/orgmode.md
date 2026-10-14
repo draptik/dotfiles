@@ -227,10 +227,6 @@ in the file. You only need it for persisted clocktables, like this one:
 #+END:
 ```
 
-> **Note:** the hook points to `~/.dotfiles/emacs/update-clocktables.el`, but
-> the script is at `~/.dotfiles/.config/emacs/update-clocktables.el`.
-> `<Leader>oC` does nothing until that path is fixed.
-
 ## 5. A daily routine
 
 1. **Morning:** `<Leader>oa` → `d`. Look at today's scheduled items and
