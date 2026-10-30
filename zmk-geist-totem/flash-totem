@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 #
-# Usage: ./flash-totem left|right
+# Usage: ./flash-totem left|right|dongle|settings_reset
 #
-# Flash one half of the TOTEM keyboard (Seeed XIAO BLE).
+# Flash one half of the TOTEM keyboard, the dongle, or the settings reset
+# firmware (all Seeed XIAO BLE).
 #
 # If a firmware.zip (downloaded from the GitHub Actions build) lies next to
 # this script, it asks for a short description and unpacks the zip into a new
@@ -14,12 +15,13 @@
 # the newest firmware folder next to this script.
 #
 # Copies <folder>/*<side>*.uf2 to the XIAO-SENSE bootloader drive. Double-tap
-# the reset button on that half when prompted.
+# the reset button on that device when prompted.
 #
 set -eou pipefail
 
-side="${1:?usage: flash-totem left|right}"
-case "$side" in left|right) ;; *) echo "usage: flash-totem left|right" >&2; exit 1 ;; esac
+usage="usage: flash-totem left|right|dongle|settings_reset"
+side="${1:?$usage}"
+case "$side" in left|right|dongle|settings_reset) ;; *) echo "$usage" >&2; exit 1 ;; esac
 
 here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 zip="$here/firmware.zip"
@@ -56,12 +58,11 @@ fi
 uf2=("$fwdir"/*"$side"*.uf2)
 [ -f "${uf2[0]}" ] || { echo "No $side .uf2 in $fwdir" >&2; exit 1; }
 
-echo "YOU MUST DOUBLE-TAP THE RESET BUTTON on the $side half..."
+echo "YOU MUST DOUBLE-TAP THE RESET BUTTON on the device to flash ($side)..."
 until [ -e "$dev" ]; do sleep 0.5; done
 
 [ -d "$mnt" ] || udiskie-mount "$dev"
 until [ -d "$mnt" ]; do sleep 0.5; done
 
 cp "${uf2[@]}" "$mnt/" && sync
-echo "Done. $side half is rebooting."
-echo "You can unplug the keyboard"
+echo "Done. The device is rebooting with $(basename "${uf2[0]}")."
