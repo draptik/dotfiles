@@ -4,6 +4,8 @@
 # shellcheck disable=SC2015
 # -*- mode: bash -*-
 
+[[ -r ~/.dotfiles/sh_common_env/env.sh ]] && source ~/.dotfiles/sh_common_env/env.sh
+
 # If not running interactively, don't do anything
 case $- in
 *i*) ;;
