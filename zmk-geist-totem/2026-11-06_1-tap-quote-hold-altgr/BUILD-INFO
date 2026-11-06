@@ -1,0 +1,10 @@
+repo=draptik/zmk-config-totem
+commit=9b9671e52c8400dd626a16142a41cf3d7318ddf5
+title=update keymap: tap quote, hold altgr on right outer key
+run_id=42289353453
+run_url=https://github.com/draptik/zmk-config-totem/actions/runs/42289353453
+built_at=2026-11-06T20:33:27Z
+artifact_id=13538992543
+artifact_digest=sha256:f88a75350182a7734a1dd6b1cde40cbc433ef49b38709a9f700fe29417b744f6
+zmk_revision=v0.3
+fetched_at=2026-11-07T00:32:32+01:00
