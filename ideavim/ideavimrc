@@ -176,6 +176,28 @@ let g:WhichKeyDesc_fullscreen = "<leader>df Toggle full screen"
 let g:WhichKeyDesc_hide_all_windows = "<leader>dh Hide all (other) windows"
 let g:WhichKeyDesc_change_color_theme = "<leader>dt Change color theme"
 
+" Debug ---------------------------------------------------
+map <leader>bb <Action>(ToggleLineBreakpoint)
+map <leader>bd <Action>(Debug)
+map <leader>bn <Action>(StepOver)
+map <leader>bi <Action>(StepInto)
+map <leader>bo <Action>(StepOut)
+map <leader>bc <Action>(Resume)
+map <leader>br <Action>(RunToCursor)
+map <leader>be <Action>(EvaluateExpression)
+map <leader>bs <Action>(Stop)
+
+let g:WhichKeyDesc_debug = "<leader>b Debug"
+let g:WhichKeyDesc_debug_breakpoint = "<leader>bb Toggle breakpoint"
+let g:WhichKeyDesc_debug_debug = "<leader>bd Debug"
+let g:WhichKeyDesc_debug_step_over = "<leader>bn Step over"
+let g:WhichKeyDesc_debug_step_into = "<leader>bi Step into"
+let g:WhichKeyDesc_debug_step_out = "<leader>bo Step out"
+let g:WhichKeyDesc_debug_resume = "<leader>bc Resume"
+let g:WhichKeyDesc_debug_run_to_cursor = "<leader>br Run to cursor"
+let g:WhichKeyDesc_debug_evaluate = "<leader>be Evaluate expression"
+let g:WhichKeyDesc_debug_stop = "<leader>bs Stop"
+
 " Actions -------------------------------------------------
 map <leader>am <Action>(ShowIntentionActions)
 map <leader>as <Action>(SearchEverywhere)
