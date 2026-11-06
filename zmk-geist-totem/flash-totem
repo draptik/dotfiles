@@ -1,68 +1,165 @@
 #!/usr/bin/env bash
 #
-# Usage: ./flash-totem left|right|dongle|settings_reset
+# Usage: ./flash-totem [-f FOLDER] [dongle|left|right|settings_reset]
 #
-# Flash one half of the TOTEM keyboard, the dongle, or the settings reset
-# firmware (all Seeed XIAO BLE).
+# Flash one TOTEM device (dongle, a half, or the settings reset firmware) from
+# a firmware folder next to this script. Asks for anything not given:
 #
-# If a firmware.zip (downloaded from the GitHub Actions build) lies next to
-# this script, it asks for a short description and unpacks the zip into a new
-# firmware folder named <date>_<n>-<description>, e.g.:
+#   - folder: the current directory if it holds firmware, else a menu of the
+#     dongle-era firmware folders (newest first)
+#   - device: a menu
 #
-#   2026-09-27_1-update-keymap
+# Before copying it
+#   - verifies SHA256SUMS (written by fetch-totem) and that the file is a valid
+#     nRF52840 UF2 image,
+#   - waits (max. 2 min) for exactly one USB drive labelled XIAO-SENSE whose
+#     INFO_UF2.TXT names the Seeed XIAO nRF52840 bootloader,
+#   - shows what it is about to flash and asks for confirmation.
 #
-# Otherwise it uses the current directory if it contains .uf2 files, or else
-# the newest firmware folder next to this script.
+# Afterwards it waits for the device to reboot and, for the dongle, checks that
+# it comes back as the TOTEM keyboard.
 #
-# Copies <folder>/*<side>*.uf2 to the XIAO-SENSE bootloader drive. Double-tap
-# the reset button on that device when prompted.
+# Keymap changes: flash only the dongle. ZMK update / hardware config change:
+# flash dongle and both halves from the same folder.
 #
-set -eou pipefail
-
-usage="usage: flash-totem left|right|dongle|settings_reset"
-side="${1:?$usage}"
-case "$side" in left|right|dongle|settings_reset) ;; *) echo "$usage" >&2; exit 1 ;; esac
+set -euo pipefail
 
 here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-zip="$here/firmware.zip"
-dev=/dev/disk/by-label/XIAO-SENSE
-mnt=/run/media/$USER/XIAO-SENSE
+# shellcheck source=totem-lib.sh
+source "$here/totem-lib.sh"
 
-if [ -f "$zip" ]; then
-  today="$(date +%F)"
-  n=1
-  while compgen -G "$here/${today}_${n}[-_]*" >/dev/null; do n=$((n + 1)); done
+usage="usage: flash-totem [-f FOLDER] [dongle|left|right|settings_reset]"
 
-  read -rp "Folder name for this firmware: " name
-  shopt -s extglob
-  name="${name##+([[:space:]])}"
-  name="${name%%+([[:space:]])}"
-  name="${name//+([[:space:]])/-}"
-  [ -n "$name" ] || { echo "No folder name given." >&2; exit 1; }
-
-  fwdir="$here/${today}_${n}-${name}"
-  mkdir "$fwdir"
-  cp "$zip" "$fwdir/"
-  unzip -oj "$fwdir/firmware.zip" '*.uf2' -d "$fwdir"
-  rm "$fwdir/firmware.zip" "$zip"
-  echo "Unpacked firmware to $(basename "$fwdir")"
-elif compgen -G "./*.uf2" >/dev/null; then
-  fwdir="$PWD"
-else
-  fwdir="$(find "$here" -mindepth 1 -maxdepth 1 -type d -name '20*' | sort | tail -n1)"
-  [ -n "$fwdir" ] || { echo "No firmware.zip and no firmware folder found." >&2; exit 1; }
-  read -rp "Flash from $(basename "$fwdir")? [Y/n] " ok
-  [[ "${ok:-y}" =~ ^[Yy]$ ]] || exit 1
+fwdir=""
+while getopts ":f:h" opt; do
+  case "$opt" in
+    f) fwdir="$OPTARG" ;;
+    h) info "$usage"; exit 0 ;;
+    *) die "$usage" ;;
+  esac
+done
+shift $((OPTIND - 1))
+[ $# -le 1 ] || die "$usage"
+device="${1:-}"
+if [ -n "$device" ]; then
+  case " ${TOTEM_DEVICES[*]} " in *" $device "*) ;; *) die "$usage" ;; esac
 fi
 
-uf2=("$fwdir"/*"$side"*.uf2)
-[ -f "${uf2[0]}" ] || { echo "No $side .uf2 in $fwdir" >&2; exit 1; }
+for cmd in lsblk findmnt udisksctl sha256sum od awk; do
+  command -v "$cmd" >/dev/null || die "$cmd is not installed"
+done
 
-echo "YOU MUST DOUBLE-TAP THE RESET BUTTON on the device to flash ($side)..."
-until [ -e "$dev" ]; do sleep 0.5; done
+# --- folder -----------------------------------------------------------------
 
-[ -d "$mnt" ] || udiskie-mount "$dev"
-until [ -d "$mnt" ]; do sleep 0.5; done
+is_fw_folder() { compgen -G "$1/*totem_dongle-*.uf2" >/dev/null; }
 
-cp "${uf2[@]}" "$mnt/" && sync
-echo "Done. The device is rebooting with $(basename "${uf2[0]}")."
+if [ -n "$fwdir" ]; then
+  fwdir="$(cd "$fwdir" && pwd)" || die "no such folder: $fwdir"
+elif is_fw_folder "$PWD"; then
+  fwdir="$PWD"
+else
+  choices=()
+  while IFS= read -r d; do
+    is_fw_folder "$d" && choices+=("$(basename "$d")")
+  done < <(find "$here" -mindepth 1 -maxdepth 1 -type d -name '20*' | sort -r)
+  [ "${#choices[@]}" -gt 0 ] || die "no firmware folders found - run ./fetch-totem first"
+  info "Firmware folders (newest first):"
+  fwdir="$here/$(pick "Folder" "${choices[@]}")"
+fi
+is_fw_folder "$fwdir" || die "$fwdir has no dongle firmware (pre-dongle folder?) - refusing to mix setups"
+
+verify_folder "$fwdir"
+
+# --- device -----------------------------------------------------------------
+
+if [ -z "$device" ]; then
+  info "Device (keymap changes: dongle only):"
+  device="$(pick "Device" "${TOTEM_DEVICES[@]}")"
+fi
+
+matches=("$fwdir"/*"$device"-*.uf2)
+[ "${#matches[@]}" -eq 1 ] && [ -f "${matches[0]}" ] || die "expected exactly one $device .uf2 in $fwdir"
+uf2="${matches[0]}"
+
+# --- bootloader drive -------------------------------------------------------
+
+# Print the XIAO bootloader drives currently attached via USB.
+find_drives() {
+  lsblk -nrpdo NAME,LABEL,TRAN | awk -v l="$TOTEM_LABEL" '$2 == l && $3 == "usb" {print $1}'
+}
+
+case "$device" in
+  dongle) how="double-tap the button on the dongle case" ;;
+  left|right) how="double-tap the reset button on the $device half (USB powers it, the switch doesn't matter)" ;;
+  settings_reset) how="double-tap the reset button on the device you want to reset" ;;
+esac
+
+mapfile -t drives < <(find_drives)
+if [ "${#drives[@]}" -eq 0 ]; then
+  info ""
+  info ">>> Bootloader mode: $how"
+  info "    Waiting up to 2 minutes for the $TOTEM_LABEL drive (Ctrl-C to abort)..."
+  for _ in $(seq 240); do
+    mapfile -t drives < <(find_drives)
+    [ "${#drives[@]}" -eq 0 ] || break
+    sleep 0.5
+  done
+fi
+[ "${#drives[@]}" -gt 0 ] || die "no $TOTEM_LABEL drive appeared"
+[ "${#drives[@]}" -eq 1 ] \
+  || die "more than one $TOTEM_LABEL drive attached (${drives[*]}) - put only one device into bootloader mode"
+dev="${drives[0]}"
+
+mnt="$(findmnt -nro TARGET -S "$dev" || true)"
+if [ -z "$mnt" ]; then
+  udisksctl mount --no-user-interaction -b "$dev" >/dev/null
+  for _ in $(seq 20); do
+    mnt="$(findmnt -nro TARGET -S "$dev" || true)"
+    [ -z "$mnt" ] || break
+    sleep 0.5
+  done
+  [ -n "$mnt" ] || die "could not mount $dev"
+fi
+
+grep -qx "Board-ID: $TOTEM_BOARD_ID" "$mnt/INFO_UF2.TXT" 2>/dev/null \
+  || die "$dev ($mnt) is not a $TOTEM_BOARD_ID bootloader"
+
+info ""
+info "Folder:   $(basename "$fwdir")"
+if [ -f "$fwdir/BUILD-INFO" ]; then
+  info "Commit:   $(sed -n 's/^commit=//p' "$fwdir/BUILD-INFO" | cut -c1-12) $(sed -n 's/^title=//p' "$fwdir/BUILD-INFO")"
+fi
+info "Firmware: $(basename "$uf2")"
+info "Target:   $dev at $mnt"
+[ "$device" != settings_reset ] || warn "settings_reset erases all pairings on this device"
+if ! confirm "Flash it? The device in bootloader mode must be the $device."; then
+  udisksctl unmount --no-user-interaction -b "$dev" >/dev/null 2>&1 || true
+  exit 1
+fi
+
+# --- flash ------------------------------------------------------------------
+
+# The bootloader reboots as soon as it has the last block, so cp/sync can
+# report an error even though flashing worked; the reboot is the real signal.
+copy_ok=1
+{ cp -- "$uf2" "$mnt/" && sync; } || copy_ok=0
+
+gone=0
+for _ in $(seq 60); do
+  if [ "$(lsblk -ndo LABEL "$dev" 2>/dev/null)" != "$TOTEM_LABEL" ]; then gone=1; break; fi
+  sleep 0.5
+done
+[ "$gone" -eq 1 ] || die "the device did not reboot - flashing probably failed, try again"
+[ "$copy_ok" -eq 1 ] || warn "the copy reported an error, but the device rebooted (usually fine)"
+
+if [ "$device" = dongle ] && command -v lsusb >/dev/null; then
+  for _ in $(seq 20); do
+    if lsusb | grep -q ' TOTEM$'; then
+      info "Done. The dongle is back as the TOTEM keyboard."
+      exit 0
+    fi
+    sleep 0.5
+  done
+  die "the dongle rebooted but didn't come back as the TOTEM keyboard - check it"
+fi
+info "Done. The $device is rebooting with $(basename "$uf2")."

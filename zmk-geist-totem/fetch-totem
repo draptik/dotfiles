@@ -1,0 +1,139 @@
+#!/usr/bin/env bash
+#
+# Usage: ./fetch-totem [COMMIT | RUN_ID]
+#
+# Download the TOTEM firmware built by GitHub Actions in draptik/zmk-config-totem
+# into a new folder next to this script, named <date>_<n>-<description>.
+#
+# Without an argument it takes the newest successful build of main. A commit
+# (7-40 hex chars) or a run ID selects a specific build; it must be a
+# successful push build on main.
+#
+# The artifact zip is checked against the SHA-256 digest GitHub reports, must
+# contain only .uf2 files, and every file must be a valid nRF52840 UF2 image.
+# The folder gets BUILD-INFO (commit, run, artifact, digest) and SHA256SUMS,
+# which flash-totem verifies before flashing. Files are made read-only.
+#
+# Needs: gh (logged in), jq, unzip, sha256sum, od, awk.
+#
+set -euo pipefail
+umask 022
+
+here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=totem-lib.sh
+source "$here/totem-lib.sh"
+
+usage="usage: fetch-totem [COMMIT | RUN_ID]"
+[ $# -le 1 ] || die "$usage"
+case "${1:-}" in -h|--help) info "$usage"; exit 0 ;; esac
+
+for cmd in gh jq unzip sha256sum od awk; do
+  command -v "$cmd" >/dev/null || die "$cmd is not installed"
+done
+gh auth status >/dev/null 2>&1 || die "gh is not logged in (run: gh auth login)"
+
+# --- pick the run -----------------------------------------------------------
+
+fields=databaseId,headSha,headBranch,event,conclusion,displayTitle,createdAt,url
+list=(gh run list -R "$TOTEM_REPO" -w "$TOTEM_WORKFLOW" -b main -e push -s success -L 1 --json "$fields")
+arg="${1:-}"
+if [ -z "$arg" ]; then
+  run_json="$("${list[@]}" -q '.[0] // empty')"
+elif [[ "$arg" =~ ^[0-9]{8,}$ ]]; then
+  run_json="$(gh run view -R "$TOTEM_REPO" "$arg" --json "$fields")"
+elif [[ "$arg" =~ ^[0-9a-fA-F]{7,40}$ ]]; then
+  sha="$(gh api "repos/$TOTEM_REPO/commits/$arg" -q .sha)" || die "unknown commit $arg"
+  run_json="$("${list[@]}" -c "$sha" -q '.[0] // empty')"
+else
+  die "$usage"
+fi
+[ -n "$run_json" ] || die "no successful build of main found${arg:+ for $arg}"
+
+field() { jq -r ".$1" <<<"$run_json"; }
+run_id="$(field databaseId)"
+sha="$(field headSha)"
+title="$(field displayTitle)"
+built_at="$(field createdAt)"
+run_url="$(field url)"
+[ "$(field conclusion)" = success ] || die "run $run_id did not succeed"
+[ "$(field event)" = push ] && [ "$(field headBranch)" = main ] \
+  || die "run $run_id is not a push build of main"
+
+# Already fetched?
+if dup="$(grep -lx "run_id=$run_id" "$here"/20*/BUILD-INFO 2>/dev/null)"; then
+  warn "run $run_id is already in $(basename "$(dirname "$dup")")"
+  confirm "Fetch it again into a new folder?" || exit 0
+fi
+
+# --- artifact ---------------------------------------------------------------
+
+art_json="$(gh api "repos/$TOTEM_REPO/actions/runs/$run_id/artifacts" \
+  -q ".artifacts[] | select(.name == \"$TOTEM_ARTIFACT\")")"
+[ -n "$art_json" ] || die "run $run_id has no '$TOTEM_ARTIFACT' artifact"
+art_id="$(jq -r .id <<<"$art_json")"
+[ "$(jq -r .expired <<<"$art_json")" = false ] || die "the artifact of run $run_id has expired"
+digest="$(jq -r '.digest // empty' <<<"$art_json")"
+[[ "$digest" =~ ^sha256:[0-9a-f]{64}$ ]] || die "GitHub reports no SHA-256 digest for the artifact"
+zmk_rev="$(gh api "repos/$TOTEM_REPO/contents/config/west.yml?ref=$sha" \
+  -H 'Accept: application/vnd.github.raw' 2>/dev/null \
+  | awk '/name: zmk$/ {z=1} z && /revision:/ {print $2; exit}')" || true
+
+info "Build:    $title"
+info "Commit:   $sha"
+info "Run:      $run_url ($built_at)"
+info "ZMK:      ${zmk_rev:-unknown}"
+confirm "Download this firmware?" y || exit 0
+
+tmp="$(mktemp -d)"
+trap 'rm -rf -- "$tmp"' EXIT
+gh api "repos/$TOTEM_REPO/actions/artifacts/$art_id/zip" >"$tmp/firmware.zip"
+
+[ "sha256:$(sha256sum "$tmp/firmware.zip" | cut -d' ' -f1)" = "$digest" ] \
+  || die "artifact digest mismatch - download corrupted or tampered with"
+
+# Only plain *.uf2 names at the top level, nothing else.
+mapfile -t names < <(unzip -Z1 "$tmp/firmware.zip")
+[ "${#names[@]}" -gt 0 ] || die "artifact is empty"
+for n in "${names[@]}"; do
+  [[ "$n" =~ ^[A-Za-z0-9_.-]+\.uf2$ ]] || die "unexpected file in artifact: $n"
+done
+mkdir "$tmp/fw"
+unzip -q "$tmp/firmware.zip" -d "$tmp/fw"
+for d in "${TOTEM_DEVICES[@]}"; do
+  compgen -G "$tmp/fw/*${d}*.uf2" >/dev/null || die "artifact has no $d firmware"
+done
+for f in "$tmp"/fw/*.uf2; do check_uf2 "$f" || die "artifact contains an invalid UF2 file"; done
+
+# --- folder -----------------------------------------------------------------
+
+default="$(sed -E 's/^[a-z]+( [a-z]+)?: *//' <<<"$title")"
+read -rp "Folder description [$default]: " name
+name="${name:-$default}"
+name="$(tr '[:upper:]' '[:lower:]' <<<"$name" | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g' | cut -c1-60)"
+name="${name%-}"
+[ -n "$name" ] || die "no folder description given"
+
+today="$(date +%F)"
+n=1
+while compgen -G "$here/${today}_${n}[-_]*" >/dev/null; do n=$((n + 1)); done
+fwdir="$here/${today}_${n}-${name}"
+
+cat >"$tmp/fw/BUILD-INFO" <<EOF
+repo=$TOTEM_REPO
+commit=$sha
+title=$title
+run_id=$run_id
+run_url=$run_url
+built_at=$built_at
+artifact_id=$art_id
+artifact_digest=$digest
+zmk_revision=${zmk_rev:-unknown}
+fetched_at=$(date -Iseconds)
+EOF
+(cd "$tmp/fw" && sha256sum -- *.uf2 BUILD-INFO >SHA256SUMS)
+chmod 444 "$tmp"/fw/*
+
+mkdir "$fwdir"
+mv -n -- "$tmp"/fw/* "$fwdir/"
+info "Saved to $(basename "$fwdir"):"
+ls -1 "$fwdir"
