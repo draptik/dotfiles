@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Firefox (work)
+GenericName=Web Browser
+Comment=Firefox with work profile
+Icon=firefox
+Exec=firefox -P work %u
+Terminal=false
+Categories=Network;WebBrowser;
