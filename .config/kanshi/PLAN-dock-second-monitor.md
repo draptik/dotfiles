@@ -61,6 +61,26 @@ after the monitors have been in standby for a while (the likely trigger).
 - Monitor still missing: run Step 1 again and check whether the tunnel now
   hangs instead of being torn down. Then go to Step 4.
 
+### Findings 2026-11-17
+
+- Applied Step 2, then rebooted with the dock attached: second Dell missing
+  (DP-7 disconnected). No TB debug output, so the cause is unknown.
+- Replugged the dock with debug enabled: both Dells came up. Both tunnels
+  logged `DPRX read timeout`, then `DPRX capabilities read completed`. The
+  second one came up ~2 s later; kanshi went single-monitor → `homeoffice`.
+- Suspected: tunnels set up by the BIOS before boot don't survive the
+  handover. Unconfirmed.
+- Enabled persistent debug logging to catch the next bad boot:
+  `options thunderbolt dprx_timeout=-1 dyndbg=+p`
+
+After the next bad boot:
+
+```sh
+journalctl -b -k | grep -E 'thunderbolt.*(DP|DPRX|tunnel|tearing)'
+```
+
+Workaround: replug the dock.
+
 ## Step 4: fallbacks
 
 1. Disable bandwidth allocation mode as well:
