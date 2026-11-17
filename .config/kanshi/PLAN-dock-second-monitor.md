@@ -131,6 +131,7 @@ Next: Step 4.1 (`bw_alloc_mode=0`) and see if the reduction changes.
 1. Disable bandwidth allocation mode as well:
    `options thunderbolt dprx_timeout=-1 bw_alloc_mode=0`
 2. Update the dock firmware: `fwupdmgr refresh && fwupdmgr get-updates`
+   (checked 2026-11-17: no update available)
 3. Try the other USB-C port and a different/shorter TB cable.
 
 ## Workaround when it happens
